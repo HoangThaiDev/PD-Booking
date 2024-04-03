@@ -26,6 +26,7 @@
 }
 
 #header .header-nav-scroll {
+    transition: 1s all ease;
     background-color: #66c8c9;
 }
 
