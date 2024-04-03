@@ -1,0 +1,32 @@
+#about {
+    margin-top: 15%;
+}
+
+#about .about-container {
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+}
+
+#about .about-container img {
+    width: 70px;
+}
+
+#about .about-container .about__content {
+    font-size: 14px;
+    margin-top: 20px;
+    color: rgb(83, 98, 78);
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#about .about__title {
+    margin: 30px 0;
+    font-size: 4rem;
+}
+
+#about .about__desc {
+    color: rgb(79, 103, 71);
+    letter-spacing: 1px;
+    line-height: 30px;
+}
