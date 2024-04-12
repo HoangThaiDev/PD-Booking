@@ -1,0 +1,193 @@
+#formBooking {
+    position: relative;
+    top: -55px;
+}
+
+#formBooking .formBooking-container {
+    background-color: #53624E;
+    padding: 30px;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#formBooking .formBooking-row {
+    justify-content: space-around;
+}
+
+#formBooking .formBooking-date {
+    width: 100%;
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid #B99D75;
+    height: 50px;
+}
+
+#formBooking .formBooking-date .ant-picker-input input::placeholder,
+#formBooking .formBooking-date .ant-picker-input input {
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+#formBooking .ant-picker-separator,
+#formBooking .anticon-calendar {
+    position: relative;
+    color: white !important;
+    left: -10px !important;
+}
+
+#formBooking .form-input {
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border: 1px solid #B99D75;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#formBooking .form-input .form-input__city {
+    box-sizing: border-box;
+    width: 50%;
+    height: inherit;
+    background-color: transparent;
+    border: 0;
+    font-size: 14px;
+    color: white;
+}
+
+#formBooking .form-input .form-input__city::placeholder {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    position: relative;
+    top: 1px;
+
+}
+
+#formBooking .form-input label {
+    font-family: "Roboto", sans-serif;
+    width: 20%;
+}
+
+#formBooking .form-input>div {
+    height: inherit;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+#formBooking .form-input>div input {
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    text-align: right;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+
+#formBooking .form-input>div .icon-dropdown {
+    color: rgb(195, 194, 194);
+    position: relative;
+    font-size: 24px;
+    top: 2px;
+    font-family: "Roboto", sans-serif;
+}
+
+#formBooking .form-input>.form-input-dropdown {
+    cursor: auto;
+    position: absolute;
+    bottom: -155px;
+    left: 0;
+    width: 300px !important;
+    height: auto;
+    background-color: white;
+    border: 2px solid #B99D75;
+    border-radius: 3px;
+    color: black;
+    padding: 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: showPopupDropdown 0.7s 1 forwards;
+}
+
+
+#formBooking .form-input .form-input-dropdown .form-dropdown-flex {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#formBooking .form-input-dropdown .form-dropdown-flex>label {
+    cursor: auto;
+    width: 30%;
+}
+
+#formBooking .form-input-dropdown .form-dropdown-flex>p {
+    width: 60%;
+    text-align: right;
+}
+
+#formBooking .form-input-dropdown .form-dropdown-flex>p>span {
+    margin: 0 20px;
+}
+
+#formBooking .form-input-dropdown .form-dropdown-flex>p>.icon-quantity-increase,
+#formBooking .form-input-dropdown .form-dropdown-flex>p>.icon-quantity-decrease {
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+}
+
+#formBooking .formBooking-search {
+    height: 50px;
+}
+
+#formBooking .formBooking-search .btn-search {
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    height: inherit;
+    background-color: #B99D75;
+    color: white;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Effect CSS */
+
+#formBooking .form-input input:focus {
+    outline: 0;
+}
+
+#formBooking .ant-picker-active-bar {
+    background-color: transparent !important;
+}
+
+#formBooking .formBooking-search .btn-search:hover {
+    transition: 0.3s all ease;
+    filter: brightness(95%);
+}
+
+/* Animation CSS */
+
+@keyframes showPopupDropdown {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

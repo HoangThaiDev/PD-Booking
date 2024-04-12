@@ -6,11 +6,13 @@ import "./css/header.css";
 import banner from "../assets/banner.jpg";
 import { Row, Col } from "antd";
 import { NavLink } from "react-router-dom";
+import FormBooking from "../components/Home/FormBooking";
 
 // Import Icons
 import { VscMenu } from "react-icons/vsc";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosStar } from "react-icons/io";
+import { FaRegUser } from "react-icons/fa6";
 
 export default function Header() {
   // Create + use Hooks
@@ -57,33 +59,18 @@ export default function Header() {
               <li className="menu__item">
                 STAY <MdKeyboardArrowDown className="icon icon-dropdown" />
                 <ul className="menu-dropdown">
+                  <li className="menu-dropdown__item">Citys Page</li>
+                  <li className="menu-dropdown__item">Resorts Page</li>
                   <li className="menu-dropdown__item">Rooms Page</li>
-                  <li className="menu-dropdown__item">
-                    Room Detail - Top Image
-                  </li>
-                  <li className="menu-dropdown__item">
-                    Room Detail - Top Gallery
-                  </li>
-                  <li className="menu-dropdown__item">
-                    Room Detail - Left Booking Form
-                  </li>
-                  <li className="menu-dropdown__item">Cart</li>
-                  <li className="menu-dropdown__item">Checkout</li>
-                  <li className="menu-dropdown__item">My Account</li>
                 </ul>
               </li>
               <li className="menu__item">
-                PAGES <MdKeyboardArrowDown className="icon icon-dropdown" />
+                SERVICES <MdKeyboardArrowDown className="icon icon-dropdown" />
                 <ul className="menu-dropdown">
-                  <li className="menu-dropdown__item">About The Hotel</li>
-                  <li className="menu-dropdown__item">Restaurants & Bars</li>
-                  <li className="menu-dropdown__item">The Restaurant</li>
-                  <li className="menu-dropdown__item">Menu Page</li>
-                  <li className="menu-dropdown__item">Spa & Wellness</li>
-                  <li className="menu-dropdown__item">Events & Meetings</li>
-                  <li className="menu-dropdown__item">Local Activities</li>
-                  <li className="menu-dropdown__item">Activity Detail Page</li>
+                  <li className="menu-dropdown__item">Cart</li>
+                  <li className="menu-dropdown__item">Checkout</li>
                   <li className="menu-dropdown__item">Contact</li>
+                  <li className="menu-dropdown__item">About Me</li>
                 </ul>
               </li>
               <li className="menu__item">NEWS</li>
@@ -104,8 +91,15 @@ export default function Header() {
           <Col className="header__col contact" xl={8}>
             <div className="contact-container">
               <ul className="contact__list">
+                <li className="contact__item">
+                  USER
+                  <ul className="menu-dropdown">
+                    <li className="menu-dropdown__item">Login</li>
+                    <li className="menu-dropdown__item">Setting</li>
+                    <li className="menu-dropdown__item">Logout</li>
+                  </ul>
+                </li>
                 <li className="contact__item">Tel: +84 12 111 22 33</li>
-                <li className="contact__item">EN / VN</li>
                 <li className="contact__item">Book Now</li>
               </ul>
             </div>
@@ -113,11 +107,13 @@ export default function Header() {
         </Row>
       </div>
       <div className="header-introduce">
-        <h1 className="intro__title">Boutique Private Island Resort</h1>
+        <h1 className="intro__title">Vietnam's Resort Search System</h1>
         <p className="intro__content">
-          The seaside haven of warmth, tranquility and restoration
+          Look for resorts that are comfortable, relaxing, friendly, and
+          reasonably priced
         </p>
       </div>
+      <FormBooking />
     </div>
   );
 }
