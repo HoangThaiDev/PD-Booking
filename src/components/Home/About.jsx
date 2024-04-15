@@ -4,7 +4,7 @@ import classes from "./css/about.module.css";
 
 // Import Components
 import logoHotel from "../../assets/resort.png";
-import SlideImage from "./SlideImage";
+import SlideImage from "../../UI/SlideImage";
 
 // Import Images Hotel
 import image1 from "../../assets/Images Hotel/img-75-683x1024.jpg";

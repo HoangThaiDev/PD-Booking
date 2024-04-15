@@ -56,17 +56,20 @@
     padding: 10px 80px 10px 10px;
     border: 2px solid rgb(182, 155, 117);
     letter-spacing: 1px;
+    border-radius: 3px;
 }
 
 .cities__options .col:nth-child(1) .iconSearch {
     cursor: pointer;
     position: absolute;
-    font-size: 20px;
+    font-size: 18px;
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
     top: 0;
     right: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .cities__options .col:nth-child(1) .input-search::placeholder {
@@ -78,22 +81,17 @@
     text-align: right;
 }
 
-.cities__options .col:nth-child(2) .pagination li {
-    font-family: "Roboto", sans-serif;
-    border: 2px solid rgb(182, 155, 117);
-}
-
 .cities__list {
     margin-top: 5%;
     justify-content: space-between;
     text-align: center;
-    gap: 50px;
+    gap: 80px;
 }
 
 .cities__item {
     position: relative;
-    width: 48%;
-    height: 600px;
+    width: 47%;
+    height: 500px;
     transition: 0.3s all ease;
     overflow: hidden;
 }
@@ -176,14 +174,6 @@
 
 .cities__options .col:nth-child(1) .input-search:focus {
     outline: 0;
-}
-
-.cities__options .col:nth-child(2) .pagination li:hover {
-    background-color: rgb(182, 155, 117);
-}
-
-.cities__options .col:nth-child(2) .pagination li a:hover {
-    color: white;
 }
 
 .form__link .btn-link:hover {

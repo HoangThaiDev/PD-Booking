@@ -1,0 +1,39 @@
+.pagination .ant-pagination-item,
+.pagination .ant-pagination-prev,
+.pagination .ant-pagination-next {
+    font-family: "Roboto", sans-serif;
+    border: 1px solid rgb(182, 155, 117);
+    width: 35px;
+    height: 35px;
+}
+
+.pagination li a,
+.pagination .anticon {
+    color: rgb(182, 155, 117) !important;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+}
+
+
+/* Effect CSS */
+.pagination .ant-pagination-item-active {
+    background-color: rgb(182, 155, 117);
+}
+
+.pagination .ant-pagination-item-active a {
+    color: white !important;
+}
+
+.pagination .ant-pagination-prev:hover .anticon,
+.pagination .ant-pagination-next:hover .anticon {
+    color: white !important;
+}
+
+.pagination li:hover {
+    background-color: rgb(182, 155, 117);
+}
+
+.pagination li a:hover {
+    color: white;
+}

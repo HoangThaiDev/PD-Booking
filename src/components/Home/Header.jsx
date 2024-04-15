@@ -4,7 +4,7 @@ import classes from "./css/header.module.css";
 
 // Import Components
 import banner from "../../assets/banner.jpg";
-import FormBooking from "./FormBooking";
+import FormBooking from "../../UI/FormBooking";
 
 export default function Header() {
   return (

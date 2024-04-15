@@ -1,0 +1,167 @@
+.resort {
+    padding-bottom: 5%;
+}
+
+.resort__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.resort__title {
+    position: relative;
+    font-family: "Lora", serif;
+    color: #403b34;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 5%;
+}
+
+.resort__title::after,
+.resort__title::before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgb(182, 155, 117);
+}
+
+.resort__title::before {
+    top: 15px;
+    left: 0;
+}
+
+.resort__title::after {
+    top: 15px;
+    right: 0;
+}
+
+
+.resort__options {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resort__options .col:nth-child(1)>div {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.resort__options .col:nth-child(1) .input-search {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 80px 10px 10px;
+    border: 2px solid rgb(182, 155, 117);
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.resort__options .col:nth-child(1) .iconSearch {
+    cursor: pointer;
+    position: absolute;
+    font-size: 18px;
+    background-color: rgb(182, 155, 117);
+    padding: 10px 20px;
+    color: white;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.resort__options .col:nth-child(1) .input-search::placeholder {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.resort__options .col:nth-child(2) {
+    text-align: right;
+}
+
+.resort__list {
+    margin-top: 5%;
+    justify-content: space-between;
+    text-align: center;
+    gap: 80px;
+}
+
+.resort__item {
+    position: relative;
+    width: 47%;
+    height: 500px;
+    transition: 0.3s all ease;
+    overflow: hidden;
+}
+
+.resort__item>img {
+    width: 100%;
+    height: inherit;
+    filter: brightness(85%);
+}
+
+.resort__item .resort__card {
+    position: absolute;
+    color: white;
+    background: linear-gradient(160deg, rgba(15, 14, 14, 0.3), rgba(221, 207, 207, 0.1));
+    padding: 60px 40px;
+    top: 20%;
+    left: 100%;
+    width: 400px;
+    border-radius: 5px;
+
+}
+
+.resort__card .card__address {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+}
+
+.resort__card .card__name {
+    font-family: "Bodoni Moda", serif;
+    font-size: 26px;
+    margin: 20px 0;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+
+.resort__card .card__btn {
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: 0.3s all ease;
+}
+
+/* Effect CSS */
+
+.resort__card .card__btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.resort__item:hover {
+    transition: 0.3s all ease;
+    filter: brightness(90%);
+}
+
+.resort__item:hover .resort__card {
+    animation: showCard 1s 1 ease forwards;
+}
+
+@keyframes showCard {
+    0% {
+        top: 20%;
+        left: 100%;
+    }
+
+    100% {
+        top: 20%;
+        left: 15%;
+    }
+}

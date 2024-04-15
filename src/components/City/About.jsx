@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./css/about.module.css";
 
 // Import Components
-import SlideImage from "../Home/SlideImage";
+import SlideImage from "../../UI/SlideImage";
 import LogoCity from "../../assets/buildings.png";
 
 // Import Images
