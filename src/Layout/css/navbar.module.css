@@ -1,17 +1,4 @@
-#header {
-    width: 100%;
-    height: 700px;
-    position: relative;
-}
-
-#header .header__img {
-    width: 100%;
-    height: inherit;
-    object-fit: cover;
-    filter: brightness(60%);
-}
-
-#header .header-nav {
+.navbar .navbar-nav {
     position: fixed;
     width: 100%;
     height: 60px;
@@ -22,25 +9,25 @@
     z-index: 3;
 }
 
-#header .header-nav-scroll {
+.navbar .navbar-nav-scroll {
     transition: 1s all ease;
     background-color: #66c8c9;
 }
 
-#header .header-nav .header__row {
+.navbar .navbar-nav .navbar__row {
     height: inherit;
     justify-content: space-around;
     align-items: center;
     padding: 0 20px;
 }
 
-#header .header__row .menu .menu__list {
+.navbar .navbar__row .menu .menu__list {
     height: inherit;
     display: flex;
     align-items: center;
 }
 
-#header .header__row .menu .menu__list .menu__item {
+.navbar .navbar__row .menu .menu__list .menu__item {
     font-family: "Playfair Display", serif;
     cursor: pointer;
     display: inline-block;
@@ -51,22 +38,22 @@
     padding: 10px 0;
 }
 
-#header .menu__item a {
+.navbar .menu__item a {
     color: white;
 }
 
-#header .menu__item .icon-menu {
+.navbar .menu__item .icon-menu {
     font-size: 2rem;
     color: rgba(255, 255, 255, 0.663);
 }
 
-#header .menu__item .icon-dropdown {
+.navbar .menu__item .icon-dropdown {
     position: absolute;
     right: -20px;
     font-size: 16px;
 }
 
-#header .menu-dropdown {
+.navbar .menu-dropdown {
     position: absolute;
     left: -50px;
     background-color: rgba(43, 42, 42);
@@ -76,29 +63,30 @@
     display: none;
 }
 
-#header .contact__item .menu-dropdown {
+.navbar .contact__item .menu-dropdown {
     text-align: left;
     left: 80px;
     width: 60px;
 }
 
-#header .menu-dropdown .menu-dropdown__item {
+.navbar .menu-dropdown .menu-dropdown__item {
+    display: block;
     margin: 20px 0;
     line-height: 25px;
 }
 
-#header .logo .logo-container {
+.navbar .logo .logo-container {
     text-align: center;
     position: relative;
 }
 
-#header .logo .logo-container .logo__title {
+.navbar .logo .logo-container .logo__title {
     font-family: "Lora", serif;
     letter-spacing: 10px;
     font-size: 2rem;
 }
 
-#header .logo .logo-container .logo__rating {
+.navbar .logo .logo-container .logo__rating {
     display: inline-block;
     color: #f3ab48ed;
     position: absolute;
@@ -106,106 +94,78 @@
     bottom: -60%;
 }
 
-#header .logo .logo-container .logo__rating .icon-star {
+.navbar .logo .logo-container .logo__rating .icon-star {
     margin: 0 3px;
 }
 
-#header .contact .contact-container {
+.navbar .contact .contact-container {
     text-align: right;
 }
 
-#header .contact__list .contact__item {
+.navbar .contact__list .contact__item {
     font-family: "Playfair Display", serif;
     display: inline-block;
     cursor: pointer;
     margin: 0 5%;
 }
 
-#header .contact__item:nth-child(1) {
+.navbar .contact__item:nth-child(1) {
 
     padding: 10px 0;
 }
 
-#header .contact__item:nth-child(3) {
+.navbar .contact__item:nth-child(3) {
     border: 1px solid white;
     padding: 15px 30px;
     letter-spacing: 1px;
     border-radius: 3px;
 }
 
-.header-introduce {
-    font-family: "Bodoni Moda", serif;
-    position: absolute;
-    top: 35%;
-    left: 20%;
-    color: white;
-    width: 60%;
-    text-align: center;
-    z-index: 1;
-}
-
-.header-introduce .intro__title {
-    font-weight: bold;
-    font-size: 2.5cm;
-    letter-spacing: 2px;
-    line-height: 120px;
-}
-
-.header-introduce .intro__content {
-    font-size: 18px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-#header .menu__item .active {
-    border-bottom: 2px solid white;
-    padding-bottom: 3px;
-}
 
 
 /* Effect CSS */
 
-#header .menu__item:hover,
-#header .menu__item .icon-menu:hover,
-#header .contact__item:nth-child(1):hover {
+.navbar .menu__item:hover,
+.navbar .menu__item .icon-menu:hover,
+.navbar .contact__item:nth-child(1):hover {
     transition: 0.5s all ease;
     color: rgb(252, 142, 87);
 }
 
-#header .contact__item:nth-child(3):hover {
+.navbar .contact__item:nth-child(3):hover {
     transition: 0.5s all ease;
     background-color: rgb(248, 115, 48);
     border: 1px solid transparent;
 }
 
-#header .menu__item:nth-child(3):hover .menu-dropdown,
-#header .menu__item:nth-child(4):hover .menu-dropdown {
+.navbar .menu__item:nth-child(3):hover .menu-dropdown,
+.navbar .menu__item:nth-child(4):hover .menu-dropdown {
     animation: showMenuDropdown 1s 1 forwards;
     transition: 0.7s all ease;
     color: white;
     display: block;
 }
 
-#header .contact__item:nth-child(1):hover .menu-dropdown {
+.navbar .contact__item:nth-child(1):hover .menu-dropdown {
     animation: showMenuDropdownUser 1s 1 forwards;
     transition: 0.7s all ease;
     color: white;
     display: block;
 }
 
-#header .menu-dropdown__item:hover {
+.navbar .menu-dropdown__item:hover {
     transition: 0.3s all ease;
     color: rgb(248, 115, 48);
 }
 
-#header .header-nav-scroll .menu__item:hover,
-#header .header-nav-scroll .menu__item .icon-menu:hover,
-#header .header-nav-scroll .contact__item:nth-child(1):hover {
+.navbar .navbar-nav-scroll .menu__item:hover,
+.navbar .navbar-nav-scroll .menu__item .icon-menu:hover,
+.navbar .navbar-nav-scroll .contact__item:nth-child(1):hover {
     color: rgb(82, 81, 81);
     transition: 0.3s all ease;
 }
 
-#header .header-nav-scroll .contact__item:nth-child(3):hover {
+.navbar .navbar-nav-scroll .contact__item:nth-child(3):hover {
     transition: 0.5s all ease;
     background-color: rgb(82, 81, 81);
     border: 1px solid transparent;
@@ -214,7 +174,7 @@
 @keyframes showMenuDropdown {
     0% {
         opacity: 0.5;
-        top: 80px;
+        top: 60px;
     }
 
     100% {
@@ -226,7 +186,7 @@
 @keyframes showMenuDropdownUser {
     0% {
         opacity: 0.5;
-        top: 80px;
+        top: 60px;
     }
 
     100% {

@@ -1,7 +1,6 @@
 // Import Modules
-import React, { useEffect, useState } from "react";
-import "./css/room.css";
-import axios from "axios";
+import React, { useMemo } from "react";
+import classes from "./css/room.module.css";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -13,25 +12,10 @@ import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineSmokeFree } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
 
-export default function Room() {
+export default function Room({ room }) {
   // Create + use Hooks
-  const [rooms, setRooms] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const sliceRoom = useMemo(() => room.slice(0, 3), [room]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchRoom = async () => {
-      try {
-        const { data } = await axios.get("http://localhost:5000/rooms");
-        const modifiedRooms = data.slice(0, 3);
-        setRooms(modifiedRooms);
-        setIsLoading(!isLoading);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchRoom();
-  }, []);
 
   // Create + use event Handlers
   const navigateResortDetailHandler = (id, name) => {
@@ -40,67 +24,73 @@ export default function Room() {
   };
 
   return (
-    <div id="room">
-      <div className="room-container">
-        <div className="room-header">
-          <Row className="room-header__row">
-            <Col className="room-header__col" xl={10}>
+    <div className={classes.room}>
+      <div className={classes["room-container"]}>
+        <div className={classes["room-header"]}>
+          <Row className={classes["room-header__row"]}>
+            <Col className={classes["room-header__col"]} xl={10}>
               <h1>The Rooms </h1>
             </Col>
-            <Col className="room-header__col" xl={10}>
+            <Col className={classes["room-header__col"]} xl={10}>
               <Link to="rooms">Discover All Rooms</Link>
             </Col>
           </Row>
         </div>
-        <div className="room-flex">
-          <Row className="room-row">
-            {isLoading &&
-              rooms.length > 0 &&
-              rooms.map((room) => (
-                <Col key={room._id} className="room-col">
-                  <img
-                    className="room-img"
-                    src={room.photos[1]}
-                    alt={room.photos[1]}
-                  />
-                  <div className="room-card">
-                    <h1 className="room-card-name">{room.name}</h1>
-                    <div className="room-card-notes">
-                      <p className="card-note-wifi">
-                        <FaWifi className="icon icon-wifi" />
-                        Free
-                      </p>
-                      <p className="card-note-smoking">
-                        <MdOutlineSmokeFree className="icon icon-smoke" />
-                        Non-Smoking
-                      </p>
-                      <p className="card-note-user">
-                        <LuUsers className="icon icon-users" />
-                        {room.detail.maxPeople} Guests
-                      </p>
-                      <p className="card-note-bed">
-                        <IoBedOutline className="icon icon-bed" />
-                        {room.detail.bed}
-                      </p>
-                    </div>
-                    <p className="room-card-desc">
-                      {room.size}, located on the west side of the resort in a
-                      private tropical garden with a plunge pool and a private
-                      outdoor shower.
+        <div className={classes["room-flex"]}>
+          <Row className={classes["room-row"]}>
+            {sliceRoom.map((room) => (
+              <Col key={room._id} className={classes["room-col"]}>
+                <img
+                  className={classes["room-img"]}
+                  src={room.photos[1]}
+                  alt={room.photos[1]}
+                />
+                <div className={classes["room-card"]}>
+                  <h1 className={classes["room-card-name"]}>{room.name}</h1>
+                  <div className={classes["room-card-notes"]}>
+                    <p className={classes["card-note-wifi"]}>
+                      <FaWifi
+                        className={`${classes.icon} ${classes["icon-wifi"]}`}
+                      />
+                      Free
+                    </p>
+                    <p className={classes["card-note-smoking"]}>
+                      <MdOutlineSmokeFree
+                        className={`${classes.icon} ${classes["icon-smoke"]}`}
+                      />
+                      Non-Smoking
+                    </p>
+                    <p className={classes["card-note-user"]}>
+                      <LuUsers
+                        className={`${classes.icon} ${classes["icon-users"]}`}
+                      />
+                      {room.detail.maxPeople} Guests
+                    </p>
+                    <p className={classes["card-note-bed"]}>
+                      <IoBedOutline
+                        className={`${classes.icon} ${classes["icon-bed"]}`}
+                      />
+                      {room.detail.bed}
                     </p>
                   </div>
-                  <div>
-                    <button
-                      className="room-link"
-                      onClick={() =>
-                        navigateResortDetailHandler(room._id, room.name)
-                      }
-                    >
-                      Discover More
-                    </button>
-                  </div>
-                </Col>
-              ))}
+                  <p className={classes["room-card-desc"]}>
+                    {room.size}, located on the west side of the resort in a
+                    private tropical garden with a plunge pool and a private
+                    outdoor shower.
+                  </p>
+                </div>
+                <div>
+                  <button
+                    className={classes["room-link"]}
+                    onClick={() =>
+                      navigateResortDetailHandler(room._id, room.name)
+                    }
+                  >
+                    Discover More
+                  </button>
+                </div>
+              </Col>
+            ))}
           </Row>
         </div>
       </div>

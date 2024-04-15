@@ -1,16 +1,16 @@
 // Import Modules
 import React from "react";
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import MailList from "./MailList";
 
 // Import Components
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import MailList from "./MailList";
 
 export default function RootLayout() {
   return (
     <div className="rootLayout">
-      <Header />
+      <Navbar />
       <Outlet />
       <MailList />
       <Footer />

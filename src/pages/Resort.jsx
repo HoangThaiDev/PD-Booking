@@ -1,5 +1,15 @@
+// Import Modules
 import React from "react";
 
-export default function Resort() {
-  return <div>Resort</div>;
+// Import Components
+import Header from "../components/Resort/Header";
+
+export default function Resort({ resort }) {
+  return (
+    <div>
+      <Header />
+      {/* <About />
+      <ListCity resort={resort} /> */}
+    </div>
+  );
 }

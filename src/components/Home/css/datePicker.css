@@ -1,0 +1,30 @@
+.formBooking-date {
+    width: 100%;
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid #B99D75;
+    height: 50px;
+}
+
+.formBooking-date .ant-picker-input input::placeholder,
+.formBooking-date .ant-picker-input input {
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.ant-picker-separator,
+.anticon-calendar {
+    position: relative;
+    color: white !important;
+    left: -10px !important;
+}
+
+/* Effect CSS */
+.formBooking-date:hover {
+    background-color: transparent;
+    border: 1px solid #B99D75;
+}
+
+.ant-picker-active-bar {
+    background-color: transparent !important;
+}

@@ -1,5 +1,10 @@
 // Import Modules
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { APIContext } from "./storeContext/APIContext";
+import { useContext, useEffect, useRef } from "react";
+
+// Import Components
 import RootLayout from "./Layout/RootLayout";
 import Home from "./pages/Home";
 import City from "./pages/City";
@@ -10,20 +15,59 @@ import DetailResort from "./pages/DetailResort";
 import DetailRoom from "./pages/DetailRoom";
 
 function App() {
+  // Create + use Hooks
+  const { city, resort, room } = useContext(APIContext);
+  const btnHomeRef = useRef();
+
+  useEffect(() => {
+    const btnScrollHandler = async () => {
+      if (window.scrollY > 150) {
+        btnHomeRef.current.classList.add("scroll");
+      } else {
+        btnHomeRef.current.classList.remove("scroll");
+      }
+    };
+
+    document.addEventListener("scroll", btnScrollHandler);
+
+    // Clean up function
+    return () => {
+      document.removeEventListener("scroll", btnScrollHandler);
+    };
+  }, []);
+
+  // Create + use event Handlers
+  const goHomeHandler = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="cities" element={<City />} />
-          <Route path="resorts" element={<Resort />} />
-          <Route path="rooms" element={<Room />} />
-          <Route path="city/:cityId" element={<DetailCity />} />
-          <Route path="resort/:resortId" element={<DetailResort />} />
-          <Route path="room/:resortId" element={<DetailRoom />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <button
+        type="button"
+        className="btn-home"
+        ref={btnHomeRef}
+        onClick={() => goHomeHandler()}
+      >
+        <span>&#171;</span>
+      </button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RootLayout />}>
+            <Route
+              index
+              element={<Home city={city} resort={resort} room={room} />}
+            />
+            <Route path="cities" element={<City city={city} />} />
+            <Route path="resorts" element={<Resort resort={resort} />} />
+            <Route path="rooms" element={<Room room={room} />} />
+            <Route path="city/:cityId" element={<DetailCity />} />
+            <Route path="resort/:resortId" element={<DetailResort />} />
+            <Route path="room/:resortId" element={<DetailRoom />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

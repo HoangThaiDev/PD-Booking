@@ -1,7 +1,6 @@
 // Import Modules
-import React, { useEffect, useState } from "react";
-import "./css/city.css";
-import axios from "axios";
+import React from "react";
+import classes from "./css/city.module.css";
 
 // Import Components
 import { Col, Row } from "antd";
@@ -18,15 +17,25 @@ import templeIcon from "../../assets/Activities City/chinese.png";
 
 function SampleNextArrow(props) {
   const { className, onClick } = props;
-  return <div className={className} onClick={onClick} />;
+  return (
+    <div
+      className={`${className} ${classes["city-icon"]} ${classes["city-icon-next"]}`}
+      onClick={onClick}
+    />
+  );
 }
 
 function SamplePrevArrow(props) {
   const { className, onClick } = props;
-  return <div className={className} onClick={onClick} />;
+  return (
+    <div
+      className={`${className} ${classes["city-icon"]} ${classes["city-icon-prev"]}`}
+      onClick={onClick}
+    />
+  );
 }
 
-export default function City() {
+export default function City({ city }) {
   // Create setting Slider
   var settings = {
     fade: true,
@@ -39,78 +48,63 @@ export default function City() {
   };
 
   // Create + use Hooks
-  const [cities, setCities] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchCityData = async () => {
-      try {
-        const { data } = await axios.get("http://localhost:5000/city");
-        setCities(data);
-        setIsLoading(!isLoading);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchCityData();
-  }, []);
 
   // Create + use event Handlers
   const navigateResortDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`city/${modifiedName}`, { state: id });
+    navigate(`city/${modifiedName}`, { state: { id: id } });
   };
 
   return (
-    <div id="city">
-      <div className="city-container">
-        <div className="city-header">
+    <div className={classes.city}>
+      <div className={classes["city-container"]}>
+        <div className={classes["city-header"]}>
           <p>ENJOY WORLD-CLASS STAY EXPERIENCE</p>
-          <Row className="city-header__row">
-            <Col className="city-header__col" xl={10}>
+          <Row className={classes["city-header__row"]}>
+            <Col className={classes["city-header__col"]} xl={10}>
               <h1>The Cities</h1>
             </Col>
-            <Col className="city-header__col" xl={10}>
+            <Col className={classes["city-header__col"]} xl={10}>
               <Link to="/cities">Discover All Cities</Link>
             </Col>
           </Row>
         </div>
-        <div className="city-flex">
+        <div className={classes["city-flex"]}>
           <Slider className="city-slide" {...settings}>
-            {isLoading &&
-              cities.length > 0 &&
-              cities.map((city) => (
-                <Row className="city-flex-row" key={city._id}>
-                  <div className="flex-container">
-                    <Col className="city-flex-col" xl={12}>
-                      <img
-                        className="city__img"
-                        src={city.banner}
-                        alt="banner-city"
-                      />
-                    </Col>
-                    <Col className="city-flex-col" xl={11}>
-                      <Link className="city__title">{city.name}</Link>
-                      <div className="city__activities">
+            {city.map((c) => (
+              <Row className={classes["city-flex-row"]} key={c._id}>
+                <div className={classes["flex-container"]}>
+                  <Col className={classes["city-flex-col"]} xl={12}>
+                    <img
+                      className={classes["city__img"]}
+                      src={c.banner}
+                      alt="banner-city"
+                    />
+                  </Col>
+                  <Col className={classes["city-flex-col"]} xl={11}>
+                    <div>
+                      <Link className={classes["city__title"]}>{c.name}</Link>
+                      <div className={classes["city__activities"]}>
                         <img src={restaurantIcon} alt="restaurant-icon" />
                         <img src={resortIcon} alt="restaurant-icon" />
                         <img src={beachIcon} alt="restaurant-icon" />
                         <img src={templeIcon} alt="restaurant-icon" />
                       </div>
-                      <p className="city__desc">{city.short_desc}</p>
+                      <p className={classes["city__desc"]}>{c.short_desc}</p>
                       <button
-                        className="city__link"
+                        className={classes["city__link"]}
                         onClick={() =>
-                          navigateResortDetailHandler(city._id, city.name)
+                          navigateResortDetailHandler(c._id, c.name)
                         }
                       >
                         Read More
                       </button>
-                    </Col>
-                  </div>
-                </Row>
-              ))}
+                    </div>
+                  </Col>
+                </div>
+              </Row>
+            ))}
           </Slider>
         </div>
       </div>

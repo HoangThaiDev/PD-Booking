@@ -1,25 +1,25 @@
-#footer {
+.footer {
     background-color: #222222;
     width: 100%;
 }
 
-#footer .footer__row {
+.footer .footer__row {
     text-align: center;
     color: white;
 }
 
-#footer .footer__col {
+.footer .footer__col {
     height: inherit;
     border: 1px solid rgb(86, 84, 84);
 }
 
-#footer .card {
+.footer .card {
     padding: 40px 35px;
     letter-spacing: 1px;
 }
 
 
-#footer .card-title {
+.footer .card-title {
     color: rgb(239, 184, 108);
     display: inline-block;
     font-family: "Playfair Display", serif;
@@ -27,29 +27,29 @@
     font-size: 12px;
 }
 
-#footer .card-content {
+.footer .card-content {
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
 }
 
-#footer .card-socials {
+.footer .card-socials {
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
-#footer .card-socials .icon {
+.footer .card-socials .icon {
     font-size: 1.1rem;
     cursor: pointer;
 }
 
-#footer .content-wrapper {
+.footer .content-wrapper {
     text-align: right;
     color: white;
     padding: 50px;
 }
 
-#footer .content-wrapper span {
+.footer .content-wrapper span {
     cursor: pointer;
     font-family: "Roboto", sans-serif;
     margin: 0 10px;
@@ -58,8 +58,8 @@
 }
 
 /* Effect CSS */
-#footer .card-socials .icon:hover,
-#footer .content-wrapper span:hover {
+.footer .card-socials .icon:hover,
+.footer .content-wrapper span:hover {
     transition: 0.3s all ease;
     color: rgb(239, 184, 108);
 }

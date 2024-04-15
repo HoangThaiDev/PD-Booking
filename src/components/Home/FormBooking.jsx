@@ -1,6 +1,7 @@
 // Import Modules
 import React, { useRef, useState } from "react";
-import "./css/formBooking.css";
+import classes from "./css/formBooking.module.css";
+import "./css/datePicker.css";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider } from "antd";
@@ -69,9 +70,12 @@ export default function FormBooking() {
         },
       }}
     >
-      <div id="formBooking">
-        <form className="formBooking-container" onSubmit={searchHotelHandler}>
-          <Row className="formBooking-row">
+      <div className={classes.formBooking}>
+        <form
+          className={classes["formBooking-container"]}
+          onSubmit={searchHotelHandler}
+        >
+          <Row className={classes["formBooking-row"]}>
             <Col xl={6}>
               <DatePicker.RangePicker
                 className="formBooking-date"
@@ -81,18 +85,18 @@ export default function FormBooking() {
               />
             </Col>
 
-            <Col className="form-input" xl={6}>
+            <Col className={classes["form-input"]} xl={6}>
               <label htmlFor="city">City</label>
               <input
                 id="city"
-                className="form-input__city"
+                className={classes["form-input__city"]}
                 type="text"
                 placeholder="Vd: Hà Nội, Phú Quốc..."
                 ref={cityRef}
               />
             </Col>
 
-            <Col className="form-input" xl={7}>
+            <Col className={classes["form-input"]} xl={7}>
               <label htmlFor="guest">Guests</label>
               <div onClick={() => setShowPopup(!showPopup)}>
                 <input
@@ -101,50 +105,50 @@ export default function FormBooking() {
                   value={`${options.rooms} Room, ${options.adults} Adult, ${options.children} Chilren`}
                   readOnly
                 />
-                <MdKeyboardArrowDown className="icon-dropdown" />
+                <MdKeyboardArrowDown className={classes["icon-dropdown"]} />
               </div>
               {showPopup && (
-                <div className="form-input-dropdown">
-                  <div className="form-dropdown-flex">
+                <div className={classes["form-input-dropdown"]}>
+                  <div className={classes["form-dropdown-flex"]}>
                     <label>Adults</label>
                     <p>
                       <GoPlus
-                        className="icon-quantity-increase"
+                        className={classes["icon-quantity-increase"]}
                         onClick={() => getValueOfOptionHandler("adults", "i")}
                       />
                       <span>{options.adults}</span>
                       <RxDividerHorizontal
-                        className="icon-quantity-decrease"
+                        className={classes["icon-quantity-decrease"]}
                         onClick={() => getValueOfOptionHandler("adults", "d")}
                       />
                     </p>
                   </div>
 
-                  <div className="form-dropdown-flex">
+                  <div className={classes["form-dropdown-flex"]}>
                     <label>Children</label>
                     <p>
                       <GoPlus
-                        className="icon-quantity-increase"
+                        className={classes["icon-quantity-increase"]}
                         onClick={() => getValueOfOptionHandler("children", "i")}
                       />
                       <span>{options.children}</span>
                       <RxDividerHorizontal
-                        className="icon-quantity-decrease"
+                        className={classes["icon-quantity-decrease"]}
                         onClick={() => getValueOfOptionHandler("children", "d")}
                       />
                     </p>
                   </div>
 
-                  <div className="form-dropdown-flex">
+                  <div className={classes["form-dropdown-flex"]}>
                     <label>Rooms</label>
                     <p>
                       <GoPlus
-                        className="icon-quantity-increase"
+                        className={classes["icon-quantity-increase"]}
                         onClick={() => getValueOfOptionHandler("rooms", "i")}
                       />
                       <span>{options.rooms}</span>
                       <RxDividerHorizontal
-                        className="icon-quantity-decrease"
+                        className={classes["icon-quantity-decrease"]}
                         onClick={() => getValueOfOptionHandler("rooms", "d")}
                       />
                     </p>
@@ -153,8 +157,8 @@ export default function FormBooking() {
               )}
             </Col>
 
-            <Col xl={4} className="formBooking-search">
-              <button type="submit" className="btn-search">
+            <Col xl={4} className={classes["formBooking-search"]}>
+              <button type="submit" className={classes["btn-search"]}>
                 Check Availability
               </button>
             </Col>

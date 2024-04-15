@@ -1,21 +1,28 @@
 // Import Modules
 import React from "react";
-import "./css/about.css";
+import classes from "./css/about.module.css";
 
 // Import Components
 import logoHotel from "../../assets/resort.png";
-import SlideImageHotel from "./SlideImageHotel";
+import SlideImage from "./SlideImage";
+
+// Import Images Hotel
+import image1 from "../../assets/Images Hotel/img-75-683x1024.jpg";
+import image2 from "../../assets/Images Hotel/img-76-683x1024.jpg";
+import image3 from "../../assets/Images Hotel/img-77-1-683x1024.jpg";
+import image4 from "../../assets/Images Hotel/img-78-1-683x1024.jpg";
 
 export default function About() {
+  const dataImagesBackground = [image1, image2, image3, image4];
   return (
-    <div id="about">
-      <div className="about-container">
+    <div className={classes.about}>
+      <div className={classes["about-container"]}>
         <img src={logoHotel} alt="logo" />
-        <p className="about__content">WELCOME TO PARADISE SYSTEM</p>
-        <h1 className="about__title">
+        <p className={classes["about__content"]}>WELCOME TO PARADISE SYSTEM</p>
+        <h1 className={classes["about__title"]}>
           Discover the Perfect Getaway in Vietnam
         </h1>
-        <p className="about__desc">
+        <p className={classes["about__desc"]}>
           PARADISE is a unique online platform, providing search and booking
           services for resorts in Vietnam. With PARADISE, visitors can easily
           discover and choose great vacation destinations, from beautiful but
@@ -23,7 +30,7 @@ export default function About() {
           city.
         </p>
       </div>
-      <SlideImageHotel />
+      <SlideImage images={dataImagesBackground} />
     </div>
   );
 }

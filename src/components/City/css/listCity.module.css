@@ -1,0 +1,193 @@
+.cities {
+    padding-bottom: 5%;
+}
+
+.cities__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cities__title {
+    position: relative;
+    font-family: "Lora", serif;
+    color: #403b34;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 5%;
+}
+
+
+.cities__title::after,
+.cities__title::before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgb(182, 155, 117);
+}
+
+.cities__title::before {
+    top: 15px;
+    left: 0;
+}
+
+.cities__title::after {
+    top: 15px;
+    right: 0;
+}
+
+.cities__options {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cities__options .col:nth-child(1)>div {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.cities__options .col:nth-child(1) .input-search {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 80px 10px 10px;
+    border: 2px solid rgb(182, 155, 117);
+    letter-spacing: 1px;
+}
+
+.cities__options .col:nth-child(1) .iconSearch {
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    background-color: rgb(182, 155, 117);
+    padding: 10px 20px;
+    color: white;
+    top: 0;
+    right: 0;
+}
+
+.cities__options .col:nth-child(1) .input-search::placeholder {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.cities__options .col:nth-child(2) {
+    text-align: right;
+}
+
+.cities__options .col:nth-child(2) .pagination li {
+    font-family: "Roboto", sans-serif;
+    border: 2px solid rgb(182, 155, 117);
+}
+
+.cities__list {
+    margin-top: 5%;
+    justify-content: space-between;
+    text-align: center;
+    gap: 50px;
+}
+
+.cities__item {
+    position: relative;
+    width: 48%;
+    height: 600px;
+    transition: 0.3s all ease;
+    overflow: hidden;
+}
+
+.cities__item::after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    border: 2px solid rgb(234, 211, 178);
+    height: 96%;
+    z-index: 1;
+    bottom: 10px;
+    left: 15px;
+}
+
+.cities__item>img {
+    position: relative;
+    transition: 0.8s all ease;
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+    object-fit: cover;
+}
+
+.cities__form {
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+    padding: 20px;
+    color: white;
+    right: 25%;
+    bottom: 10%;
+}
+
+.numberCity {
+    position: absolute;
+    top: 25px;
+    left: 5%;
+    color: rgb(182, 155, 117);
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.cities__item .form__name {
+    font-family: "Bodoni Moda", serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.cities__form .form__link,
+.cities__form .btn-link {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+}
+
+.cities__form .form__link {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__link .iconInfo {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.form__link .btn-link {
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    padding: 5px 10px;
+}
+
+/* Effect CSS */
+
+.cities__options .col:nth-child(1) .input-search:focus {
+    outline: 0;
+}
+
+.cities__options .col:nth-child(2) .pagination li:hover {
+    background-color: rgb(182, 155, 117);
+}
+
+.cities__options .col:nth-child(2) .pagination li a:hover {
+    color: white;
+}
+
+.form__link .btn-link:hover {
+    transition: 0.3s all ease;
+    background-color: rgb(182, 155, 117);
+    padding: 5px 10px;
+}

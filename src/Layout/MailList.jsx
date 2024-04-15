@@ -1,6 +1,6 @@
 // Import Modules
 import React from "react";
-import "./css/mailList.css";
+import classes from "./css/mailList.module.css";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -10,31 +10,35 @@ import { SiMinutemailer } from "react-icons/si";
 
 export default function MailList() {
   return (
-    <div id="mailList">
-      <div className="mailList__container">
-        <Row className="mailList__row">
-          <Col className="mailList__col" xl={10}>
+    <div className={classes.mailList}>
+      <div className={classes["mailList__container"]}>
+        <Row className={classes["mailList__row"]}>
+          <Col className={classes["mailList__col"]} xl={10}>
             <p>STAY TUNED WITH PARADISE</p>
             <h1>
               Sign up for our newsletter to receive our news, deals and special
               offers.
             </h1>
           </Col>
-          <Col className="mailList__col" xl={12}>
+          <Col className={classes["mailList__col"]} xl={12}>
             <form>
-              <div className="form-input">
+              <div className={classes["form-input"]}>
                 <input
-                  className="input-email"
+                  className={classes["input-email"]}
                   type="text"
                   placeholder="Your Email Address"
                 />
-                <button className="btn-email" type="submit">
+                <button className={classes["btn-email"]} type="submit">
                   Subscribe
-                  <SiMinutemailer className="icon" />
+                  <SiMinutemailer className={classes.icon} />
                 </button>
               </div>
               <div>
-                <input className="input-checkbox" type="checkbox" id="check" />
+                <input
+                  className={classes["input-checkbox"]}
+                  type="checkbox"
+                  id={classes.check}
+                />
                 <label htmlFor="check">
                   I agree to the <span>Privacy Policy</span>
                 </label>

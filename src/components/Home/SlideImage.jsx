@@ -2,16 +2,10 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./css/slideImageHotel.css";
+import "./css/slideImage.css";
 
 // Import Components
 import Slider from "react-slick";
-
-// Import Images Hotel
-import image1 from "../../assets/Images Hotel/img-75-683x1024.jpg";
-import image2 from "../../assets/Images Hotel/img-76-683x1024.jpg";
-import image3 from "../../assets/Images Hotel/img-77-1-683x1024.jpg";
-import image4 from "../../assets/Images Hotel/img-78-1-683x1024.jpg";
 
 // Create Function Custom Slide Slick
 function CustomSlide(props) {
@@ -33,7 +27,7 @@ function SamplePrevArrow(props) {
   return <div className={className} onClick={onClick} />;
 }
 
-export default function SlideImageHotel() {
+export default function SlideImage({ images }) {
   const settings = {
     infinite: true,
     speed: 500,
@@ -44,13 +38,12 @@ export default function SlideImageHotel() {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div id="slide">
+    <div className="slide">
       <div className="slider-container">
         <Slider {...settings}>
-          <CustomSlide index={image1} />
-          <CustomSlide index={image2} />
-          <CustomSlide index={image3} />
-          <CustomSlide index={image4} />
+          {images.map((img, i) => (
+            <CustomSlide index={img} key={i} />
+          ))}
         </Slider>
         <p className="slide-content">
           Inspired by our history, surrounded by nature and designed to offer a

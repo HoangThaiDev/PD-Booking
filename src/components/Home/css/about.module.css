@@ -1,18 +1,18 @@
-#about {
+.about {
     padding-top: 10%;
 }
 
-#about .about-container {
+.about .about-container {
     text-align: center;
     width: 900px;
     margin: 0 auto;
 }
 
-#about .about-container img {
+.about .about-container img {
     width: 70px;
 }
 
-#about .about-container .about__content {
+.about .about-container .about__content {
     font-family: "Bodoni Moda", serif;
     font-size: 14px;
     margin-top: 20px;
@@ -21,20 +21,20 @@
     font-weight: 600;
 }
 
-#about .about__title {
+.about .about__title {
     font-family: "Lora", serif;
     margin: 30px 0;
     font-size: 4rem;
 }
 
-#about .about__desc {
+.about .about__desc {
     font-family: "EB Garamond", serif;
     color: rgb(79, 103, 71);
     letter-spacing: 1px;
     line-height: 30px;
 }
 
-#about .about-video {
+.about .about-video {
     padding: 10% 0;
     width: 100%;
 }
