@@ -14,6 +14,7 @@ import { IoIosStar } from "react-icons/io";
 export default function Navbar() {
   // Create + use Hooks
   const navbarNavRef = useRef(null);
+
   useEffect(() => {
     const scrollNavbarHandler = () => {
       if (window.scrollY > 200) {
@@ -117,18 +118,13 @@ export default function Navbar() {
           >
             <div className={classes["contact-container"]}>
               <ul className={classes["contact__list"]}>
-                <li className={classes["contact__item"]}>
+                <Link className={classes["contact__item"]} to="/login">
                   USER
-                  <ul className={classes["menu-dropdown"]}>
-                    <li className={classes["menu-dropdown__item"]}>Login</li>
-                    <li className={classes["menu-dropdown__item"]}>Setting</li>
-                    <li className={classes["menu-dropdown__item"]}>Logout</li>
-                  </ul>
-                </li>
+                </Link>
                 <li className={classes["contact__item"]}>
                   Tel: +84 12 111 22 33
                 </li>
-                <li className={classes["contact__item"]}>Book Now</li>
+                <Link className={classes["contact__item"]}>Book Now</Link>
               </ul>
             </div>
           </Col>

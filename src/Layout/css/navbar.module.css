@@ -107,11 +107,7 @@
     display: inline-block;
     cursor: pointer;
     margin: 0 5%;
-}
-
-.navbar .contact__item:nth-child(1) {
-
-    padding: 10px 0;
+    color: white;
 }
 
 .navbar .contact__item:nth-child(3) {
@@ -126,8 +122,7 @@
 /* Effect CSS */
 
 .navbar .menu__item:hover,
-.navbar .menu__item .icon-menu:hover,
-.navbar .contact__item:nth-child(1):hover {
+.navbar .menu__item .icon-menu:hover {
     transition: 0.5s all ease;
     color: rgb(252, 142, 87);
 }
@@ -140,18 +135,13 @@
 
 .navbar .menu__item:nth-child(3):hover .menu-dropdown,
 .navbar .menu__item:nth-child(4):hover .menu-dropdown {
-    animation: showMenuDropdown 1s 1 forwards;
+    animation: showMenuDropdown 0.5s 1 forwards;
     transition: 0.7s all ease;
     color: white;
     display: block;
 }
 
-.navbar .contact__item:nth-child(1):hover .menu-dropdown {
-    animation: showMenuDropdownUser 1s 1 forwards;
-    transition: 0.7s all ease;
-    color: white;
-    display: block;
-}
+
 
 .navbar .menu-dropdown__item:hover {
     transition: 0.3s all ease;
@@ -159,8 +149,7 @@
 }
 
 .navbar .navbar-nav-scroll .menu__item:hover,
-.navbar .navbar-nav-scroll .menu__item .icon-menu:hover,
-.navbar .navbar-nav-scroll .contact__item:nth-child(1):hover {
+.navbar .navbar-nav-scroll .menu__item .icon-menu:hover {
     color: rgb(82, 81, 81);
     transition: 0.3s all ease;
 }
@@ -180,17 +169,5 @@
     100% {
         opacity: 1;
         top: 30px;
-    }
-}
-
-@keyframes showMenuDropdownUser {
-    0% {
-        opacity: 0.5;
-        top: 60px;
-    }
-
-    100% {
-        opacity: 1;
-        top: 35px;
     }
 }

@@ -152,6 +152,7 @@
 .formBooking .formBooking-search .btn-search:hover {
     transition: 0.3s all ease;
     filter: brightness(95%);
+
 }
 
 /* Animation CSS */

@@ -13,6 +13,7 @@ import Room from "./pages/Room";
 import DetailCity from "./pages/DetailCity";
 import DetailResort from "./pages/DetailResort";
 import DetailRoom from "./pages/DetailRoom";
+import ScrollTop from "./UI/ScrollTop";
 
 function App() {
   // Create + use Hooks
@@ -52,6 +53,7 @@ function App() {
         <span>&#171;</span>
       </button>
       <BrowserRouter>
+        <ScrollTop />
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route

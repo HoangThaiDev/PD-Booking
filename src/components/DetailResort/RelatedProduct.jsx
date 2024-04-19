@@ -1,0 +1,46 @@
+// Import Modules
+import React from "react";
+import classes from "./css/relatedProduct.module.css";
+import { useNavigate } from "react-router-dom";
+
+// Import Components
+import { Row, Col } from "antd";
+
+export default function RelatedProduct({ resorts }) {
+  // Create + use Hooks
+  const navigate = useNavigate();
+
+  // Create + use event Handlers
+  const navigateResortDetailHandler = (id, name) => {
+    console.log(id, name);
+    const modifiedName = name.split(" ").join("-");
+    navigate(`/resort/${modifiedName}`, { state: { id: id } });
+  };
+
+  return (
+    <div className={classes.resorts}>
+      <div className={classes["resorts__container"]}>
+        <h2 className={classes["resorts__title"]}>Related Resorts</h2>
+        <Row className={classes["resorts__row"]}>
+          {resorts.map((rs) => (
+            <Col className={classes["resorts__col"]} key={rs._id} xl={7}>
+              <div className={classes["resorts__item"]}>
+                <img src={rs.banner} alt={rs.banner} />
+                <div className={classes["item__card"]}>
+                  <p className={classes["card__name"]}>{rs.name}</p>
+                  <button
+                    className={classes["btn-view"]}
+                    type="button"
+                    onClick={() => navigateResortDetailHandler(rs._id, rs.name)}
+                  >
+                    Discover More
+                  </button>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </div>
+    </div>
+  );
+}

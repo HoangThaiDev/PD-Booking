@@ -1,0 +1,29 @@
+.about {
+    padding-top: 10%;
+    background-color: #F3F3F0;
+}
+
+.about__container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about__container>img {
+    width: 70px;
+}
+
+.about__container .about__title {
+    font-family: "Lora", serif;
+    font-size: 3rem;
+    color: rgb(78, 71, 62);
+    margin: 15px 0;
+    letter-spacing: 1px;
+}
+
+.about__container .about__content {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    color: rgb(78, 71, 62);
+    line-height: 30px;
+}

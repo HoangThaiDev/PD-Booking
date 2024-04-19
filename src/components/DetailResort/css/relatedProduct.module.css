@@ -1,0 +1,78 @@
+.resorts {
+    padding: 3% 0 5% 0;
+    background-color: #fff;
+}
+
+.resorts__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.resorts__title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: rgba(76, 75, 75, 0.9);
+    margin-bottom: 20px;
+}
+
+.resorts__row {
+    gap: 50px;
+}
+
+.resorts__item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px 4px rgba(215, 215, 215, 0.466);
+}
+
+.resorts__item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.item__card {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    text-align: center;
+    width: 80%;
+    color: white;
+    opacity: 0;
+}
+
+.item__card .card__name {
+    font-family: "Bodoni Moda", serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    line-height: 30px;
+    margin-bottom: 5%;
+    font-weight: 700;
+}
+
+.item__card .btn-view {
+    cursor: pointer;
+    font-family: "EB Garamond", serif;
+    font-size: 1.1rem;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    letter-spacing: 1px;
+}
+
+/* Effect CSS */
+
+.resorts__item:hover img {
+    transition: 0.5s all ease;
+    filter: brightness(75%);
+}
+
+.resorts__item:hover .item__card {
+    transition: 1s all ease;
+    opacity: 1;
+}
+
+.btn-view:hover {
+    border-bottom: 1px solid white;
+}

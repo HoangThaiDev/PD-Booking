@@ -65,7 +65,10 @@ export default function FormBooking() {
       theme={{
         components: {
           DatePicker: {
-            multipleItemBorderColor: "#14e50d !important",
+            activeBorderColor: "#B99D75 !important",
+            hoverBg: "transparent !important",
+            activeBg: "transparent !important",
+            cellRangeBorderColor: "#B99D75 !important",
           },
         },
       }}

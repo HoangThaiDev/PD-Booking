@@ -141,6 +141,10 @@
 
 /* Effect CSS */
 
+.input-search:focus {
+    outline: 0;
+}
+
 .resort__card .card__btn:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }

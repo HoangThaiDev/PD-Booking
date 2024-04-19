@@ -27,7 +27,7 @@ export default function ListResort({ resort }) {
           name: nameResortRef.current.value,
         }
       );
-      setCities(data);
+      setResorts(data);
     } catch (error) {
       console.log(error);
     }
@@ -77,7 +77,11 @@ export default function ListResort({ resort }) {
                 <div className={classes["resort__card"]}>
                   <p className={classes["card__address"]}>{r.address}</p>
                   <h3 className={classes["card__name"]}>{r.name}</h3>
-                  <button className={classes["card__btn"]} type="button">
+                  <button
+                    className={classes["card__btn"]}
+                    type="button"
+                    onClick={() => navigateResortDetailHandler(r._id, r.name)}
+                  >
                     Read More
                   </button>
                 </div>

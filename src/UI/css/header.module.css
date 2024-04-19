@@ -11,14 +11,13 @@
     filter: brightness(60%);
 }
 
-
 .header-introduce {
     font-family: "Bodoni Moda", serif;
     position: absolute;
     top: 35%;
-    left: 20%;
+    left: 10%;
     color: white;
-    width: 60%;
+    width: 80%;
     text-align: center;
     z-index: 1;
 }

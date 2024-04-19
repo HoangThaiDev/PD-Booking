@@ -1,0 +1,216 @@
+.rooms {
+    padding-bottom: 5%;
+}
+
+.rooms__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.rooms__title {
+    position: relative;
+    font-family: "Lora", serif;
+    color: #403b34;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 5%;
+}
+
+
+.rooms__title::after,
+.rooms__title::before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgb(182, 155, 117);
+}
+
+.rooms__title::before {
+    top: 15px;
+    left: 0;
+}
+
+.rooms__title::after {
+    top: 15px;
+    right: 0;
+}
+
+.rooms__options {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rooms__options .col:nth-child(1)>div {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.rooms__options .col:nth-child(1) .input-search {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 80px 10px 10px;
+    border: 2px solid rgb(182, 155, 117);
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.rooms__options .col:nth-child(1) .iconSearch {
+    cursor: pointer;
+    position: absolute;
+    font-size: 18px;
+    background-color: rgb(182, 155, 117);
+    padding: 10px 20px;
+    color: white;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.rooms__options .col:nth-child(1) .input-search::placeholder {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.rooms__options .col:nth-child(2) {
+    text-align: right;
+}
+
+.rooms__list {
+    margin-top: 5%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.rooms .rooms__item {
+    position: relative;
+}
+
+.rooms__item .rooms__img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.rooms__item:nth-child(1) .rooms__price {
+    background-color: white;
+    padding: 15px 20px;
+    color: #9f7a4a;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.rooms__item:nth-child(2) {
+    align-self: center;
+    padding: 50px 60px;
+}
+
+.rooms__item:nth-child(2) .rooms__item-breakcrum {
+    color: gray;
+    font-style: italic;
+    font-family: "Lora", serif;
+    margin-bottom: 5%;
+}
+
+.rooms__item:nth-child(2) .rooms__item-name {
+    font-family: "Lora", serif;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    color: #403b34;
+}
+
+.rooms__item:nth-child(2) .rooms__item-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.rooms__item:nth-child(2) .rooms__item-card>p {
+    font-family: "Roboto", sans-serif;
+    color: #43433c;
+    font-size: 16px;
+}
+
+.rooms__item:nth-child(2) .rooms__item-card>p .icon {
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.rooms__item:nth-child(2) .rooms__item-desc {
+    font-family: "Roboto", sans-serif;
+    color: #403b34;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+.rooms__item:nth-child(2) .rooms__btn-link {
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: 3%;
+    border: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    color: #302a22;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.rooms__item:nth-child(2) .rooms__btn-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #c3ac8c;
+}
+
+
+.rooms__item:nth-child(2) .rooms__btn-link::before {
+    content: '\203A';
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    color: #AB916C;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rooms__list:nth-child(2n + 2) .rooms__item:nth-child(2) {
+    order: 1;
+}
+
+.rooms__list:nth-child(2n + 2) .rooms__item:nth-child(1) {
+    order: 2;
+}
+
+/* Effect CSS */
+
+.rooms__options .col:nth-child(1) .input-search:focus {
+    outline: 0;
+}
+
+.rooms__item:nth-child(2) .rooms__btn-link:hover::after {
+    transition: 0.5s all ease;
+    width: 0;
+}
+
+.rooms__item:nth-child(2) .rooms__btn-link:hover::before {
+    transition: 0.5s all ease;
+    right: -20px;
+}

@@ -1,0 +1,145 @@
+.about {
+    padding: 10% 0 5% 0;
+    background-color: #fff;
+}
+
+.about__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.about .about__title {
+    position: relative;
+    text-align: center;
+    font-family: "Lora", serif;
+    font-size: 2rem;
+    color: rgb(151, 115, 68);
+    margin: 15px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about__title::after,
+.about__title::before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgb(182, 155, 117);
+}
+
+.about__title::before {
+    top: 15px;
+    left: 0;
+}
+
+.about__title::after {
+    top: 15px;
+    right: 0;
+}
+
+.about .about__title>span {
+    font-weight: 700;
+}
+
+.about__row {
+    margin-top: 5%;
+    justify-content: space-between;
+}
+
+.about__col img {
+    width: 100%;
+    height: 500px;
+}
+
+.about__col ul p {
+    font-family: "Playfair Display", serif;
+    color: #a9885a;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.about__col ul li {
+    list-style: square;
+    font-family: "EB Garamond", serif;
+    font-size: 1.1rem;
+    color: rgb(67, 66, 66);
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.about__col ul li::marker {
+    color: #a9885a;
+}
+
+.about__information {
+    position: relative;
+    font-family: "Lora", serif;
+    color: #a9885a;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 5% 0;
+}
+
+
+.about__information::after,
+.about__information::before {
+    content: "";
+    position: absolute;
+    width: 36%;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgb(182, 155, 117);
+}
+
+.about__information::before {
+    top: 15px;
+    left: 0;
+}
+
+.about__information::after {
+    top: 15px;
+    right: 0;
+}
+
+.information__row {
+    justify-content: space-between;
+}
+
+.information__col h3 {
+    font-family: "Playfair Display", serif;
+    color: #a9885a;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+.information__col li {
+    font-family: "EB Garamond", serif;
+    color: rgb(67, 66, 66);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+.information__col:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.information__col:nth-child(2) .information__card {
+    width: 33%;
+}
+
+/* Effect CSS */
+.information__col h3:hover {
+    transition: 0.3s all ease;
+    color: #ea9b2c;
+}

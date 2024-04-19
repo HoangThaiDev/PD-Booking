@@ -15,7 +15,7 @@ export default function Resort({ resort }) {
 
   const navigateResortDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`resort/${modifiedName}`, { state: id });
+    navigate(`resort/${modifiedName}`, { state: { id: id } });
   };
 
   return (
