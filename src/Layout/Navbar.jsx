@@ -1,6 +1,8 @@
 // Import Modules
 import React, { useEffect, useRef } from "react";
 import classes from "./css/navbar.module.css";
+import { useDispatch } from "react-redux";
+import { sideMenuAction } from "../redux/store";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -14,6 +16,7 @@ import { IoIosStar } from "react-icons/io";
 export default function Navbar() {
   // Create + use Hooks
   const navbarNavRef = useRef(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const scrollNavbarHandler = () => {
@@ -35,6 +38,9 @@ export default function Navbar() {
   }, []);
 
   // Create + use Event Handlers
+  const showSideMenuHandler = () => {
+    dispatch(sideMenuAction.showSideMenu());
+  };
 
   return (
     <div className={classes.navbar}>
@@ -43,7 +49,10 @@ export default function Navbar() {
           <Col className={`${classes["navbar__col"]} ${classes.menu}`} xl={8}>
             <ul className={classes["menu__list"]}>
               <li className={classes["menu__item"]}>
-                <VscMenu className={`${classes.icon}${classes["icon-menu"]}`} />
+                <VscMenu
+                  className={`${classes.icon} ${classes["icon-menu"]}`}
+                  onClick={showSideMenuHandler}
+                />
               </li>
               <li className={classes["menu__item"]}>
                 <NavLink

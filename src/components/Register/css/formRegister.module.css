@@ -1,0 +1,174 @@
+.form-register {
+    position: relative;
+    height: 100vh;
+}
+
+.form-background {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.form__row {
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.form__col:nth-child(1) .card__introduce-container {
+    width: 80%;
+    color: white;
+    letter-spacing: 1px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.card__introduce-container .card__title {
+    font-family: "Lora", serif;
+    font-size: 2.5rem;
+    margin-bottom: 5%;
+}
+
+.card__introduce-container .card__content {
+    font-family: "EB Garamond", serif;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.card__introduce-container .card__content span {
+    font-weight: 700;
+}
+
+.card__introduce-container a {
+    display: inline-block;
+    margin-top: 5%;
+    font-family: "EB Garamond", serif;
+    letter-spacing: 1px;
+    border: 2px solid white;
+    padding: 15px 30px;
+    border-radius: 3px;
+    color: white;
+}
+
+.form-main {
+    text-align: center;
+    width: 350px;
+    padding: 50px 30px;
+    background: linear-gradient(45deg, rgba(169, 168, 168, 0.2), rgba(60, 60, 60, 0.2));
+}
+
+.form-main .form-title {
+    font-family: "Bodoni Moda", serif;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 10%;
+}
+
+.form-main .form-input {
+    position: relative;
+}
+
+.form-main .form-input>input {
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 3% 0;
+    padding: 15px 40px 15px 40px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    letter-spacing: 1px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.form-main .error-message {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-size: 13px;
+}
+
+.form-main .error-message>span {
+    position: relative;
+    top: -1px;
+}
+
+.btn-login {
+    cursor: pointer;
+    font-family: "EB Garamond", serif;
+    text-transform: uppercase;
+    color: white;
+    border: 2px solid white;
+    width: 100%;
+    background: transparent;
+    padding: 15px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 5%;
+}
+
+.form-link-signIn {
+    font-family: "Bodoni Moda", serif;
+    color: white;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+.form-link-signIn>a {
+    color: white;
+    margin-left: 5px;
+}
+
+.icon {
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    left: 10px;
+    top: 25px;
+}
+
+.icon-show {
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    top: 25px;
+    right: 15px;
+}
+
+/* Effect CSS */
+
+.card__introduce-container>a:hover {
+    transition: 0.3s all ease;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(72, 56, 39);
+    font-weight: 700;
+}
+
+.form-main .form-input>input:hover,
+.btn-login:hover {
+    transition: 0.3s all ease-in-out;
+    background-color: rgba(169, 168, 168, 0.2);
+}
+
+.form-footer a:hover,
+.form-link-signUp a:hover {
+    font-weight: 700;
+}
+
+.form-input>input:focus {
+    outline: 0;
+}
+
+.form-input>input::placeholder {
+    font-family: "EB Garamond", serif;
+    color: white;
+    font-size: 1rem;
+}

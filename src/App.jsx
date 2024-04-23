@@ -13,7 +13,11 @@ import Room from "./pages/Room";
 import DetailCity from "./pages/DetailCity";
 import DetailResort from "./pages/DetailResort";
 import DetailRoom from "./pages/DetailRoom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgetPassword";
 import ScrollTop from "./UI/ScrollTop";
+import SideMenu from "./Layout/SideMenu";
 
 function App() {
   // Create + use Hooks
@@ -54,6 +58,7 @@ function App() {
       </button>
       <BrowserRouter>
         <ScrollTop />
+        <SideMenu />
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route
@@ -67,6 +72,9 @@ function App() {
             <Route path="resort/:resortId" element={<DetailResort />} />
             <Route path="room/:resortId" element={<DetailRoom />} />
           </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     </>

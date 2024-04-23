@@ -1,0 +1,62 @@
+.about {
+    padding: 5% 0 5% 0;
+    background-color: #fff;
+}
+
+.about__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.about__row {
+    justify-content: space-between;
+}
+
+.about__name {
+    font-family: "Bodoni Moda", serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.about__breakcrum {
+    font-family: "Playfair Display", serif;
+    display: inline-block;
+    color: #53624e;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 3% 0;
+}
+
+
+.rooms__item-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.rooms__item-card>p {
+    font-family: "Roboto", sans-serif;
+    color: #5c5434;
+    font-size: 1rem;
+}
+
+.rooms__item-card>p .icon {
+    position: relative;
+    top: 3px;
+    margin-right: 8px;
+    font-size: 1.3rem;
+}
+
+.about__images {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% 0;
+    gap: 30px;
+}
+
+.about__images .image__item {
+    width: 30%;
+    border-radius: 5px;
+}

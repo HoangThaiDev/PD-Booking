@@ -1,0 +1,254 @@
+.formBooking__container {
+    box-shadow: 0 0 20px 5px rgba(221, 223, 223, 0.8);
+    padding: 40px;
+}
+
+.formBooking__header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formBooking__header__col:nth-child(1)>p {
+    font-family: "Playfair Display", serif;
+    font-size: 1.9rem;
+}
+
+.formBooking__header__col:nth-child(2) {
+    font-family: "EB Garamond", serif;
+    text-align: right;
+}
+
+.formBooking__header__col:nth-child(2)>p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.formBooking__header__col:nth-child(2)>p>span {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.formBooking__header__col:nth-child(2)>p:nth-child(1) {
+    color: rgb(99, 97, 97);
+    font-style: italic;
+}
+
+.formBooking__header__col:nth-child(2)>p:nth-child(1)>span {
+    text-decoration: line-through;
+}
+
+.formDate__container {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formDate-checkIn,
+.formDate-checkOut {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #b99d75;
+    border-radius: 0;
+}
+
+.formDate__container .formDate-checkIn input::placeholder,
+.formDate__container .formDate-checkOut input::placeholder {
+    color: #494949;
+    font-family: "EB Garamond", serif;
+    font-size: 1.1rem;
+}
+
+.formDate__container .formDate-checkIn input[value],
+.formDate__container .formDate-checkOut input[value] {
+    color: #b99d75;
+}
+
+.formDate__container .ant-picker-suffix .anticon-calendar,
+.formDate__container .ant-picker-clear .anticon {
+    color: #b99d75 !important;
+    font-size: 1.1rem;
+}
+
+
+.form__adult-quantity,
+.form__children-quantity {
+    font-family: "EB Garamond", serif;
+    position: relative;
+    border: 1px solid #b99d75;
+    padding: 15px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form__adult-quantity label,
+.form__children-quantity label {
+    font-size: 1.1rem;
+}
+
+
+.form__adult-quantity>p,
+.form__children-quantity>p {
+    display: flex;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.form__adult-quantity>p .icon-quantity-increase,
+.form__adult-quantity>p .icon-quantity-decrease,
+.form__children-quantity>p .icon-quantity-increase,
+.form__children-quantity>p .icon-quantity-decrease {
+    cursor: pointer;
+}
+
+.selectRooms {
+    margin: 10% 0 5% 0;
+}
+
+.selectRooms>p {
+    font-size: 1.5rem;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 5%;
+    color: #494949;
+}
+
+.selectRooms .selectRooms__row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-service {
+    margin-top: 10%;
+}
+
+.form-service>p {
+    font-size: 1.5rem;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 5%;
+    color: #494949;
+}
+
+.service-options {
+    justify-content: space-between;
+    margin: 7% 0;
+}
+
+.option__title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.option__title .checkbox>label,
+.selectRooms .checkbox>label {
+    cursor: pointer;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    padding-left: 30px;
+}
+
+.option__title .checkbox>label::before,
+.selectRooms .checkbox>label::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #b99d75;
+    left: 0;
+    top: -1px;
+}
+
+.option__title .checkbox>input[type="checkbox"]:checked~label::after,
+.selectRooms .checkbox>input[type="checkbox"]:checked~label::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #b99d75;
+    left: 5px;
+    top: 4px;
+}
+
+.option__price {
+    font-family: "Roboto", sans-serif;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.border {
+    display: block;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.totalPrice {
+    margin-top: 5%;
+}
+
+.totalPrice .totalPrice__row {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.totalPrice .totalPrice__col:nth-child(1)>p {
+    font-size: 1.5rem;
+    font-family: "Playfair Display", serif;
+    color: #494949;
+}
+
+.totalPrice .totalPrice__col:nth-child(2) {
+    text-align: right;
+}
+
+.totalPrice .totalPrice__col:nth-child(2)>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+}
+
+.btn-submit {
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    background-color: #494949;
+    border: 0;
+    border-radius: 5px;
+    padding: 13px 20px;
+    color: white;
+    width: 100%;
+}
+
+/* Effect CSS */
+.formDate__container .formDate-checkIn input:focus,
+.formDate__container .formDate-checkOut input:focus {
+    outline: 0;
+}
+
+.formDate__container .formDate-checkIn:hover input::placeholder,
+.formDate__container .formDate-checkIn:hover input[value],
+.formDate__container .formDate-checkIn:hover .ant-picker-suffix .anticon,
+.formDate__container .formDate-checkIn:hover .ant-picker-clear .anticon {
+    color: white !important;
+}
+
+.formDate__container .formDate-checkOut:hover input::placeholder,
+.formDate__container .formDate-checkOut:hover input[value],
+.formDate__container .formDate-checkOut:hover .ant-picker-suffix .anticon,
+.formDate__container .formDate-checkOut:hover .ant-picker-clear .anticon {
+    color: white !important;
+}
+
+.btn-submit:hover {
+    transition: 0.3s all ease;
+    background-color: #b99d75;
+}

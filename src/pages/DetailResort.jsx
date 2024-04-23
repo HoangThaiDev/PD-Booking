@@ -31,6 +31,7 @@ function DetailResort() {
     };
     fetchDetailResort();
   }, [state.id]);
+
   return (
     <div>
       {isLoading && Object.keys(resort).length > 0 && (

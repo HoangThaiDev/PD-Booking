@@ -5,7 +5,12 @@ import classes from "./css/header.module.css";
 // Import Components
 import FormBooking from "./FormBooking";
 
-export default function Header({ banner, title, content }) {
+export default function Header({
+  banner,
+  title,
+  content,
+  showFormBooking = true,
+}) {
   return (
     <div className={classes.header}>
       <img className={classes["header__img"]} src={banner} alt="banner" />
@@ -13,7 +18,7 @@ export default function Header({ banner, title, content }) {
         <h1 className={classes["intro__title"]}>{title}</h1>
         <p className={classes["intro__content"]}>{content}</p>
       </div>
-      <FormBooking />
+      {showFormBooking && <FormBooking />}
     </div>
   );
 }
