@@ -1,0 +1,106 @@
+.modalCart {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 300vh;
+    background: linear-gradient(45deg, rgba(80, 80, 80, 0.3), rgba(60, 60, 60, 0.2));
+    top: 0;
+}
+
+.modalCart__container {
+    position: absolute;
+    width: 60%;
+    transform: translate(28%, 30%);
+    background-color: white;
+    box-shadow: 0 0 4px 4px rgba(241, 241, 241, 0.303);
+    border-radius: 3px;
+    padding: 40px 30px 20px 30px;
+    overflow: hidden;
+}
+
+.modalCart__container .modalCart__block {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(138, 138, 138);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.modalCart__icon-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 2rem;
+    color: #fff;
+
+}
+
+.modalCart__row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalCart__col:nth-child(1)>img {
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.modalCart__col:nth-child(2) .modalCart__item {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.modalCart__col:nth-child(2) .modalCart__item span {
+    font-weight: normal;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+.modalCart__col:nth-child(2) .modalCart__name {
+    font-family: "EB Garamond", serif;
+    font-size: 2rem;
+    color: #484847;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.modalCart__col:nth-child(2) .modalCart__detail li,
+.modalCart__col:nth-child(2) .modalCart__service li {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.modalCart__col:nth-child(2) .modalCart__total {
+    font-family: "Bodoni Moda", serif;
+    font-size: 1.5rem;
+    color: rgb(185, 157, 117);
+}
+
+.modalCart__col:nth-child(2) .modalCart__total span {
+    font-size: 1.4rem;
+    color: #484847;
+    margin-left: 10px;
+}
+
+.modalCart__status>span {
+    background-color: rgb(29, 145, 216);
+    padding: 5px 10px;
+    color: white;
+}
+
+
+/* Effect CSS */
+.modalCart__container .modalCart__block:hover {
+    transition: 0.5s all ease;
+    background-color: rgba(72, 72, 71, 0.5);
+}
+
+.modalCart__container .modalCart__block:hover .modalCart__icon-close {
+    transition: 0.5s all ease;
+}

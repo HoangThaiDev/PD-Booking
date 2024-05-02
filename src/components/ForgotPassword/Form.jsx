@@ -1,6 +1,7 @@
 // Import Modules
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import classes from "./css/form.module.css";
+import { checkValidateFormForgotPassword } from "../../middeware/checkValidateForm";
 
 // Import Components
 import { Link } from "react-router-dom";
@@ -13,10 +14,34 @@ import { MdOutlineMail } from "react-icons/md";
 
 export default function Form() {
   // Create + use Hooks
+  const [errorMessages, setErrorMessages] = useState({
+    email: false,
+  });
+  const emailRef = useRef("");
 
   // Create + use event Handlers
-  const signInHandler = (event) => {
+  const getPasswordByEmailHandler = (event) => {
     event.preventDefault();
+    const infoUserRegister = {
+      email: emailRef.current.value,
+    };
+
+    const { isCheck, errorMessages } =
+      checkValidateFormForgotPassword(infoUserRegister);
+
+    if (!isCheck) {
+      setErrorMessages((prev) => {
+        return {
+          ...prev,
+          email: errorMessages.email,
+        };
+      });
+      return false;
+    } else {
+      setErrorMessages({
+        email: false,
+      });
+    }
   };
 
   return (
@@ -41,15 +66,17 @@ export default function Form() {
           <Col className={classes["form__col"]} xl={10}>
             <div className={classes["form-main"]}>
               <h2 className={classes["form-title"]}>FORGOT PASSWORD</h2>
-              <form onSubmit={signInHandler}>
+              <form onSubmit={getPasswordByEmailHandler}>
                 <div
                   className={`${classes["form-input"]} ${classes["input-email"]}`}
                 >
-                  <input type="text" placeholder="Email" />
+                  <input type="text" placeholder="Email" ref={emailRef} />
                   <MdOutlineMail className={classes.icon} />
-                  <p className={classes["error-message"]}>
-                    <span>(&#8902;)</span> The Email is required
-                  </p>
+                  {errorMessages.email && (
+                    <p className={classes["error-message"]}>
+                      <span>(&#8902;)</span> The Email is required
+                    </p>
+                  )}
                 </div>
 
                 <button type="submit" className={classes["btn-login"]}>

@@ -1,5 +1,5 @@
 // Import Modules
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import classes from "./css/listResort.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +10,12 @@ import PaginationCusTom from "../../UI/Pagination";
 
 // Import Icons
 import { FaSearch } from "react-icons/fa";
+import { MdOutlineRefresh } from "react-icons/md";
 
 export default function ListResort({ resort }) {
   // Create + use Hooks
   const [resorts, setResorts] = useState(resort.slice(0, 4));
+  const [refreshPage, setRefreshPage] = useState(false);
   const nameResortRef = useRef("");
   const navigate = useNavigate();
 
@@ -33,13 +35,19 @@ export default function ListResort({ resort }) {
     }
   };
 
-  const getSliceResortHandler = (value) => {
+  const getSliceResortHandler = useCallback((value, restart) => {
     setResorts(value);
-  };
+    setRefreshPage(restart);
+  }, []);
 
   const navigateResortDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
     navigate(`/resort/${modifiedName}`, { state: { id: id } });
+  };
+
+  const refreshDataResortHandler = () => {
+    setResorts(resort);
+    setRefreshPage(true);
   };
 
   return (
@@ -47,7 +55,7 @@ export default function ListResort({ resort }) {
       <div className={classes["resort__container"]}>
         <h1 className={classes["resort__title"]}>Browse All Resorts</h1>
         <Row className={classes["resort__options"]}>
-          <Col className={classes.col} xl={9}>
+          <Col className={classes.col} xl={10}>
             <div>
               <input
                 className={classes["input-search"]}
@@ -59,13 +67,18 @@ export default function ListResort({ resort }) {
                 className={classes.iconSearch}
                 onClick={findResortByNameHandler}
               />
+              <MdOutlineRefresh
+                className={classes.iconRefresh}
+                onClick={refreshDataResortHandler}
+              />
             </div>
           </Col>
           <Col className={classes.col} xl={10}>
             <PaginationCusTom
               data={resort}
               onSaveSliceData={getSliceResortHandler}
-              pageSize={4}
+              pageSize={resorts.length}
+              refresh={refreshPage}
             />
           </Col>
         </Row>

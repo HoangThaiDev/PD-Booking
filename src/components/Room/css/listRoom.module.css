@@ -46,30 +46,38 @@
 .rooms__options .col:nth-child(1)>div {
     width: 100%;
     position: relative;
-    overflow: hidden;
 }
 
 .rooms__options .col:nth-child(1) .input-search {
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
-    width: 100%;
-    padding: 10px 80px 10px 10px;
+    width: 80%;
+    padding: 10px 30px 10px 10px;
     border: 2px solid rgb(182, 155, 117);
     letter-spacing: 1px;
-    border-radius: 3px;
 }
 
 .rooms__options .col:nth-child(1) .iconSearch {
     cursor: pointer;
     position: absolute;
     font-size: 18px;
+    border: 1px solid rgb(182, 155, 117);
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
-    top: 0;
-    right: 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    top: -0.5px;
+    right: 13%;
+}
+
+.rooms__options .col:nth-child(1) .iconRefresh {
+    cursor: pointer;
+    position: absolute;
+    font-size: 18px;
+    border: 1px solid rgb(182, 155, 117);
+    padding: 10px 20px;
+    color: rgb(182, 155, 117);
+    top: -0.5px;
+    right: 2.5%;
 }
 
 .rooms__options .col:nth-child(1) .input-search::placeholder {
@@ -199,6 +207,22 @@
     order: 2;
 }
 
+.room__footer {
+    margin-top: 50px;
+}
+
+.footer__title {
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: rgba(48, 42, 34, 0.8);
+    font-weight: 700;
+}
+
+.footer__title>span {
+    margin: 0 5px;
+}
+
 /* Effect CSS */
 
 .rooms__options .col:nth-child(1) .input-search:focus {
@@ -213,4 +237,11 @@
 .rooms__item:nth-child(2) .rooms__btn-link:hover::before {
     transition: 0.5s all ease;
     right: -20px;
+}
+
+.rooms__options .col:nth-child(1) .iconRefresh:hover {
+    transition: 0.3s all ease;
+    background-color: rgb(182, 155, 117);
+    color: white;
+    border-left: 1px solid white;
 }

@@ -1,12 +1,17 @@
 // Import Modules
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import classes from "./css/formLogin.module.css";
+import { checkValidateFormLogin } from "../../middeware/checkValidateForm";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { userAction } from "../../redux/store";
 
 // Import Components
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 const bannerImage =
-  "https://img.freepik.com/free-photo/photorealistic-wooden-house-with-timber-structure_23-2151302631.jpg?t=st=1713543361~exp=1713546961~hmac=6fc1613b3856a4bc6e842e85fbd20634abdbae8ebd34a13288156619a2d6d6e8&w=996";
+  "https://img.freepik.com/free-photo/photorealistic-wooden-house-with-timber-structure_23-2151302631.jpg";
 
 // Import Icons
 import { MdOutlineMail } from "react-icons/md";
@@ -16,14 +21,68 @@ import { IoEyeOff } from "react-icons/io5";
 
 export default function FormLogin() {
   // Create + use Hooks
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState({
+    password: false,
+  });
+  const [errorMessages, setErrorMessages] = useState({
+    email: false,
+    password: false,
+  });
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   // Create + use event Handlers
-  const showPasswordHandler = () => {
-    setShowPassword(!showPassword);
+  const showPasswordHandler = (name) => {
+    setShowPassword((prev) => {
+      return { ...prev, [name]: !showPassword[name] };
+    });
   };
-  const signInHandler = (event) => {
+
+  const signInHandler = async (event) => {
     event.preventDefault();
+    const infoUserLogin = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+
+    const { isCheck, errorMessages } = checkValidateFormLogin(infoUserLogin);
+
+    if (!isCheck) {
+      setErrorMessages((prev) => {
+        return {
+          ...prev,
+          email: errorMessages.email,
+          password: errorMessages.password,
+        };
+      });
+      return false;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:5000/users/login", {
+        infoUserLogin,
+      });
+
+      if (response.status === 200) {
+        dispatch(userAction.login({ user: response.data.user }));
+        alert(response.data.message);
+        navigate("/");
+      }
+
+      setErrorMessages({
+        username: false,
+        email: false,
+        password: false,
+        confirmPassword: false,
+      });
+    } catch (error) {
+      if (error.response.status === 400) {
+        alert(error.response.data.message);
+        return false;
+      }
+    }
   };
 
   return (
@@ -53,34 +112,39 @@ export default function FormLogin() {
                 <div
                   className={`${classes["form-input"]} ${classes["input-email"]}`}
                 >
-                  <input type="text" placeholder="Email" />
+                  <input type="text" placeholder="Email" ref={emailRef} />
                   <MdOutlineMail className={classes.icon} />
-                  <p className={classes["error-message"]}>
-                    <span>(&#8902;)</span> The Email is required
-                  </p>
+                  {errorMessages.email && (
+                    <p className={classes["error-message"]}>
+                      <span>(&#8902;)</span> The Email is required
+                    </p>
+                  )}
                 </div>
                 <div
                   className={`${classes["form-input"]} ${classes["input-password"]}`}
                 >
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword.password ? "text" : "password"}
                     placeholder="Password"
+                    ref={passwordRef}
                   />
                   <IoKeyOutline className={classes.icon} />
-                  {showPassword ? (
+                  {showPassword.password ? (
                     <FaEye
                       className={classes["icon-show"]}
-                      onClick={showPasswordHandler}
+                      onClick={() => showPasswordHandler("password")}
                     />
                   ) : (
                     <IoEyeOff
                       className={classes["icon-show"]}
-                      onClick={showPasswordHandler}
+                      onClick={() => showPasswordHandler("password")}
                     />
                   )}
-                  <p className={classes["error-message"]}>
-                    <span>(&#8902;)</span> The Password is required
-                  </p>
+                  {errorMessages.password && (
+                    <p className={classes["error-message"]}>
+                      <span>(&#8902;)</span> The Password is required
+                    </p>
+                  )}
                 </div>
                 <div className={classes["form-footer"]}>
                   <div className={`${classes["input-checkbox"]}`}>

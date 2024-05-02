@@ -30,7 +30,7 @@ function DetailRoom() {
   }, [state.id]);
 
   return (
-    <div>
+    <div className="detailRoom">
       {isLoading && Object.keys(room).length > 0 && (
         <>
           <Header

@@ -1,0 +1,125 @@
+.itemCart__content-list {
+    overflow: hidden;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 0;
+    border-bottom: 1px solid rgb(190, 188, 188);
+}
+
+.itemCart__content-item>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    color: rgb(48, 48, 48);
+}
+
+.itemCart__content-action>p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.itemCart__content-action>p .icon__close-action,
+.itemCart__content-action>p .icon__modal-action {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.itemCart__content-action>p .icon__modal-action {
+    color: rgb(29, 145, 216);
+}
+
+.itemCart__content-action>p .icon__close-action {
+    color: rgba(246, 53, 53, 0.934);
+}
+
+.item__card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+}
+
+.item__card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+}
+
+.card__content {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+}
+
+.card__content>h3 {
+    color: rgb(57, 56, 56);
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card__content>p {
+    color: rgb(57, 56, 56);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.card__content>p>span {
+    font-family: "Roboto", sans-serif;
+    color: rgb(115, 114, 114);
+    font-weight: normal;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+.card__content .card__content-date {
+    margin-bottom: 10px;
+}
+
+.itemCart__content-status>p {
+    padding: 20px;
+    background-color: rgb(29, 145, 216);
+    color: white;
+    border-radius: 3px;
+}
+
+.itemCart__message {
+    text-align: center;
+    transform: translateY(60px);
+}
+
+.itemCart__message h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(70, 70, 69);
+}
+
+.itemCart__link {
+    font-family: "EB Garamond", serif;
+    display: inline-block;
+    background-color: rgb(185, 157, 117);
+    color: white;
+    padding: 15px 40px;
+    margin-top: 3%;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 2px solid transparent
+}
+
+.pagination__container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Effect CSS */
+.itemCart__link:hover {
+    transition: 0.5s all ease;
+    border-radius: 0;
+    border-color: rgb(185, 157, 117);
+    background-color: white;
+    color: rgb(185, 157, 117)
+}

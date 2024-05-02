@@ -92,7 +92,7 @@ export default function About({ resort }) {
         </Row>
         {showRooms && typeRooms.length > 0 && (
           <div className={classes["room__list"]}>
-            <ListRoom room={typeRooms} />
+            <ListRoom room={typeRooms} pageResort={false} />
           </div>
         )}
       </div>

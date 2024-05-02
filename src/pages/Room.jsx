@@ -1,14 +1,18 @@
 // Import Modules
 import React from "react";
+import { useSelector } from "react-redux";
 
 // Import Components
 import Header from "../UI/Header";
 import About from "../components/Room/About";
-import ListResort from "../components/Room/ListRoom";
+import ListRoom from "../components/Room/ListRoom";
 const banner =
   "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/04/spacejoy-FX61rYaAfCQ-unsplash.jpg";
 
 export default function Room({ room }) {
+  // Create + use Hooks
+  const filteredRooms = useSelector((state) => state.updatedRoom.rooms);
+
   return (
     <div>
       <Header
@@ -18,7 +22,7 @@ export default function Room({ room }) {
         beautiful views"
       />
       <About />
-      <ListResort room={room} />
+      <ListRoom room={room} filteredRooms={filteredRooms} />
     </div>
   );
 }

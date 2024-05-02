@@ -31,7 +31,7 @@ export default function Provider({ children }) {
           resort: dataResort ? dataResort : [],
           room: dataRoom ? dataRoom : [],
         });
-        setIsLoading(!isLoading);
+        setIsLoading(true);
       } catch (error) {
         console.log(error);
       }

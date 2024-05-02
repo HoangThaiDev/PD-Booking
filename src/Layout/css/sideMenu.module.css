@@ -5,11 +5,7 @@
     top: 0;
     left: -100%;
     z-index: 4;
-    animation: hideSideMenu ease-in-out 1s 1 forwards;
-}
 
-.sideMenu__container.active {
-    animation: showSideMenu ease-in-out 1s 1 forwards;
 }
 
 .sideMenu__container img {
@@ -78,6 +74,10 @@
     color: rgb(206, 186, 157);
 }
 
+.show {
+    animation: showSideMenu ease-in-out 1s 1 forwards;
+}
+
 
 
 @keyframes showSideMenu {
@@ -86,19 +86,6 @@
     }
 
     100% {
-
         left: 0;
-    }
-}
-
-@keyframes hideSideMenu {
-    0% {
-
-        left: 0;
-    }
-
-    100% {
-
-        left: -100%;
     }
 }

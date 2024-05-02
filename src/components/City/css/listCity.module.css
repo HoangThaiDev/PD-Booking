@@ -46,30 +46,39 @@
 .cities__options .col:nth-child(1)>div {
     width: 100%;
     position: relative;
-    overflow: hidden;
+
 }
 
 .cities__options .col:nth-child(1) .input-search {
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
-    width: 100%;
-    padding: 10px 80px 10px 10px;
+    width: 80%;
+    padding: 10px 30px 10px 10px;
     border: 2px solid rgb(182, 155, 117);
     letter-spacing: 1px;
-    border-radius: 3px;
 }
 
 .cities__options .col:nth-child(1) .iconSearch {
     cursor: pointer;
     position: absolute;
     font-size: 18px;
+    border: 1px solid rgb(182, 155, 117);
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
     top: 0;
-    right: 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    right: 13%;
+}
+
+.cities__options .col:nth-child(1) .iconRefresh {
+    cursor: pointer;
+    position: absolute;
+    font-size: 18px;
+    border: 1px solid rgb(182, 155, 117);
+    padding: 10px 20px;
+    color: rgb(182, 155, 117);
+    top: 0;
+    right: 2.5%;
 }
 
 .cities__options .col:nth-child(1) .input-search::placeholder {
@@ -180,4 +189,11 @@
     transition: 0.3s all ease;
     background-color: rgb(182, 155, 117);
     padding: 5px 10px;
+}
+
+.cities__options .col:nth-child(1) .iconRefresh:hover {
+    transition: 0.3s all ease;
+    background-color: rgb(182, 155, 117);
+    color: white;
+    border-left: 1px solid white;
 }

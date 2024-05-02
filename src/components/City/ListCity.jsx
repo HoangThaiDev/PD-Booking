@@ -1,5 +1,5 @@
 // Import Modules
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import classes from "./css/listCity.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -11,10 +11,12 @@ import PaginationCusTom from "../../UI/Pagination";
 // Import Icons
 import { FaSearch } from "react-icons/fa";
 import { BsInfoCircleFill } from "react-icons/bs";
+import { MdOutlineRefresh } from "react-icons/md";
 
 export default function ListCity({ city }) {
   // Create + use Hooks
   const [cities, setCities] = useState(city.slice(0, 4));
+  const [refreshPage, setRefreshPage] = useState(false);
   const nameCityRef = useRef("");
   const navigate = useNavigate();
 
@@ -30,13 +32,19 @@ export default function ListCity({ city }) {
     }
   };
 
-  const getSliceCityHandler = (value) => {
+  const getSliceCityHandler = useCallback((value, restart) => {
     setCities(value);
-  };
+    setRefreshPage(restart);
+  }, []);
 
   const navigateCityDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
     navigate(`/city/${modifiedName}`, { state: { id: id } });
+  };
+
+  const refreshDataCityHandler = () => {
+    setCities(city);
+    setRefreshPage(!refreshPage);
   };
 
   return (
@@ -44,7 +52,7 @@ export default function ListCity({ city }) {
       <div className={classes["cities__container"]}>
         <h1 className={classes["cities__title"]}>Browse All Cities</h1>
         <Row className={classes["cities__options"]}>
-          <Col className={classes.col} xl={9}>
+          <Col className={classes.col} xl={10}>
             <div>
               <input
                 className={classes["input-search"]}
@@ -56,6 +64,10 @@ export default function ListCity({ city }) {
                 className={classes.iconSearch}
                 onClick={findCityByNameHandler}
               />
+              <MdOutlineRefresh
+                className={classes.iconRefresh}
+                onClick={refreshDataCityHandler}
+              />
             </div>
           </Col>
           <Col className={classes.col} xl={10}>
@@ -63,6 +75,7 @@ export default function ListCity({ city }) {
               data={city}
               onSaveSliceData={getSliceCityHandler}
               pageSize={4}
+              refresh={refreshPage}
             />
           </Col>
         </Row>

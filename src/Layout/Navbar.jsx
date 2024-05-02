@@ -1,7 +1,7 @@
 // Import Modules
 import React, { useEffect, useRef } from "react";
 import classes from "./css/navbar.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { sideMenuAction } from "../redux/store";
 
 // Import Components
@@ -17,6 +17,7 @@ export default function Navbar() {
   // Create + use Hooks
   const navbarNavRef = useRef(null);
   const dispatch = useDispatch();
+  const { user, isLoggedIn } = useSelector((state) => state.user);
 
   useEffect(() => {
     const scrollNavbarHandler = () => {
@@ -90,10 +91,18 @@ export default function Navbar() {
                   className={`${classes.icon} ${classes["icon-dropdown"]}`}
                 />
                 <ul className={classes["menu-dropdown"]}>
-                  <li className={classes["menu-dropdown__item"]}>Cart</li>
-                  <li className={classes["menu-dropdown__item"]}>Checkout</li>
-                  <li className={classes["menu-dropdown__item"]}>Contact</li>
-                  <li className={classes["menu-dropdown__item"]}>About Me</li>
+                  <Link className={classes["menu-dropdown__item"]} to="/carts">
+                    Cart
+                  </Link>
+                  <Link className={classes["menu-dropdown__item"]}>
+                    Checkout
+                  </Link>
+                  <Link className={classes["menu-dropdown__item"]}>
+                    Contact
+                  </Link>
+                  <Link className={classes["menu-dropdown__item"]}>
+                    About Me
+                  </Link>
                 </ul>
               </li>
               <li className={classes["menu__item"]}>NEWS</li>
@@ -128,7 +137,7 @@ export default function Navbar() {
             <div className={classes["contact-container"]}>
               <ul className={classes["contact__list"]}>
                 <Link className={classes["contact__item"]} to="/login">
-                  USER
+                  {isLoggedIn ? user : "USER"}
                 </Link>
                 <li className={classes["contact__item"]}>
                   Tel: +84 12 111 22 33

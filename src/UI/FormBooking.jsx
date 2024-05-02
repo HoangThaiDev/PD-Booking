@@ -2,6 +2,14 @@
 import React, { useRef, useState } from "react";
 import classes from "./css/formBooking.module.css";
 import "./css/datePicker.css";
+import {
+  convertFromStartDate,
+  convertFromEndDate,
+} from "../middeware/convertFromDate";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { roomAction, optionsAction } from "../redux/store";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider } from "antd";
@@ -27,6 +35,9 @@ export default function FormBooking() {
     endDate: "",
   });
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   // Create + use Event Handlers
   const getValueOfOptionHandler = (name, operation) => {
     if (operation === "d" && options[name] <= 0) {
@@ -41,24 +52,35 @@ export default function FormBooking() {
   };
 
   const changeDatePickerHandler = (value) => {
-    const startDate = new Date(value[0].$d);
-    const startDay = startDate.getDate().toString().padStart(2, "0");
-    const startMonth = (startDate.getMonth() + 1).toString().padStart(2, "0");
-    const startYear = startDate.getFullYear();
-    const formattedStartDate = `${startDay}/${startMonth}/${startYear}`;
-
-    const endDate = new Date(value[1].$d);
-    const endDay = endDate.getDate().toString().padStart(2, "0");
-    const endMonth = (endDate.getMonth() + 1).toString().padStart(2, "0");
-    const endYear = endDate.getFullYear();
-    const formattedEndDate = `${endDay}/${endMonth}/${endYear}`;
-
+    const formattedStartDate = convertFromStartDate(value[0].$d);
+    const formattedEndDate = convertFromEndDate(value[1].$d);
     setDateString({ startDate: formattedStartDate, endDate: formattedEndDate });
   };
 
-  const searchHotelHandler = (event) => {
+  const searchHotelHandler = async (event) => {
     event.preventDefault();
-    console.log(options, dateString, cityRef.current.value);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/rooms/find-room",
+        {
+          nameCity: cityRef.current.value,
+          options: options,
+          dateBooking: dateString,
+        }
+      );
+
+      if (response.status === 200) {
+        const userOptions = {
+          date: dateString,
+          options: options,
+        };
+        dispatch(optionsAction.saveValueOptions(userOptions)); // Save options value of user choice in store Redux
+        dispatch(roomAction.updatedRooms(response.data)); // Save filtered rooms in store Redux
+        navigate("/rooms");
+      }
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   };
 
   return (
@@ -97,6 +119,7 @@ export default function FormBooking() {
                 type="text"
                 placeholder="Vd: Hà Nội, Phú Quốc..."
                 ref={cityRef}
+                autoComplete="city"
               />
             </Col>
 

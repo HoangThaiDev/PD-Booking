@@ -1,0 +1,92 @@
+.listCart {
+    padding: 5% 0;
+}
+
+.listCart__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.listCart__row {
+    justify-content: space-between;
+}
+
+.listCart__title-list {
+    border-top: 1px solid rgb(190, 188, 188);
+    border-bottom: 1px solid rgb(190, 188, 188);
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 0;
+}
+
+.listCart__title-item {
+    overflow: hidden;
+    text-align: center;
+}
+
+.listCart__title-item p {
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgba(37, 37, 37, 0.801);
+}
+
+.form-cart {
+    background-color: #F9F9F9;
+    padding: 10%;
+}
+
+.form-cart>h2 {
+    font-family: "Playfair Display", serif;
+    color: rgb(46, 46, 46);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(190, 188, 188);
+}
+
+.form-cart .cart__subtotal,
+.form-cart .cart__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid rgb(190, 188, 188);
+}
+
+.form-cart .cart__subtotal>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    color: rgb(46, 46, 46);
+    font-style: italic;
+}
+
+.form-cart .cart__total>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(46, 46, 46);
+}
+
+.cart__btn-checkout {
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10%;
+    border: 1px solid transparent;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 15px 20px;
+}
+
+
+/* Effect CSS */
+
+.cart__btn-checkout:hover {
+    transition: 0.3s all ease;
+    background-color: rgba(37, 37, 37, 0.801);
+}

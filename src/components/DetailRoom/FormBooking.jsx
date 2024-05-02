@@ -1,6 +1,11 @@
 // Import Modules
-import React, { useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./css/formBooking.css";
+import moment from "moment";
+import { useSelector } from "react-redux";
+import { checkFormBooking } from "../../middeware/checkValidateForm";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider } from "antd";
@@ -11,10 +16,17 @@ import { GoPlus } from "react-icons/go";
 
 export default function FormBooking({ room }) {
   // Create +use Hooks
+  const { isLoggedIn } = useSelector((state) => state.user);
+  const {
+    adults: adultsValue,
+    children: childrenValue,
+    startDate,
+    endDate,
+  } = useSelector((state) => state.options);
+
   const [options, setOptions] = useState({
-    rooms: 0,
-    adults: 0,
-    children: 0,
+    adults: adultsValue,
+    children: childrenValue,
   });
 
   const [dateString, setDateString] = useState({
@@ -29,24 +41,64 @@ export default function FormBooking({ room }) {
   });
 
   const [selectedRooms, setSelectedRooms] = useState([]);
+  const navigate = useNavigate();
+
+  // Updated Date Booking from Options Value Of User
+  useEffect(() => {
+    if (startDate.length > 0 && endDate.length > 0) {
+      const startDateConvert = moment(startDate, "DD MM YYYY");
+      const endDateConvert = moment(endDate, "DD MM YYYY");
+      setDateString((prev) => {
+        return {
+          ...prev,
+          startDate: startDateConvert,
+          endDate: endDateConvert,
+        };
+      });
+    }
+  }, [startDate, endDate]);
+
   // Create + use event Handlers
+  const totalCost = useMemo(() => {
+    let sum = 0;
+
+    const priceOptions =
+      serviceOptions.roomClean + serviceOptions.massage + serviceOptions.daySpa;
+    const priceRoom = parseInt(room.discount_price.replace(/\./g, ""));
+    let checkDateString =
+      moment(dateString.startDate).isSame(dateString.endDate) ||
+      moment(dateString.startDate).isAfter(dateString.endDate);
+
+    if (
+      dateString.startDate.length === 0 ||
+      dateString.endDate.length === 0 ||
+      checkDateString
+    ) {
+      return 0;
+    }
+
+    const dateDiff = dateString.endDate.diff(dateString.startDate, "day");
+
+    sum = dateDiff * Number(priceRoom) * selectedRooms.length + priceOptions;
+
+    return sum.toLocaleString("us-US").replace(/\,/g, ".");
+  }, [dateString, serviceOptions, selectedRooms]);
+
   const changeDateCheckInHandler = (date) => {
-    const startDate = new Date(date.$d);
-    const startDay = startDate.getDate().toString().padStart(2, "0");
-    const startMonth = (startDate.getMonth() + 1).toString().padStart(2, "0");
-    const startYear = startDate.getFullYear();
-    const formattedStartDate = `${startDay}/${startMonth}/${startYear}`;
+    if (!date) {
+      return false;
+    }
+    const formattedStartDate = new moment(date.$d);
     setDateString((prev) => {
       return { ...prev, startDate: formattedStartDate };
     });
   };
 
-  const changeDateCheckOutHandler = (date) => {
-    const endDate = new Date(date.$d);
-    const endDay = endDate.getDate().toString().padStart(2, "0");
-    const endMonth = (endDate.getMonth() + 1).toString().padStart(2, "0");
-    const endYear = endDate.getFullYear();
-    const formattedEndDate = `${endDay}/${endMonth}/${endYear}`;
+  const changeDateCheckOutHandler = (date, dateString) => {
+    if (!date) {
+      return false;
+    }
+    const formattedEndDate = new moment(date.$d);
     setDateString((prev) => {
       return { ...prev, endDate: formattedEndDate };
     });
@@ -82,6 +134,52 @@ export default function FormBooking({ room }) {
     }
   };
 
+  const submitBookingHandler = async (event) => {
+    event.preventDefault();
+
+    // Check user sign in ?
+    // if (!isLoggedIn) {
+    //   alert("You need to Sign In account to use Booking!");
+    //   return false;
+    // }
+    const updatedServiceOptions = {
+      roomClean: serviceOptions.roomClean
+        .toLocaleString("us-US")
+        .replace(/\,/g, "."),
+      massage: serviceOptions.massage
+        .toLocaleString("us-US")
+        .replace(/\,/g, "."),
+      daySpa: serviceOptions.daySpa.toLocaleString("us-US").replace(/\,/g, "."),
+    };
+
+    const valueFormBooking = {
+      roomId: room._id,
+      name: room.name,
+      photo: room.photos[0],
+      startDate: moment(dateString.startDate).format("DD/MM/YYYY"),
+      endDate: moment(dateString.endDate).format("DD/MM/YYYY"),
+      options: options,
+      price: room.discount_price,
+      maxPeople: room.detail.maxPeople,
+      rooms: selectedRooms,
+      totalPrice: totalCost,
+      serviceOptions: updatedServiceOptions,
+      status: "Booking",
+    };
+
+    const isCheckValid = checkFormBooking(valueFormBooking);
+    if (isCheckValid) {
+      const response = await axios.post(
+        "http://localhost:5000/carts/add-cart",
+        { valueFormBooking }
+      );
+      if (response.status === 200) {
+        alert(response.data);
+        navigate("/carts");
+      }
+    }
+  };
+
   return (
     <ConfigProvider
       theme={{
@@ -93,7 +191,7 @@ export default function FormBooking({ room }) {
         },
       }}
     >
-      <form className="formBooking">
+      <form className="formBooking" onSubmit={submitBookingHandler}>
         <div className="formBooking__container">
           <Row className="formBooking__header">
             <Col className="formBooking__header__col" xl={10}>
@@ -101,10 +199,10 @@ export default function FormBooking({ room }) {
             </Col>
             <Col className="formBooking__header__col" xl={13}>
               <p>
-                From: <span>4.000.000</span> VND/Night
+                From: <span>{room.price}</span> VND/Night
               </p>
               <p>
-                Sale: <span>4.000.000</span> VND/Night
+                Sale: <span>{room.discount_price}</span> VND/Night
               </p>
             </Col>
           </Row>
@@ -233,7 +331,7 @@ export default function FormBooking({ room }) {
                 <p>Total Cost:</p>
               </Col>
               <Col className="totalPrice__col" xl={10}>
-                <p>10.000.000 VND</p>
+                <p>{totalCost} VND</p>
               </Col>
             </Row>
             <button type="submit" className="btn-submit">

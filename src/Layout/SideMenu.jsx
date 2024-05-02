@@ -25,8 +25,8 @@ const Container = () => {
     <div
       className={
         showSideMenu
-          ? `${classes["sideMenu__container"]} ${classes["active"]}`
-          : `${classes["sideMenu__container"]}`
+          ? `${classes["sideMenu__container"]} ${classes["show"]}`
+          : `${classes["sideMenu__container"]} `
       }
     >
       <img
