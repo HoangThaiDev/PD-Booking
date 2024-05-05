@@ -2,12 +2,12 @@
 import React from "react";
 
 // Import Components
-import Form from "../components/ForgotPassword/Form";
+import FormForgotPassword from "../components/ForgotPassword/FormForgotPassword";
 
 export default function ForgetPassword() {
   return (
     <div>
-      <Form />
+      <FormForgotPassword />
     </div>
   );
 }

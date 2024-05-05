@@ -130,6 +130,7 @@
 
 
 .form-main .input-checkbox label {
+    cursor: pointer;
     margin-left: 5px;
 }
 

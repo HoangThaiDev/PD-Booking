@@ -1,18 +1,18 @@
 // Import Modules
 import React, { useState, useRef } from "react";
-import classes from "./css/form.module.css";
+import classes from "./css/formForgotPassword.module.css";
 import { checkValidateFormForgotPassword } from "../../middeware/checkValidateForm";
 
 // Import Components
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 const bannerImage =
-  "https://img.freepik.com/free-photo/photorealistic-wooden-house-with-timber-structure_23-2151302631.jpg?t=st=1713543361~exp=1713546961~hmac=6fc1613b3856a4bc6e842e85fbd20634abdbae8ebd34a13288156619a2d6d6e8&w=996";
+  "https://img.freepik.com/free-photo/photorealistic-wooden-house-with-timber-structure_23-2151302631.jpg";
 
 // Import Icons
 import { MdOutlineMail } from "react-icons/md";
 
-export default function Form() {
+export default function FormForgotPassword() {
   // Create + use Hooks
   const [errorMessages, setErrorMessages] = useState({
     email: false,
@@ -46,6 +46,9 @@ export default function Form() {
 
   return (
     <div className={classes["form-getPassword"]}>
+      <Link to="/" className={classes["link_home-mobile"]}>
+        <span>&#8249;</span> Back to home
+      </Link>
       <img
         className={classes["form-background"]}
         src={bannerImage}
@@ -53,7 +56,7 @@ export default function Form() {
       />
       <div className={classes["form__container"]}>
         <Row className={classes["form__row"]}>
-          <Col className={classes["form__col"]} xl={12}>
+          <Col className={classes["form__col"]} xl={12} xs={24} sm={24} md={12}>
             <div className={classes["card__introduce-container"]}>
               <h1 className={classes["card__title"]}>FORGOT PASSWORD</h1>
               <p className={classes["card__content"]}>
@@ -63,7 +66,7 @@ export default function Form() {
               <Link to="/">BACK TO HOME</Link>
             </div>
           </Col>
-          <Col className={classes["form__col"]} xl={10}>
+          <Col className={classes["form__col"]} xl={10} xs={24} sm={24} md={10}>
             <div className={classes["form-main"]}>
               <h2 className={classes["form-title"]}>FORGOT PASSWORD</h2>
               <form onSubmit={getPasswordByEmailHandler}>

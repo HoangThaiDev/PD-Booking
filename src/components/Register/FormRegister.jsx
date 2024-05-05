@@ -94,6 +94,9 @@ export default function FormLogin() {
 
   return (
     <div className={classes["form-register"]}>
+      <Link to="/" className={classes["link_home-mobile"]}>
+        <span>&#8249;</span> Back to home
+      </Link>
       <img
         className={classes["form-background"]}
         src={bannerImage}
@@ -101,7 +104,7 @@ export default function FormLogin() {
       />
       <div className={classes["form__container"]}>
         <Row className={classes["form__row"]}>
-          <Col className={classes["form__col"]} xl={12}>
+          <Col className={classes["form__col"]} xl={12} xs={24} sm={24} md={12}>
             <div className={classes["card__introduce-container"]}>
               <h1 className={classes["card__title"]}>SIGN UP</h1>
               <p className={classes["card__content"]}>
@@ -111,7 +114,7 @@ export default function FormLogin() {
               <Link to="/">BACK TO HOME</Link>
             </div>
           </Col>
-          <Col className={classes["form__col"]} xl={10}>
+          <Col className={classes["form__col"]} xl={10} xs={24} sm={24} md={10}>
             <div className={classes["form-main"]}>
               <h2 className={classes["form-title"]}>SIGN UP</h2>
               <form onSubmit={signUpHandler}>

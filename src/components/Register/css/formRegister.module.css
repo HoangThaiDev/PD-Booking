@@ -142,6 +142,26 @@
     right: 15px;
 }
 
+.link_home-mobile {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    z-index: 2;
+    font-size: 1rem;
+    padding-bottom: 3px;
+}
+
+.link_home-mobile>span {
+    position: absolute;
+    font-size: 1.3rem;
+    left: -13px;
+    top: -3px;
+}
+
 /* Effect CSS */
 
 .card__introduce-container>a:hover {
@@ -171,4 +191,102 @@
     font-family: "EB Garamond", serif;
     color: white;
     font-size: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .form-login {
+        width: 100%;
+    }
+
+    .link_home-mobile {
+        display: block;
+    }
+
+    .form-background {
+        filter: brightness(45%);
+    }
+
+    .form__col:nth-child(1) {
+        display: none;
+    }
+
+    .form__row {
+        height: 0vh;
+    }
+
+    .form__col:nth-child(2) {
+        order: 1;
+        margin-top: 10%;
+        padding: 50px 0;
+    }
+
+    .form-main {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        background: transparent !important;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .form-login {
+        width: 100%;
+    }
+
+    .link_home-mobile {
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    .form-background {
+        filter: brightness(45%);
+    }
+
+    .form__col:nth-child(1) {
+        display: none;
+    }
+
+    .form__row {
+        height: 0vh;
+    }
+
+    .form__col:nth-child(2) {
+        width: 100%;
+        order: 1;
+        margin-top: 10%;
+        padding: 50px 0;
+    }
+
+    .form-main {
+        width: 60%;
+        margin: 0 auto;
+        padding: 0;
+        background: transparent !important;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .form-login {
+        width: 100%;
+    }
+
+    .form-background {
+        filter: brightness(45%);
+    }
+
+    .form__col:nth-child(1) .card__introduce-container {
+        padding: 0;
+    }
+
+    .card__introduce-container .card__content {
+        font-size: 1.3rem;
+        margin: 20px 0;
+    }
+
+    .form-main {
+        width: 90%;
+        padding: 0;
+        background: transparent !important;
+    }
 }
