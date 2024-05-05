@@ -1,5 +1,11 @@
 <<<<<<< HEAD
 
+<!-- XS (Extra small): Max-width: 575px
+SM (Small): Min-width: 576px
+MD (Medium): Min-width: 768px
+LG (Large): Min-width: 992px
+XL (Extra large): Min-width: 1200px -->
+
 # PD-Booking
 
 =======
