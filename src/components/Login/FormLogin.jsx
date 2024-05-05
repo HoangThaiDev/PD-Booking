@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { userAction } from "../../redux/store";
+import { API_ROOT } from "../../utils/constant";
 
 // Import Components
 import { Link } from "react-router-dom";
-import { Row, Col } from "antd";
+import { Row, Col, message } from "antd";
 const bannerImage =
   "https://img.freepik.com/free-photo/photorealistic-wooden-house-with-timber-structure_23-2151302631.jpg";
 
@@ -21,6 +22,7 @@ import { IoEyeOff } from "react-icons/io5";
 
 export default function FormLogin() {
   // Create + use Hooks
+  const [messageApi, contextHolder] = message.useMessage();
   const [showPassword, setShowPassword] = useState({
     password: false,
   });
@@ -61,7 +63,7 @@ export default function FormLogin() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/users/login", {
+      const response = await axios.post(`${API_ROOT}/users/login`, {
         infoUserLogin,
       });
 

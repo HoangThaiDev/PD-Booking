@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { API_ROOT } from "../utils/constant";
 
 // Import Components
 import About from "../components/DetailCity/About";
@@ -17,7 +18,7 @@ export default function DetailCity() {
     const fetchDetailCity = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/cities/detail/${state.id}`
+          `${API_ROOT}/cities/detail/${state.id}`
         );
         setCity(data);
         setIsLoading(!isLoading);

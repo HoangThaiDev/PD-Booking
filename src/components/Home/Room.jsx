@@ -18,9 +18,9 @@ export default function Room({ room }) {
   const navigate = useNavigate();
 
   // Create + use event Handlers
-  const navigateResortDetailHandler = (id, name) => {
+  const navigateRoomDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`city/${modifiedName}`, { state: id });
+    navigate(`room/${modifiedName}`, { state: { id: id } });
   };
 
   return (
@@ -83,7 +83,7 @@ export default function Room({ room }) {
                   <button
                     className={classes["room-link"]}
                     onClick={() =>
-                      navigateResortDetailHandler(room._id, room.name)
+                      navigateRoomDetailHandler(room._id, room.name)
                     }
                   >
                     Discover More

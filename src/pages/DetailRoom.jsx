@@ -2,6 +2,7 @@
 import React, { useEffect, useState, memo } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { API_ROOT } from "../utils/constant";
 
 // Import Components
 import About from "../components/DetailRoom/About";
@@ -17,9 +18,8 @@ function DetailRoom() {
     const fetchDetailRoom = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/rooms/detail/${state.id}`
+          `${API_ROOT}/rooms/detail/${state.id}`
         );
-
         setRoom(data);
         setIsLoading(true);
       } catch (error) {
@@ -27,7 +27,7 @@ function DetailRoom() {
       }
     };
     fetchDetailRoom();
-  }, [state.id]);
+  }, []);
 
   return (
     <div className="detailRoom">

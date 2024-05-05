@@ -1,6 +1,7 @@
 // Import Modules
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { API_ROOT } from "../utils/constant";
 
 const APIContext = createContext();
 
@@ -16,15 +17,9 @@ export default function Provider({ children }) {
   useEffect(() => {
     const fetchCity = async () => {
       try {
-        const { data: dataCity } = await axios.get(
-          "http://localhost:5000/cities"
-        );
-        const { data: dataResort } = await axios.get(
-          "http://localhost:5000/resorts"
-        );
-        const { data: dataRoom } = await axios.get(
-          "http://localhost:5000/rooms"
-        );
+        const { data: dataCity } = await axios.get(`${API_ROOT}/cities`);
+        const { data: dataResort } = await axios.get(`${API_ROOT}/resorts`);
+        const { data: dataRoom } = await axios.get(`${API_ROOT}/rooms`);
 
         setData({
           city: dataCity ? dataCity : [],
@@ -34,15 +29,19 @@ export default function Provider({ children }) {
         setIsLoading(true);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
       }
     };
     fetchCity();
   }, []);
   return (
     <>
-      {isLoading && (
-        <APIContext.Provider value={data}>{children}</APIContext.Provider>
-      )}
+      {isLoading &&
+        data.city.length > 0 &&
+        data.resort.length > 0 &&
+        data.room.length > 0 && (
+          <APIContext.Provider value={data}>{children}</APIContext.Provider>
+        )}
     </>
   );
 }

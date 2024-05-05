@@ -3,6 +3,7 @@ import React, { useRef, useState, useCallback } from "react";
 import classes from "./css/listCity.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_ROOT } from "../../utils/constant";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -23,7 +24,7 @@ export default function ListCity({ city }) {
   // Create + use event Handlers
   const findCityByNameHandler = async () => {
     try {
-      const { data } = await axios.post("http://localhost:5000/cities/search", {
+      const { data } = await axios.post(`${API_ROOT}/cities/search`, {
         name: nameCityRef.current.value,
       });
       setCities(data);

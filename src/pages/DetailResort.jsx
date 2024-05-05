@@ -2,6 +2,7 @@
 import React, { useEffect, useState, memo } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { API_ROOT } from "../utils/constant";
 
 // Import Components
 import About from "../components/DetailResort/About";
@@ -19,7 +20,7 @@ function DetailResort() {
     const fetchDetailResort = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/resorts/detail/${state.id}`
+          `${API_ROOT}/resorts/detail/${state.id}`
         );
         const { current_resort, other_resorts } = data;
         setResort(current_resort);

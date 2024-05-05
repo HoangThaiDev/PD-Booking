@@ -23,8 +23,8 @@ export default function ModalCart() {
   return (
     <>
       {showModal && (
-        <div className={classes.modalCart}>
-          <div className={classes["modalCart__container"]}>
+        <div className={classes["modalCart__container"]}>
+          <div className={classes.modalCart}>
             <div className={classes["modalCart__block"]}>
               <MdClose
                 className={classes["modalCart__icon-close"]}
@@ -46,14 +46,14 @@ export default function ModalCart() {
                 >
                   Date:
                   <span>
-                    {cart.startDate} - {cart.endDate}
+                    {cart.date.startDate} - {cart.date.endDate}
                   </span>
                 </p>
                 <p
                   className={`${classes["modalCart__item"]} ${classes["modalCart__price"]}`}
                 >
                   Price:
-                  <span>{cart.price} VNĐ / Room</span>
+                  <span>{cart.priceRoom} VNĐ / Room</span>
                 </p>
                 <p
                   className={`${classes["modalCart__item"]} ${classes["modalCart__status"]}`}
@@ -82,7 +82,7 @@ export default function ModalCart() {
                       People:
                       <span>
                         {cart.options.adults + cart.options.children} (
-                        {cart.options.adults} Adults - {cart.options.children}
+                        {cart.options.adults} Adults - {cart.options.children}{" "}
                         Children)
                       </span>
                     </p>

@@ -10,6 +10,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { roomAction, optionsAction } from "../redux/store";
+import { API_ROOT } from "../utils/constant";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider } from "antd";
@@ -60,14 +61,11 @@ export default function FormBooking() {
   const searchHotelHandler = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/rooms/find-room",
-        {
-          nameCity: cityRef.current.value,
-          options: options,
-          dateBooking: dateString,
-        }
-      );
+      const response = await axios.post(`${API_ROOT}/rooms/find-room`, {
+        nameCity: cityRef.current.value,
+        options: options,
+        dateBooking: dateString,
+      });
 
       if (response.status === 200) {
         const userOptions = {

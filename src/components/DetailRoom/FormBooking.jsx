@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { checkFormBooking } from "../../middeware/checkValidateForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_ROOT } from "../../utils/constant";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider } from "antd";
@@ -16,7 +17,7 @@ import { GoPlus } from "react-icons/go";
 
 export default function FormBooking({ room }) {
   // Create +use Hooks
-  const { isLoggedIn } = useSelector((state) => state.user);
+  const { user, isLoggedIn } = useSelector((state) => state.user);
   const {
     adults: adultsValue,
     children: childrenValue,
@@ -138,10 +139,10 @@ export default function FormBooking({ room }) {
     event.preventDefault();
 
     // Check user sign in ?
-    // if (!isLoggedIn) {
-    //   alert("You need to Sign In account to use Booking!");
-    //   return false;
-    // }
+    if (!isLoggedIn) {
+      alert("You need to Sign In account to use Booking!");
+      return false;
+    }
     const updatedServiceOptions = {
       roomClean: serviceOptions.roomClean
         .toLocaleString("us-US")
@@ -169,13 +170,18 @@ export default function FormBooking({ room }) {
 
     const isCheckValid = checkFormBooking(valueFormBooking);
     if (isCheckValid) {
-      const response = await axios.post(
-        "http://localhost:5000/carts/add-cart",
-        { valueFormBooking }
-      );
-      if (response.status === 200) {
-        alert(response.data);
-        navigate("/carts");
+      try {
+        const response = await axios.post(`${API_ROOT}/carts/add-cart`, {
+          valueFormBooking,
+          user,
+        });
+        if (response.status === 200) {
+          alert(response.data);
+          navigate("/carts");
+        }
+      } catch (error) {
+        console.log(error);
+        alert(error.response.data.message);
       }
     }
   };

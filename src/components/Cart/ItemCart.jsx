@@ -4,6 +4,7 @@ import classes from "./css/itemCart.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { modalCartAction } from "../../redux/store";
+import { API_ROOT } from "../../utils/constant";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -14,9 +15,9 @@ import PaginationCusTom from "../../UI/Pagination";
 import { IoMdClose } from "react-icons/io";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
-export default function ItemCart({ data }) {
+export default function ItemCart({ cartUser }) {
   // Create + use Hooks
-  const [sliceCarts, setSliceCarts] = useState(data.slice(0, 5));
+  const [sliceCarts, setSliceCarts] = useState(cartUser.items.slice(0, 5));
   const dispatch = useDispatch();
 
   // Create + use event Handlers
@@ -24,13 +25,18 @@ export default function ItemCart({ data }) {
     const isCheck = confirm(`Do you want delete this cart!`);
     if (isCheck) {
       try {
-        const response = await axios.delete(
-          "http://localhost:5000/carts/delete-cart",
-          { data: { id: id } }
-        );
+        const response = await axios.delete(`${API_ROOT}/carts/delete-cart`, {
+          data: { id: id, user: cartUser.user },
+        });
+
+        const updatedCarts =
+          response.data.map((c) => {
+            c.numberRooms = c.rooms.join(", ");
+            return c;
+          }) || [];
 
         if (response.status === 200) {
-          setSliceCarts(response.data);
+          setSliceCarts(updatedCarts);
           dispatch(modalCartAction.saveModalCart());
         }
       } catch (error) {
@@ -87,7 +93,7 @@ export default function ItemCart({ data }) {
                   <p className={classes["card__content-date"]}>
                     Date:
                     <span>
-                      {cart.startDate} - {cart.endDate}
+                      {cart.date.startDate} - {cart.date.endDate}
                     </span>
                   </p>
                   <p className={classes["card__content-detail"]}>
@@ -122,7 +128,7 @@ export default function ItemCart({ data }) {
         ))}
       <div className={classes["pagination__container"]}>
         <PaginationCusTom
-          data={data}
+          data={cartUser}
           onSaveSliceData={getSliceCartHandler}
           pageSize={sliceCarts.length}
           refresh={false}

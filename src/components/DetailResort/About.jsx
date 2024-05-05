@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import classes from "./css/about.module.css";
 import axios from "axios";
+import { API_ROOT } from "../../utils/constant";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -20,12 +21,9 @@ export default function About({ resort }) {
 
   const navigateRoomHandler = async () => {
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/resorts/detail/rooms",
-        {
-          roomIds: resort.rooms,
-        }
-      );
+      const { data } = await axios.post(`${API_ROOT}/resorts/detail/rooms`, {
+        roomIds: resort.rooms,
+      });
       setTypeRooms(data);
       setShowRooms(!showRooms);
     } catch (error) {
@@ -92,7 +90,7 @@ export default function About({ resort }) {
         </Row>
         {showRooms && typeRooms.length > 0 && (
           <div className={classes["room__list"]}>
-            <ListRoom room={typeRooms} pageResort={false} />
+            <ListRoom room={typeRooms} stateShowAddressDetail={false} />
           </div>
         )}
       </div>

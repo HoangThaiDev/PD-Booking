@@ -6,16 +6,17 @@ import classes from "./css/listCart.module.css";
 import { Row, Col } from "antd";
 import ItemCart from "./ItemCart";
 
-export default function ListCart({ carts }) {
+export default function ListCart({ cartUser }) {
+  console.log(cartUser);
   // Create + use Hooks
   const totalCarts = useMemo(() => {
-    const totalPrice = carts.reduce((a, c) => {
+    const totalPrice = cartUser.items.reduce((a, c) => {
       const convertPriceNumber = parseInt(c.totalPrice.replace(/\./g, ""));
       return a + convertPriceNumber;
     }, 0);
 
     return totalPrice.toLocaleString("us-US").replace(/\,/g, ".");
-  }, [carts]);
+  }, [cartUser.items]);
 
   const addToCheckoutHandler = (event) => {
     event.preventDefault();
@@ -48,7 +49,7 @@ export default function ListCart({ carts }) {
               </Col>
             </Row>
 
-            <ItemCart data={carts} />
+            <ItemCart cartUser={cartUser} />
           </Col>
 
           <Col

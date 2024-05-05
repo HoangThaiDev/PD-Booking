@@ -11,6 +11,7 @@ import PaginationCusTom from "../../UI/Pagination";
 // Import Icons
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineRefresh } from "react-icons/md";
+import { API_ROOT } from "../../utils/constant";
 
 export default function ListResort({ resort }) {
   // Create + use Hooks
@@ -23,12 +24,9 @@ export default function ListResort({ resort }) {
 
   const findResortByNameHandler = async () => {
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/resorts/search",
-        {
-          name: nameResortRef.current.value,
-        }
-      );
+      const { data } = await axios.post(`${API_ROOT}/resorts/search`, {
+        name: nameResortRef.current.value,
+      });
       setResorts(data);
     } catch (error) {
       console.log(error);

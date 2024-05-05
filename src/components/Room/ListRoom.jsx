@@ -17,8 +17,13 @@ import { MdOutlineSmokeFree } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
 import { MdOutlineRefresh } from "react-icons/md";
 import { roomAction } from "../../redux/store";
+import { API_ROOT } from "../../utils/constant";
 
-export default function ListRoom({ room, filteredRooms }) {
+export default function ListRoom({
+  room,
+  filteredRooms,
+  stateShowAddressDetail = true,
+}) {
   // Slice array Room
   const sliceRoomsHandler = useCallback((array) => {
     return array.slice(0, 4);
@@ -34,7 +39,6 @@ export default function ListRoom({ room, filteredRooms }) {
 
   // Setup Value Default for state of Hook useLocation()
   useEffect(() => {
-    console.log(filteredRooms);
     if (filteredRooms?.length > 0) {
       const updatedRoom = sliceRoomsHandler(filteredRooms);
       setRooms(filteredRooms);
@@ -42,7 +46,7 @@ export default function ListRoom({ room, filteredRooms }) {
       setIsLoading(true);
     } else {
       const updatedRoom = sliceRoomsHandler(room);
-      console.log(updatedRoom[0].nameCity);
+
       setRooms(room);
       setSliceRooms(updatedRoom);
       setIsLoading(true);
@@ -52,7 +56,7 @@ export default function ListRoom({ room, filteredRooms }) {
   // Create + use event Handlers
   const findRoomByNameHandler = async () => {
     try {
-      const { data } = await axios.post("http://localhost:5000/rooms/search", {
+      const { data } = await axios.post(`${API_ROOT}/rooms/search`, {
         name: nameRoomRef.current.value,
       });
       const updatedRoom = sliceRoomsHandler(data);
@@ -176,18 +180,19 @@ export default function ListRoom({ room, filteredRooms }) {
                     </div>
 
                     {/* Show Detail Room about Resort + City if in Page Rooms */}
-
-                    <div className={classes["room__footer"]}>
-                      <p className={classes["footer__title"]}>
-                        <span className={classes["footer__title-resort"]}>
-                          {r.nameResort}
-                        </span>
-                        -
-                        <span className={classes["footer__title-city"]}>
-                          {r.nameCity}
-                        </span>
-                      </p>
-                    </div>
+                    {stateShowAddressDetail && (
+                      <div className={classes["room__footer"]}>
+                        <p className={classes["footer__title"]}>
+                          <span className={classes["footer__title-resort"]}>
+                            {r.nameResort}
+                          </span>
+                          -
+                          <span className={classes["footer__title-city"]}>
+                            {r.nameCity}
+                          </span>
+                        </p>
+                      </div>
+                    )}
                   </Col>
                 </Row>
               ))}
