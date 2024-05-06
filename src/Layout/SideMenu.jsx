@@ -43,16 +43,61 @@ const Container = () => {
         </p>
       </div>
       <div className={classes["menu__list"]}>
-        <ul>
-          <li onClick={() => navigateHandler("/")}>Home</li>
-          <li onClick={() => navigateHandler("/cities")}>Cities</li>
-          <li onClick={() => navigateHandler("/resorts")}>Resorts</li>
-          <li onClick={() => navigateHandler("/rooms")}>Rooms</li>
-          <li onClick={() => navigateHandler("/login")}>User</li>
-          <li onClick={() => navigateHandler("/cart")}>Cart</li>
-          <li onClick={() => navigateHandler("/checkout")}>Checkout</li>
-          <li onClick={() => navigateHandler("/")}>Contact</li>
-          <li onClick={() => navigateHandler("/")}>About me</li>
+        <ul className={classes["menu__list-flex"]}>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/")}
+          >
+            Home
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/cities")}
+          >
+            Cities
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/resorts")}
+          >
+            Resorts
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/rooms")}
+          >
+            Rooms
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/login")}
+          >
+            User
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/cart")}
+          >
+            Cart
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/checkout")}
+          >
+            Checkout
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/")}
+          >
+            Contact
+          </li>
+          <li
+            className={classes["menu__item"]}
+            onClick={() => navigateHandler("/")}
+          >
+            About me
+          </li>
         </ul>
       </div>
     </div>

@@ -1,3 +1,5 @@
+/* CSS: SideMenu  */
+
 .sideMenu__container {
     width: 100%;
     height: 100vh;
@@ -15,6 +17,8 @@
     object-fit: cover;
     filter: brightness(80%);
 }
+
+/* CSS: SideMenu - Header */
 
 .sideMenu__header {
     box-sizing: border-box;
@@ -42,6 +46,8 @@
     margin: 0 5px;
 }
 
+/* CSS: SideMenu - Menu */
+
 .menu__list {
     position: absolute;
     width: 70%;
@@ -49,20 +55,31 @@
     left: 15%;
 }
 
-.menu__list ul {
+.menu__list-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.menu__list ul li {
+.menu__item {
     cursor: pointer;
     font-family: "Playfair Display", serif;
     letter-spacing: 1px;
     color: #fff;
     font-size: 3rem;
     padding: 20px;
+}
+
+/* CSS: Active */
+@keyframes showSideMenu {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
 }
 
 /* Effect CSS */
@@ -78,14 +95,88 @@
     animation: showSideMenu ease-in-out 1s 1 forwards;
 }
 
-
-
-@keyframes showSideMenu {
-    0% {
-        left: -100%;
+/* Responsive */
+@media screen and (max-width: 575px) {
+    .menu__list {
+        top: 20%;
+        width: 90%;
+        left: 5%;
     }
 
-    100% {
-        left: 0;
+    .menu__list-flex {
+        justify-content: space-between
+    }
+
+    .menu__item {
+        text-align: center;
+        word-wrap: break-word;
+        padding: 0;
+        margin: 20px 5px;
+        width: 40%;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .menu__list {
+        top: 20%;
+        width: 80%;
+        left: 10%;
+    }
+
+    .menu__list-flex {
+        justify-content: space-between
+    }
+
+    .menu__item {
+        text-align: center;
+        word-wrap: break-word;
+        padding: 0;
+        margin: 20px 5px;
+        width: 40%;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .menu__list {
+        top: 25%;
+        width: 80%;
+        left: 10%;
+    }
+
+    .menu__list-flex {
+        justify-content: flex-start;
+    }
+
+    .menu__item {
+        text-align: center;
+        word-wrap: break-word;
+        padding: 0;
+        margin: 20px 0;
+        width: 30%;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .menu__list {
+        top: 20%;
+        width: 90%;
+        left: 10%;
+    }
+
+    .menu__list-flex {
+        justify-content: flex-start;
+        gap: 30px 0;
+    }
+
+    .menu__item {
+        text-align: center;
+        word-wrap: break-word;
+        padding: 0;
+        margin: 20px 5px;
+        width: 30%;
+        font-size: 3rem;
     }
 }

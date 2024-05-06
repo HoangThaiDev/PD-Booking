@@ -42,7 +42,7 @@
     color: white;
 }
 
-.navbar .menu__item .icon-menu {
+.icon-menu {
     font-size: 2rem;
     color: rgba(255, 255, 255, 0.912);
 }
@@ -203,6 +203,10 @@
     .menu__item a,
     .contact__item:not(:nth-child(4)) {
         display: none;
+    }
+
+    .icon-menu {
+        font-size: 1.7rem;
     }
 
     .logo__title {
