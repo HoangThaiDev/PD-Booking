@@ -1,3 +1,4 @@
+/* CSS: Header */
 .header {
     width: 100%;
     height: 700px;
@@ -11,33 +12,151 @@
     filter: brightness(60%);
 }
 
-
-.header-introduce {
+/* CSS: Header - Introduce*/
+.header__introduce {
     font-family: "Bodoni Moda", serif;
     position: absolute;
     top: 35%;
     left: 20%;
     color: white;
     width: 60%;
+    height: auto;
     text-align: center;
     z-index: 1;
 }
 
-.header-introduce .intro__title {
+.intro__title {
     font-weight: bold;
-    font-size: 2.2cm;
+    font-size: 5.2rem;
     letter-spacing: 2px;
     line-height: 100px;
-
 }
 
-.header-introduce .intro__content {
+.intro__content {
     font-size: 18px;
     margin-top: 20px;
     letter-spacing: 2px;
 }
 
+.introduce__footer {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* CSS: Active */
+.btn-booking {
+    display: none;
+    margin-top: 40px;
+    font-family: "Bodoni Moda", serif;
+    background-color: rgb(185, 157, 117);
+    color: white;
+    text-decoration: none;
+    width: 150px;
+    padding: 20px 0;
+    border-radius: 3px;
+}
+
 .header .menu__item .active {
     border-bottom: 2px solid white;
     padding-bottom: 3px;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width:575px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 25%;
+    }
+
+    .intro__title {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .btn-booking {
+        display: inline-block;
+    }
+
+    .formBooking {
+        display: none;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 30%;
+    }
+
+    .intro__title {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+    .btn-booking {
+        display: inline-block;
+        width: 200px;
+    }
+
+    .formBooking {
+        display: none;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 30%;
+    }
+
+    .intro__title {
+        font-size: 4.5rem;
+        line-height: 5rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 30%;
+    }
+
+    .intro__title {
+        font-size: 5rem;
+        line-height: 5.2rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        line-height: 2rem;
+        font-size: 1.5rem;
+    }
+
 }

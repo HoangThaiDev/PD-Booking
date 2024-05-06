@@ -12,10 +12,10 @@ export default function Home({ city, resort, room }) {
   return (
     <div className={classes.home}>
       <Header />
-      <About />
-      <City city={city} />
-      <Resort resort={resort} />
-      <Room room={room} />
+      {/* <About /> */}
+      {/* <City city={city} /> */}
+      {/* <Resort resort={resort} /> */}
+      {/* <Room room={room} /> */}
     </div>
   );
 }

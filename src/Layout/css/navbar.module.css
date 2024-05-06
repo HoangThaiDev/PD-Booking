@@ -139,6 +139,7 @@
 .navbar-nav-scroll {
     transition: 1s all ease;
     background-color: #66c8c9;
+    border-bottom: 0;
 }
 
 
@@ -210,13 +211,14 @@
     }
 
     .logo__title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         letter-spacing: 8px;
     }
 
     .logo__rating {
         position: relative;
         left: 0%;
+        font-size: 0.7rem;
     }
 
     .contact__list {

@@ -100,7 +100,7 @@ export default function FormBooking() {
           onSubmit={searchHotelHandler}
         >
           <Row className={classes["formBooking-row"]}>
-            <Col xl={6}>
+            <Col md={24} lg={24} xl={6}>
               <DatePicker.RangePicker
                 className="formBooking-date"
                 placeholder={["Check In", "Check Out"]}
@@ -182,7 +182,7 @@ export default function FormBooking() {
               )}
             </Col>
 
-            <Col xl={4} className={classes["formBooking-search"]}>
+            <Col className={classes["formBooking-search"]} md={24} xl={4}>
               <button type="submit" className={classes["btn-search"]}>
                 Check Availability
               </button>
