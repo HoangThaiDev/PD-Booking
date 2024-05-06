@@ -12,6 +12,7 @@ import { NavLink, Link } from "react-router-dom";
 import { VscMenu } from "react-icons/vsc";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosStar } from "react-icons/io";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
   // Create + use Hooks
@@ -47,7 +48,14 @@ export default function Navbar() {
     <div className={classes.navbar}>
       <div className={classes["navbar-nav"]} ref={navbarNavRef}>
         <Row className={classes["navbar__row"]}>
-          <Col className={`${classes["navbar__col"]} ${classes.menu}`} xl={8}>
+          <Col
+            className={`${classes["navbar__col"]} ${classes.menu}`}
+            xs={4}
+            sm={4}
+            md={6}
+            lg={8}
+            xl={8}
+          >
             <ul className={classes["menu__list"]}>
               <li className={classes["menu__item"]}>
                 <VscMenu
@@ -108,7 +116,14 @@ export default function Navbar() {
               <li className={classes["menu__item"]}>NEWS</li>
             </ul>
           </Col>
-          <Col className={`${classes["navbar__col"]} ${classes.logo}`} xl={4}>
+          <Col
+            className={`${classes["navbar__col"]} ${classes.logo}`}
+            xs={15}
+            sm={15}
+            md={10}
+            lg={7}
+            xl={5}
+          >
             <div className={classes["logo-container"]}>
               <h1 className={classes["logo__title"]}>PARADISE</h1>
               <span className={classes["logo__rating"]}>
@@ -132,6 +147,10 @@ export default function Navbar() {
           </Col>
           <Col
             className={`${classes["navbar__col"]} ${classes.contact}`}
+            xs={4}
+            sm={4}
+            md={6}
+            lg={8}
             xl={8}
           >
             <div className={classes["contact-container"]}>
@@ -142,7 +161,12 @@ export default function Navbar() {
                 <li className={classes["contact__item"]}>
                   Tel: +84 12 111 22 33
                 </li>
-                <Link className={classes["contact__item"]}>Book Now</Link>
+                <Link className={classes["contact__item"]} to="/rooms">
+                  Book Now
+                </Link>
+                <Link className={classes["contact__item"]}>
+                  <FaRegUserCircle className={classes["icon-user"]} />
+                </Link>
               </ul>
             </div>
           </Col>

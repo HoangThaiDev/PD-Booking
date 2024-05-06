@@ -1,4 +1,4 @@
-.navbar .navbar-nav {
+.navbar-nav {
     position: fixed;
     width: 100%;
     height: 60px;
@@ -7,27 +7,27 @@
     border-bottom: 1px solid rgba(232, 229, 229, 0.5);
     padding: 30px 0;
     z-index: 3;
+    background-color: red;
 }
 
-.navbar .navbar-nav-scroll {
-    transition: 1s all ease;
-    background-color: #66c8c9;
-}
+/* CSS: Row */
 
-.navbar .navbar-nav .navbar__row {
+.navbar__row {
     height: inherit;
     justify-content: space-around;
     align-items: center;
     padding: 0 20px;
 }
 
-.navbar .navbar__row .menu .menu__list {
+/* CSS: Col - Menu */
+
+.menu__list {
     height: inherit;
     display: flex;
     align-items: center;
 }
 
-.navbar .navbar__row .menu .menu__list .menu__item {
+.menu__item {
     font-family: "Playfair Display", serif;
     cursor: pointer;
     display: inline-block;
@@ -44,7 +44,7 @@
 
 .navbar .menu__item .icon-menu {
     font-size: 2rem;
-    color: rgba(255, 255, 255, 0.663);
+    color: rgba(255, 255, 255, 0.912);
 }
 
 .navbar .menu__item .icon-dropdown {
@@ -75,19 +75,21 @@
     line-height: 25px;
 }
 
-.navbar .logo .logo-container {
+/* CSS: Col - Logo */
+
+.logo-container {
     text-align: center;
     position: relative;
 }
 
-.navbar .logo .logo-container .logo__title {
+.logo__title {
     font-family: "Lora", serif;
     letter-spacing: 10px;
     font-size: 2rem;
 
 }
 
-.navbar .logo .logo-container .logo__rating {
+.logo__rating {
     display: inline-block;
     color: #f3ab48ed;
     position: absolute;
@@ -95,15 +97,23 @@
     bottom: -60%;
 }
 
-.navbar .logo .logo-container .logo__rating .icon-star {
+.icon-star {
     margin: 0 3px;
 }
 
-.navbar .contact .contact-container {
+/* CSS: Col - Contact */
+
+.contact-container {
     text-align: right;
 }
 
-.navbar .contact__list .contact__item {
+.contact__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.contact__item {
     font-family: "Playfair Display", serif;
     display: inline-block;
     cursor: pointer;
@@ -111,52 +121,24 @@
     color: white;
 }
 
-.navbar .contact__item:nth-child(3) {
+.contact__item:nth-child(3) {
     border: 1px solid white;
-    padding: 15px 30px;
+    padding: 15px 25px;
     letter-spacing: 1px;
     border-radius: 3px;
 }
 
-/* Effect CSS */
 
-.navbar .menu__item:hover,
-.navbar .menu__item .icon-menu:hover {
-    transition: 0.5s all ease;
-    color: rgb(252, 142, 87);
-}
-
-.navbar .contact__item:nth-child(3):hover {
-    transition: 0.5s all ease;
-    background-color: rgb(248, 115, 48);
-    border: 1px solid transparent;
-}
-
-.navbar .menu__item:nth-child(3):hover .menu-dropdown,
-.navbar .menu__item:nth-child(4):hover .menu-dropdown {
-    animation: showMenuDropdown 0.5s 1 forwards;
-    transition: 0.7s all ease;
-    color: white;
-    display: block;
+/* CSS: Icon */
+.contact__item:nth-child(4) {
+    display: none;
 }
 
 
-
-.navbar .menu-dropdown__item:hover {
-    transition: 0.3s all ease;
-    color: rgb(248, 115, 48);
-}
-
-.navbar .navbar-nav-scroll .menu__item:hover,
-.navbar .navbar-nav-scroll .menu__item .icon-menu:hover {
-    color: rgb(82, 81, 81);
-    transition: 0.3s all ease;
-}
-
-.navbar .navbar-nav-scroll .contact__item:nth-child(3):hover {
-    transition: 0.5s all ease;
-    background-color: rgb(82, 81, 81);
-    border: 1px solid transparent;
+/* CSS: Active */
+.navbar-nav-scroll {
+    transition: 1s all ease;
+    background-color: #66c8c9;
 }
 
 
@@ -169,5 +151,177 @@
     100% {
         opacity: 1;
         top: 30px;
+    }
+}
+
+/* Effect CSS */
+
+.menu__item:hover,
+.menu__item .icon-menu:hover {
+    transition: 0.5s all ease;
+    color: rgb(252, 142, 87);
+}
+
+.contact__item:nth-child(3):hover {
+    transition: 0.5s all ease;
+    background-color: rgb(248, 115, 48);
+    border: 1px solid transparent;
+}
+
+.menu__item:nth-child(3):hover .menu-dropdown,
+.menu__item:nth-child(4):hover .menu-dropdown {
+    animation: showMenuDropdown 0.5s 1 forwards;
+    transition: 0.7s all ease;
+    color: white;
+    display: block;
+}
+
+.menu-dropdown__item:hover {
+    transition: 0.3s all ease;
+    color: rgb(248, 115, 48);
+}
+
+.navbar-nav-scroll .menu__item:hover,
+.navbar-nav-scroll .menu__item .icon-menu:hover {
+    color: rgb(82, 81, 81);
+    transition: 0.3s all ease;
+}
+
+.navbar-nav-scroll .contact__item:nth-child(3):hover {
+    transition: 0.5s all ease;
+    background-color: rgb(82, 81, 81);
+    border: 1px solid transparent;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .navbar__row {
+        padding: 0 10px;
+    }
+
+    .menu__item:not(:first-child),
+    .menu__item a,
+    .contact__item:not(:nth-child(4)) {
+        display: none;
+    }
+
+    .logo__title {
+        font-size: 1.3rem;
+        letter-spacing: 8px;
+    }
+
+    .logo__rating {
+        position: relative;
+        left: 0%;
+    }
+
+    .contact__list {
+        justify-content: flex-end;
+    }
+
+    .contact__item:nth-child(4) {
+        display: block;
+        color: rgba(255, 255, 255, 0.912);
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .navbar__row {
+        padding: 0 20px;
+    }
+
+    .menu__item:not(:first-child),
+    .menu__item a,
+    .contact__item:not(:nth-child(4)) {
+        display: none;
+    }
+
+    .logo__title {
+        font-size: 1.5rem;
+        letter-spacing: 8px;
+    }
+
+    .logo__rating {
+        position: relative;
+        left: 0%;
+    }
+
+    .contact__list {
+        justify-content: flex-end;
+    }
+
+    .contact__item:nth-child(4) {
+        display: block;
+        color: rgba(255, 255, 255, 0.912);
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    .menu__item:not(:first-child),
+    .menu__item a,
+    .contact__item:not(:nth-child(4)):not(:nth-child(3)) {
+        display: none;
+    }
+
+    .contact__list {
+        justify-content: flex-end;
+    }
+
+    .contact__item:nth-child(4) {
+        order: 3;
+        display: block;
+    }
+
+    .contact__item:nth-child(3) {
+        order: 4;
+        padding: 15px 20px;
+    }
+
+    .logo__rating {
+        position: relative;
+        left: 0%;
+    }
+
+    .icon-user {
+        display: block;
+        color: rgba(255, 255, 255, 0.912);
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1190px) {
+
+    .menu__item:not(:first-child),
+    .menu__item a,
+    .contact__item:not(:nth-child(4)):not(:nth-child(3)) {
+        display: none;
+    }
+
+    .contact__list {
+        justify-content: flex-end;
+    }
+
+    .contact__item:nth-child(4) {
+        order: 3;
+        display: block;
+    }
+
+    .contact__item:nth-child(3) {
+        order: 4;
+    }
+
+    .logo__rating {
+        position: relative;
+        left: 0%;
+    }
+
+    .icon-user {
+        display: block;
+        color: rgba(255, 255, 255, 0.912);
+        font-size: 1.5rem;
     }
 }

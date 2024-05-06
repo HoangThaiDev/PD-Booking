@@ -11,9 +11,9 @@ export default function RootLayout() {
   return (
     <div className="rootLayout">
       <Navbar />
-      <Outlet />
-      <MailList />
-      <Footer />
+      {/* <Outlet /> */}
+      {/* <MailList /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
