@@ -2,12 +2,15 @@
     background-color: #FFFF;
 }
 
-.slide .slider-container {
+/* CSS: slider Container */
+.slide .slider__container {
     margin: 75px auto;
     padding: 50px 0;
     width: 90%;
     text-align: center;
 }
+
+/* CSS: Slider Slick Custommize */
 
 .slide .slide-image__list {
     width: 95% !important;
@@ -41,7 +44,7 @@
     left: -10px;
 }
 
-.slide .slide-content {
+.slide .slide__content {
     font-family: "EB Garamond", serif;
     margin: 30px 0 0 20px;
     font-size: 24px;
@@ -69,4 +72,36 @@
 
 .slide .slick-prev::before {
     content: '\21BC';
+}
+
+/* Responsive */
+
+@media screen and (max-width:575px) {
+    .slide .slide__content {
+        font-size: 1rem;
+        margin: 30px 0;
+        width: 80%;
+        line-height: 20px;
+        transform: translateX(10%);
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .slide .slide__content {
+        font-size: 1.2rem;
+        margin: 30px 0;
+        width: 80%;
+        line-height: 20px;
+        transform: translateX(10%);
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .slide .slide__content {
+        font-size: 1.5rem;
+        margin: 30px 0;
+        width: 80%;
+        line-height: 30px;
+        transform: translateX(10%);
+    }
 }

@@ -36,16 +36,46 @@ export default function SlideImage({ images }) {
     rtl: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="slide">
-      <div className="slider-container">
+      <div className="slider__container">
         <Slider {...settings}>
           {images.map((img, i) => (
             <CustomSlide index={img} key={i} />
           ))}
         </Slider>
-        <p className="slide-content">
+        <p className="slide__content">
           Inspired by our history, surrounded by nature and designed to offer a
           different experience
         </p>

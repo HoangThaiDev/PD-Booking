@@ -1,40 +1,143 @@
 .about {
+    width: 100%;
     padding-top: 10%;
 }
 
-.about .about-container {
+/* CSS: About Container */
+.about__container {
     text-align: center;
     width: 900px;
     margin: 0 auto;
 }
 
-.about .about-container img {
+.about__container>img {
     width: 70px;
 }
 
-.about .about-container .about__content {
+/* CSS: About Content */
+.about__content {
     font-family: "Bodoni Moda", serif;
     font-size: 14px;
     margin-top: 20px;
     color: rgb(83, 98, 78);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: 600;
 }
 
-.about .about__title {
+.about__title {
     font-family: "Lora", serif;
     margin: 30px 0;
     font-size: 4rem;
 }
 
-.about .about__desc {
+.about__desc {
     font-family: "EB Garamond", serif;
     color: rgb(79, 103, 71);
     letter-spacing: 1px;
     line-height: 30px;
+    font-size: 1.2rem;
 }
 
-.about .about-video {
-    padding: 10% 0;
-    width: 100%;
+/* Responsive */
+@media screen and (max-width:575px) {
+    .about__container {
+        width: 80%;
+    }
+
+    .about__container>img {
+        width: 20%;
+    }
+
+    .about__content {
+        font-size: 12px;
+    }
+
+    .about__title {
+        font-size: 2rem;
+    }
+
+    .about__desc {
+        letter-spacing: 1px;
+        line-height: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .about__container {
+        width: 80%;
+    }
+
+    .about__container>img {
+        width: 10%;
+    }
+
+    .about__content {
+        font-size: 12px;
+    }
+
+    .about__title {
+        font-size: 2.2rem;
+    }
+
+    .about__desc {
+        letter-spacing: 1px;
+        line-height: 30px;
+
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .about {
+        padding-top: 25%;
+    }
+
+    .about__container {
+        width: 80%;
+    }
+
+    .about__container>img {
+        width: 10%;
+    }
+
+    .about__content {
+        font-size: 13px;
+    }
+
+    .about__title {
+        font-size: 2.5rem;
+    }
+
+    .about__desc {
+        letter-spacing: 1px;
+        line-height: 30px;
+
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .about {
+        padding-top: 25%;
+    }
+
+    .about__container {
+        width: 80%;
+    }
+
+    .about__container>img {
+        width: 10%;
+    }
+
+    .about__content {
+        font-size: 14px;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    .about__desc {
+        letter-spacing: 1px;
+        line-height: 30px;
+    }
 }

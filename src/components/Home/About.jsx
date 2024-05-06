@@ -16,7 +16,7 @@ export default function About() {
   const dataImagesBackground = [image1, image2, image3, image4];
   return (
     <div className={classes.about}>
-      <div className={classes["about-container"]}>
+      <div className={classes["about__container"]}>
         <img src={logoHotel} alt="logo" />
         <p className={classes["about__content"]}>WELCOME TO PARADISE SYSTEM</p>
         <h1 className={classes["about__title"]}>
