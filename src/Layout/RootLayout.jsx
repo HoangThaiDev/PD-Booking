@@ -12,7 +12,7 @@ export default function RootLayout() {
     <div className="rootLayout">
       <Navbar />
       {/* <Outlet /> */}
-      {/* <MailList /> */}
+      <MailList />
       {/* <Footer /> */}
     </div>
   );

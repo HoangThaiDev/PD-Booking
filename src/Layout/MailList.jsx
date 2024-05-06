@@ -13,15 +13,15 @@ export default function MailList() {
     <div className={classes.mailList}>
       <div className={classes["mailList__container"]}>
         <Row className={classes["mailList__row"]}>
-          <Col className={classes["mailList__col"]} xl={10}>
+          <Col className={classes["mailList__col"]} xs={24} xl={10}>
             <p>STAY TUNED WITH PARADISE</p>
             <h1>
               Sign up for our newsletter to receive our news, deals and special
               offers.
             </h1>
           </Col>
-          <Col className={classes["mailList__col"]} xl={12}>
-            <form>
+          <Col className={classes["mailList__col"]} xs={24} xl={12}>
+            <form className={classes.form}>
               <div className={classes["form-input"]}>
                 <input
                   className={classes["input-email"]}
@@ -33,7 +33,7 @@ export default function MailList() {
                   <SiMinutemailer className={classes.icon} />
                 </button>
               </div>
-              <div>
+              <div className={classes["form-input"]}>
                 <input
                   className={classes["input-checkbox"]}
                   type="checkbox"
