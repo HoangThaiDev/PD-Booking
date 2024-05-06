@@ -17,25 +17,53 @@ export default function Footer() {
     <div className={classes.footer}>
       <div className={classes["footer__container"]}>
         <Row className={classes["footer__row"]}>
-          <Col className={classes["footer__col"]} xl={6}>
+          <Col
+            className={classes["footer__col"]}
+            xs={24}
+            sm={24}
+            md={12}
+            lg={6}
+            xl={6}
+          >
             <div className={classes.card}>
               <span className={classes["card-title"]}>ADDRESS</span>
               <p className={classes["card-content"]}>P11, Q11, TP.HCM</p>
             </div>
           </Col>
-          <Col className={classes["footer__col"]} xl={6}>
+          <Col
+            className={classes["footer__col"]}
+            xs={24}
+            sm={24}
+            md={12}
+            lg={6}
+            xl={6}
+          >
             <div className={classes.card}>
               <span className={classes["card-title"]}>PHONE</span>
               <p className={classes["card-content"]}>+84 22 345 67 88</p>
             </div>
           </Col>
-          <Col className={classes["footer__col"]} xl={6}>
+          <Col
+            className={classes["footer__col"]}
+            xs={24}
+            sm={24}
+            md={12}
+            lg={6}
+            xl={6}
+          >
             <div className={classes.card}>
               <span className={classes["card-title"]}>EMAIL</span>
               <p className={classes["card-content"]}>thain4268@gmail.com</p>
             </div>
           </Col>
-          <Col className={classes["footer__col"]} xl={6}>
+          <Col
+            className={classes["footer__col"]}
+            xs={24}
+            sm={24}
+            md={12}
+            lg={6}
+            xl={6}
+          >
             <div className={classes.card}>
               <span className={classes["card-title"]}>SOCIAL</span>
               <div className={classes["card-socials"]}>

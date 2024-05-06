@@ -3,23 +3,31 @@
     width: 100%;
 }
 
-.footer .footer__row {
+/* CSS: Footer - Row */
+
+.footer__row {
     text-align: center;
     color: white;
+    flex-wrap: wrap;
 }
 
-.footer .footer__col {
+/* CSS: Footer - Col */
+
+.footer__col {
     height: inherit;
-    border: 1px solid rgb(86, 84, 84);
+    border: 1px solid rgba(143, 143, 143, 0.2);
 }
 
-.footer .card {
+
+/* CSS: Footer - Card */
+
+.card {
     padding: 40px 35px;
     letter-spacing: 1px;
 }
 
 
-.footer .card-title {
+.card-title {
     color: rgb(239, 184, 108);
     display: inline-block;
     font-family: "Playfair Display", serif;
@@ -43,8 +51,9 @@
     cursor: pointer;
 }
 
+/* CSS: Footer - Content */
 .footer .content-wrapper {
-    text-align: right;
+    text-align: center;
     color: white;
     padding: 50px;
 }
@@ -62,4 +71,35 @@
 .footer .content-wrapper span:hover {
     transition: 0.3s all ease;
     color: rgb(239, 184, 108);
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .footer .content-wrapper {
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .footer .content-wrapper {
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .footer .content-wrapper {
+        padding: 50px 20px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .footer .content-wrapper {
+        padding: 50px 20px;
+    }
 }
