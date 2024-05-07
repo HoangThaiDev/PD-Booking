@@ -16,7 +16,7 @@
 }
 
 .btn-home.scroll {
-    background-color: white;
+    background-color: transparent;
     z-index: 3;
 }
 
@@ -34,4 +34,17 @@
 
 .btn-home:hover span {
     color: white;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .btn-home {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-home span {
+        top: 0px;
+        left: 12px;
+    }
 }

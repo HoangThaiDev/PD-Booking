@@ -8,7 +8,7 @@ import { Row, Col } from "antd";
 
 export default function Resort({ resort }) {
   // Create + use Hooks
-  const sliceResort = useMemo(() => resort.slice(0, 3), [resort]);
+  const sliceResort = useMemo(() => resort.slice(0, 4), [resort]);
   const navigate = useNavigate();
 
   // Create + use event Handlers
@@ -20,13 +20,27 @@ export default function Resort({ resort }) {
 
   return (
     <div className={classes.resort}>
-      <div className={classes["resort-container"]}>
-        <div className={classes["resort-header"]}>
-          <Row className={classes["resort-header__row"]}>
-            <Col className={classes["resort-header__col"]} xl={10}>
+      <div className={classes["resort__container"]}>
+        <div className={classes["resort__header"]}>
+          <Row className={classes["resort__row"]}>
+            <Col
+              className={classes["resort__col"]}
+              xs={24}
+              sm={24}
+              md={10}
+              lg={10}
+              xl={10}
+            >
               <h1>The Resorts</h1>
             </Col>
-            <Col className={classes["resort-header__col"]} xl={10}>
+            <Col
+              className={classes["resort__col"]}
+              xs={24}
+              sm={24}
+              md={10}
+              lg={10}
+              xl={10}
+            >
               <Link to="resorts">Discover All Resorts</Link>
             </Col>
           </Row>
@@ -34,20 +48,34 @@ export default function Resort({ resort }) {
         <div>
           {sliceResort.map((r) => (
             <Row className={classes["resort__list"]} key={r._id}>
-              <Col className={classes["resort__item"]} xl={12}>
+              <Col
+                className={classes["resort__item"]}
+                xs={24}
+                sm={24}
+                md={24}
+                lg={13}
+                xl={12}
+              >
                 <img
                   className={classes["resort__item-img"]}
                   src={r.banner}
                   alt={r.banner}
                 />
               </Col>
-              <Col className={classes["resort__item"]} xl={11}>
+              <Col
+                className={classes["resort__item"]}
+                xs={24}
+                sm={24}
+                md={24}
+                lg={10}
+                xl={11}
+              >
                 <div className={classes["resort__item-card"]}>
                   <p>A short Introduce Resort</p>
-                  <h1 className={classes["card-title"]}>{r.name}</h1>
-                  <p className={classes["card-desc"]}>{r.desc}</p>
+                  <h1 className={classes["card__title"]}>{r.name}</h1>
+                  <p className={classes["card__desc"]}>{r.desc}</p>
                   <button
-                    className={classes["card-link"]}
+                    className={classes["card__link"]}
                     onClick={() => navigateResortDetailHandler(r._id, r.name)}
                   >
                     Resort Detail

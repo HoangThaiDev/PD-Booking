@@ -1,14 +1,11 @@
-.city .city-container {
+/* CSS: City Container */
+.city__container {
     width: 90%;
     margin: 0 auto;
     padding-bottom: 50px;
 }
 
-.city .city-header__row {
-    justify-content: space-between;
-}
-
-.city .city-header>p {
+.city__header>p {
     font-family: "Playfair Display", serif;
     letter-spacing: 1px;
     font-size: 14px;
@@ -17,7 +14,13 @@
     font-weight: 600;
 }
 
-.city .city-header__col>h1 {
+/* CSS: City Row */
+
+.city__header__row {
+    justify-content: space-between;
+}
+
+.city__header__col>h1 {
     font-family: "Bodoni Moda", serif;
     letter-spacing: 1px;
     font-size: 3rem;
@@ -25,7 +28,7 @@
 
 }
 
-.city .city-header__col>a {
+.city__header__col>a {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     background-color: #AB916C;
@@ -38,67 +41,71 @@
     border: 2px solid transparent;
 }
 
-.city .city-header__col:nth-child(2) {
+.city__header__col:nth-child(2) {
     text-align: right;
 }
 
-.city .city-slide {
-    width: 100%;
+
+/* CSS: City Flex */
+.city-slide {
+    position: relative;
 }
 
-.city .city-flex {
+.city-flex {
     margin-top: 5%;
 }
 
-.city .city-flex-row .flex-container {
-    display: flex;
+.city__row-flex {
+    display: flex !important;
     justify-content: space-between;
 }
 
-.city .city-flex-row .city-flex-col {
+.city__col-flex {
     position: relative;
     width: 100%;
 }
 
-.city .city-flex-row .city-flex-col:nth-child(2) {
+/* CSS: City Col 2 */
+.city__col-flex:nth-child(2) {
     border-right: 5px solid #AB916C;
     padding: 0 20px 20px 0;
     border-top-right-radius: 20%;
     border-bottom-right-radius: 10%;
 }
 
-.city .city__img {
+.city__img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     box-shadow: 0 0 30px 5px rgba(62, 62, 62, 0.2), 0 0 20px 5px rgba(215, 159, 99, 0.2);
 }
 
-.city .city__title {
+.city__title {
     font-family: "Lora", serif;
     font-size: 2rem;
     letter-spacing: 1px;
     color: #585858;
 }
 
-.city .city__activities {
+/* CSS: City Acitivites */
+.city__activities {
     display: flex;
     margin: 20px 0;
 }
 
-.city .city__activities img {
+.city__activities img {
     width: 35px;
     margin-right: 30px;
 }
 
-.city .city__desc {
+.city__desc {
     font-family: "Roboto", sans-serif;
     line-height: 25px;
     letter-spacing: 1px;
     color: #585858;
 }
 
-.city .city__link {
+.city__link {
     cursor: pointer;
     border: 0;
     padding: 0;
@@ -111,7 +118,7 @@
     letter-spacing: 1px;
 }
 
-.city .city__link::after {
+.city__link::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -122,7 +129,7 @@
 }
 
 
-.city .city__link::before {
+.city__link::before {
     content: '\203A';
     position: absolute;
     right: -15px;
@@ -132,26 +139,26 @@
     font-weight: bold;
 }
 
+
+/* CSS: Icon */
 .city-icon {
     border: 1px solid #AB916C;
     border-radius: 100%;
     padding: 10px;
     top: 85%;
+    background: transparent;
 }
 
 .city-icon-next {
     position: absolute;
-
     left: 80rem;
 }
 
 .city-icon-prev {
     position: absolute;
-
     left: 76rem;
     z-index: 2;
 }
-
 
 .city-icon-prev::before,
 .city-icon-next::before {
@@ -175,24 +182,295 @@
 
 /* Effect CSS */
 
-.city .city__title:hover {
+.city__title:hover {
     opacity: 0.8;
 }
 
-.city .city__link:hover::after {
+.city__link:hover::after {
     transition: 0.5s all ease;
     width: 0;
 }
 
-.city .city__link:hover::before {
+.city__link:hover::before {
     transition: 0.5s all ease;
     right: -20px;
 }
 
-.city .city-header__col>a:hover {
+.city__header__col>a:hover {
     background-color: #fff;
     color: #AB916C;
     border: 2px solid #AB916C;
     border-radius: 5px;
     transition: 0.3s all ease;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .city__container {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .city__header>p {
+        line-height: 1.5rem;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .city__header__row {
+        gap: 30px 0;
+    }
+
+    .city__header__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+    }
+
+    .city__header__col:nth-child(2) {
+        text-align: center;
+    }
+
+    .city__header__col:nth-child(2)>a {
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .city-flex {
+        margin-top: 3rem;
+        padding-bottom: 20px;
+    }
+
+    /* Icon Arrow */
+    .city-icon-next {
+        position: absolute;
+        left: 3.5rem;
+        top: 1.5rem;
+        background-color: transparent !important;
+        border-color: #fff;
+    }
+
+    .city-icon-prev {
+        position: absolute;
+        left: 0.5rem;
+        top: 1.5rem;
+        background-color: transparent !important;
+        border-color: #fff;
+    }
+
+    .city-icon-prev::before,
+    .city-icon-next::before {
+        color: #fff !important;
+    }
+
+    /* CSS: City Col Content */
+    .city__col-flex:nth-child(2) {
+        position: relative;
+        border: 0;
+        padding: 0;
+        margin-top: 10%;
+    }
+
+    .city__activities {
+        justify-content: center;
+        gap: 0 40px;
+    }
+
+    .city__activities img {
+        margin: 0;
+    }
+
+    .city__desc {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .city__link {
+        margin-top: 5%;
+        top: -5px;
+
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .city__container {
+        text-align: center;
+    }
+
+    .city__header>p {
+        line-height: 1.5rem;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .city__header__row {
+        gap: 30px 0;
+    }
+
+    .city__header__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+    }
+
+    .city__header__col:nth-child(2) {
+        text-align: center;
+    }
+
+    .city__header__col:nth-child(2)>a {
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .city-flex {
+        margin-top: 3rem;
+        padding-bottom: 20px;
+    }
+
+    /* Icon Arrow */
+    .city-icon-next {
+        position: absolute;
+        left: 3.5rem;
+        top: 1.5rem;
+        background-color: transparent !important;
+        border-color: #fff;
+    }
+
+    .city-icon-prev {
+        position: absolute;
+        left: 0.5rem;
+        top: 1.5rem;
+        background-color: transparent !important;
+        border-color: #fff;
+    }
+
+    .city-icon-prev::before,
+    .city-icon-next::before {
+        color: #fff !important;
+    }
+
+    /* CSS: City Col Content */
+    .city__col-flex:nth-child(2) {
+        position: relative;
+        border: 0;
+        padding: 0;
+        margin-top: 10%;
+    }
+
+    .city__activities {
+        justify-content: center;
+        gap: 0 40px;
+    }
+
+    .city__activities img {
+        margin: 0;
+    }
+
+    .city__desc {
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .city__link {
+        margin-top: 5%;
+        top: -5px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .city__header>p {
+        line-height: 1.5rem;
+        font-size: 0.8rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .city__header__row {
+        gap: 30px 0;
+    }
+
+    .city__header__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+    }
+
+    .city__header__col:nth-child(2)>a {
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .city-flex {
+        margin-top: 3rem;
+        padding-bottom: 20px;
+    }
+
+    /* Icon Arrow */
+    .city-icon-next {
+        position: absolute;
+        left: 3.5rem;
+        top: 1.5rem;
+        background-color: transparent !important;
+        border-color: #fff;
+    }
+
+    .city-icon-prev {
+        position: absolute;
+        left: 0.5rem;
+        top: 1.5rem;
+        background-color: transparent !important;
+        border-color: #fff;
+    }
+
+    .city-icon-prev::before,
+    .city-icon-next::before {
+        color: #fff !important;
+    }
+
+    /* CSS: City Col Content */
+    .city__col-flex:nth-child(2) {
+        position: relative;
+        border: 0;
+        padding: 0;
+        margin-top: 10%;
+    }
+
+    .city__activities {
+        justify-content: center;
+        gap: 0 40px;
+    }
+
+    .city__activities img {
+        margin: 0;
+    }
+
+    .city__title {
+        display: block;
+        text-align: center;
+    }
+
+    .city__desc {
+        text-align: left;
+    }
+
+    .city__link {
+        margin-top: 5%;
+        top: -5px;
+        left: 0;
+        display: block;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .city__row-flex {
+        margin-bottom: 20px;
+    }
+
+    .city__col-flex:nth-child(2) {
+        border: 0;
+        padding: 0;
+    }
+
+    .city__desc {
+        font-size: 0.8rem;
+    }
+
+    .city__link {
+        margin-top: 3%;
+        top: -5px;
+        left: 0;
+    }
 }

@@ -2,17 +2,19 @@
     margin-bottom: 5%;
 }
 
-.room .room-container {
+/* CSS: Container */
+.room__container {
     width: 90%;
     margin: auto;
     padding: 50px 0 100px 0;
 }
 
-.room .room-header__row {
+/* CSS: Row */
+.room__row {
     justify-content: space-between;
 }
 
-.room .room-header>p {
+.room__header>p {
     font-family: "Playfair Display", serif;
     letter-spacing: 1px;
     font-size: 14px;
@@ -21,14 +23,14 @@
     font-weight: 600;
 }
 
-.room .room-header__col>h1 {
+.room__col:nth-child(1)>h1 {
     font-family: "Bodoni Moda", serif;
     letter-spacing: 1px;
     font-size: 3rem;
     color: rgb(71, 70, 70);
 }
 
-.room .room-header__col>a {
+.room__col:nth-child(2)>a {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     background-color: #AB916C;
@@ -41,38 +43,41 @@
     border: 2px solid transparent;
 }
 
-.room .room-header__col:nth-child(2) {
+.room__header .room__col:nth-child(2) {
     text-align: right;
 }
 
-.room .room-flex {
+/* CSS: room Flex */
+.room__flex {
     margin-top: 5%;
 }
 
-.room .room-row {
+
+/* CSS: room flex row */
+.room__row {
     justify-content: space-between;
 }
 
-
-.room .room-col {
+/* CSS: room flex col */
+.room__flex .room__col {
     position: relative;
     width: 31%;
 }
 
-.room .room-img {
+.room__img {
     width: 100%;
     height: 400px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-.room .room-card {
+.room__card {
     position: relative;
     padding: 20px 0;
     color: #333632;
 }
 
-.room .room-card-name {
+.room__card-name {
     cursor: pointer;
     font-family: "Lora", serif;
     font-size: 1.5rem;
@@ -80,38 +85,49 @@
     margin-bottom: 15px;
 }
 
-.room .room-card-notes {
+.room__card-notes {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.room .room-card-notes>p {
-    font-family: "Roboto", sans-serif;
-    color: #927646;
-    font-size: 14px;
+.room__card-notes .note-flex {
+    display: flex;
+    gap: 0 5px;
+    align-items: center;
 }
 
-.room .room-card-notes>p .icon {
+.room__card-notes .note-flex>p {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    top: 3px;
+    color: #927646;
+    font-size: 0.8rem;
+}
+
+.room__card-notes .note-flex>.icon {
+    color: #927646;
     position: relative;
     top: 2px;
     margin-right: 7px;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
-.room .room-card-desc {
+.room__card-desc {
     font-family: "Roboto", sans-serif;
     margin: 20px 0;
     line-height: 25px;
     font-size: 16px;
 }
 
-.room .room-col div:nth-child(3) {
+/* CSS: room footer */
+.room__footer {
     position: absolute;
     bottom: 0;
 }
 
-.room .room-link {
+.room__link {
+    cursor: pointer;
     border: 0;
     padding: 0;
     position: relative;
@@ -121,7 +137,7 @@
     letter-spacing: 1px;
 }
 
-.room .room-link::after {
+.room__link::after {
     content: '';
     position: absolute;
     bottom: -8px;
@@ -132,7 +148,7 @@
 }
 
 
-.room .room-link::before {
+.room__link::before {
     content: '\203A';
     position: absolute;
     right: -15px;
@@ -143,17 +159,17 @@
 }
 
 /* Effect CSS */
-.room .room-card-name:hover {
+.room__card-name:hover {
     transition: 0.3s all ease;
     opacity: 0.7;
 }
 
-.room .room-img:hover {
+.room__img:hover {
     cursor: pointer;
     opacity: 0.9;
 }
 
-.room .room-header__col>a:hover {
+.room__col>a:hover {
     background-color: #fff;
     color: #AB916C;
     border: 2px solid #AB916C;
@@ -161,12 +177,257 @@
     transition: 0.3s all ease;
 }
 
-.room .room-link:hover::after {
+.room__link:hover::after {
     transition: 0.5s all ease;
     width: 0;
 }
 
-.room .room-link:hover::before {
+.room__link:hover::before {
     transition: 0.5s all ease;
     right: -20px;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .room__row {
+        gap: 20px 0;
+        margin-bottom: 2rem;
+    }
+
+    .room__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .room__col:nth-child(2)>a {
+        margin: 0 auto;
+        width: 200px;
+        font-size: 1rem;
+        display: block;
+    }
+
+    .room__flex .room__col {
+        position: relative;
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    .room__img {
+        width: 100%;
+        height: 250px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .room__card-name {
+        font-size: 1.3rem;
+    }
+
+    .room__card-notes .note-flex {
+        gap: 0 1px;
+    }
+
+    .room__card-notes .note-flex>p {
+        font-size: 0.8rem;
+    }
+
+    .room__card-notes .note-flex>.icon {
+        color: #927646;
+        position: relative;
+        top: 2px;
+        margin-right: 7px;
+        font-size: 0.8rem;
+    }
+
+    .room__card-desc {
+        font-size: 0.9rem;
+    }
+
+    .room__footer {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .room__row {
+        gap: 20px 0;
+        margin-bottom: 2rem;
+    }
+
+    .room__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .room__col:nth-child(2)>a {
+        margin: 0 auto;
+        width: 200px;
+        font-size: 1rem;
+        display: block;
+    }
+
+    .room__flex .room__col {
+        position: relative;
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    .room__img {
+        width: 100%;
+        height: 350px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .room__card-name {
+        font-size: 1.4rem;
+    }
+
+    .room__card-notes .note-flex {
+        gap: 0 1px;
+    }
+
+    .room__card-notes .note-flex>p {
+        font-size: 0.9rem;
+    }
+
+    .room__card-notes .note-flex>.icon {
+        color: #927646;
+        position: relative;
+        top: 2px;
+        margin-right: 7px;
+        font-size: 1rem;
+    }
+
+    .room__card-desc {
+        font-size: 0.9rem;
+    }
+
+    .room__footer {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .room__row {
+        gap: 20px 0;
+        margin-bottom: 2rem;
+    }
+
+    .room__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .room__col:nth-child(2)>a {
+        margin: 0 auto;
+        width: 200px;
+        font-size: 1rem;
+        display: block;
+    }
+
+    .room__flex .room__col {
+        position: relative;
+        width: 49%;
+        margin: 30px 0;
+    }
+
+    .room__img {
+        width: 100%;
+        height: 350px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .room__card-name {
+        font-size: 1.2rem;
+    }
+
+    .room__card-notes .note-flex {
+        gap: 0 1px;
+    }
+
+    .room__card-notes .note-flex>p {
+        font-size: 0.8rem;
+    }
+
+    .room__card-notes .note-flex>.icon {
+        color: #927646;
+        position: relative;
+        top: 2px;
+        margin-right: 7px;
+        font-size: 0.8rem;
+    }
+
+    .room__card-desc {
+        font-size: 0.9rem;
+    }
+
+    .room__footer {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .room__row {
+        gap: 20px 0;
+        margin-bottom: 2rem;
+    }
+
+    .room__col:nth-child(1)>h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .room__col:nth-child(2)>a {
+        margin: 0 auto;
+        width: 200px;
+        font-size: 1rem;
+        display: block;
+    }
+
+    .room__flex .room__col {
+        position: relative;
+        width: 49%;
+        margin: 30px 0;
+    }
+
+    .room__img {
+        width: 100%;
+        height: 350px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .room__card-name {
+        font-size: 1.2rem;
+    }
+
+    .room__card-notes .note-flex {
+        gap: 0 1px;
+    }
+
+    .room__card-notes .note-flex>p {
+        font-size: 0.9rem;
+    }
+
+    .room__card-notes .note-flex>.icon {
+        color: #927646;
+        position: relative;
+        top: 2px;
+        margin-right: 7px;
+        font-size: 0.9rem;
+    }
+
+    .room__card-desc {
+        font-size: 0.9rem;
+    }
+
+    .room__footer {
+        width: 100%;
+        text-align: center;
+    }
 }

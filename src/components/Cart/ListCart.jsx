@@ -7,7 +7,6 @@ import { Row, Col } from "antd";
 import ItemCart from "./ItemCart";
 
 export default function ListCart({ cartUser }) {
-  console.log(cartUser);
   // Create + use Hooks
   const totalCarts = useMemo(() => {
     const totalPrice = cartUser.items.reduce((a, c) => {
