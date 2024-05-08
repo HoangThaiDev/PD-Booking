@@ -2,6 +2,7 @@
     padding-bottom: 5%;
 }
 
+/* CSS: Container */
 .cities__container {
     width: 90%;
     margin: 0 auto;
@@ -38,18 +39,20 @@
     right: 0;
 }
 
+/* CSS: Options */
 .cities__options {
     justify-content: space-between;
     align-items: center;
 }
 
-.cities__options .col:nth-child(1)>div {
+.cities__options .col>div {
     width: 100%;
     position: relative;
-
+    display: flex;
+    align-items: center;
 }
 
-.cities__options .col:nth-child(1) .input-search {
+.cities__options .col .input-search {
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
     width: 80%;
@@ -58,37 +61,29 @@
     letter-spacing: 1px;
 }
 
-.cities__options .col:nth-child(1) .iconSearch {
+.cities__options .col .iconSearch {
     cursor: pointer;
-    position: absolute;
     font-size: 18px;
     border: 1px solid rgb(182, 155, 117);
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
-    top: 0;
-    right: 13%;
 }
 
-.cities__options .col:nth-child(1) .iconRefresh {
+.cities__options .col .iconRefresh {
     cursor: pointer;
-    position: absolute;
     font-size: 18px;
     border: 1px solid rgb(182, 155, 117);
     padding: 10px 20px;
     color: rgb(182, 155, 117);
-    top: 0;
-    right: 2.5%;
 }
 
-.cities__options .col:nth-child(1) .input-search::placeholder {
+.cities__options .col .input-search::placeholder {
     font-family: "Roboto", sans-serif;
     letter-spacing: 1px;
 }
 
-.cities__options .col:nth-child(2) {
-    text-align: right;
-}
+/* CSS: List */
 
 .cities__list {
     margin-top: 5%;
@@ -110,7 +105,7 @@
     position: absolute;
     width: 95%;
     border: 2px solid rgb(234, 211, 178);
-    height: 96%;
+    height: 95%;
     z-index: 1;
     bottom: 10px;
     left: 15px;
@@ -125,25 +120,15 @@
     object-fit: cover;
 }
 
+/* CSS: Form */
 .cities__form {
     position: absolute;
     z-index: 2;
-    width: 300px;
-    padding: 20px;
+    width: 100%;
     color: white;
-    right: 25%;
-    bottom: 10%;
-}
-
-.numberCity {
-    position: absolute;
-    top: 25px;
-    left: 5%;
-    color: rgb(182, 155, 117);
-    font-size: 1.5em;
-    padding: 10px;
-    border-radius: 3px;
-    background-color: #fff;
+    top: 0;
+    left: 0;
+    transform: translateY(20rem);
 }
 
 .cities__item .form__name {
@@ -159,15 +144,9 @@
 }
 
 .cities__form .form__link {
-
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.form__link .iconInfo {
-    margin-right: 5px;
-    font-size: 20px;
 }
 
 .form__link .btn-link {
@@ -179,9 +158,22 @@
     padding: 5px 10px;
 }
 
+/* CSS: Pagination */
+.cities__pagination {
+    width: 100%;
+    margin-top: 4%;
+    text-align: center;
+}
+
+/* CSS: Icon */
+.form__link .iconInfo {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
 /* Effect CSS */
 
-.cities__options .col:nth-child(1) .input-search:focus {
+.cities__options .col .input-search:focus {
     outline: 0;
 }
 
@@ -191,9 +183,142 @@
     padding: 5px 10px;
 }
 
-.cities__options .col:nth-child(1) .iconRefresh:hover {
+.cities__options .col .iconRefresh:hover {
     transition: 0.3s all ease;
     background-color: rgb(182, 155, 117);
     color: white;
     border-left: 1px solid white;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .cities__title {
+        font-size: 1.3rem;
+    }
+
+    .cities__title::after,
+    .cities__title::before {
+        display: none;
+    }
+
+    .cities__list {
+        gap: 30px 0;
+    }
+
+    .cities__item {
+        width: 98%;
+        height: 380px;
+    }
+
+    .cities__item::after {
+        left: 10px;
+    }
+
+    .cities__form {
+        transform: translateY(15rem);
+    }
+
+    .cities__item .cities__form .form__name {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .cities__title {
+        font-size: 1.5rem;
+    }
+
+    .cities__title::after,
+    .cities__title::before {
+        display: none;
+    }
+
+    .cities__list {
+        gap: 30px 0;
+    }
+
+    .cities__item {
+        width: 98%;
+        height: 380px;
+    }
+
+    .cities__item::after {
+        left: 15px;
+    }
+
+    .cities__form {
+        transform: translateY(15rem);
+    }
+
+    .cities__item .cities__form .form__name {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .cities__title {
+        font-size: 2rem;
+    }
+
+    .cities__title::after,
+    .cities__title::before {
+        display: none;
+    }
+
+    .cities__list {
+        gap: 30px 20px;
+    }
+
+    .cities__item {
+        width: 48%;
+        height: 380px;
+    }
+
+    .cities__item::after {
+        left: 10px;
+    }
+
+    .cities__form {
+        transform: translateY(15rem);
+    }
+
+    .cities__item .cities__form .form__name {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .cities__title {
+        font-size: 2.2rem;
+    }
+
+    .cities__title::after,
+    .cities__title::before {
+        display: none;
+    }
+
+    .cities__list {
+        gap: 30px 20px;
+    }
+
+    .cities__item {
+        width: 48%;
+        height: 380px;
+    }
+
+    .cities__item::after {
+        left: 10px;
+    }
+
+    .cities__form {
+        transform: translateY(15rem);
+    }
+
+    .cities__item .cities__form .form__name {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
 }

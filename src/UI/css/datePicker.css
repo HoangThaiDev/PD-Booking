@@ -4,19 +4,57 @@
     background-color: transparent;
     border: 1px solid #B99D75;
     height: 50px;
+    padding: 0 25px;
 }
 
+/* CSS: Input*/
 .formBooking-date .ant-picker-input input::placeholder,
 .formBooking-date .ant-picker-input input {
     color: white;
     font-family: "Roboto", sans-serif;
 }
 
+/* CSS: Icon */
 .ant-picker-separator,
 .anticon-calendar {
     position: relative;
     color: white !important;
     left: -10px !important;
+}
+
+.ant-picker-clear {
+    color: #fff !important;
+}
+
+/* CSS: Popup DatePicker */
+.ant-picker-header {
+    background-color: rgba(185, 157, 117, 0.2);
+    font-family: "EB Garamond", serif;
+}
+
+.ant-picker-body {
+    background-color: rgba(185, 157, 117, 0.2);
+    font-family: "EB Garamond", serif;
+}
+
+td.ant-picker-cell {
+    border: 1px solid rgba(60, 60, 60, 0.2);
+
+}
+
+td.ant-picker-cell.ant-picker-cell-in-view {
+    background-color: white;
+    border: 1px solid rgba(60, 60, 60, 0.2);
+}
+
+.ant-picker-panel-layout {
+    flex-direction: column !important;
+    display: block;
+    border: 1px solid #B99D75;
+}
+
+.ant-picker-active-bar {
+    background-color: transparent !important;
 }
 
 /* Effect CSS */
@@ -25,6 +63,82 @@
     border: 1px solid #B99D75;
 }
 
-.ant-picker-active-bar {
-    background-color: transparent !important;
+.ant-picker-cell-today .ant-picker-cell-inner::before {
+    border: 1px solid #B99D75 !important;
+}
+
+.ant-picker-cell:hover .ant-picker-cell-inner,
+.ant-picker-cell-inner:hover {
+    background-color: #B99D75 !important;
+}
+
+/* td.ant-picker-cell:hover {
+    background-color: red;
+} */
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .formBooking-date {
+        padding: 0 15px;
+    }
+
+    .formBooking-date .ant-picker-input input::placeholder,
+    .formBooking-date .ant-picker-input input {
+        font-size: 0.8rem;
+    }
+
+    /* CSS DatePicker */
+    .ant-picker-panel-layout {
+        flex-direction: column !important;
+    }
+
+    .ant-picker-presets {
+        max-width: 100% !important;
+        min-height: 10rem !important;
+    }
+
+    .ant-picker-panels,
+    .ant-picker-datetime-panel {
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (min-width:575px) and (max-width:767px) {
+    .formBooking-popup {
+        width: 100%;
+    }
+
+    .formBooking-date {
+        padding: 0 15px;
+    }
+
+    .formBooking-date .ant-picker-input input::placeholder,
+    .formBooking-date .ant-picker-input input {
+        font-size: 0.8rem;
+    }
+
+    /* CSS DatePicker */
+    .ant-picker-panel-container.ant-picker-date-panel-container {
+        width: 80%;
+        position: relative;
+    }
+
+    .ant-picker-panels {
+        overflow: hidden;
+        width: 100% !important;
+
+    }
+
+    .ant-picker-panel {
+        width: 50% !important;
+    }
+
+    .ant-picker-date-panel {
+        width: 100% !important;
+    }
+
+    .ant-picker-panels,
+    .ant-picker-datetime-panel {
+        flex-direction: row !important;
+    }
 }

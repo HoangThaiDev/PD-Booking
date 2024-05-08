@@ -5,7 +5,6 @@ import classes from "./css/header.module.css";
 // Import Components
 import banner from "../../assets/banner.jpg";
 import FormBooking from "../../UI/FormBooking";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -19,17 +18,9 @@ export default function Header() {
           Look for resorts that are comfortable, relaxing, friendly, and
           reasonably priced
         </p>
-        {/* Link Mobile Booking */}
-        <div className={classes["introduce__footer"]}>
-          <Link to="/rooms" className={classes["btn-booking"]}>
-            Book Your Stay
-          </Link>
-        </div>
       </div>
 
-      <div className={classes.formBooking}>
-        <FormBooking />
-      </div>
+      <FormBooking />
     </div>
   );
 }

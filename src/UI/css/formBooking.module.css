@@ -45,23 +45,26 @@
     color: white;
     position: relative;
     top: 1px;
-
 }
 
 /* CSS: formBooking - Rooms */
 .form-input>label {
     font-family: "Roboto", sans-serif;
-    width: 20%;
+    width: 25%;
+}
+
+.form-input>.form-input__city {
+    font-family: "Roboto", sans-serif;
+    width: 60%;
 }
 
 .form-input>div {
-    height: inherit;
     width: 60%;
     display: flex;
     align-items: center;
 }
 
-.form-input>div input {
+.form-input .form-input__options {
     font-family: "Roboto", sans-serif;
     cursor: pointer;
     text-align: right;
@@ -81,13 +84,12 @@
     font-family: "Roboto", sans-serif;
 }
 
-.form-input>.form-input-dropdown {
+.form-input-dropdown {
     cursor: auto;
     position: absolute;
     bottom: -155px;
     left: 0;
     width: 300px !important;
-    height: auto;
     background-color: white;
     border: 2px solid #B99D75;
     border-radius: 3px;
@@ -142,7 +144,7 @@
     border-radius: 2px;
     border: 1px solid transparent;
     width: 100%;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* Active */
@@ -177,6 +179,84 @@ input:-webkit-autofill:active {
 }
 
 /* Responsive */
+@media screen and (max-width:575px) {
+    .formBooking {
+        top: -150px;
+    }
+
+    .formBooking-row {
+        justify-content: space-between;
+        gap: 20px 0;
+    }
+
+    .form-input {
+        width: 49%;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .form-input__city {
+        text-align: right;
+    }
+
+    .form-input__city::placeholder {
+        text-align: right;
+        font-size: 0.8rem;
+    }
+
+    .form-input__options {
+        font-size: 0.8rem;
+    }
+
+    .form-input-dropdown {
+        width: 85% !important;
+        bottom: -150px;
+    }
+
+    .btn-search {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .formBooking {
+        top: -150px;
+    }
+
+    .formBooking-row {
+        justify-content: space-between;
+        gap: 20px 0;
+    }
+
+    .form-input {
+        width: 49%;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .form-input__city {
+        text-align: right;
+    }
+
+    .form-input__city::placeholder {
+        text-align: right;
+        font-size: 0.8rem;
+    }
+
+    .form-input__options {
+        font-size: 0.8rem;
+    }
+
+    .form-input-dropdown {
+        width: 85% !important;
+        bottom: -150px;
+    }
+
+    .btn-search {
+        font-size: 0.9rem;
+    }
+}
+
 @media screen and (min-width:768px) and (max-width:991px) {
     .formBooking {
         top: -130px;
@@ -190,6 +270,11 @@ input:-webkit-autofill:active {
     .form-input {
         width: 49%;
         height: 50px;
+    }
+
+    .form-input__city::placeholder {
+        text-align: right;
+        font-size: 0.8rem;
     }
 }
 
@@ -207,5 +292,10 @@ input:-webkit-autofill:active {
     .form-input {
         width: 49%;
         height: 50px;
+    }
+
+    .form-input__city::placeholder {
+        text-align: right;
+        font-size: 0.9rem;
     }
 }

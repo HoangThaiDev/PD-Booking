@@ -100,7 +100,7 @@ export default function FormBooking() {
           onSubmit={searchHotelHandler}
         >
           <Row className={classes["formBooking-row"]}>
-            <Col md={24} lg={24} xl={6}>
+            <Col xs={24} md={24} lg={24} xl={6}>
               <DatePicker.RangePicker
                 className="formBooking-date"
                 placeholder={["Check In", "Check Out"]}
@@ -109,7 +109,7 @@ export default function FormBooking() {
               />
             </Col>
 
-            <Col className={classes["form-input"]} xl={6}>
+            <Col className={classes["form-input"]} xs={24} xl={6}>
               <label htmlFor="city">City</label>
               <input
                 id="city"
@@ -121,12 +121,13 @@ export default function FormBooking() {
               />
             </Col>
 
-            <Col className={classes["form-input"]} xl={7}>
+            <Col className={classes["form-input"]} xs={24} xl={7}>
               <label htmlFor="guest">Guests</label>
               <div onClick={() => setShowPopup(!showPopup)}>
                 <input
                   type="text"
                   id="guest"
+                  className={classes["form-input__options"]}
                   value={`${options.rooms} Room, ${options.adults} Adult, ${options.children} Chilren`}
                   readOnly
                 />
@@ -182,7 +183,12 @@ export default function FormBooking() {
               )}
             </Col>
 
-            <Col className={classes["formBooking-search"]} md={24} xl={4}>
+            <Col
+              className={classes["formBooking-search"]}
+              xs={24}
+              md={24}
+              xl={4}
+            >
               <button type="submit" className={classes["btn-search"]}>
                 Check Availability
               </button>

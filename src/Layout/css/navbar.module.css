@@ -167,6 +167,7 @@
     transition: 0.5s all ease;
     background-color: rgb(248, 115, 48);
     border: 1px solid transparent;
+    color: #fff;
 }
 
 .menu__item:nth-child(3):hover .menu-dropdown,

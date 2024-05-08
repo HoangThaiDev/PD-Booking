@@ -38,26 +38,9 @@
     letter-spacing: 2px;
 }
 
-.introduce__footer {
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-}
+
 
 /* CSS: Active */
-.btn-booking {
-    display: none;
-    margin-top: 40px;
-    font-family: "Bodoni Moda", serif;
-    background-color: rgb(185, 157, 117);
-    color: white;
-    text-decoration: none;
-    width: 150px;
-    padding: 20px 0;
-    border-radius: 3px;
-}
-
 .header .menu__item .active {
     border-bottom: 2px solid white;
     padding-bottom: 3px;
@@ -83,21 +66,13 @@
         font-size: 1rem;
         line-height: 1.5rem;
     }
-
-    .btn-booking {
-        display: inline-block;
-    }
-
-    .formBooking {
-        display: none;
-    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
     .header__introduce {
         width: 80%;
         left: 10%;
-        top: 30%;
+        top: 35%;
     }
 
     .intro__title {
@@ -109,15 +84,6 @@
         margin-top: 25px;
         font-size: 1.3rem;
         line-height: 1.5rem;
-    }
-
-    .btn-booking {
-        display: inline-block;
-        width: 200px;
-    }
-
-    .formBooking {
-        display: none;
     }
 }
 

@@ -53,7 +53,7 @@ export default function ListResort({ resort }) {
       <div className={classes["resort__container"]}>
         <h1 className={classes["resort__title"]}>Browse All Resorts</h1>
         <Row className={classes["resort__options"]}>
-          <Col className={classes.col} xl={10}>
+          <Col className={classes.col} xs={24} sm={16} md={16} xl={10}>
             <div>
               <input
                 className={classes["input-search"]}
@@ -70,14 +70,6 @@ export default function ListResort({ resort }) {
                 onClick={refreshDataResortHandler}
               />
             </div>
-          </Col>
-          <Col className={classes.col} xl={10}>
-            <PaginationCusTom
-              data={resort}
-              onSaveSliceData={getSliceResortHandler}
-              pageSize={resorts.length}
-              refresh={refreshPage}
-            />
           </Col>
         </Row>
         <Row className={classes["resort__list"]}>
@@ -98,6 +90,16 @@ export default function ListResort({ resort }) {
                 </div>
               </Col>
             ))}
+        </Row>
+        <Row className={classes["resort__pagination"]}>
+          <Col className={classes.col} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <PaginationCusTom
+              data={resort}
+              onSaveSliceData={getSliceResortHandler}
+              pageSize={resorts.length}
+              refresh={refreshPage}
+            />
+          </Col>
         </Row>
       </div>
     </div>

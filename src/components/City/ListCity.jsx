@@ -53,7 +53,7 @@ export default function ListCity({ city }) {
       <div className={classes["cities__container"]}>
         <h1 className={classes["cities__title"]}>Browse All Cities</h1>
         <Row className={classes["cities__options"]}>
-          <Col className={classes.col} xl={10}>
+          <Col className={classes.col} xs={24} sm={16} md={16} xl={10}>
             <div>
               <input
                 className={classes["input-search"]}
@@ -71,21 +71,12 @@ export default function ListCity({ city }) {
               />
             </div>
           </Col>
-          <Col className={classes.col} xl={10}>
-            <PaginationCusTom
-              data={city}
-              onSaveSliceData={getSliceCityHandler}
-              pageSize={4}
-              refresh={refreshPage}
-            />
-          </Col>
         </Row>
         <Row className={classes["cities__list"]}>
           {cities.length > 0 &&
             cities.map((c, i) => (
               <Col className={classes["cities__item"]} key={c._id}>
                 <img src={c.banner} alt={c.banner} />
-                <p className={classes.numberCity}>#{i + 1}</p>
                 <div className={classes["cities__form"]}>
                   <h1 className={classes["form__name"]}>{c.name}</h1>
                   <p className={classes["form__link"]}>
@@ -102,6 +93,16 @@ export default function ListCity({ city }) {
                 </div>
               </Col>
             ))}
+        </Row>
+        <Row className={classes["cities__pagination"]}>
+          <Col className={classes.col} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <PaginationCusTom
+              data={city}
+              onSaveSliceData={getSliceCityHandler}
+              pageSize={4}
+              refresh={refreshPage}
+            />
+          </Col>
         </Row>
       </div>
     </div>

@@ -15,10 +15,6 @@ import ImageCity4 from "../../assets/Images Resort/imageResort4.jpg";
 export default function About() {
   const dataImageCity = [ImageCity1, ImageCity2, ImageCity3, ImageCity4];
 
-  // Create + use Hooks
-
-  // Create + use event Handlers
-
   return (
     <div className={classes.about}>
       <div className={classes["about__container"]}>

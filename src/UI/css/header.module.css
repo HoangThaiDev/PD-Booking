@@ -4,14 +4,14 @@
     position: relative;
 }
 
-.header .header__img {
+.header__img {
     width: 100%;
     height: inherit;
     object-fit: cover;
     filter: brightness(60%);
 }
 
-.header-introduce {
+.header__introduce {
     font-family: "Bodoni Moda", serif;
     position: absolute;
     top: 35%;
@@ -22,20 +22,96 @@
     z-index: 1;
 }
 
-.header-introduce .intro__title {
+.intro__title {
     font-weight: bold;
-    font-size: 2.2cm;
+    font-size: 5rem;
     letter-spacing: 2px;
     line-height: 100px;
 }
 
-.header-introduce .intro__content {
+.intro__content {
     font-size: 18px;
     margin-top: 20px;
     letter-spacing: 2px;
 }
 
-.header .menu__item .active {
-    border-bottom: 2px solid white;
-    padding-bottom: 3px;
+
+/* Responsive */
+
+@media screen and (max-width:575px) {
+    .header__introduce {
+        width: 90%;
+        left: 5%;
+        top: 25%;
+    }
+
+    .intro__title {
+        font-size: 2.8rem;
+        line-height: 3.5rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 30%;
+    }
+
+    .intro__title {
+        font-size: 2.8rem;
+        line-height: 3.5rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 30%;
+    }
+
+    .intro__title {
+        font-size: 3.5rem;
+        line-height: 5rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        line-height: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .header__introduce {
+        width: 80%;
+        left: 10%;
+        top: 30%;
+    }
+
+    .intro__title {
+        font-size: 4rem;
+        line-height: 5.2rem;
+    }
+
+    .intro__content {
+        margin-top: 25px;
+        line-height: 2rem;
+        font-size: 1.4rem;
+    }
+
 }
