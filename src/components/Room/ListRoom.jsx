@@ -94,7 +94,7 @@ export default function ListRoom({
           <>
             <h1 className={classes["rooms__title"]}>Browse All rooms</h1>
             <Row className={classes["rooms__options"]}>
-              <Col className={classes.col} xl={10}>
+              <Col className={classes.col} xs={24} sm={16} md={16} xl={10}>
                 <div>
                   <input
                     className={classes["input-search"]}
@@ -112,19 +112,18 @@ export default function ListRoom({
                   />
                 </div>
               </Col>
-              <Col className={classes.col} xl={10}>
-                <PaginationCusTom
-                  data={rooms}
-                  onSaveSliceData={getSliceRoomHandler}
-                  pageSize={sliceRooms.length}
-                  refresh={refreshPage}
-                />
-              </Col>
             </Row>
             {sliceRooms.length > 0 &&
               sliceRooms.map((r) => (
                 <Row className={classes["rooms__list"]} key={r._id}>
-                  <Col className={classes["rooms__item"]} xl={11}>
+                  <Col
+                    className={classes["rooms__item"]}
+                    xs={24}
+                    sm={24}
+                    md={12}
+                    lg={12}
+                    xl={11}
+                  >
                     <img
                       className={classes["rooms__img"]}
                       src={r.photos[1]}
@@ -134,7 +133,14 @@ export default function ListRoom({
                       FROM: {r.price} VNĐ
                     </p>
                   </Col>
-                  <Col className={classes["rooms__item"]} xl={12}>
+                  <Col
+                    className={classes["rooms__item"]}
+                    xs={24}
+                    sm={24}
+                    md={11}
+                    lg={11}
+                    xl={12}
+                  >
                     <p className={classes["rooms__item-breakcrum"]}>
                       Private Pool / Ocean View / Single Level
                     </p>
@@ -181,7 +187,7 @@ export default function ListRoom({
 
                     {/* Show Detail Room about Resort + City if in Page Rooms */}
                     {stateShowAddressDetail && (
-                      <div className={classes["room__footer"]}>
+                      <div className={classes["rooms__footer"]}>
                         <p className={classes["footer__title"]}>
                           <span className={classes["footer__title-resort"]}>
                             {r.nameResort}
@@ -196,6 +202,23 @@ export default function ListRoom({
                   </Col>
                 </Row>
               ))}
+            <Row className={classes["rooms__pagination"]}>
+              <Col
+                className={classes.col}
+                xs={24}
+                sm={24}
+                md={24}
+                lg={24}
+                xl={24}
+              >
+                <PaginationCusTom
+                  data={rooms}
+                  onSaveSliceData={getSliceRoomHandler}
+                  pageSize={sliceRooms.length}
+                  refresh={refreshPage}
+                />
+              </Col>
+            </Row>
           </>
         )}
       </div>
