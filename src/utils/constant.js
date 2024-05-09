@@ -6,5 +6,5 @@ if (import.meta.env.DEV === true) {
 if (import.meta.env.PRODUCTION === true) {
   apiRoot = "https://server-pd-booking.onrender.com";
 }
-
+console.log(apiRoot);
 export const API_ROOT = apiRoot;
