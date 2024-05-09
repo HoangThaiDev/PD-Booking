@@ -35,7 +35,13 @@ export default function About({ resort }) {
     <div className={classes.about}>
       <div className={classes["about__container"]}>
         <Row className={classes["about__row"]}>
-          <Col className={classes["about__col"]} xl={12}>
+          <Col
+            className={classes["about__col"]}
+            xs={24}
+            sm={24}
+            md={11}
+            xl={12}
+          >
             <div className={classes["about__resort"]}>
               <div className={classes["resort__card"]}>
                 <h3 className={classes["card__name"]}>{resort.name}</h3>
@@ -68,7 +74,13 @@ export default function About({ resort }) {
               </div>
             </div>
           </Col>
-          <Col className={classes["about__col"]} xl={11}>
+          <Col
+            className={classes["about__col"]}
+            xs={24}
+            sm={24}
+            md={12}
+            xl={11}
+          >
             <img
               className={classes["image-active"]}
               src={resort.photos[indexImage]}

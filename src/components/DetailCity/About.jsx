@@ -14,10 +14,24 @@ export default function About({ city }) {
           Wellcom to <span>{city.name}</span> city
         </h2>
         <Row className={classes["about__row"]}>
-          <Col className={classes["about__col"]} xl={12}>
+          <Col
+            className={classes["about__col"]}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={12}
+            xl={12}
+          >
             <img src={city.banner} alt={city.banner} />
           </Col>
-          <Col className={classes["about__col"]} xl={11}>
+          <Col
+            className={classes["about__col"]}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={11}
+            xl={11}
+          >
             <ul>
               <p>(&#8727;) Vị trí</p>
               <li>{city.short_desc}</li>
@@ -30,7 +44,14 @@ export default function About({ city }) {
 
         <h2 className={classes["about__information"]}>CITY INFORMATION</h2>
         <Row className={classes["information__row"]}>
-          <Col className={classes["information__col"]} xl={9}>
+          <Col
+            className={classes["information__col"]}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={20}
+            xl={9}
+          >
             <h3>Văn hóa</h3>
             {city.detail_city.culture.map((c, i) => (
               <div key={i}>
@@ -38,7 +59,14 @@ export default function About({ city }) {
               </div>
             ))}
           </Col>
-          <Col className={classes["information__col"]} xl={13}>
+          <Col
+            className={classes["information__col"]}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={14}
+          >
             <div className={classes["information__card"]}>
               <h3>DANH LAM THẮNG CẢNH</h3>
               {city.detail_city.attractive_location.map((c, i) => (

@@ -3,12 +3,13 @@
     background-color: #fff;
 }
 
+/* CSS: Container */
 .about__container {
     width: 90%;
     margin: 0 auto;
 }
 
-.about .about__title {
+.about__title {
     position: relative;
     text-align: center;
     font-family: "Lora", serif;
@@ -39,15 +40,17 @@
     right: 0;
 }
 
-.about .about__title>span {
+.about__title>span {
     font-weight: 700;
 }
 
+/* CSS: Row */
 .about__row {
     margin-top: 5%;
     justify-content: space-between;
 }
 
+/* CSS: Col */
 .about__col img {
     width: 100%;
     height: 500px;
@@ -75,6 +78,7 @@
     color: #a9885a;
 }
 
+/* CSS: Infomaition */
 .about__information {
     position: relative;
     font-family: "Lora", serif;
@@ -107,10 +111,12 @@
     right: 0;
 }
 
+/* CSS: Information Row */
 .information__row {
     justify-content: space-between;
 }
 
+/* CSS: Information Col */
 .information__col h3 {
     font-family: "Playfair Display", serif;
     color: #a9885a;
@@ -142,4 +148,271 @@
 .information__col h3:hover {
     transition: 0.3s all ease;
     color: #ea9b2c;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .about {
+        margin-top: 40%;
+        padding-bottom: 0;
+    }
+
+    .about__title {
+        font-size: 1.3rem;
+    }
+
+    .about__title::after,
+    .about__title::before {
+        display: none;
+    }
+
+    .about__col:nth-child(1) img {
+        height: 300px;
+    }
+
+    .about__col:nth-child(2) {
+        margin-top: 5%;
+    }
+
+    .about__col:nth-child(2) ul p {
+        margin-bottom: 1%;
+        font-size: 1rem;
+    }
+
+    .about__col:nth-child(2) ul li {
+        margin-bottom: 1%;
+        font-size: 0.9rem;
+        line-height: 35px;
+    }
+
+    .about__information {
+        font-size: 1.3rem;
+    }
+
+    .about__information::after,
+    .about__information::before {
+        display: none;
+    }
+
+    .information__row {
+        margin-top: 10%;
+    }
+
+    .information__col h3,
+    .information__col:nth-child(2) .information__card {
+        font-size: 1.1rem;
+    }
+
+    .information__col li {
+        font-size: 0.9rem;
+    }
+
+    .information__col:nth-child(2) {
+        justify-content: space-between;
+    }
+
+    .information__col:nth-child(2) .information__card {
+        width: 45%;
+    }
+
+    .information__col:nth-child(2) .information__card li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .about {
+        margin-top: 30%;
+        padding-bottom: 0;
+    }
+
+    .about__title {
+        font-size: 1.4rem;
+    }
+
+    .about__title::after,
+    .about__title::before {
+        display: none;
+    }
+
+    .about__col:nth-child(1) img {
+        height: 400px;
+    }
+
+    .about__col:nth-child(2) {
+        margin-top: 5%;
+    }
+
+    .about__col:nth-child(2) ul p {
+        margin-bottom: 1%;
+        font-size: 1.1rem;
+    }
+
+    .about__col:nth-child(2) ul li {
+        margin-bottom: 1%;
+        font-size: 1rem;
+        line-height: 35px;
+    }
+
+    .about__information {
+        font-size: 1.3rem;
+    }
+
+    .about__information::after,
+    .about__information::before {
+        display: none;
+    }
+
+    .information__row {
+        margin-top: 5%;
+    }
+
+    .information__col h3,
+    .information__col:nth-child(2) .information__card {
+        font-size: 1.1rem;
+    }
+
+    .information__col li {
+        font-size: 1rem;
+    }
+
+    .information__col:nth-child(2) {
+        justify-content: space-between;
+    }
+
+    .information__col:nth-child(2) .information__card {
+        width: 45%;
+    }
+
+    .information__col:nth-child(2) .information__card li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .about {
+        margin-top: 30%;
+        padding-bottom: 0;
+    }
+
+    .about__title {
+        font-size: 1.4rem;
+    }
+
+    .about__title::after,
+    .about__title::before {
+        display: none;
+    }
+
+    .about__col:nth-child(1) img {
+        height: 350px;
+    }
+
+    .about__col:nth-child(2) {
+        text-align: left;
+        margin-top: 5%;
+    }
+
+    .about__col:nth-child(2) ul p {
+        margin-bottom: 1%;
+        font-size: 1.1rem;
+    }
+
+    .about__col:nth-child(2) ul li {
+        margin-bottom: 1%;
+        font-size: 1rem;
+        line-height: 35px;
+    }
+
+    .about__information {
+        font-size: 1.3rem;
+    }
+
+    .about__information::after,
+    .about__information::before {
+        display: none;
+    }
+
+    .information__row {
+        margin-top: 10%;
+    }
+
+    .information__col h3,
+    .information__col:nth-child(2) .information__card {
+        font-size: 1.1rem;
+    }
+
+    .information__col li {
+        font-size: 1rem;
+    }
+
+    .information__col:nth-child(2) {
+        justify-content: space-between;
+    }
+
+    .information__col:nth-child(2) .information__card {
+        width: 30%;
+    }
+
+    .information__col:nth-child(2) .information__card li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .about {
+        margin-top: 20%;
+        padding-bottom: 0;
+    }
+
+    .about__title {
+        font-size: 1.5rem;
+    }
+
+    .about__title::after,
+    .about__title::before {
+        display: none;
+    }
+
+    .about__col:nth-child(2) ul p {
+        margin-bottom: 1%;
+        font-size: 1.1rem;
+    }
+
+    .about__col:nth-child(2) ul li {
+        margin-bottom: 1%;
+        font-size: 0.9rem;
+        line-height: 35px;
+    }
+
+    .about__information {
+        font-size: 1.4rem;
+    }
+
+    .about__information::after,
+    .about__information::before {
+        display: none;
+    }
+
+    .information__row {
+        margin-top: 5%;
+    }
+
+    .information__col h3,
+    .information__col:nth-child(2) .information__card {
+        font-size: 1.1rem;
+    }
+
+    .information__col li {
+        font-size: 1.1rem;
+    }
+
+    .information__col:nth-child(2) {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .information__col:nth-child(2) .information__card {
+        width: 30%;
+    }
 }

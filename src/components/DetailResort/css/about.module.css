@@ -3,16 +3,20 @@
     background-color: #fff;
 }
 
+/* CSS: Container */
 .about__container {
     width: 90%;
     margin: 0 auto;
 }
 
+/* CSS: Row */
 .about__row {
     justify-content: space-between;
     align-items: center;
 }
 
+
+/* CSS: Content Resort */
 .about__resort {
     box-shadow: 2px 2px 4px 4px rgba(105, 99, 74, 0.6);
     padding: 50px;
@@ -83,7 +87,6 @@
     margin-bottom: 5%;
 }
 
-
 .card__information>p {
     font-family: "EB Garamond", serif;
     color: rgba(53, 52, 52);
@@ -111,6 +114,7 @@
     border-radius: 3px;
 }
 
+/* CSS: Image Resort */
 .about__col .image-active {
     width: 100%;
     height: 500px;
@@ -155,4 +159,352 @@
     background-color: white;
     color: rgb(182, 155, 117);
     border-radius: 0;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .about {
+        margin-top: 50%;
+    }
+
+    .about__col:nth-child(1) {
+        order: 2;
+    }
+
+    .about__col:nth-child(2) {
+        order: 1;
+    }
+
+    /* CSS: Image Resort */
+    .about__col:nth-child(2) .image-active {
+        height: 300px;
+    }
+
+    .about__col:nth-child(2) .image__list {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .about__col:nth-child(2) .image__list>div {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* CSS: Content Resort */
+
+    .about__col:nth-child(1) {
+        margin-top: 10%;
+    }
+
+    .about__resort {
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: 0 0 2px 2px rgba(105, 99, 74, 0.6);
+    }
+
+    .about__resort .card__name {
+        font-size: 1.4rem;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description {
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description .desc-title,
+    .card__information .info-title {
+        font-size: 1.2rem;
+    }
+
+    .card__description .desc-title::after,
+    .card__description .desc-title::before,
+    .card__information .info-title::after,
+    .card__information .info-title::before {
+        display: none;
+    }
+
+    .card__description .desc-content {
+        font-size: 1rem;
+    }
+
+    .card__information .info-title {
+        margin-bottom: 20px;
+    }
+
+    .card__information>p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 5px 0;
+    }
+
+    .card__information>p>span {
+        margin-left: 5px;
+    }
+
+    .btn-view {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .about {
+        margin-top: 30%;
+    }
+
+    .about__col:nth-child(1) {
+        order: 2;
+    }
+
+    .about__col:nth-child(2) {
+        order: 1;
+    }
+
+    /* CSS: Image Resort */
+    .about__col:nth-child(2) .image-active {
+        height: 400px;
+    }
+
+    .about__col:nth-child(2) .image__list {
+        gap: 20px;
+        justify-content: center;
+    }
+
+
+    .about__col:nth-child(2) .image__list>div {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* CSS: Content Resort */
+
+    .about__col:nth-child(1) {
+        margin-top: 10%;
+    }
+
+    .about__resort {
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: 0 0 2px 2px rgba(105, 99, 74, 0.6);
+    }
+
+    .about__resort .card__name {
+        font-size: 1.3rem;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description {
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description .desc-title,
+    .card__information .info-title {
+        font-size: 1.2rem;
+    }
+
+    .card__description .desc-title::after,
+    .card__description .desc-title::before,
+    .card__information .info-title::after,
+    .card__information .info-title::before {
+        display: none;
+    }
+
+    .card__description .desc-content {
+        font-size: 1rem;
+    }
+
+    .card__information .info-title {
+        margin-bottom: 20px;
+    }
+
+    .card__information>p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 5px 0;
+    }
+
+    .card__information>p>span {
+        margin-left: 5px;
+    }
+
+    .btn-view {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .about {
+        margin-top: 30%;
+    }
+
+    .about__col:nth-child(1) {
+        order: 2;
+    }
+
+    .about__col:nth-child(2) {
+        order: 1;
+    }
+
+    /* CSS: Image Resort */
+    .about__col:nth-child(2) .image-active {
+        height: 400px;
+    }
+
+    .about__col:nth-child(2) .image__list {
+        gap: 10px;
+        justify-content: center;
+    }
+
+
+    .about__col:nth-child(2) .image__list>div {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* CSS: Content Resort */
+
+    .about__resort {
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: 0 0 2px 2px rgba(105, 99, 74, 0.6);
+    }
+
+    .about__resort .card__name {
+        font-size: 1.2rem;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description {
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description .desc-title,
+    .card__information .info-title {
+        font-size: 1.2rem;
+    }
+
+    .card__description .desc-title::after,
+    .card__description .desc-title::before,
+    .card__information .info-title::after,
+    .card__information .info-title::before {
+        display: none;
+    }
+
+    .card__description .desc-content {
+        font-size: 1rem;
+    }
+
+    .card__information .info-title {
+        margin-bottom: 20px;
+    }
+
+    .card__information>p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 5px 0;
+    }
+
+    .card__information>p>span {
+        margin-left: 5px;
+    }
+
+    .btn-view {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .about {
+        margin-top: 30%;
+    }
+
+    .about__col:nth-child(1) {
+        order: 2;
+    }
+
+    .about__col:nth-child(2) {
+        order: 1;
+    }
+
+    /* CSS: Image Resort */
+    .about__col:nth-child(2) .image-active {
+        height: 400px;
+    }
+
+    .about__col:nth-child(2) .image__list {
+        gap: 10px;
+        justify-content: center;
+    }
+
+
+    .about__col:nth-child(2) .image__list>div {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* CSS: Content Resort */
+
+    .about__resort {
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: 0 0 2px 2px rgba(105, 99, 74, 0.6);
+    }
+
+    .about__resort .card__name {
+        font-size: 1.2rem;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description {
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .card__description .desc-title,
+    .card__information .info-title {
+        font-size: 1.2rem;
+    }
+
+    .card__description .desc-title::after,
+    .card__description .desc-title::before,
+    .card__information .info-title::after,
+    .card__information .info-title::before {
+        display: none;
+    }
+
+    .card__description .desc-content {
+        font-size: 1rem;
+    }
+
+    .card__information .info-title {
+        margin-bottom: 20px;
+    }
+
+    .card__information>p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 5px 0;
+    }
+
+    .card__information>p>span {
+        margin-left: 5px;
+    }
+
+    .btn-view {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
 }

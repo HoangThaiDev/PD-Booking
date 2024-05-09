@@ -12,7 +12,6 @@ export default function RelatedProduct({ resorts }) {
 
   // Create + use event Handlers
   const navigateResortDetailHandler = (id, name) => {
-    console.log(id, name);
     const modifiedName = name.split(" ").join("-");
     navigate(`/resort/${modifiedName}`, { state: { id: id } });
   };
@@ -23,7 +22,15 @@ export default function RelatedProduct({ resorts }) {
         <h2 className={classes["resorts__title"]}>Related Resorts</h2>
         <Row className={classes["resorts__row"]}>
           {resorts.map((rs) => (
-            <Col className={classes["resorts__col"]} key={rs._id} xl={7}>
+            <Col
+              className={classes["resorts__col"]}
+              key={rs._id}
+              xs={24}
+              sm={24}
+              md={11}
+              lg={9}
+              xl={7}
+            >
               <div className={classes["resorts__item"]}>
                 <img src={rs.banner} alt={rs.banner} />
                 <div className={classes["item__card"]}>
