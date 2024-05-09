@@ -146,30 +146,36 @@ export default function ListRoom({
                     </p>
                     <h3 className={classes["rooms__item-name"]}>{r.name}</h3>
                     <div className={classes["rooms__item-card"]}>
-                      <p className={classes["card__note-wifi"]}>
+                      <span className={classes["note-flex"]}>
                         <FaWifi
                           className={`${classes.icon} ${classes["icon-wifi"]}`}
                         />
-                        Free
-                      </p>
-                      <p className={classes["card__note-smoking"]}>
+                        <p className={classes["card__note-wifi"]}>Free</p>
+                      </span>
+                      <span className={classes["note-flex"]}>
                         <MdOutlineSmokeFree
                           className={`${classes.icon} ${classes["icon-smoke"]}`}
                         />
-                        Non-Smoking
-                      </p>
-                      <p className={classes["card__note-user"]}>
+                        <p className={classes["card__note-smoking"]}>
+                          Non-Smoking
+                        </p>
+                      </span>
+                      <span className={classes["note-flex"]}>
                         <LuUsers
                           className={`${classes.icon} ${classes["icon-users"]}`}
                         />
-                        {r.detail.maxPeople} Guests
-                      </p>
-                      <p className={classes["card__note-bed"]}>
+                        <p className={classes["card__note-user"]}>
+                          {r.detail.maxPeople} Guests
+                        </p>
+                      </span>
+                      <span className={classes["note-flex"]}>
                         <IoBedOutline
                           className={`${classes.icon} ${classes["icon-bed"]}`}
                         />
-                        {r.detail.bed}
-                      </p>
+                        <p className={classes["card__note-bed"]}>
+                          {r.detail.bed}
+                        </p>
+                      </span>
                     </div>
                     <p className={classes["rooms__item-desc"]}>
                       {r.size}, located on the west side of the resort in a

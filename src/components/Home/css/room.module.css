@@ -100,15 +100,13 @@
 .room__card-notes .note-flex>p {
     font-family: "Roboto", sans-serif;
     position: relative;
-    top: 3px;
     color: #927646;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .room__card-notes .note-flex>.icon {
     color: #927646;
     position: relative;
-    top: 2px;
     margin-right: 7px;
     font-size: 1rem;
 }
@@ -219,8 +217,16 @@
         border-top-right-radius: 0;
     }
 
+    .room__card {
+        text-align: center;
+    }
+
     .room__card-name {
         font-size: 1.3rem;
+    }
+
+    .room__card-notes {
+        justify-content: center;
     }
 
     .room__card-notes .note-flex {
@@ -232,10 +238,6 @@
     }
 
     .room__card-notes .note-flex>.icon {
-        color: #927646;
-        position: relative;
-        top: 2px;
-        margin-right: 7px;
         font-size: 0.8rem;
     }
 
@@ -280,8 +282,16 @@
         border-top-right-radius: 0;
     }
 
+    .room__card {
+        text-align: center;
+    }
+
     .room__card-name {
         font-size: 1.4rem;
+    }
+
+    .room__card-notes {
+        justify-content: center;
     }
 
     .room__card-notes .note-flex {
@@ -293,9 +303,6 @@
     }
 
     .room__card-notes .note-flex>.icon {
-        color: #927646;
-        position: relative;
-        top: 2px;
         margin-right: 7px;
         font-size: 1rem;
     }
@@ -354,9 +361,6 @@
     }
 
     .room__card-notes .note-flex>.icon {
-        color: #927646;
-        position: relative;
-        top: 2px;
         margin-right: 7px;
         font-size: 0.8rem;
     }
