@@ -1,9 +1,9 @@
 let apiRoot = "";
-console.log(import.meta.env);
-if (import.meta.env.DEV === true) {
+
+if (import.meta.env.MODE === "development") {
   apiRoot = "http://localhost:5000";
 }
-if (import.meta.env.PRODUCTION === true) {
+if (import.meta.env.MODE === "production") {
   apiRoot = "https://server-pd-booking.onrender.com";
 }
 
