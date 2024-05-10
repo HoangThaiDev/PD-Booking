@@ -1,6 +1,8 @@
 // Import Modules
 import React from "react";
 import classes from "./css/about.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { modalImageRoomAction } from "../../redux/store";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -13,8 +15,18 @@ import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineSmokeFree } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
 import FormBooking from "./FormBooking";
+import ModalImageRoom from "../../UI/ModalImageRoom";
 
 export default function About({ room }) {
+  // Create + use Hook
+  const dispatch = useDispatch();
+  const { showModal } = useSelector((state) => state.modalImageRoom);
+
+  // Create + use event Handlers
+  const showModalImageRoom = (path) => {
+    dispatch(modalImageRoomAction.showModalImageRoom(path));
+  };
+
   return (
     <div className={classes.about}>
       <div className={classes["about__container"]}>
@@ -64,9 +76,11 @@ export default function About({ room }) {
                   className={classes["image__item"]}
                   src={r}
                   alt={r}
+                  onClick={() => showModalImageRoom(r)}
                 />
               ))}
             </div>
+            {showModal && <ModalImageRoom />}
             <FamilyAmenities />
             <RoomAmenities />
           </Col>

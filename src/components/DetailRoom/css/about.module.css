@@ -63,8 +63,14 @@
 }
 
 .about__images .image__item {
-    width: 40%;
+    cursor: pointer;
+    width: 30%;
     border-radius: 5px;
+}
+
+/* CSS: Effect */
+.image__item:hover {
+    opacity: 0.7;
 }
 
 /* Responsive */

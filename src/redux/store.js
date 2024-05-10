@@ -12,6 +12,7 @@ const initialUserOptions = {
   children: 0,
 };
 const initialModalCart = { cart: null, showModal: false, refresh: false };
+const initialModalImageRoom = { imageActive: "", showModal: false };
 const initialUser = { user: "", isLoggedIn: false };
 // Create Slides
 const sideMenuSlice = createSlice({
@@ -84,6 +85,28 @@ const modalCartSlice = createSlice({
   },
 });
 
+const modalImageRoomSlice = createSlice({
+  name: "modal-imageRoom",
+  initialState: initialModalImageRoom,
+  reducers: {
+    showModalImageRoom(state, data) {
+      const urlImage = data.payload;
+      return {
+        ...state,
+        imageActive: urlImage,
+        showModal: true,
+      };
+    },
+    hideModalImageRoom(state, data) {
+      return {
+        ...state,
+        imageActive: "",
+        showModal: false,
+      };
+    },
+  },
+});
+
 const userSlice = createSlice({
   name: "user",
   initialState: initialUser,
@@ -105,6 +128,7 @@ const store = configureStore({
     options: optionsSlice.reducer,
     modalCart: modalCartSlice.reducer,
     user: userSlice.reducer,
+    modalImageRoom: modalImageRoomSlice.reducer,
   },
 });
 
@@ -114,6 +138,7 @@ const sideMenuAction = sideMenuSlice.actions;
 const roomAction = roomSlice.actions;
 const optionsAction = optionsSlice.actions;
 const modalCartAction = modalCartSlice.actions;
+const modalImageRoomAction = modalImageRoomSlice.actions;
 const userAction = userSlice.actions;
 
 export default store;
@@ -123,4 +148,5 @@ export {
   optionsAction,
   modalCartAction,
   userAction,
+  modalImageRoomAction,
 };
