@@ -100,7 +100,7 @@
 
 @media screen and (min-width:576px) and (max-width:767px) {
     .slide .slide__content {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin: 30px 0;
         width: 80%;
         line-height: 20px;
@@ -122,7 +122,7 @@
 
 @media screen and (min-width:768px) and (max-width:991px) {
     .slide .slide__content {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin: 30px 0;
         width: 80%;
         line-height: 30px;
@@ -139,5 +139,27 @@
 
     .slide .slick-prev {
         left: -5px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .slide .slide__content {
+        font-size: 1.4rem;
+        margin: 30px 0;
+        width: 80%;
+        line-height: 30px;
+        transform: translateX(10%);
+    }
+
+    .slide .slick-arrow {
+        padding: 15px;
+    }
+
+    .slide .slick-next {
+        right: -10px;
+    }
+
+    .slide .slick-prev {
+        left: -10px;
     }
 }

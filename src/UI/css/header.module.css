@@ -42,16 +42,15 @@
     .header__introduce {
         width: 90%;
         left: 5%;
-        top: 25%;
+        top: 30%;
     }
 
     .intro__title {
-        font-size: 2.8rem;
-        line-height: 3.5rem;
+        font-size: 2rem;
+        line-height: 3rem;
     }
 
     .intro__content {
-        margin-top: 25px;
         font-size: 1rem;
         line-height: 1.5rem;
     }
@@ -65,13 +64,12 @@
     }
 
     .intro__title {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         line-height: 3.5rem;
     }
 
     .intro__content {
-        margin-top: 25px;
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1.5rem;
     }
 }
@@ -84,14 +82,13 @@
     }
 
     .intro__title {
-        font-size: 3.5rem;
+        font-size: 3rem;
         line-height: 5rem;
     }
 
     .intro__content {
-        margin-top: 25px;
         line-height: 1.5rem;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
 }
@@ -104,14 +101,13 @@
     }
 
     .intro__title {
-        font-size: 4rem;
+        font-size: 3.5rem;
         line-height: 5.2rem;
     }
 
     .intro__content {
-        margin-top: 25px;
         line-height: 2rem;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
 }

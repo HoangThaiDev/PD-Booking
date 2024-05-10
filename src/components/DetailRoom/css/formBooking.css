@@ -1,18 +1,22 @@
+/* CSS: Container */
 .formBooking__container {
     box-shadow: 0 0 20px 5px rgba(221, 223, 223, 0.8);
     padding: 40px;
 }
 
+/* CSS: Row */
 .formBooking__header {
     justify-content: space-between;
     align-items: center;
 }
 
+/* CSS: Col 1 */
 .formBooking__header__col:nth-child(1)>p {
     font-family: "Playfair Display", serif;
     font-size: 1.9rem;
 }
 
+/* CSS: Col 2  */
 .formBooking__header__col:nth-child(2) {
     font-family: "EB Garamond", serif;
     text-align: right;
@@ -37,6 +41,8 @@
     text-decoration: line-through;
 }
 
+
+/* CSS: formDate Container */
 .formDate__container {
     width: 100%;
     margin-top: 5%;
@@ -73,6 +79,7 @@
     font-size: 1.1rem;
 }
 
+/* CSS: Form Options */
 
 .form__adult-quantity,
 .form__children-quantity {
@@ -106,6 +113,7 @@
     cursor: pointer;
 }
 
+/* CSS: Number Rooms */
 .selectRooms {
     margin: 10% 0 5% 0;
 }
@@ -120,9 +128,18 @@
 .selectRooms .selectRooms__row {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
+.selectRooms__row .checkbox {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* CSS: Form Services */
 .form-service {
     margin-top: 10%;
 }
@@ -180,10 +197,11 @@
     top: 4px;
 }
 
-.option__price {
+/* CSS: Price Container */
+.option__price>p {
     font-family: "Roboto", sans-serif;
     text-align: right;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .border {
@@ -195,18 +213,21 @@
     margin-top: 5%;
 }
 
+/* CSS: Price Row */
 .totalPrice .totalPrice__row {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10%;
 }
 
+/* CSS: Price Col 1 */
 .totalPrice .totalPrice__col:nth-child(1)>p {
     font-size: 1.5rem;
     font-family: "Playfair Display", serif;
     color: #494949;
 }
 
+/* CSS: Price Col 2 */
 .totalPrice .totalPrice__col:nth-child(2) {
     text-align: right;
 }
@@ -252,3 +273,212 @@
     transition: 0.3s all ease;
     background-color: #b99d75;
 }
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .formBooking__header__col>p {
+        text-align: center;
+    }
+
+    .formBooking__header__col:nth-child(1)>p {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .formBooking__header__col:nth-child(2)>p {
+        font-size: 0.8rem;
+    }
+
+    .formDate__container .formDate-checkIn input[value],
+    .formDate__container .formDate-checkOut input[value] {
+        font-size: 0.7rem;
+    }
+
+    .formDate__container .formDate-checkIn input[value]::placeholder,
+    .formDate__container .formDate-checkOut input[value]::placeholder,
+    .formDate__container .ant-picker-suffix .anticon-calendar,
+    .formDate__container .ant-picker-clear .anticon {
+        font-size: 0.8rem;
+    }
+
+    /* CSS: Form Options */
+    .form__adult-quantity,
+    .form__children-quantity {
+        padding: 15px 12px;
+    }
+
+    .form__adult-quantity>label,
+    .form__children-quantity>label {
+        font-size: 0.8rem;
+    }
+
+    .form__adult-quantity>p,
+    .form__children-quantity>p {
+        font-size: 0.8rem;
+    }
+
+    /* CSS: Number Room */
+    .selectRooms>p {
+        font-size: 1.1rem;
+    }
+
+    .selectRooms .checkbox>label {
+        font-size: 0.8rem;
+        padding-left: 25px;
+    }
+
+    .selectRooms .checkbox>label::before {
+        width: 15px;
+        height: 15px;
+        top: -2px;
+    }
+
+    .selectRooms .checkbox>input[type="checkbox"]:checked~label::after {
+        width: 8px;
+        height: 8px;
+        left: 3px;
+        top: 2px;
+    }
+
+    /* CSS: Form Service */
+    .form-service>p {
+        font-size: 1.1rem;
+    }
+
+    .service-options {
+        align-items: center;
+    }
+
+    .form-service .checkbox>label {
+        padding-left: 25px;
+        font-size: 0.8rem;
+    }
+
+    .form-service .checkbox>label::before {
+        width: 15px;
+        height: 15px;
+        top: 0px;
+    }
+
+    .form-service .checkbox>input[type="checkbox"]:checked~label::after {
+        width: 8px;
+        height: 8px;
+        left: 3.5px;
+        top: 3.5px;
+    }
+
+    .option__price>p {
+        font-size: 0.8rem;
+    }
+
+    /* CSS: Total Price */
+    .totalPrice .totalPrice__col:nth-child(1)>p,
+    .totalPrice .totalPrice__col:nth-child(2)>p {
+        font-size: 1.3rem;
+    }
+
+    .btn-submit {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .formBooking__header__col:nth-child(1)>p {
+        font-size: 1.5rem;
+    }
+
+    .formBooking__header__col:nth-child(2)>p {
+        font-size: 0.9rem;
+    }
+
+    .formDate__container .formDate-checkIn input[value],
+    .formDate__container .formDate-checkOut input[value] {
+        font-size: 0.8rem;
+    }
+
+    .formDate__container .formDate-checkIn input[value]::placeholder,
+    .formDate__container .formDate-checkOut input[value]::placeholder,
+    .formDate__container .ant-picker-suffix .anticon-calendar,
+    .formDate__container .ant-picker-clear .anticon {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Form Options */
+    .form__adult-quantity>label,
+    .form__children-quantity>label {
+        font-size: 0.9rem;
+    }
+
+    .form__adult-quantity>p,
+    .form__children-quantity>p {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Number Room */
+    .selectRooms>p {
+        font-size: 1.2rem;
+    }
+
+    .selectRooms .checkbox>label {
+        font-size: 0.9rem;
+        padding-left: 20px;
+    }
+
+    .selectRooms .checkbox>label::before {
+        width: 15px;
+        height: 15px;
+        top: -1px;
+    }
+
+    .selectRooms .checkbox>input[type="checkbox"]:checked~label::after {
+        width: 8px;
+        height: 8px;
+        left: 3.5px;
+        top: 3px;
+    }
+
+    /* CSS: Form Service */
+    .form-service>p {
+        font-size: 1.2rem;
+    }
+
+    .service-options {
+        align-items: center;
+    }
+
+    .form-service .checkbox>label {
+        padding-left: 25px;
+        font-size: 0.9rem;
+    }
+
+    .form-service .checkbox>label::before {
+        width: 15px;
+        height: 15px;
+        top: 1px;
+    }
+
+    .form-service .checkbox>input[type="checkbox"]:checked~label::after {
+        width: 8px;
+        height: 8px;
+        left: 3.5px;
+        top: 5px;
+    }
+
+    .option__price>p {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Total Price */
+    .totalPrice .totalPrice__col:nth-child(1)>p,
+    .totalPrice .totalPrice__col:nth-child(2)>p {
+        font-size: 1.4rem;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {}
+
+@media screen and (min-width:992px) and (max-width:1199px) {}

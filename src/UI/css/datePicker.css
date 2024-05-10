@@ -109,7 +109,7 @@ td.ant-picker-cell.ant-picker-cell-in-view {
     }
 
     .formBooking-date {
-        padding: 0 15px;
+        padding: 0 20px;
     }
 
     .formBooking-date .ant-picker-input input::placeholder,
@@ -150,7 +150,7 @@ td.ant-picker-cell.ant-picker-cell-in-view {
     }
 
     .formBooking-date {
-        padding: 0 20px;
+        padding: 0 25px;
     }
 
     .formBooking-date .ant-picker-input input::placeholder,
@@ -162,12 +162,12 @@ td.ant-picker-cell.ant-picker-cell-in-view {
     .ant-picker-panel-container.ant-picker-date-panel-container {
         width: 80%;
         position: relative;
+        right: -18% !important;
     }
 
     .ant-picker-panels {
         overflow: hidden;
         width: 100% !important;
-
     }
 
     .ant-picker-panel {
@@ -190,7 +190,7 @@ td.ant-picker-cell.ant-picker-cell-in-view {
     }
 
     .formBooking-date {
-        padding: 0 35px;
+        padding: 0 33px;
     }
 
     .formBooking-date .ant-picker-input input::placeholder,
@@ -202,6 +202,7 @@ td.ant-picker-cell.ant-picker-cell-in-view {
     .ant-picker-panel-container.ant-picker-date-panel-container {
         width: 80%;
         position: relative;
+        right: -18% !important;
     }
 
     .ant-picker-panels {

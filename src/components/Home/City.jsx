@@ -70,6 +70,9 @@ export default function City({ city }) {
           slidesToShow: 1,
           slidesToScroll: 1,
           waitForAnimate: false,
+          dots: true,
+          nextArrow: false,
+          prevArrow: false,
         },
       },
       {
@@ -81,6 +84,9 @@ export default function City({ city }) {
           slidesToShow: 1,
           slidesToScroll: 1,
           waitForAnimate: false,
+          dots: true,
+          nextArrow: false,
+          prevArrow: false,
         },
       },
     ],
@@ -104,7 +110,7 @@ export default function City({ city }) {
             <Col
               className={classes["city__header__col"]}
               xs={24}
-              sm={24}
+              sm={10}
               md={10}
               lg={10}
               xl={10}
@@ -114,7 +120,7 @@ export default function City({ city }) {
             <Col
               className={classes["city__header__col"]}
               xs={24}
-              sm={24}
+              sm={10}
               md={10}
               lg={10}
               xl={10}

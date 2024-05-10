@@ -31,7 +31,7 @@ export default function Room({ room }) {
             <Col
               className={classes["room__col"]}
               xs={24}
-              sm={24}
+              sm={10}
               md={10}
               lg={10}
               xl={10}
@@ -41,7 +41,7 @@ export default function Room({ room }) {
             <Col
               className={classes["room__col"]}
               xs={24}
-              sm={24}
+              sm={10}
               md={10}
               lg={10}
               xl={10}

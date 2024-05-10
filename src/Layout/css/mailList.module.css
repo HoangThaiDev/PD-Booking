@@ -8,6 +8,7 @@
     margin-top: 130px;
 }
 
+/* CSS: Main Container */
 .mailList__container {
     width: 90%;
     margin: 0 auto;
@@ -100,7 +101,7 @@
 
 /* CSS: Icon */
 
-.mailList .btn-email .icon {
+.btn-email .icon {
     font-size: 1.3rem;
     position: absolute;
     right: 10px;
@@ -143,6 +144,23 @@
     .form {
         height: 150px;
     }
+
+    .input-email {
+        padding-left: 10px;
+    }
+
+    .input-email::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .btn-email {
+        font-size: 0.9rem;
+    }
+
+    .btn-email .icon {
+        font-size: 1.2rem;
+        top: 7px;
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -152,16 +170,33 @@
     }
 
     .mailList__col:nth-child(1)>p {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
 
     .mailList__col:nth-child(1)>h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 3rem;
     }
 
     .form {
         height: 200px;
+    }
+
+    .input-email {
+        padding-left: 10px;
+    }
+
+    .input-email::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .btn-email {
+        font-size: 0.9rem;
+    }
+
+    .btn-email .icon {
+        font-size: 1.2rem;
+        top: 7px;
     }
 }
 

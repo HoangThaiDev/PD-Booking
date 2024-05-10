@@ -272,12 +272,15 @@ input:-webkit-autofill:active {
         height: 50px;
     }
 
+    .form-input>label {
+        font-size: 0.9rem;
+    }
+
     .form-input__city::placeholder {
         text-align: right;
         font-size: 0.8rem;
     }
 }
-
 
 @media screen and (min-width:992px) and (max-width:1199px) {
     .formBooking {

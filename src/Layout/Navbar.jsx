@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.navbar}>
-      <div className={classes["navbar-nav"]} ref={navbarNavRef}>
+      <div className={classes["navbar__nav"]} ref={navbarNavRef}>
         <Row className={classes["navbar__row"]}>
           <Col
             className={`${classes["navbar__col"]} ${classes.menu}`}
@@ -164,7 +164,7 @@ export default function Navbar() {
                 <Link className={classes["contact__item"]} to="/rooms">
                   Book Now
                 </Link>
-                <Link className={classes["contact__item"]}>
+                <Link to="/login" className={classes["contact__item"]}>
                   <FaRegUserCircle className={classes["icon-user"]} />
                 </Link>
               </ul>

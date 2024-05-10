@@ -3,6 +3,7 @@
     background-color: #F3F3F0;
 }
 
+/* CSS: Container */
 .about__container {
     width: 50%;
     margin: 0 auto;
@@ -13,6 +14,7 @@
     width: 10%;
 }
 
+/* CSS: Content */
 .about__title {
     font-family: "Lora", serif;
     font-size: 3rem;

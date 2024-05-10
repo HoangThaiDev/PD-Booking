@@ -17,9 +17,9 @@
     font-family: "Bodoni Moda", serif;
     position: absolute;
     top: 35%;
-    left: 20%;
+    left: 25%;
     color: white;
-    width: 60%;
+    width: 50%;
     height: auto;
     text-align: center;
     z-index: 1;
@@ -38,14 +38,11 @@
     letter-spacing: 2px;
 }
 
-
-
 /* CSS: Active */
 .header .menu__item .active {
     border-bottom: 2px solid white;
     padding-bottom: 3px;
 }
-
 
 /* Responsive */
 
@@ -53,7 +50,7 @@
     .header__introduce {
         width: 80%;
         left: 10%;
-        top: 25%;
+        top: 30%;
     }
 
     .intro__title {
@@ -95,13 +92,13 @@
     }
 
     .intro__title {
-        font-size: 4.5rem;
+        font-size: 4rem;
         line-height: 5rem;
     }
 
     .intro__content {
         margin-top: 25px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.5rem;
     }
 
@@ -115,14 +112,14 @@
     }
 
     .intro__title {
-        font-size: 5rem;
+        font-size: 4.8rem;
         line-height: 5.2rem;
     }
 
     .intro__content {
         margin-top: 25px;
         line-height: 2rem;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
 }

@@ -75,7 +75,7 @@
 
 .city__img {
     width: 100%;
-    height: 400px;
+    height: 500px;
     object-fit: cover;
     box-shadow: 0 0 30px 5px rgba(62, 62, 62, 0.2), 0 0 20px 5px rgba(215, 159, 99, 0.2);
 }
@@ -103,6 +103,8 @@
     line-height: 25px;
     letter-spacing: 1px;
     color: #585858;
+    font-size: 1rem;
+    line-height: 2rem;
 }
 
 .city__link {
@@ -116,6 +118,7 @@
     font-family: "Playfair Display", serif;
     color: #837054;
     letter-spacing: 1px;
+    font-size: 1.2rem;
 }
 
 .city__link::after {
@@ -151,12 +154,12 @@
 
 .city-icon-next {
     position: absolute;
-    left: 80rem;
+    left: 90rem;
 }
 
 .city-icon-prev {
     position: absolute;
-    left: 76rem;
+    left: 86rem;
     z-index: 2;
 }
 
@@ -239,34 +242,16 @@
         padding-bottom: 20px;
     }
 
-    /* Icon Arrow */
-    .city-icon-next {
-        position: absolute;
-        left: 3.5rem;
-        top: 1.5rem;
-        background-color: transparent !important;
-        border-color: #fff;
-    }
-
-    .city-icon-prev {
-        position: absolute;
-        left: 0.5rem;
-        top: 1.5rem;
-        background-color: transparent !important;
-        border-color: #fff;
-    }
-
-    .city-icon-prev::before,
-    .city-icon-next::before {
-        color: #fff !important;
-    }
-
     /* CSS: City Col Content */
     .city__col-flex:nth-child(2) {
         position: relative;
         border: 0;
         padding: 0;
         margin-top: 10%;
+    }
+
+    .city__col-flex:nth-child(2)>div {
+        text-align: center;
     }
 
     .city__activities {
@@ -279,43 +264,35 @@
     }
 
     .city__desc {
-        text-align: center;
         font-size: 0.8rem;
     }
 
     .city__link {
-        margin-top: 5%;
+        margin: 5% 0 10%;
         top: -5px;
-
+        font-size: 0.9rem;
     }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
-    .city__container {
-        text-align: center;
-    }
-
     .city__header>p {
         line-height: 1.5rem;
         font-size: 0.8rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .city__header__row {
         gap: 30px 0;
+        align-items: center;
     }
 
     .city__header__col:nth-child(1)>h1 {
-        font-size: 2.5rem;
-    }
-
-    .city__header__col:nth-child(2) {
-        text-align: center;
+        font-size: 2.3rem;
     }
 
     .city__header__col:nth-child(2)>a {
-        width: 200px;
-        font-size: 1rem;
+        width: 150px;
+        font-size: 0.9rem;
     }
 
     .city-flex {
@@ -323,34 +300,16 @@
         padding-bottom: 20px;
     }
 
-    /* Icon Arrow */
-    .city-icon-next {
-        position: absolute;
-        left: 3.5rem;
-        top: 1.5rem;
-        background-color: transparent !important;
-        border-color: #fff;
-    }
-
-    .city-icon-prev {
-        position: absolute;
-        left: 0.5rem;
-        top: 1.5rem;
-        background-color: transparent !important;
-        border-color: #fff;
-    }
-
-    .city-icon-prev::before,
-    .city-icon-next::before {
-        color: #fff !important;
-    }
-
     /* CSS: City Col Content */
     .city__col-flex:nth-child(2) {
         position: relative;
         border: 0;
         padding: 0;
         margin-top: 10%;
+    }
+
+    .city__col-flex:nth-child(2)>div {
+        text-align: center;
     }
 
     .city__activities {
@@ -363,13 +322,13 @@
     }
 
     .city__desc {
-        text-align: left;
         font-size: 0.8rem;
     }
 
     .city__link {
-        margin-top: 5%;
+        margin: 5% 0 10%;
         top: -5px;
+        font-size: 0.9rem;
     }
 }
 
@@ -382,6 +341,7 @@
 
     .city__header__row {
         gap: 30px 0;
+        align-items: center;
     }
 
     .city__header__col:nth-child(1)>h1 {
@@ -398,34 +358,16 @@
         padding-bottom: 20px;
     }
 
-    /* Icon Arrow */
-    .city-icon-next {
-        position: absolute;
-        left: 3.5rem;
-        top: 1.5rem;
-        background-color: transparent !important;
-        border-color: #fff;
-    }
-
-    .city-icon-prev {
-        position: absolute;
-        left: 0.5rem;
-        top: 1.5rem;
-        background-color: transparent !important;
-        border-color: #fff;
-    }
-
-    .city-icon-prev::before,
-    .city-icon-next::before {
-        color: #fff !important;
-    }
-
     /* CSS: City Col Content */
     .city__col-flex:nth-child(2) {
         position: relative;
         border: 0;
         padding: 0;
-        margin-top: 10%;
+        margin-top: 8%;
+    }
+
+    .city__col-flex:nth-child(2)>div {
+        text-align: center;
     }
 
     .city__activities {
@@ -447,14 +389,32 @@
     }
 
     .city__link {
-        margin-top: 5%;
-        top: -5px;
-        left: 0;
-        display: block;
+        margin: 5% 0 10%;
+        font-size: 1rem;
     }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
+    .city__header>p {
+        line-height: 1.5rem;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .city__header__row {
+        gap: 30px 0;
+        align-items: center;
+    }
+
+    .city__header__col:nth-child(1)>h1 {
+        font-size: 2.3rem;
+    }
+
+    .city__header__col:nth-child(2)>a {
+        width: 150px;
+        font-size: 0.9rem;
+    }
+
     .city__row-flex {
         margin-bottom: 20px;
     }
@@ -469,8 +429,7 @@
     }
 
     .city__link {
-        margin-top: 3%;
-        top: -5px;
-        left: 0;
+        margin: 3% 0 10%;
+        font-size: 1rem;
     }
 }

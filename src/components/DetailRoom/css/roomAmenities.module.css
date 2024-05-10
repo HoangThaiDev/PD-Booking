@@ -1,6 +1,6 @@
 .room-amenities>h3 {
     font-family: "Playfair Display", serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     margin-bottom: 3%;
 }
@@ -29,4 +29,134 @@
     font-family: "Playfair Display", serif;
     font-size: 1rem;
     color: #53624e;
+}
+
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .room-amenities {
+        margin: 10% 0;
+    }
+
+    .room-amenities>h3 {
+        font-size: 1.1rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+        justify-content: space-between;
+        box-shadow: 0 0 5px 5px #eee7e0;
+        padding: 20px;
+    }
+
+    .amenity__item {
+        width: 45%;
+        justify-content: flex-start;
+    }
+
+    .amenity__item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .amenity__item>p {
+        width: 100%;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+    }
+
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .room-amenities {
+        margin: 10% 0;
+    }
+
+    .room-amenities>h3 {
+        font-size: 1.2rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+        justify-content: space-between;
+        box-shadow: 0 0 5px 5px #eee7e0;
+        padding: 20px;
+    }
+
+    .amenity__item {
+        width: 45%;
+        justify-content: flex-start;
+    }
+
+    .amenity__item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .amenity__item>p {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .room-amenities {
+        margin: 10% 0;
+    }
+
+    .room-amenities>h3 {
+        font-size: 1.3rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+        justify-content: space-between;
+        box-shadow: 0 0 5px 5px #eee7e0;
+        padding: 20px;
+    }
+
+    .amenity__item {
+        width: 30%;
+        justify-content: flex-start;
+    }
+
+    .amenity__item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .amenity__item>p {
+        text-align: left;
+        width: 80%;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .room-amenities {
+        margin: 10% 0;
+    }
+
+    .room-amenities>h3 {
+        font-size: 1.4rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+        justify-content: space-between;
+        box-shadow: 0 0 5px 5px #eee7e0;
+        padding: 20px;
+        gap: 30px 0;
+    }
+
+    .amenity__item {
+        width: 30%;
+        justify-content: flex-start;
+    }
+
+    .amenity__item>p {
+        text-align: left;
+        width: 100%;
+        font-size: 1rem;
+    }
 }

@@ -200,10 +200,24 @@ export default function FormBooking({ room }) {
       <form className="formBooking" onSubmit={submitBookingHandler}>
         <div className="formBooking__container">
           <Row className="formBooking__header">
-            <Col className="formBooking__header__col" xl={10}>
+            <Col
+              className="formBooking__header__col"
+              xs={24}
+              sm={10}
+              md={10}
+              lg={10}
+              xl={10}
+            >
               <p>RESERVE:</p>
             </Col>
-            <Col className="formBooking__header__col" xl={13}>
+            <Col
+              className="formBooking__header__col"
+              xs={24}
+              sm={13}
+              md={13}
+              lg={13}
+              xl={13}
+            >
               <p>
                 From: <span>{room.price}</span> VND/Night
               </p>
@@ -274,7 +288,14 @@ export default function FormBooking({ room }) {
           <div className="form-service">
             <p>Extra Services:</p>
             <Row className="service-options">
-              <Col className="option__title" xl={10}>
+              <Col
+                className="option__title"
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+              >
                 <div className="checkbox">
                   <input
                     type="checkbox"
@@ -287,12 +308,26 @@ export default function FormBooking({ room }) {
                   <label htmlFor="room-clean">Room Clean</label>
                 </div>
               </Col>
-              <Col className="option__price" xl={10}>
+              <Col
+                className="option__price"
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+              >
                 <p>250.000 VND / Night</p>
               </Col>
             </Row>
             <Row className="service-options">
-              <Col className="option__title" xl={10}>
+              <Col
+                className="option__title"
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+              >
                 <div className="checkbox">
                   <input
                     type="checkbox"
@@ -305,12 +340,26 @@ export default function FormBooking({ room }) {
                   <label htmlFor="massage">Massage</label>
                 </div>
               </Col>
-              <Col className="option__price" xl={10}>
+              <Col
+                className="option__price"
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+              >
                 <p>500.000 VND / Day</p>
               </Col>
             </Row>
             <Row className="service-options">
-              <Col className="option__title" xl={10}>
+              <Col
+                className="option__title"
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+              >
                 <div className="checkbox">
                   <input
                     type="checkbox"
@@ -323,7 +372,14 @@ export default function FormBooking({ room }) {
                   <label htmlFor="day-spa">Day Spa</label>
                 </div>
               </Col>
-              <Col className="option__price" xl={10}>
+              <Col
+                className="option__price"
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+              >
                 <p>1.000.000 VND / Day</p>
               </Col>
             </Row>

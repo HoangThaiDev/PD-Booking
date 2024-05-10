@@ -19,34 +19,43 @@ export default function About({ room }) {
     <div className={classes.about}>
       <div className={classes["about__container"]}>
         <Row className={classes["about__row"]}>
-          <Col className={classes["about__col"]} xl={14}>
+          <Col
+            className={classes["about__col"]}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={14}
+          >
             <h2 className={classes["about__name"]}>{room.name}</h2>
             <p className={classes["about__breakcrum"]}>
               Private Pool / Ocean View / Single Level
             </p>
             <div className={classes["rooms__item-card"]}>
-              <p className={classes["card__note-wifi"]}>
+              <span className={classes["card-flex"]}>
                 <FaWifi className={`${classes.icon} ${classes["icon-wifi"]}`} />
-                Free
-              </p>
-              <p className={classes["card__note-smoking"]}>
+                <p className={classes["card__note-wifi"]}>Free</p>
+              </span>
+              <span className={classes["card-flex"]}>
                 <MdOutlineSmokeFree
                   className={`${classes.icon} ${classes["icon-smoke"]}`}
                 />
-                Non-Smoking
-              </p>
-              <p className={classes["card__note-user"]}>
+                <p className={classes["card__note-smoking"]}>Non-Smoking</p>
+              </span>
+              <span className={classes["card-flex"]}>
                 <LuUsers
                   className={`${classes.icon} ${classes["icon-users"]}`}
                 />
-                {room.detail.maxPeople} Guests
-              </p>
-              <p className={classes["card__note-bed"]}>
+                <p className={classes["card__note-user"]}>
+                  {room.detail.maxPeople} Guests
+                </p>
+              </span>
+              <span className={classes["card-flex"]}>
                 <IoBedOutline
                   className={`${classes.icon} ${classes["icon-bed"]}`}
                 />
-                {room.detail.bed}
-              </p>
+                <p className={classes["card__note-bed"]}>{room.detail.bed}</p>
+              </span>
             </div>
             <div className={classes["about__images"]}>
               {room.photos.map((r) => (
@@ -61,7 +70,14 @@ export default function About({ room }) {
             <FamilyAmenities />
             <RoomAmenities />
           </Col>
-          <Col className={classes["about__col"]} xl={9}>
+          <Col
+            className={classes["about__col"]}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={9}
+          >
             <FormBooking room={room} />
           </Col>
         </Row>

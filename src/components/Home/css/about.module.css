@@ -1,6 +1,6 @@
 .about {
     width: 100%;
-    padding-top: 10%;
+    margin-top: 10%;
 }
 
 /* CSS: About Container */
@@ -8,10 +8,11 @@
     text-align: center;
     width: 900px;
     margin: 0 auto;
+    padding-bottom: 3%;
 }
 
 .about__container>img {
-    width: 10%;
+    width: 8%;
 }
 
 /* CSS: About Content */
@@ -54,11 +55,13 @@
     }
 
     .about__content {
-        font-size: 12px;
+        font-size: 0.7rem;
     }
 
     .about__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        margin: 20px 0;
     }
 
     .about__desc {
@@ -70,7 +73,7 @@
 
 @media screen and (min-width:576px) and (max-width:767px) {
     .about {
-        padding-top: 40%;
+        padding-top: 30%;
     }
 
     .about__container {
@@ -82,17 +85,18 @@
     }
 
     .about__content {
-        font-size: 12px;
+        font-size: 0.7rem;
     }
 
     .about__title {
         font-size: 2rem;
+        line-height: 2.2rem;
     }
 
     .about__desc {
         letter-spacing: 1px;
         line-height: 30px;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -103,6 +107,7 @@
 
     .about__container {
         width: 80%;
+        padding-bottom: 8%;
     }
 
     .about__container>img {
@@ -110,7 +115,7 @@
     }
 
     .about__content {
-        font-size: 13px;
+        font-size: 0.9rem;
     }
 
     .about__title {
@@ -120,25 +125,26 @@
     .about__desc {
         letter-spacing: 1px;
         line-height: 30px;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
     .about {
-        padding-top: 25%;
+        padding-top: 20%;
     }
 
     .about__container {
         width: 80%;
+        padding-bottom: 5%;
     }
 
     .about__container>img {
-        width: 10%;
+        width: 9%;
     }
 
     .about__content {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 
     .about__title {

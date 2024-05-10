@@ -26,7 +26,7 @@ export default function Resort({ resort }) {
             <Col
               className={classes["resort__col"]}
               xs={24}
-              sm={24}
+              sm={10}
               md={10}
               lg={10}
               xl={10}
@@ -36,7 +36,7 @@ export default function Resort({ resort }) {
             <Col
               className={classes["resort__col"]}
               xs={24}
-              sm={24}
+              sm={10}
               md={10}
               lg={10}
               xl={10}

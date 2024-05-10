@@ -301,12 +301,12 @@
 
     @keyframes showCard {
         0% {
-            top: 30%;
+            top: 25%;
             left: 100%;
         }
 
         100% {
-            top: 30%;
+            top: 25%;
             left: 0;
         }
     }
@@ -348,7 +348,7 @@
     }
 
     .resort__card .card__name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 0 20px;
     }
 

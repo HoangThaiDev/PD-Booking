@@ -1,6 +1,6 @@
 .family-amenities>h3 {
     font-family: "Playfair Display", serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     margin-bottom: 3%;
 }
@@ -32,4 +32,89 @@
     font-family: "Playfair Display", serif;
     font-size: 0.9rem;
     color: #53624e;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .family-amenities {
+        margin: 10% 0;
+    }
+
+    .family-amenities>h3 {
+        font-size: 1.1rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+        justify-content: center;
+    }
+
+    .amenity__item {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .family-amenities {
+        margin: 10% 0;
+    }
+
+    .family-amenities>h3 {
+        font-size: 1.2rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+    }
+
+    .amenity__item {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .family-amenities {
+        margin: 10% 0;
+    }
+
+    .family-amenities>h3 {
+        font-size: 1.3rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+    }
+
+    .amenity__item {
+        width: 40%;
+    }
+
+    .amenity__item>p {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .family-amenities {
+        margin-top: 10%;
+    }
+
+    .family-amenities>h3 {
+        font-size: 1.4rem;
+    }
+
+    .amenities__list {
+        margin-top: 5%;
+        justify-content: center;
+    }
+
+    .amenity__item {
+        width: 25%;
+    }
+
+    .amenity__item>p {
+        width: 100%;
+    }
 }
