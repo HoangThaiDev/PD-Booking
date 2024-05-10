@@ -4,8 +4,12 @@ import { createPortal } from "react-dom";
 import classes from "./css/sideMenu.module.css";
 import { sideMenuAction } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
+
 // Import Icons
 import { IoClose } from "react-icons/io5";
+
+// Import Components
+import { Link } from "react-router-dom";
 
 const Container = () => {
   // Create + use Hooks\
@@ -15,10 +19,6 @@ const Container = () => {
   // Create + use Event Handlers
   const showSideMenuHandler = () => {
     dispatch(sideMenuAction.hideSideMenu());
-  };
-
-  const navigateHandler = (nameURL) => {
-    document.location.assign(nameURL);
   };
 
   return (
@@ -44,60 +44,33 @@ const Container = () => {
       </div>
       <div className={classes["menu__list"]}>
         <ul className={classes["menu__list-flex"]}>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/")}
-          >
+          <Link to="/" className={classes["menu__item"]}>
             Home
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/cities")}
-          >
+          </Link>
+          <Link to="/cities" className={classes["menu__item"]}>
             Cities
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/resorts")}
-          >
+          </Link>
+          <Link to="/resorts" className={classes["menu__item"]}>
             Resorts
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/rooms")}
-          >
+          </Link>
+          <Link to="/rooms" className={classes["menu__item"]}>
             Rooms
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/login")}
-          >
+          </Link>
+          <Link to="/login" className={classes["menu__item"]}>
             User
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/cart")}
-          >
+          </Link>
+          <Link to="/cart" className={classes["menu__item"]}>
             Cart
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/checkout")}
-          >
+          </Link>
+          <Link to="/checkout" className={classes["menu__item"]}>
             Checkout
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/")}
-          >
+          </Link>
+          <Link to="/contact" className={classes["menu__item"]}>
             Contact
-          </li>
-          <li
-            className={classes["menu__item"]}
-            onClick={() => navigateHandler("/")}
-          >
+          </Link>
+          <Link to="/about-me" className={classes["menu__item"]}>
             About me
-          </li>
+          </Link>
         </ul>
       </div>
     </div>

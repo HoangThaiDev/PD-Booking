@@ -39,7 +39,7 @@
     font-size: 1rem;
 }
 
-.navbar .menu__item a {
+.menu__item a {
     color: white;
 }
 
@@ -48,13 +48,13 @@
     color: rgba(255, 255, 255, 0.912);
 }
 
-.navbar .menu__item .icon-dropdown {
+.menu__item .icon-dropdown {
     position: absolute;
     right: -20px;
     font-size: 16px;
 }
 
-.navbar .menu-dropdown {
+.menu-dropdown {
     position: absolute;
     left: -50px;
     background-color: rgba(43, 42, 42);
@@ -64,13 +64,13 @@
     display: none;
 }
 
-.navbar .contact__item .menu-dropdown {
+.contact__item .menu-dropdown {
     text-align: left;
     left: 80px;
     width: 60px;
 }
 
-.navbar .menu-dropdown .menu-dropdown__item {
+.menu-dropdown .menu-dropdown__item {
     display: block;
     margin: 20px 0;
     line-height: 25px;

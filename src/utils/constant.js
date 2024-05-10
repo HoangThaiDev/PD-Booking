@@ -1,10 +1,10 @@
-let apiRoot = "";
+let apiRootServer = "";
 
 if (import.meta.env.MODE === "development") {
-  apiRoot = "http://localhost:5000";
+  apiRootServer = "http://localhost:5000";
 }
 if (import.meta.env.MODE === "production") {
-  apiRoot = "https://server-pd-booking.onrender.com";
+  apiRootServer = "https://server-pd-booking.onrender.com";
 }
 
-export const API_ROOT = apiRoot;
+export const API_ROOT = apiRootServer;

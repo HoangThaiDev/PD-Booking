@@ -6,7 +6,7 @@ import { sideMenuAction } from "../redux/store";
 
 // Import Components
 import { Row, Col } from "antd";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Import Icons
 import { VscMenu } from "react-icons/vsc";
@@ -64,14 +64,7 @@ export default function Navbar() {
                 />
               </li>
               <li className={classes["menu__item"]}>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "active" : undefined
-                  }
-                >
-                  HOME
-                </NavLink>
+                <Link to="/">HOME</Link>
               </li>
               <li className={classes["menu__item"]}>
                 STAY
