@@ -329,11 +329,11 @@ export default function FormBooking({ room }) {
               </Col>
               <Col
                 className="option__price"
-                xs={10}
-                sm={10}
-                md={10}
-                lg={10}
-                xl={10}
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
               >
                 <p>250.000 VND / Night</p>
               </Col>
@@ -361,11 +361,11 @@ export default function FormBooking({ room }) {
               </Col>
               <Col
                 className="option__price"
-                xs={10}
-                sm={10}
-                md={10}
-                lg={10}
-                xl={10}
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
               >
                 <p>500.000 VND / Day</p>
               </Col>
@@ -393,11 +393,11 @@ export default function FormBooking({ room }) {
               </Col>
               <Col
                 className="option__price"
-                xs={10}
-                sm={10}
-                md={10}
-                lg={10}
-                xl={10}
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
               >
                 <p>1.000.000 VND / Day</p>
               </Col>

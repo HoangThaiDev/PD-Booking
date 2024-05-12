@@ -287,8 +287,8 @@
 
     .form__col:nth-child(2) {
         order: 1;
-        margin-top: 10%;
-        padding: 50px 0;
+        padding: 4rem 0;
+        transform: translateY(35px);
     }
 
     .form-main {
@@ -324,8 +324,8 @@
     .form__col:nth-child(2) {
         width: 100%;
         order: 1;
-        margin-top: 5%;
-        padding: 50px 0;
+        padding: 4rem 0;
+        transform: translateY(30px);
     }
 
     .form-main {
