@@ -7,10 +7,11 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { userAction } from "../../redux/store";
 import { API_ROOT } from "../../utils/constant";
+import "../../UI/css/messageAlert.css";
 
 // Import Components
 import { Link } from "react-router-dom";
-import { Row, Col } from "antd";
+import { Row, Col, message } from "antd";
 const bannerImage =
   "https://img.freepik.com/free-photo/photorealistic-wooden-house-with-timber-structure_23-2151302631.jpg";
 
@@ -19,10 +20,12 @@ import { MdOutlineMail } from "react-icons/md";
 import { IoKeyOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
+import { MdError } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 export default function FormLogin() {
   // Create + use Hooks
-
+  const [messageApi, contextHolder] = message.useMessage();
   const [showPassword, setShowPassword] = useState({
     password: false,
   });
@@ -69,8 +72,15 @@ export default function FormLogin() {
 
       if (response.status === 200) {
         dispatch(userAction.login({ user: response.data.user }));
-        alert(response.data.message);
-        navigate("/");
+        messageApi.open({
+          type: "success",
+          content: response.data.message,
+          className: "message-success",
+          icon: <FaCheck />,
+        });
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       }
 
       setErrorMessages({
@@ -80,15 +90,19 @@ export default function FormLogin() {
         confirmPassword: false,
       });
     } catch (error) {
-      if (error.response.status === 400) {
-        alert(error.response.data.message);
-        return false;
-      }
+      console.log(error.response.data.message);
+      messageApi.open({
+        type: "error",
+        content: error.response.data.message,
+        className: "message-error",
+        icon: <MdError />,
+      });
     }
   };
 
   return (
     <div className={classes["form-login"]}>
+      {contextHolder} {/* Alert Action */}
       <Link to="/" className={classes["link_home-mobile"]}>
         <span>&#8249;</span> Back to home
       </Link>

@@ -5,6 +5,7 @@ import { checkValidateFormRegister } from "../../middeware/checkValidateForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
+import "../../UI/css/messageAlert.css";
 
 // Import Components
 import { Link } from "react-router-dom";
@@ -18,9 +19,12 @@ import { IoKeyOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { PiUser } from "react-icons/pi";
+import { MdError } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 export default function FormLogin() {
   // Create + use Hooks
+  const [messageApi, contextHolder] = message.useMessage();
   const [showPassword, setShowPassword] = useState({
     password: false,
     confirmPassword: false,
@@ -74,8 +78,15 @@ export default function FormLogin() {
         infoUserRegister,
       });
       if (response.status === 200) {
-        alert(response.data.message);
-        navigate("/login");
+        messageApi.open({
+          type: "success",
+          content: response.data.message,
+          className: "message-success",
+          icon: <FaCheck />,
+        });
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
       }
 
       setErrorMessages({
@@ -85,15 +96,19 @@ export default function FormLogin() {
         confirmPassword: false,
       });
     } catch (error) {
-      if (error.response.status === 400) {
-        alert(error.response.data.message);
-        return false;
-      }
+      console.log(error.response.data.message);
+      messageApi.open({
+        type: "error",
+        content: error.response.data.message,
+        className: "message-error",
+        icon: <MdError />,
+      });
     }
   };
 
   return (
     <div className={classes["form-register"]}>
+      {contextHolder} {/* Alert Action */}
       <Link to="/" className={classes["link_home-mobile"]}>
         <span>&#8249;</span> Back to home
       </Link>

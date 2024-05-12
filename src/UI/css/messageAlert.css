@@ -1,0 +1,88 @@
+/* CSS: Message Success */
+.message-success,
+.message-error {
+    margin-top: 1rem;
+}
+
+.message-success .ant-message-notice-content {
+    width: auto;
+    max-width: 350px;
+    background: #DEF0D8 !important;
+}
+
+.message-success .ant-message-success {
+    display: flex;
+    align-items: center;
+}
+
+.message-success .ant-message-success span {
+    color: #40633C !important;
+    font-size: 1.2rem;
+    font-family: "EB Garamond", serif;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.message-success svg {
+    color: #40633C;
+    font-size: 1.2rem !important;
+}
+
+/* CSS: Message Error */
+
+.message-error .ant-message-notice-content {
+    width: auto;
+    max-width: 350px;
+    background: #F3DFE0 !important;
+}
+
+.message-error .ant-message-error {
+    display: flex;
+    align-items: center;
+}
+
+.message-error .ant-message-error span {
+    color: #633c3c !important;
+    font-size: 1.2rem;
+    font-family: "EB Garamond", serif;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.message-error svg {
+    color: #633c3c;
+    font-size: 1.2rem !important;
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+
+    .message-success .ant-message-success span,
+    .message-error .ant-message-error span {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+
+    .message-success .ant-message-success span,
+    .message-error .ant-message-error span {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    .message-success .ant-message-success span,
+    .message-error .ant-message-error span {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    .message-success .ant-message-success span,
+    .message-error .ant-message-error span {
+        font-size: 1.1rem;
+    }
+}

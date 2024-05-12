@@ -36,12 +36,13 @@ export default function Cart() {
           setIsLoading(true);
         }
       } catch (error) {
-        alert(error.response.data.message);
+        console.log(error.response.data.message);
+        setIsLoading(true);
       }
     };
 
     fetchCart();
-  }, [refresh]);
+  }, []);
 
   return (
     <>
@@ -53,7 +54,7 @@ export default function Cart() {
           showFormBooking={false}
         />
         <ModalCart />
-        {isLoading && <ListCart cartUser={cartUser} />}
+        {isLoading && <ListCart cartUser={cartUser} isLoggedIn={isLoggedIn} />}
       </div>
     </>
   );

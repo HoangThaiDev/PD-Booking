@@ -23,8 +23,8 @@ export default function ModalCart() {
   return (
     <>
       {showModal && (
-        <div className={classes["modalCart__container"]}>
-          <div className={classes.modalCart}>
+        <div className={classes.modalCart}>
+          <div className={classes["modalCart__container"]}>
             <div className={classes["modalCart__block"]}>
               <MdClose
                 className={classes["modalCart__icon-close"]}
@@ -32,10 +32,20 @@ export default function ModalCart() {
               />
             </div>
             <Row className={classes["modalCart__row"]}>
-              <Col className={classes["modalCart__col"]} xl={12}>
+              <Col
+                className={classes["modalCart__col"]}
+                xs={24}
+                sm={24}
+                xl={12}
+              >
                 <img src={cart.photo} alt={cart.photo} />
               </Col>
-              <Col className={classes["modalCart__col"]} xl={11}>
+              <Col
+                className={classes["modalCart__col"]}
+                xs={24}
+                sm={24}
+                xl={11}
+              >
                 <p
                   className={`${classes["modalCart__item"]} ${classes["modalCart__name"]}`}
                 >

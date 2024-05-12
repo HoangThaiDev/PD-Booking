@@ -6,7 +6,7 @@ import classes from "./css/listCart.module.css";
 import { Row, Col } from "antd";
 import ItemCart from "./ItemCart";
 
-export default function ListCart({ cartUser }) {
+export default function ListCart({ cartUser, isLoggedIn }) {
   // Create + use Hooks
   const totalCarts = useMemo(() => {
     const totalPrice = cartUser.items.reduce((a, c) => {
@@ -28,31 +28,71 @@ export default function ListCart({ cartUser }) {
         <Row className={classes["listCart__row"]}>
           <Col
             className={`${classes["listCart__col"]} ${classes["listCart__carts"]}`}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
             xl={16}
           >
             <Row className={classes["listCart__title-list"]}>
-              <Col className={classes["listCart__title-item"]} xl={2}>
+              <Col
+                className={classes["listCart__title-item"]}
+                md={2}
+                lg={2}
+                xl={2}
+              >
                 <p>ACTION</p>
               </Col>
-              <Col className={classes["listCart__title-item"]} xl={10}>
+              <Col
+                className={classes["listCart__title-item"]}
+                md={8}
+                lg={10}
+                xl={10}
+              >
                 <p>PRODUCT</p>
               </Col>
-              <Col className={classes["listCart__title-item"]} xl={3}>
+              <Col
+                className={classes["listCart__title-item"]}
+                md={3}
+                lg={3}
+                xl={3}
+              >
                 <p>ROOMS</p>
               </Col>
-              <Col className={classes["listCart__title-item"]} xl={3}>
+              <Col
+                className={classes["listCart__title-item"]}
+                md={4}
+                lg={3}
+                xl={3}
+              >
                 <p>PRICE (VNĐ)</p>
               </Col>
-              <Col className={classes["listCart__title-item"]} xl={3}>
+              <Col
+                className={classes["listCart__title-item"]}
+                md={4}
+                lg={3}
+                xl={3}
+              >
                 <p>STATUS</p>
+              </Col>
+              <Col
+                className={classes["listCart__title-item-active"]}
+                xs={24}
+                sm={24}
+              >
+                <p>DETAIL CART</p>
               </Col>
             </Row>
 
-            <ItemCart cartUser={cartUser} />
+            <ItemCart cartUser={cartUser} isLoggedIn={isLoggedIn} />
           </Col>
 
           <Col
             className={`${classes["listCart__col"]} ${classes["listCart__formPrice"]}`}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
             xl={7}
           >
             <form

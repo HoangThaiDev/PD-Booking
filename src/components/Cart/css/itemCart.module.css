@@ -34,6 +34,8 @@
     color: rgba(246, 53, 53, 0.934);
 }
 
+
+/* CSS: Item Card */
 .item__card {
     display: flex;
     gap: 20px;
@@ -80,20 +82,23 @@
 
 .itemCart__content-status>p {
     padding: 20px;
-    background-color: rgb(29, 145, 216);
+    background-color: rgba(29, 77, 106, 0.8);
     color: white;
     border-radius: 3px;
 }
 
+/* CSS: Item - Message */
 .itemCart__message {
+    width: 80%;
     text-align: center;
-    transform: translateY(60px);
+    margin: 5rem auto;
 }
 
 .itemCart__message h2 {
     font-family: "Bodoni Moda", serif;
     font-size: 2rem;
     font-weight: 700;
+    letter-spacing: 1px;
     color: rgb(70, 70, 69);
 }
 
@@ -109,6 +114,7 @@
     border: 2px solid transparent
 }
 
+/* CSS: Pagination */
 .pagination__container {
     width: 100%;
     text-align: center;
@@ -122,4 +128,319 @@
     border-color: rgb(185, 157, 117);
     background-color: white;
     color: rgb(185, 157, 117)
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .itemCart__message {
+        box-shadow: 0 0 5px 5px rgba(227, 227, 226, 0.5);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .itemCart__message>h2 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .itemCart__link {
+        font-size: 0.9rem;
+        padding: 15px 30px;
+    }
+
+    /* CSS: Col Item */
+    .itemCart__content-item:nth-child(2) .item__card>img {
+        display: none;
+    }
+
+    .itemCart__content-list {
+        display: grid;
+        grid-template-columns: 80px 1fr 1fr;
+        grid-template-rows: 1fr 50px;
+        grid-gap: 5px 10px;
+    }
+
+    .itemCart__content-item:nth-child(1) {
+        grid-row: 1/4;
+    }
+
+    .itemCart__content-item:nth-child(2) {
+        grid-column: 2/4;
+    }
+
+    .itemCart__content-item:nth-child(3),
+    .itemCart__content-item:nth-child(4) {
+        position: relative;
+        text-align: right;
+    }
+
+    .itemCart__content-item:nth-child(5) {
+        grid-column: 2/4
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content .card__content-name {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p {
+        margin: 10px 0;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p>span {
+        margin-left: 10px;
+    }
+
+    .itemCart__content-item:nth-child(3)>p,
+    .itemCart__content-item:nth-child(4)>p {
+        text-align: left;
+        padding-left: 3.5rem;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p,
+    .itemCart__content-item:nth-child(3)>p,
+    .itemCart__content-item:nth-child(4)>p,
+    .itemCart__content-item:nth-child(5)>p {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Active */
+    .itemCart__content-item:nth-child(3)::after {
+        font-family: "Roboto", sans-serif;
+        content: 'Rooms:';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    .itemCart__content-item:nth-child(4)::after {
+        font-family: "Roboto", sans-serif;
+        content: 'Price:';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .itemCart__message {
+        box-shadow: 0 0 5px 5px rgba(227, 227, 226, 0.5);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .itemCart__message>h2 {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .itemCart__link {
+        font-size: 1rem;
+        padding: 15px 30px;
+    }
+
+    .itemCart__message {
+        box-shadow: 0 0 5px 5px rgba(227, 227, 226, 0.5);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .itemCart__message>h2 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .itemCart__link {
+        font-size: 0.9rem;
+        padding: 15px 30px;
+    }
+
+    /* CSS: Col Item */
+    .itemCart__content-item:nth-child(2) .item__card>img {
+        display: none;
+    }
+
+    .itemCart__content-list {
+        display: grid;
+        grid-template-columns: 80px 250px 100px;
+        grid-template-rows: 1fr 30px 30px;
+        grid-gap: 3px 20px;
+    }
+
+    .itemCart__content-item:nth-child(3),
+    .itemCart__content-item:nth-child(4) {
+        position: relative;
+        text-align: right;
+    }
+
+    .card__content {
+        width: 250px;
+        word-wrap: break-word;
+        display: inline-block;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content .card__content-name {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p {
+        margin: 10px 0;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p>span {
+        margin-left: 10px;
+    }
+
+    .itemCart__content-item:nth-child(3)>p,
+    .itemCart__content-item:nth-child(4)>p {
+        text-align: left;
+        padding-left: 3.5rem;
+    }
+
+    .itemCart__content-item:nth-child(4)>p {
+        text-align: left;
+        padding-left: 2.5rem;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p,
+    .itemCart__content-item:nth-child(3)>p,
+    .itemCart__content-item:nth-child(4)>p,
+    .itemCart__content-item:nth-child(5)>p {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Active */
+    .itemCart__content-item:nth-child(1) {
+        grid-row: 1/4;
+        order: 1;
+    }
+
+    .itemCart__content-item:nth-child(2) {
+        grid-column: 2/4;
+        grid-row: 1/2;
+        order: 2;
+    }
+
+    .itemCart__content-item:nth-child(3) {
+        grid-column: 2/3;
+        order: 3;
+    }
+
+    .itemCart__content-item:nth-child(4) {
+        grid-row: 3/4;
+        grid-column: 2/3;
+        order: 5;
+    }
+
+    .itemCart__content-item:nth-child(5) {
+        order: 4;
+        grid-column: 3/4;
+        grid-row: -4/-1;
+    }
+
+
+
+    .itemCart__content-item:nth-child(3)::after {
+        font-family: "Roboto", sans-serif;
+        content: 'Rooms:';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    .itemCart__content-item:nth-child(4)::after {
+        font-family: "Roboto", sans-serif;
+        content: 'Price:';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .itemCart__message {
+        box-shadow: 0 0 5px 5px rgba(227, 227, 226, 0.5);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .itemCart__message>h2 {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .itemCart__link {
+        font-size: 1.1rem;
+        padding: 15px 30px;
+    }
+
+    /* CSS: Col List */
+    .itemCart__content-list {
+        padding: 5% 0;
+    }
+
+    /* CSS: Col Item */
+    .itemCart__content-item:nth-child(2) .item__card>img {
+        display: none;
+    }
+
+    .card__content {
+        width: 100%;
+        word-wrap: break-word;
+        display: inline-block;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content .card__content-name {
+        font-size: 1.2rem;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content>p,
+    .itemCart__content-item:nth-child(3)>p,
+    .itemCart__content-item:nth-child(4)>p,
+    .itemCart__content-item:nth-child(5)>p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .itemCart__message {
+        box-shadow: 0 0 5px 5px rgba(227, 227, 226, 0.5);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .itemCart__message>h2 {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .itemCart__link {
+        font-size: 1.1rem;
+        padding: 15px 30px;
+    }
+
+    /* CSS: Col Item */
+    .card__content {
+        width: 100%;
+        word-wrap: break-word;
+        display: inline-block;
+    }
+
+    .itemCart__content-item:nth-child(2) .card__content .card__content-name {
+        font-size: 1.3rem;
+    }
 }

@@ -7,16 +7,20 @@ import { checkFormBooking } from "../../middeware/checkValidateForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
+import "../../UI/css/messageAlert.css";
 
 // Import Components
-import { DatePicker, Row, Col, ConfigProvider } from "antd";
+import { DatePicker, Row, Col, ConfigProvider, message } from "antd";
 
 // Import Icons
 import { RxDividerHorizontal } from "react-icons/rx";
 import { GoPlus } from "react-icons/go";
+import { MdError } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 export default function FormBooking({ room }) {
   // Create +use Hooks
+  const [messageApi, contextHolder] = message.useMessage();
   const { user, isLoggedIn } = useSelector((state) => state.user);
   const {
     adults: adultsValue,
@@ -176,12 +180,24 @@ export default function FormBooking({ room }) {
           user,
         });
         if (response.status === 200) {
-          alert(response.data);
-          navigate("/carts");
+          messageApi.open({
+            type: "success",
+            content: "Add To Cart Success!",
+            className: "message-success",
+            icon: <FaCheck />,
+          });
+          setTimeout(() => {
+            navigate("/carts");
+          }, 1000);
         }
       } catch (error) {
         console.log(error);
-        alert(error.response.data.message);
+        messageApi.open({
+          type: "error",
+          content: error.response.data.message,
+          className: "message-error",
+          icon: <MdError />,
+        });
       }
     }
   };
@@ -197,6 +213,7 @@ export default function FormBooking({ room }) {
         },
       }}
     >
+      {contextHolder} {/* Alert Action */}
       <form className="formBooking" onSubmit={submitBookingHandler}>
         <div className="formBooking__container">
           <Row className="formBooking__header">
@@ -231,11 +248,13 @@ export default function FormBooking({ room }) {
             <DatePicker
               placeholder="Check In"
               className="formDate-checkIn"
+              popupClassName="formDatePopup-checkIn"
               onChange={changeDateCheckInHandler}
             />
             <DatePicker
               placeholder="Check Out"
               className="formDate-checkOut"
+              popupClassName="formDatePopup-checkOut"
               onChange={changeDateCheckOutHandler}
             />
           </div>

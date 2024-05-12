@@ -1,10 +1,9 @@
 <<<<<<< HEAD
 
-<!-- XS (Extra small): Max-width: 575px
-SM (Small): Min-width: 576px
-MD (Medium): Min-width: 768px
-LG (Large): Min-width: 992px
-XL (Extra large): Min-width: 1200px -->
+<!-- @media screen and (max-width:575px) {}
+@media screen and (min-width:576px) and (max-width:767px) {}
+@media screen and (min-width:768px) and (max-width:991px) {}
+@media screen and (min-width:992px) and (max-width:1199px) {} -->
 
 # PD-Booking
 

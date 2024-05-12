@@ -2,15 +2,18 @@
     padding: 5% 0;
 }
 
+/* CSS: Container */
 .listCart__container {
     width: 90%;
     margin: 0 auto;
 }
 
+/* CSS: Row */
 .listCart__row {
     justify-content: space-between;
 }
 
+/* CSS: Row - Title */
 .listCart__title-list {
     border-top: 1px solid rgb(190, 188, 188);
     border-bottom: 1px solid rgb(190, 188, 188);
@@ -33,6 +36,7 @@
     color: rgba(37, 37, 37, 0.801);
 }
 
+/* CSS: Col Form Cart */
 .form-cart {
     background-color: #F9F9F9;
     padding: 10%;
@@ -83,10 +87,89 @@
     padding: 15px 20px;
 }
 
+/* CSS: Active */
+.listCart__title-item-active {
+    display: none;
+    padding: 10px 0;
+}
+
+.listCart__title-item-active p {
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgba(37, 37, 37, 0.801);
+}
 
 /* Effect CSS */
-
 .cart__btn-checkout:hover {
     transition: 0.3s all ease;
     background-color: rgba(37, 37, 37, 0.801);
+}
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .listCart__title-list {
+        justify-content: center;
+    }
+
+    .listCart__title-item {
+        display: none;
+    }
+
+    .listCart__title-item-active {
+        text-align: center;
+        display: block;
+    }
+
+    /* CSS: form Price */
+    .listCart__formPrice {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .listCart__title-list {
+        justify-content: center;
+    }
+
+    .listCart__title-item {
+        display: none;
+    }
+
+    .listCart__title-item-active {
+        text-align: center;
+        display: block;
+    }
+
+
+    /* CSS: form Price */
+    .listCart__formPrice {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:991px) {
+    .listCart__title-item>p {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+
+    /* CSS: form Price */
+    .listCart__formPrice {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .listCart__title-item>p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    /* CSS: form Price */
+    .listCart__formPrice {
+        margin-top: 5rem;
+    }
 }

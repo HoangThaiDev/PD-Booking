@@ -41,7 +41,6 @@
     text-decoration: line-through;
 }
 
-
 /* CSS: formDate Container */
 .formDate__container {
     width: 100%;
@@ -71,12 +70,60 @@
 .formDate__container .formDate-checkIn input[value],
 .formDate__container .formDate-checkOut input[value] {
     color: #b99d75;
+    font-size: 1rem;
 }
 
 .formDate__container .ant-picker-suffix .anticon-calendar,
 .formDate__container .ant-picker-clear .anticon {
     color: #b99d75 !important;
     font-size: 1.1rem;
+}
+
+/* CSS: Popup DatePicker */
+.formDatePopup-checkIn .ant-picker-header,
+.formDatePopup-checkOut .ant-picker-header {
+    background-color: rgb(241, 235, 227);
+    font-family: "EB Garamond", serif;
+}
+
+.formDatePopup-checkIn .ant-picker-body,
+.formDatePopup-checkOut .ant-picker-body {
+    background-color: rgb(241, 235, 227);
+    font-family: "EB Garamond", serif;
+}
+
+.formDatePopup-checkIn td.ant-picker-cell,
+.formDatePopup-checkOut td.ant-picker-cell {
+    border: 1px solid rgba(60, 60, 60, 0.2);
+}
+
+.formDatePopup-checkIn td.ant-picker-cell.ant-picker-cell-in-view,
+.formDatePopup-checkOut td.ant-picker-cell.ant-picker-cell-in-view {
+    background-color: white;
+    border: 1px solid rgba(60, 60, 60, 0.2);
+}
+
+.formDatePopup-checkIn .ant-picker-panel-layout,
+.formDatePopup-checkOut .ant-picker-panel-layout {
+    flex-direction: column !important;
+    display: block;
+    border: 1px solid #B99D75;
+}
+
+.formDatePopup-checkIn .ant-picker-active-bar,
+.formDatePopup-checkOut .ant-picker-active-bar {
+    background-color: transparent !important;
+}
+
+.formDatePopup-checkIn .ant-picker-footer,
+.formDatePopup-checkOut .ant-picker-footer {
+    background-color: rgb(241, 235, 227) !important;
+}
+
+.formDatePopup-checkIn .ant-picker-footer .ant-picker-now-btn,
+.formDatePopup-checkOut .ant-picker-footer .ant-picker-now-btn {
+    color: #494949;
+    font-weight: 700;
 }
 
 /* CSS: Form Options */
@@ -92,12 +139,10 @@
     justify-content: space-between;
 }
 
-
 .form__adult-quantity label,
 .form__children-quantity label {
     font-size: 1.1rem;
 }
-
 
 .form__adult-quantity>p,
 .form__children-quantity>p {
@@ -136,8 +181,6 @@
     display: flex;
     align-items: center;
 }
-
-
 
 /* CSS: Form Services */
 .form-service {
@@ -250,6 +293,7 @@
 }
 
 /* Effect CSS */
+
 .formDate__container .formDate-checkIn input:focus,
 .formDate__container .formDate-checkOut input:focus {
     outline: 0;
@@ -287,6 +331,16 @@
 
     .formBooking__header__col:nth-child(2)>p {
         font-size: 0.8rem;
+    }
+
+    .formDatePopup-checkIn .ant-picker-panel-container {
+        position: relative;
+        left: -0.5rem !important;
+    }
+
+    .formDatePopup-checkOut .ant-picker-panel-container {
+        position: relative;
+        left: 0.5rem !important;
     }
 
     .formDate__container .formDate-checkIn input[value],
@@ -371,6 +425,10 @@
         font-size: 0.8rem;
     }
 
+    .service-options {
+        margin: 5% 0;
+    }
+
     /* CSS: Total Price */
     .totalPrice .totalPrice__col:nth-child(1)>p,
     .totalPrice .totalPrice__col:nth-child(2)>p {
@@ -389,6 +447,17 @@
 
     .formBooking__header__col:nth-child(2)>p {
         font-size: 0.9rem;
+    }
+
+
+    .formDatePopup-checkIn .ant-picker-panel-container {
+        position: relative;
+        left: 0rem !important;
+    }
+
+    .formDatePopup-checkOut .ant-picker-panel-container {
+        position: relative;
+        right: 0rem !important;
     }
 
     .formDate__container .formDate-checkIn input[value],
@@ -468,6 +537,10 @@
         font-size: 0.9rem;
     }
 
+    .service-options {
+        margin: 4% 0;
+    }
+
     /* CSS: Total Price */
     .totalPrice .totalPrice__col:nth-child(1)>p,
     .totalPrice .totalPrice__col:nth-child(2)>p {
@@ -479,6 +552,93 @@
     }
 }
 
-@media screen and (min-width:768px) and (max-width:991px) {}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .formBooking__header__col:nth-child(1)>p {
+        font-size: 1.7rem;
+    }
 
-@media screen and (min-width:992px) and (max-width:1199px) {}
+    .formDatePopup-checkIn .ant-picker-panel-container {
+        position: relative;
+        left: 0rem !important;
+    }
+
+    .formDatePopup-checkOut .ant-picker-panel-container {
+        position: relative;
+        right: -5rem !important;
+    }
+
+    .formDate__container .formDate-checkIn input[value],
+    .formDate__container .formDate-checkOut input[value] {
+        font-size: 0.9rem;
+    }
+
+    .formDate__container .formDate-checkIn input[value]::placeholder,
+    .formDate__container .formDate-checkOut input[value]::placeholder,
+    .formDate__container .ant-picker-suffix .anticon-calendar,
+    .formDate__container .ant-picker-clear .anticon {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Form Options */
+    .form-service {
+        margin-top: 5%;
+    }
+
+    .form__adult-quantity>label,
+    .form__children-quantity>label {
+        font-size: 0.9rem;
+    }
+
+    .form__adult-quantity>p,
+    .form__children-quantity>p {
+        font-size: 0.9rem;
+    }
+
+    .service-options {
+        margin: 4% 0;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    .formDatePopup-checkIn .ant-picker-panel-container {
+        position: relative;
+        left: 0rem !important;
+    }
+
+    .formDatePopup-checkOut .ant-picker-panel-container {
+        position: relative;
+        right: -7rem !important;
+    }
+
+    .formDate__container .formDate-checkIn input[value],
+    .formDate__container .formDate-checkOut input[value] {
+        font-size: 1rem;
+    }
+
+    .formDate__container .formDate-checkIn input[value]::placeholder,
+    .formDate__container .formDate-checkOut input[value]::placeholder,
+    .formDate__container .ant-picker-suffix .anticon-calendar,
+    .formDate__container .ant-picker-clear .anticon {
+        font-size: 1rem;
+    }
+
+    /* CSS: Form Options */
+    .form-service {
+        margin-top: 5%;
+    }
+
+    .form__adult-quantity>label,
+    .form__children-quantity>label {
+        font-size: 1rem;
+    }
+
+    .form__adult-quantity>p,
+    .form__children-quantity>p {
+        font-size: 1rem;
+    }
+
+    .service-options {
+        margin: 4% 0;
+    }
+}

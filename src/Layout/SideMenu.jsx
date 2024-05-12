@@ -44,31 +44,67 @@ const Container = () => {
       </div>
       <div className={classes["menu__list"]}>
         <ul className={classes["menu__list-flex"]}>
-          <Link to="/" className={classes["menu__item"]}>
+          <Link
+            to="/"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Home
           </Link>
-          <Link to="/cities" className={classes["menu__item"]}>
+          <Link
+            to="/cities"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Cities
           </Link>
-          <Link to="/resorts" className={classes["menu__item"]}>
+          <Link
+            to="/resorts"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Resorts
           </Link>
-          <Link to="/rooms" className={classes["menu__item"]}>
+          <Link
+            to="/rooms"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Rooms
           </Link>
-          <Link to="/login" className={classes["menu__item"]}>
+          <Link
+            to="/login"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             User
           </Link>
-          <Link to="/cart" className={classes["menu__item"]}>
+          <Link
+            to="/carts"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Cart
           </Link>
-          <Link to="/checkout" className={classes["menu__item"]}>
+          <Link
+            to="/checkout"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Checkout
           </Link>
-          <Link to="/contact" className={classes["menu__item"]}>
+          <Link
+            to="/contact"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             Contact
           </Link>
-          <Link to="/about-me" className={classes["menu__item"]}>
+          <Link
+            to="/about-me"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
             About me
           </Link>
         </ul>
