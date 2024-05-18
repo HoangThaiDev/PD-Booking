@@ -142,9 +142,10 @@
     background-color: #B99D75;
     color: white;
     border-radius: 2px;
-    border: 1px solid transparent;
+    border: 3px solid transparent;
     width: 100%;
     font-size: 1rem;
+    transition: 0.3s all ease;
 }
 
 /* Active */
@@ -174,8 +175,7 @@ input:-webkit-autofill:active {
 }
 
 .btn-search:hover {
-    transition: 0.3s all ease;
-    opacity: 0.8;
+    background: rgba(185, 157, 117, 0.7);
 }
 
 /* Responsive */

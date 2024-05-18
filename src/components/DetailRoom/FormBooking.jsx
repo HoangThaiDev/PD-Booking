@@ -21,7 +21,7 @@ import { FaCheck } from "react-icons/fa";
 export default function FormBooking({ room }) {
   // Create +use Hooks
   const [messageApi, contextHolder] = message.useMessage();
-  const { user, isLoggedIn } = useSelector((state) => state.user);
+  const { isLoggedIn, user } = useSelector((state) => state.user);
   const {
     adults: adultsValue,
     children: childrenValue,
@@ -179,10 +179,11 @@ export default function FormBooking({ room }) {
           valueFormBooking,
           user,
         });
+
         if (response.status === 200) {
           messageApi.open({
             type: "success",
-            content: "Add To Cart Success!",
+            content: response.data.message,
             className: "message-success",
             icon: <FaCheck />,
           });

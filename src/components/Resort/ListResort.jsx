@@ -13,9 +13,9 @@ import { FaSearch } from "react-icons/fa";
 import { MdOutlineRefresh } from "react-icons/md";
 import { API_ROOT } from "../../utils/constant";
 
-export default function ListResort({ resort }) {
+export default function ListResort({ resorts }) {
   // Create + use Hooks
-  const [resorts, setResorts] = useState(resort.slice(0, 4));
+  const [resortsSlice, setResortsSlice] = useState(resorts.slice(0, 4));
   const [refreshPage, setRefreshPage] = useState(false);
   const nameResortRef = useRef("");
   const navigate = useNavigate();
@@ -27,14 +27,14 @@ export default function ListResort({ resort }) {
       const { data } = await axios.post(`${API_ROOT}/resorts/search`, {
         name: nameResortRef.current.value,
       });
-      setResorts(data);
+      setResortsSlice(data);
     } catch (error) {
       console.log(error);
     }
   };
 
   const getSliceResortHandler = useCallback((value, restart) => {
-    setResorts(value);
+    setResortsSlice(value);
     setRefreshPage(restart);
   }, []);
 
@@ -44,7 +44,7 @@ export default function ListResort({ resort }) {
   };
 
   const refreshDataResortHandler = () => {
-    setResorts(resort);
+    setResortsSlice(resorts);
     setRefreshPage(true);
   };
 
@@ -73,8 +73,8 @@ export default function ListResort({ resort }) {
           </Col>
         </Row>
         <Row className={classes["resort__list"]}>
-          {resorts.length > 0 &&
-            resorts.map((r) => (
+          {resortsSlice.length > 0 &&
+            resortsSlice.map((r) => (
               <Col className={classes["resort__item"]} key={r._id}>
                 <img src={r.banner} alt={r.banner} />
                 <div className={classes["resort__card"]}>
@@ -94,9 +94,9 @@ export default function ListResort({ resort }) {
         <Row className={classes["resort__pagination"]}>
           <Col className={classes.col} xs={24} sm={24} md={24} lg={24} xl={24}>
             <PaginationCusTom
-              data={resort}
+              data={resorts}
               onSaveSliceData={getSliceResortHandler}
-              pageSize={resorts.length}
+              pageSize={resortsSlice.length}
               refresh={refreshPage}
             />
           </Col>

@@ -76,6 +76,7 @@
     border: 1px solid rgb(182, 155, 117);
     padding: 10px 20px;
     color: rgb(182, 155, 117);
+    transition: 0.3s all ease;
 }
 
 .rooms__options .col .input-search::placeholder {
@@ -183,11 +184,12 @@
 .rooms__item:nth-child(2) .rooms__btn-link::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -5px;
     left: 0;
     width: 100%;
-    height: 1.5px;
+    height: 1px;
     background-color: #c3ac8c;
+    transition: 0.5s all ease;
 }
 
 .rooms__item:nth-child(2) .rooms__btn-link::before {
@@ -196,8 +198,9 @@
     right: -15px;
     top: 0px;
     color: #AB916C;
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: bold;
+    transition: 0.5s all ease;
 }
 
 /* CSS: Item Footer */
@@ -240,17 +243,14 @@
 }
 
 .rooms__item:nth-child(2) .rooms__btn-link:hover::after {
-    transition: 0.5s all ease;
     width: 0;
 }
 
 .rooms__item:nth-child(2) .rooms__btn-link:hover::before {
-    transition: 0.5s all ease;
     right: -20px;
 }
 
 .rooms__options .col:nth-child(1) .iconRefresh:hover {
-    transition: 0.3s all ease;
     background-color: rgb(182, 155, 117);
     color: white;
     border-left: 1px solid white;

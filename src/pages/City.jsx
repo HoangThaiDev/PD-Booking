@@ -9,7 +9,7 @@ import ListCity from "../components/City/ListCity";
 const banner =
   "https://a.storyblok.com/f/88871/1408x744/8f2b7c30e8/chongqing-headerbild-jpg.jpg";
 
-export default function City({ city }) {
+export default function City({ cities }) {
   return (
     <div className={classes.city}>
       <Header
@@ -19,7 +19,7 @@ export default function City({ city }) {
         unique"
       />
       <About />
-      <ListCity city={city} />
+      <ListCity cities={cities} />
     </div>
   );
 }

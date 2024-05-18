@@ -1,8 +1,8 @@
 // Import Modules
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import { API_ROOT } from "../utils/constant";
+import { useSelector } from "react-redux";
 
 // Import Components
 import Header from "../UI/Header";
@@ -14,25 +14,24 @@ const banner =
 
 export default function Cart() {
   // Create + use Hooks
-  const [cartUser, setCartUser] = useState({ user: "", items: [] });
+  const [cartUser, setCartUser] = useState({ items: [] });
   const [isLoading, setIsLoading] = useState(false);
-  const { user, isLoggedIn } = useSelector((state) => state.user);
-  const { refresh } = useSelector((state) => state.modalCart);
+  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     const fetchCart = async () => {
       try {
         const response = await axios.post(`${API_ROOT}/carts/get-carts`, {
           user,
-          isLoggedIn,
         });
-        const updatedCarts = response.data.items.map((c) => {
-          c.numberRooms = c.rooms.join(", ");
-          return c;
-        });
-
+        console.log(response.data);
         if (response.status === 200) {
-          setCartUser({ user: response.data.user, items: updatedCarts });
+          const updatedCarts = response.data.items.map((c) => {
+            c.numberRooms = c.rooms.join(", ");
+            return c;
+          });
+
+          setCartUser({ items: updatedCarts });
           setIsLoading(true);
         }
       } catch (error) {
@@ -45,17 +44,15 @@ export default function Cart() {
   }, []);
 
   return (
-    <>
-      <div className="carts">
-        <Header
-          banner={banner}
-          title="Cart"
-          content="HOME / CART"
-          showFormBooking={false}
-        />
-        <ModalCart />
-        {isLoading && <ListCart cartUser={cartUser} isLoggedIn={isLoggedIn} />}
-      </div>
-    </>
+    <div className="carts">
+      <Header
+        banner={banner}
+        title="Cart"
+        content="HOME / CART"
+        showFormBooking={false}
+      />
+      <ModalCart />
+      {isLoading && <ListCart cartUser={cartUser} />}
+    </div>
   );
 }

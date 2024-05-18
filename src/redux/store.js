@@ -13,7 +13,7 @@ const initialUserOptions = {
 };
 const initialModalCart = { cart: null, showModal: false, refresh: false };
 const initialModalImageRoom = { imageActive: "", showModal: false };
-const initialUser = { user: "", isLoggedIn: false };
+const initialUser = { user: null, isLoggedIn: false };
 // Create Slides
 const sideMenuSlice = createSlice({
   name: "sideMenu",
@@ -112,11 +112,11 @@ const userSlice = createSlice({
   initialState: initialUser,
   reducers: {
     login(state, data) {
-      const { user } = data.payload;
-      return { ...state, isLoggedIn: true, user: user };
+      const { user, isLoggedIn } = data.payload;
+      return { ...state, isLoggedIn: isLoggedIn, user: user };
     },
     logout(state, data) {
-      return { ...state, isLoggedIn: false, user: "" };
+      return { ...state, isLoggedIn: false, user: null };
     },
   },
 });

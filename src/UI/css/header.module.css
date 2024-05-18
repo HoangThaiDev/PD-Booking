@@ -14,7 +14,7 @@
 .header__introduce {
     font-family: "Bodoni Moda", serif;
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 10%;
     color: white;
     width: 80%;
@@ -30,8 +30,8 @@
 }
 
 .intro__content {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    margin-top: 1.3rem;
     letter-spacing: 2px;
 }
 

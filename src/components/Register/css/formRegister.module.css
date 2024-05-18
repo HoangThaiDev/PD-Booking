@@ -50,6 +50,7 @@
     padding: 15px 30px;
     border-radius: 3px;
     color: white;
+    transition: 0.5s all ease;
 }
 
 .form-main {
@@ -83,6 +84,7 @@
     letter-spacing: 1px;
     font-size: 14px;
     border-radius: 3px;
+    transition: 0.3s all ease-in-out;
 }
 
 .form-main .error-message {
@@ -92,6 +94,7 @@
     text-align: left;
     margin: 0 0 10px 0;
     font-size: 13px;
+    line-height: 1.3rem;
 }
 
 .form-main .error-message>span {
@@ -99,7 +102,7 @@
     top: -1px;
 }
 
-.btn-login {
+.btn-signUp {
     cursor: pointer;
     font-family: "EB Garamond", serif;
     text-transform: uppercase;
@@ -111,6 +114,7 @@
     font-size: 1rem;
     letter-spacing: 1px;
     margin-top: 5%;
+    transition: 0.3s all ease-in-out;
 }
 
 .form-link-signIn {
@@ -165,7 +169,6 @@
 /* Effect CSS */
 
 .card__introduce-container>a:hover {
-    transition: 0.3s all ease;
     cursor: pointer;
     background-color: white;
     color: rgb(72, 56, 39);
@@ -173,8 +176,7 @@
 }
 
 .form-main .form-input>input:hover,
-.btn-login:hover {
-    transition: 0.3s all ease-in-out;
+.btn-signUp:hover {
     background-color: rgba(169, 168, 168, 0.2);
 }
 

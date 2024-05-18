@@ -1,7 +1,6 @@
 // Import Modules
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import classes from "./css/formLogin.module.css";
-import { checkValidateFormLogin } from "../../middeware/checkValidateForm";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -30,14 +29,21 @@ export default function FormLogin() {
     password: false,
   });
   const [errorMessages, setErrorMessages] = useState({
-    email: false,
-    password: false,
+    email: {
+      message: "",
+      showError: false,
+    },
+    password: {
+      message: "",
+      showError: false,
+    },
   });
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   // Create + use event Handlers
   const showPasswordHandler = (name) => {
     setShowPassword((prev) => {
@@ -52,26 +58,12 @@ export default function FormLogin() {
       password: passwordRef.current.value,
     };
 
-    const { isCheck, errorMessages } = checkValidateFormLogin(infoUserLogin);
-
-    if (!isCheck) {
-      setErrorMessages((prev) => {
-        return {
-          ...prev,
-          email: errorMessages.email,
-          password: errorMessages.password,
-        };
-      });
-      return false;
-    }
-
     try {
       const response = await axios.post(`${API_ROOT}/users/login`, {
         infoUserLogin,
       });
 
       if (response.status === 200) {
-        dispatch(userAction.login({ user: response.data.user }));
         messageApi.open({
           type: "success",
           content: response.data.message,
@@ -79,18 +71,28 @@ export default function FormLogin() {
           icon: <FaCheck />,
         });
         setTimeout(() => {
-          navigate("/");
-        }, 1000);
+          navigate("/", { replace: true });
+          window.location.reload();
+        }, 800);
       }
-
-      setErrorMessages({
-        username: false,
-        email: false,
-        password: false,
-        confirmPassword: false,
-      });
     } catch (error) {
-      console.log(error.response.data.message);
+      const { message, messages } = error.response.data;
+      console.log(messages);
+      if (!message) {
+        const updatedErrorMessages = { ...errorMessages };
+        messages.forEach((errorData) => {
+          const { path, message, showError } = errorData;
+          const field = path[0];
+
+          // Updated Error Messages
+          updatedErrorMessages[field] = {
+            message,
+            showError,
+          };
+          setErrorMessages(updatedErrorMessages);
+        });
+        return false;
+      }
       messageApi.open({
         type: "error",
         content: error.response.data.message,
@@ -133,9 +135,9 @@ export default function FormLogin() {
                 >
                   <input type="text" placeholder="Email" ref={emailRef} />
                   <MdOutlineMail className={classes.icon} />
-                  {errorMessages.email && (
+                  {errorMessages.email.showError && (
                     <p className={classes["error-message"]}>
-                      <span>(&#8902;)</span> The Email is required
+                      <span>(&#8902;)</span> {errorMessages.email.message}
                     </p>
                   )}
                 </div>
@@ -159,9 +161,9 @@ export default function FormLogin() {
                       onClick={() => showPasswordHandler("password")}
                     />
                   )}
-                  {errorMessages.password && (
+                  {errorMessages.password.showError && (
                     <p className={classes["error-message"]}>
-                      <span>(&#8902;)</span> The Password is required
+                      <span>(&#8902;)</span> {errorMessages.password.message}
                     </p>
                   )}
                 </div>
@@ -177,7 +179,8 @@ export default function FormLogin() {
                 </button>
                 <h2 className={classes["form-title-signUp"]}>SIGN UP</h2>
                 <p className={classes["form-link-signUp"]}>
-                  Don't have a account? <Link to="/register">Sign up!</Link>
+                  Don&apos;t have a account?
+                  <Link to="/register">Sign up!</Link>
                 </p>
               </form>
             </div>

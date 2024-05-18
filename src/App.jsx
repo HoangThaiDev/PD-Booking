@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { APIContext } from "./storeContext/APIContext";
 import { useContext, useEffect, useRef } from "react";
+import axios from "axios";
+import { API_ROOT } from "./utils/constant";
+import { useDispatch } from "react-redux";
+import { userAction } from "./redux/store";
 
 // Import Components
 import RootLayout from "./Layout/RootLayout";
@@ -19,15 +23,21 @@ import ForgotPassword from "./pages/ForgetPassword";
 import ScrollTop from "./UI/ScrollTop";
 import SideMenu from "./Layout/SideMenu";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import SettingUser from "./pages/SettingUser";
 
 function App() {
+  // Cấu hình Axios để gửi cookie trong tất cả các yêu cầu
+  axios.defaults.withCredentials = true;
+
   // Create + use Hooks
-  const { city, resort, room } = useContext(APIContext);
+  const { cities, resorts, rooms } = useContext(APIContext);
   const btnHomeRef = useRef();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const btnScrollHandler = async () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 250) {
         btnHomeRef.current.classList.add("scroll");
       } else {
         btnHomeRef.current.classList.remove("scroll");
@@ -40,6 +50,21 @@ function App() {
     return () => {
       document.removeEventListener("scroll", btnScrollHandler);
     };
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(`${API_ROOT}/users/login`);
+
+        if (data.isLoggedIn) {
+          dispatch(userAction.login(data));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
 
   // Create + use event Handlers
@@ -65,15 +90,17 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route
               index
-              element={<Home city={city} resort={resort} room={room} />}
+              element={<Home cities={cities} resorts={resorts} rooms={rooms} />}
             />
-            <Route path="cities" element={<City city={city} />} />
-            <Route path="resorts" element={<Resort resort={resort} />} />
-            <Route path="rooms" element={<Room room={room} />} />
+            <Route path="cities" element={<City cities={cities} />} />
+            <Route path="resorts" element={<Resort resorts={resorts} />} />
+            <Route path="rooms" element={<Room rooms={rooms} />} />
             <Route path="city/:cityId" element={<DetailCity />} />
             <Route path="resort/:resortId" element={<DetailResort />} />
             <Route path="room/:resortId" element={<DetailRoom />} />
             <Route path="carts" element={<Cart />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="setting-user" element={<SettingUser />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

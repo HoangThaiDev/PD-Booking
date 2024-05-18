@@ -14,9 +14,9 @@ import { FaSearch } from "react-icons/fa";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { MdOutlineRefresh } from "react-icons/md";
 
-export default function ListCity({ city }) {
+export default function ListCity({ cities }) {
   // Create + use Hooks
-  const [cities, setCities] = useState(city.slice(0, 4));
+  const [citiesSlice, setCitiesSlice] = useState(cities.slice(0, 4));
   const [refreshPage, setRefreshPage] = useState(false);
   const nameCityRef = useRef("");
   const navigate = useNavigate();
@@ -27,14 +27,14 @@ export default function ListCity({ city }) {
       const { data } = await axios.post(`${API_ROOT}/cities/search`, {
         name: nameCityRef.current.value,
       });
-      setCities(data);
+      setCitiesSlice(data);
     } catch (error) {
       console.log(error);
     }
   };
 
   const getSliceCityHandler = useCallback((value, restart) => {
-    setCities(value);
+    setCitiesSlice(value);
     setRefreshPage(restart);
   }, []);
 
@@ -44,7 +44,7 @@ export default function ListCity({ city }) {
   };
 
   const refreshDataCityHandler = () => {
-    setCities(city);
+    setCitiesSlice(cities);
     setRefreshPage(!refreshPage);
   };
 
@@ -73,8 +73,8 @@ export default function ListCity({ city }) {
           </Col>
         </Row>
         <Row className={classes["cities__list"]}>
-          {cities.length > 0 &&
-            cities.map((c, i) => (
+          {citiesSlice.length > 0 &&
+            citiesSlice.map((c, i) => (
               <Col className={classes["cities__item"]} key={c._id}>
                 <img src={c.banner} alt={c.banner} />
                 <div className={classes["cities__form"]}>
@@ -97,9 +97,9 @@ export default function ListCity({ city }) {
         <Row className={classes["cities__pagination"]}>
           <Col className={classes.col} xs={24} sm={24} md={24} lg={24} xl={24}>
             <PaginationCusTom
-              data={city}
+              data={cities}
               onSaveSliceData={getSliceCityHandler}
-              pageSize={4}
+              pageSize={citiesSlice.length}
               refresh={refreshPage}
             />
           </Col>

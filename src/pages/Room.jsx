@@ -9,7 +9,7 @@ import ListRoom from "../components/Room/ListRoom";
 const banner =
   "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/04/spacejoy-FX61rYaAfCQ-unsplash.jpg";
 
-export default function Room({ room }) {
+export default function Room({ rooms }) {
   // Create + use Hooks
   const filteredRooms = useSelector((state) => state.updatedRoom.rooms);
 
@@ -22,7 +22,7 @@ export default function Room({ room }) {
         beautiful views"
       />
       <About />
-      <ListRoom room={room} filteredRooms={filteredRooms} />
+      <ListRoom rooms={rooms} filteredRooms={filteredRooms} />
     </div>
   );
 }

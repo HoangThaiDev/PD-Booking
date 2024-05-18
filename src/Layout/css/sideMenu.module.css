@@ -7,7 +7,7 @@
     top: 0;
     left: -100%;
     z-index: 4;
-
+    transition: 1.5s all ease;
 }
 
 .sideMenu__container img {
@@ -34,6 +34,7 @@
     cursor: pointer;
     color: white;
     font-size: 2.5rem;
+    transition: 0.5s all ease-in-out;
 }
 
 .sideMenu__header>p {
@@ -44,6 +45,7 @@
 .sideMenu__header>p>span {
     cursor: pointer;
     margin: 0 5px;
+    transition: 0.5s all ease-in-out;
 }
 
 /* CSS: SideMenu - Menu */
@@ -70,30 +72,23 @@
     font-size: 3rem;
     padding: 20px;
     text-decoration: none;
-}
-
-/* CSS: Active */
-@keyframes showSideMenu {
-    0% {
-        left: -100%;
-    }
-
-    100% {
-        left: 0;
-    }
+    transition: 0.5s all ease-in-out;
 }
 
 /* Effect CSS */
 
 .icon-close:hover,
 .sideMenu__header>p>span:hover,
-.menu__list ul li:hover {
-    transition: 0.3s all ease-in-out;
+.menu__list ul a:hover {
     color: rgb(206, 186, 157);
 }
 
-.show {
-    animation: showSideMenu ease-in-out 1s 1 forwards;
+.sideMenu__container.hide {
+    left: -100%;
+}
+
+.sideMenu__container.show {
+    left: 0%;
 }
 
 /* Responsive */

@@ -1,5 +1,4 @@
 // Import Modules
-import React from "react";
 import { createPortal } from "react-dom";
 import classes from "./css/sideMenu.module.css";
 import { sideMenuAction } from "../redux/store";
@@ -15,6 +14,7 @@ const Container = () => {
   // Create + use Hooks\
   const dispatch = useDispatch();
   const { showSideMenu } = useSelector((state) => state.sideMenu);
+  const { user, isLoggedIn } = useSelector((state) => state.user);
 
   // Create + use Event Handlers
   const showSideMenuHandler = () => {
@@ -23,11 +23,9 @@ const Container = () => {
 
   return (
     <div
-      className={
-        showSideMenu
-          ? `${classes["sideMenu__container"]} ${classes["show"]}`
-          : `${classes["sideMenu__container"]} `
-      }
+      className={`${classes["sideMenu__container"]} ${
+        showSideMenu ? `${classes["show"]}` : `${classes["hide"]}`
+      }`}
     >
       <img
         src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg"
@@ -73,7 +71,7 @@ const Container = () => {
             Rooms
           </Link>
           <Link
-            to="/login"
+            to={isLoggedIn ? "setting-user" : "/login"}
             className={classes["menu__item"]}
             onClick={showSideMenuHandler}
           >

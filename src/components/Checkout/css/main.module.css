@@ -1,0 +1,14 @@
+.main {
+    padding: 5% 0;
+}
+
+/* CSS: Container */
+.main__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* CSS: Row */
+.main__row {
+    justify-content: space-between;
+}

@@ -32,6 +32,7 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
+    transition: 0.5s all ease;
 }
 
 .item__card {
@@ -42,6 +43,7 @@
     width: 80%;
     color: white;
     opacity: 0;
+    transition: 0.5s all ease;
 }
 
 .item__card .card__name {
@@ -65,12 +67,10 @@
 
 /* Effect CSS */
 .resorts__item:hover img {
-    transition: 0.5s all ease;
     filter: brightness(75%);
 }
 
 .resorts__item:hover .item__card {
-    transition: 1s all ease;
     opacity: 1;
 }
 

@@ -8,9 +8,9 @@ const APIContext = createContext();
 export default function Provider({ children }) {
   // Create + use Hooks
   const [data, setData] = useState({
-    city: [],
-    resort: [],
-    room: [],
+    cities: [],
+    resorts: [],
+    rooms: [],
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,13 +22,13 @@ export default function Provider({ children }) {
         const { data: dataRoom } = await axios.get(`${API_ROOT}/rooms`);
 
         setData({
-          city: dataCity ? dataCity : [],
-          resort: dataResort ? dataResort : [],
-          room: dataRoom ? dataRoom : [],
+          cities: dataCity ? dataCity : [],
+          resorts: dataResort ? dataResort : [],
+          rooms: dataRoom ? dataRoom : [],
         });
         setIsLoading(true);
       } catch (error) {
-        console.log(error);
+        console.log(error.response.error);
         setIsLoading(false);
       }
     };
@@ -37,9 +37,9 @@ export default function Provider({ children }) {
   return (
     <>
       {isLoading &&
-        data.city.length > 0 &&
-        data.resort.length > 0 &&
-        data.room.length > 0 && (
+        data.cities.length > 0 &&
+        data.resorts.length > 0 &&
+        data.rooms.length > 0 && (
           <APIContext.Provider value={data}>{children}</APIContext.Provider>
         )}
     </>

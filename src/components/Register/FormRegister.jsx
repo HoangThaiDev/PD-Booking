@@ -1,7 +1,6 @@
 // Import Modules
 import React, { useState, useRef } from "react";
 import classes from "./css/formRegister.module.css";
-import { checkValidateFormRegister } from "../../middeware/checkValidateForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
@@ -30,10 +29,22 @@ export default function FormLogin() {
     confirmPassword: false,
   });
   const [errorMessages, setErrorMessages] = useState({
-    username: false,
-    email: false,
-    password: false,
-    confirmPassword: false,
+    username: {
+      message: "",
+      showError: false,
+    },
+    email: {
+      message: "",
+      showError: false,
+    },
+    password: {
+      message: "",
+      showError: false,
+    },
+    confirmPassword: {
+      message: "",
+      showError: false,
+    },
   });
   const navigate = useNavigate();
   const usernameRef = useRef("");
@@ -57,22 +68,6 @@ export default function FormLogin() {
       confirmPassword: confirmPasswordRef.current.value,
     };
 
-    const { isCheck, errorMessages } =
-      checkValidateFormRegister(infoUserRegister);
-
-    if (!isCheck) {
-      setErrorMessages((prev) => {
-        return {
-          ...prev,
-          username: errorMessages.username,
-          email: errorMessages.email,
-          password: errorMessages.password,
-          confirmPassword: errorMessages.confirmPassword,
-        };
-      });
-      return false;
-    }
-
     try {
       const response = await axios.post(`${API_ROOT}/users/register`, {
         infoUserRegister,
@@ -88,15 +83,23 @@ export default function FormLogin() {
           navigate("/login");
         }, 1000);
       }
-
-      setErrorMessages({
-        username: false,
-        email: false,
-        password: false,
-        confirmPassword: false,
-      });
     } catch (error) {
-      console.log(error.response.data.message);
+      const { message, messages } = error.response.data;
+      if (!message) {
+        const updatedErrorMessages = { ...errorMessages };
+        messages.forEach((errorData) => {
+          const { path, message, showError } = errorData;
+          const field = path[0];
+
+          // Updated Error Messages
+          updatedErrorMessages[field] = {
+            message,
+            showError,
+          };
+          setErrorMessages(updatedErrorMessages);
+        });
+        return false;
+      }
       messageApi.open({
         type: "error",
         content: error.response.data.message,
@@ -138,11 +141,9 @@ export default function FormLogin() {
                 >
                   <input type="text" placeholder="Username" ref={usernameRef} />
                   <PiUser className={classes.icon} />
-                  {errorMessages.username && (
+                  {errorMessages.username.showError && (
                     <p className={classes["error-message"]}>
-                      <span>(&#8902;)</span> Username is required (Character
-                      {" > "}
-                      5)
+                      <span>(&#8902;)</span> {errorMessages.username.message}
                     </p>
                   )}
                 </div>
@@ -151,9 +152,9 @@ export default function FormLogin() {
                 >
                   <input type="text" placeholder="Email" ref={emailRef} />
                   <MdOutlineMail className={classes.icon} />
-                  {errorMessages.email && (
+                  {errorMessages.email.showError && (
                     <p className={classes["error-message"]}>
-                      <span>(&#8902;)</span> Email is required (abc@gmail.com)
+                      <span>(&#8902;)</span> {errorMessages.email.message}
                     </p>
                   )}
                 </div>
@@ -177,11 +178,9 @@ export default function FormLogin() {
                       onClick={() => showPasswordHandler("password")}
                     />
                   )}
-                  {errorMessages.password && (
+                  {errorMessages.password.showError && (
                     <p className={classes["error-message"]}>
-                      <span>(&#8902;)</span> Password is required (Character
-                      {" >"}
-                      8)
+                      <span>(&#8902;)</span> {errorMessages.password.message}
                     </p>
                   )}
                 </div>
@@ -205,13 +204,14 @@ export default function FormLogin() {
                       onClick={() => showPasswordHandler("confirmPassword")}
                     />
                   )}
-                  {errorMessages.confirmPassword && (
+                  {errorMessages.confirmPassword.showError && (
                     <p className={classes["error-message"]}>
-                      <span>(&#8902;)</span> Passwords must be matched
+                      <span>(&#8902;)</span>{" "}
+                      {errorMessages.confirmPassword.message}
                     </p>
                   )}
                 </div>
-                <button type="submit" className={classes["btn-login"]}>
+                <button type="submit" className={classes["btn-signUp"]}>
                   SIGN UP
                 </button>
                 <p className={classes["form-link-signIn"]}>

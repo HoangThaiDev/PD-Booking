@@ -82,7 +82,7 @@ export default function FormForgotPassword() {
                   )}
                 </div>
 
-                <button type="submit" className={classes["btn-login"]}>
+                <button type="submit" className={classes["btn-sendMail"]}>
                   SEND EMAIL
                 </button>
                 <h2 className={classes["form-title-signUp"]}>SIGN UP</h2>

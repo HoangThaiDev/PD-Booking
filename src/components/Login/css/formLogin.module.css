@@ -56,6 +56,7 @@
     padding: 15px 30px;
     border-radius: 3px;
     color: white;
+    transition: 0.5s all ease;
 }
 
 /* CSS: Col (2) */
@@ -79,9 +80,11 @@
 
 .form-main .form-input {
     position: relative;
+
 }
 
 .form-main .form-input>input {
+    transition: 0.3s all ease-in-out;
     cursor: pointer;
     box-sizing: border-box;
     width: 100%;
@@ -150,6 +153,7 @@
     font-size: 1rem;
     letter-spacing: 1px;
     margin-top: 5%;
+    transition: 0.3s all ease-in-out;
 }
 
 /* CSS: Form SignUp Footer */
@@ -235,7 +239,6 @@
 /* Effect CSS */
 
 .card__introduce-container>a:hover {
-    transition: 0.3s all ease;
     cursor: pointer;
     background-color: white;
     color: rgb(72, 56, 39);
@@ -244,7 +247,6 @@
 
 .form-main .form-input>input:hover,
 .btn-login:hover {
-    transition: 0.3s all ease-in-out;
     background-color: rgba(169, 168, 168, 0.2);
 }
 

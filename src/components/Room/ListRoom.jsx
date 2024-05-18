@@ -20,7 +20,7 @@ import { roomAction } from "../../redux/store";
 import { API_ROOT } from "../../utils/constant";
 
 export default function ListRoom({
-  room,
+  rooms,
   filteredRooms,
   stateShowAddressDetail = true,
 }) {
@@ -29,7 +29,7 @@ export default function ListRoom({
     return array.slice(0, 4);
   }, []);
   // Create + use Hooks
-  const [rooms, setRooms] = useState(room);
+  const [roomsData, setRoomsData] = useState(rooms);
   const [sliceRooms, setSliceRooms] = useState([]);
   const [refreshPage, setRefreshPage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -41,17 +41,17 @@ export default function ListRoom({
   useEffect(() => {
     if (filteredRooms?.length > 0) {
       const updatedRoom = sliceRoomsHandler(filteredRooms);
-      setRooms(filteredRooms);
+      setRoomsData(filteredRooms);
       setSliceRooms(updatedRoom);
       setIsLoading(true);
     } else {
-      const updatedRoom = sliceRoomsHandler(room);
+      const updatedRoom = sliceRoomsHandler(rooms);
 
-      setRooms(room);
+      setRoomsData(rooms);
       setSliceRooms(updatedRoom);
       setIsLoading(true);
     }
-  }, [room, filteredRooms]);
+  }, [rooms, filteredRooms]);
 
   // Create + use event Handlers
   const findRoomByNameHandler = async () => {
@@ -60,7 +60,7 @@ export default function ListRoom({
         name: nameRoomRef.current.value,
       });
       const updatedRoom = sliceRoomsHandler(data);
-      setRooms(data);
+      setRoomsData(data);
       setSliceRooms(updatedRoom);
       setRefreshPage(true);
     } catch (error) {
@@ -80,8 +80,8 @@ export default function ListRoom({
 
   const refreshDataRoomHandler = () => {
     nameRoomRef.current.value = "";
-    const updatedRoom = sliceRoomsHandler(room);
-    setRooms(room);
+    const updatedRoom = sliceRoomsHandler(rooms);
+    setRoomsData(rooms);
     setSliceRooms(updatedRoom);
     setRefreshPage(true);
     dispatch(roomAction.resetRooms());
@@ -218,7 +218,7 @@ export default function ListRoom({
                 xl={24}
               >
                 <PaginationCusTom
-                  data={rooms}
+                  data={roomsData}
                   onSaveSliceData={getSliceRoomHandler}
                   pageSize={sliceRooms.length}
                   refresh={refreshPage}

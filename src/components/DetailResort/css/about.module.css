@@ -112,6 +112,7 @@
     border: 2px solid transparent;
     padding: 10px 30px;
     border-radius: 3px;
+    transition: 0.3s all ease;
 }
 
 /* CSS: Image Resort */
@@ -154,7 +155,6 @@
 }
 
 .btn-view:hover {
-    transition: 0.3s all ease;
     border: 2px solid rgb(182, 155, 117);
     background-color: white;
     color: rgb(182, 155, 117);

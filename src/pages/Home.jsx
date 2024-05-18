@@ -8,14 +8,14 @@ import Resort from "../components/Home/Resort";
 import Room from "../components/Home/Room";
 import Header from "../components/Home/Header";
 
-export default function Home({ city, resort, room }) {
+export default function Home({ cities, resorts, rooms }) {
   return (
     <div className={classes.home}>
       <Header />
       <About />
-      <City city={city} />
-      <Resort resort={resort} />
-      <Room room={room} />
+      <City cities={cities} />
+      <Resort resorts={resorts} />
+      <Room rooms={rooms} />
     </div>
   );
 }

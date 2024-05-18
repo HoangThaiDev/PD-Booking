@@ -12,9 +12,9 @@ import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineSmokeFree } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
 
-export default function Room({ room }) {
+export default function Room({ rooms }) {
   // Create + use Hooks
-  const sliceRoom = useMemo(() => room.slice(0, 3), [room]);
+  const sliceRooms = useMemo(() => rooms.slice(0, 3), [rooms]);
   const navigate = useNavigate();
 
   // Create + use event Handlers
@@ -52,7 +52,7 @@ export default function Room({ room }) {
         </div>
         <div className={classes["room__flex"]}>
           <Row className={classes["room__row"]}>
-            {sliceRoom.map((room) => (
+            {sliceRooms.map((room) => (
               <Col key={room._id} className={classes["room__col"]}>
                 <img
                   className={classes["room__img"]}

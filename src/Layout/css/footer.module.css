@@ -49,6 +49,7 @@
 .footer .card-socials .icon {
     font-size: 1.1rem;
     cursor: pointer;
+    transition: 0.3s all ease;
 }
 
 /* CSS: Footer - Content */
@@ -61,15 +62,15 @@
 .footer .content-wrapper span {
     cursor: pointer;
     font-family: "Roboto", sans-serif;
-    margin: 0 10px;
+    margin: 0 25px;
     letter-spacing: 1px;
     font-size: 14px;
+    transition: 0.3s all ease;
 }
 
 /* Effect CSS */
 .footer .card-socials .icon:hover,
 .footer .content-wrapper span:hover {
-    transition: 0.3s all ease;
     color: rgb(239, 184, 108);
 }
 

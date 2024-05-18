@@ -1,25 +1,36 @@
 // Import Modules
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import classes from "./css/listCart.module.css";
+import { useSelector } from "react-redux";
 
 // import Components
 import { Row, Col } from "antd";
 import ItemCart from "./ItemCart";
 
-export default function ListCart({ cartUser, isLoggedIn }) {
+export default function ListCart({ cartUser }) {
   // Create + use Hooks
+  const { isLoggedIn } = useSelector((state) => state.user);
+  const [carts, setCarts] = useState(cartUser);
+
   const totalCarts = useMemo(() => {
-    const totalPrice = cartUser.items.reduce((a, c) => {
+    const totalPrice = carts.items.reduce((a, c) => {
       const convertPriceNumber = parseInt(c.totalPrice.replace(/\./g, ""));
       return a + convertPriceNumber;
     }, 0);
 
     return totalPrice.toLocaleString("us-US").replace(/\,/g, ".");
-  }, [cartUser.items]);
+  }, [carts.items]);
+
+  const updatedCartAfterDelete = useCallback((cart) => {
+    setCarts(cart);
+  }, []);
 
   const addToCheckoutHandler = (event) => {
     event.preventDefault();
-    console.log(carts);
+    if (!isLoggedIn) {
+      alert("You need Sign In to Checkout!");
+      return false;
+    }
   };
 
   return (
@@ -84,7 +95,11 @@ export default function ListCart({ cartUser, isLoggedIn }) {
               </Col>
             </Row>
 
-            <ItemCart cartUser={cartUser} isLoggedIn={isLoggedIn} />
+            <ItemCart
+              cartUser={cartUser}
+              isLoggedIn={isLoggedIn}
+              onSaveUpdatedCartAfterDelete={updatedCartAfterDelete}
+            />
           </Col>
 
           <Col

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import classes from "./css/itemCart.module.css";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { modalCartAction } from "../../redux/store";
 import { API_ROOT } from "../../utils/constant";
 import "../../UI/css/messageAlert.css";
@@ -18,10 +18,15 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { MdError } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 
-export default function ItemCart({ cartUser, isLoggedIn }) {
+export default function ItemCart({
+  cartUser,
+  isLoggedIn,
+  onSaveUpdatedCartAfterDelete,
+}) {
   // Create + use Hooks
   const [messageApi, contextHolder] = message.useMessage();
   const [sliceCarts, setSliceCarts] = useState(cartUser.items.slice(0, 4));
+  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   // Create + use event Handlers
@@ -30,11 +35,12 @@ export default function ItemCart({ cartUser, isLoggedIn }) {
     if (isCheck) {
       try {
         const response = await axios.delete(`${API_ROOT}/carts/delete-cart`, {
-          data: { id: id, user: cartUser.user },
+          data: { itemId: id, user: user },
         });
 
+        onSaveUpdatedCartAfterDelete(response.data);
         const updatedCarts =
-          response.data.map((c) => {
+          response.data.items.map((c) => {
             c.numberRooms = c.rooms.join(", ");
             return c;
           }) || [];

@@ -1,5 +1,5 @@
 // Import Modules
-import React, { useEffect, useState, memo } from "react";
+import { useEffect, useState, memo } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { API_ROOT } from "../utils/constant";
@@ -27,7 +27,7 @@ function DetailRoom() {
       }
     };
     fetchDetailRoom();
-  }, []);
+  }, [state.id]);
 
   return (
     <div className="detailRoom">

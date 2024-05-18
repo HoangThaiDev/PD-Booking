@@ -1,5 +1,4 @@
 // Import Modules
-import React from "react";
 import classes from "./css/about.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { modalImageRoomAction } from "../../redux/store";

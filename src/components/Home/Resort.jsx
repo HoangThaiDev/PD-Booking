@@ -6,9 +6,9 @@ import classes from "./css/resort.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col } from "antd";
 
-export default function Resort({ resort }) {
+export default function Resort({ resorts }) {
   // Create + use Hooks
-  const sliceResort = useMemo(() => resort.slice(0, 4), [resort]);
+  const sliceResorts = useMemo(() => resorts.slice(0, 4), [resorts]);
   const navigate = useNavigate();
 
   // Create + use event Handlers
@@ -46,7 +46,7 @@ export default function Resort({ resort }) {
           </Row>
         </div>
         <div>
-          {sliceResort.map((r) => (
+          {sliceResorts.map((r) => (
             <Row className={classes["resort__list"]} key={r._id}>
               <Col
                 className={classes["resort__item"]}

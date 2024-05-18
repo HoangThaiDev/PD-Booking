@@ -290,6 +290,7 @@
     padding: 13px 20px;
     color: white;
     width: 100%;
+    transition: 0.3s all ease;
 }
 
 /* Effect CSS */
@@ -314,7 +315,6 @@
 }
 
 .btn-submit:hover {
-    transition: 0.3s all ease;
     background-color: #b99d75;
 }
 

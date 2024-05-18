@@ -35,7 +35,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function City({ city }) {
+export default function City({ cities }) {
   // Create setting Slider
   var settings = {
     fade: true,
@@ -131,7 +131,7 @@ export default function City({ city }) {
         </div>
         <div className={classes["city-flex"]}>
           <Slider className="city-slide" {...settings}>
-            {city.map((c) => (
+            {cities.map((c) => (
               <Row className={classes["city__row-flex"]} key={c._id}>
                 <Col
                   className={classes["city__col-flex"]}

@@ -95,7 +95,10 @@ export default function Navbar() {
                   <Link className={classes["menu-dropdown__item"]} to="/carts">
                     Cart
                   </Link>
-                  <Link className={classes["menu-dropdown__item"]}>
+                  <Link
+                    className={classes["menu-dropdown__item"]}
+                    to="/checkout"
+                  >
                     Checkout
                   </Link>
                   <Link className={classes["menu-dropdown__item"]}>
@@ -148,9 +151,16 @@ export default function Navbar() {
           >
             <div className={classes["contact-container"]}>
               <ul className={classes["contact__list"]}>
-                <Link className={classes["contact__item"]} to="/login">
-                  {isLoggedIn ? user : "USER"}
-                </Link>
+                {isLoggedIn && (
+                  <Link className={classes["contact__item"]} to="/setting-user">
+                    {user.username}
+                  </Link>
+                )}
+                {!isLoggedIn && (
+                  <Link className={classes["contact__item"]} to="/login">
+                    USER
+                  </Link>
+                )}
                 <li className={classes["contact__item"]}>
                   Tel: +84 12 111 22 33
                 </li>
