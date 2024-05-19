@@ -18,32 +18,34 @@ const checkFormBooking = (valueFormBooking) => {
     valueFormBooking;
   const totalPeople = adults + children;
   const maxPeopleInRooms = maxPeople * rooms.length;
+  const isCheckValidate = { state: true, message: "" };
 
   if (startDate === "Invalid date" || endDate === "Invalid date") {
-    alert("Please choice Your Date Booking !");
-
-    return false;
+    isCheckValidate.state = false;
+    isCheckValidate.message = "Please choice Your Date Booking!";
+    return isCheckValidate;
   }
 
   if (adults === 0 && children === 0) {
-    alert("Please choice Your Number People Stay In Room !");
-
-    return false;
+    isCheckValidate.state = false;
+    isCheckValidate.message = "Please choice Your Number People Stay In Room!";
+    return isCheckValidate;
   }
 
   if (rooms.length === 0) {
-    alert("Please choice Your Rooms !");
-
-    return false;
+    isCheckValidate.state = false;
+    isCheckValidate.message = "Please choice Your Rooms!";
+    return isCheckValidate;
   }
   // maxpeople >= totalPeople
   if (maxPeopleInRooms < totalPeople) {
-    alert("Your Choice People greater than maxPeople of Room !");
-
-    return false;
+    isCheckValidate.state = false;
+    isCheckValidate.message =
+      "Your Choice People greater than maxPeople of Room!";
+    return isCheckValidate;
   }
 
-  return true;
+  return isCheckValidate;
 };
 
 export { checkValidateFormForgotPassword, checkFormBooking };

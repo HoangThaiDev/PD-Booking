@@ -1,18 +1,76 @@
 // Import Modules
-import React, { useCallback, useMemo, useState } from "react";
-import classes from "./css/listCart.module.css";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
+import classes from "./css/listCart.module.css";
+import "../../UI/css/messageAlert.css";
+import axios from "axios";
+import { API_ROOT } from "../../utils/constant";
 
 // import Components
-import { Row, Col } from "antd";
+import { Row, Col, message } from "antd";
 import ItemCart from "./ItemCart";
+
+// Import Icons
+import { MdError } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function ListCart({ cartUser }) {
   // Create + use Hooks
-  const { isLoggedIn } = useSelector((state) => state.user);
+  const [messageApi, contextHolder] = message.useMessage();
+  const { isLoggedIn, user } = useSelector((state) => state.user);
   const [carts, setCarts] = useState(cartUser);
+  const navigate = useNavigate();
 
-  const totalCarts = useMemo(() => {
+  useEffect(() => {
+    const updateCheckoutHandler = async () => {
+      try {
+        const response = await axios.post(
+          `${API_ROOT}/checkouts/add-checkout`,
+          {
+            carts,
+            user,
+            totalPriceCarts,
+          }
+        );
+        if (response.status === 200) {
+          messageApi.open({
+            type: "success",
+            content: response.data.message,
+            className: "message-success",
+            icon: <FaCheck />,
+          });
+          return false;
+        }
+      } catch (error) {
+        if (error.response.data.session) {
+          messageApi.open({
+            type: "error",
+            content: error.response.data.message,
+            className: "message-error",
+            icon: <MdError />,
+          });
+          setTimeout(() => {
+            window.location.replace("/login");
+          }, 1000);
+          return false;
+        }
+        messageApi.open({
+          type: "error",
+          content: error.response.data.message,
+          className: "message-error",
+          icon: <MdError />,
+        });
+      }
+      console.log("hello");
+    };
+    if (isLoggedIn) {
+      updateCheckoutHandler();
+    }
+  }, [carts]);
+
+  //  Create + use event Handler
+  const totalPriceCarts = useMemo(() => {
     const totalPrice = carts.items.reduce((a, c) => {
       const convertPriceNumber = parseInt(c.totalPrice.replace(/\./g, ""));
       return a + convertPriceNumber;
@@ -21,20 +79,18 @@ export default function ListCart({ cartUser }) {
     return totalPrice.toLocaleString("us-US").replace(/\,/g, ".");
   }, [carts.items]);
 
-  const updatedCartAfterDelete = useCallback((cart) => {
+  const updatedCartAfterDeleteHandler = useCallback((cart) => {
     setCarts(cart);
   }, []);
 
-  const addToCheckoutHandler = (event) => {
+  const addToCheckoutHandler = async (event) => {
     event.preventDefault();
-    if (!isLoggedIn) {
-      alert("You need Sign In to Checkout!");
-      return false;
-    }
+    navigate("/checkout");
   };
 
   return (
     <div className={classes.listCart}>
+      {contextHolder} {/* Alert Action */}
       <div className={classes["listCart__container"]}>
         <Row className={classes["listCart__row"]}>
           <Col
@@ -98,7 +154,7 @@ export default function ListCart({ cartUser }) {
             <ItemCart
               cartUser={cartUser}
               isLoggedIn={isLoggedIn}
-              onSaveUpdatedCartAfterDelete={updatedCartAfterDelete}
+              onSaveUpdatedCartAfterDelete={updatedCartAfterDeleteHandler}
             />
           </Col>
 
@@ -117,11 +173,11 @@ export default function ListCart({ cartUser }) {
               <h2>Cart totals</h2>
               <div className={classes["cart__subtotal"]}>
                 <p>Subtotal</p>
-                <p>{totalCarts} VNĐ</p>
+                <p>{totalPriceCarts} VNĐ</p>
               </div>
               <div className={classes["cart__total"]}>
                 <p>Total</p>
-                <p>{totalCarts} VNĐ</p>
+                <p>{totalPriceCarts} VNĐ</p>
               </div>
               <button type="submit" className={classes["cart__btn-checkout"]}>
                 Proceed to checkout

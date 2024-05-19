@@ -1,0 +1,36 @@
+.about__container {
+    width: 60%;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.about__title {
+    font-family: "Lora", serif;
+    font-size: 5rem;
+    color: rgba(60, 60, 60, 0.9);
+}
+
+.about__content {
+    font-size: 1.5rem;
+    margin: 3rem 0;
+    font-family: "EB Garamond", serif;
+}
+
+.about__link {
+    display: inline-block;
+    font-family: "EB Garamond", serif;
+    color: rgba(60, 60, 60, 0.8);
+    font-size: 1.3rem;
+    border: 1px solid rgb(185, 157, 117);
+    text-decoration: none;
+    padding: 20px 50px;
+    transition: 0.3s all ease-in-out;
+}
+
+
+/* CSS: Effect */
+.about__link:hover {
+    background-color: rgb(185, 157, 117);
+    color: #fff;
+    border: 1px solid transparent;
+}

@@ -3,18 +3,17 @@ import React from "react";
 
 // Import Components
 import Header from "../UI/Header";
-import About from "../components/SettingUser/About";
-
+import About from "../components/ErrorPage/About";
 const banner =
   "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg";
 
-export default function SettingUser() {
+export default function Error() {
   return (
-    <div className="setting">
+    <div className="error-page">
       <Header
         banner={banner}
-        title="Setting User"
-        content="HOME / SETTING"
+        title="404"
+        content="HOME / ERROR PAGE"
         showFormBooking={false}
       />
       <About />

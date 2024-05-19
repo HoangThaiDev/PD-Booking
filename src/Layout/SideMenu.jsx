@@ -75,7 +75,7 @@ const Container = () => {
             className={classes["menu__item"]}
             onClick={showSideMenuHandler}
           >
-            User
+            {isLoggedIn ? "User" : "Login"}
           </Link>
           <Link
             to="/carts"

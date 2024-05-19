@@ -24,13 +24,13 @@ export default function Cart() {
         const response = await axios.post(`${API_ROOT}/carts/get-carts`, {
           user,
         });
-        console.log(response.data);
+
         if (response.status === 200) {
           const updatedCarts = response.data.items.map((c) => {
             c.numberRooms = c.rooms.join(", ");
             return c;
           });
-
+          console.log(response);
           setCartUser({ items: updatedCarts });
           setIsLoading(true);
         }
@@ -41,7 +41,7 @@ export default function Cart() {
     };
 
     fetchCart();
-  }, []);
+  }, [user]);
 
   return (
     <div className="carts">

@@ -56,7 +56,18 @@ export default function ItemCart({
           });
         }
       } catch (error) {
-        console.log(error);
+        if (error.response.data.session) {
+          messageApi.open({
+            type: "error",
+            content: error.response.data.message,
+            className: "message-error",
+            icon: <MdError />,
+          });
+          setTimeout(() => {
+            window.location.replace("/login");
+          }, 1000);
+          return false;
+        }
         messageApi.open({
           type: "error",
           content: "Delete Product Failed!",
@@ -81,9 +92,9 @@ export default function ItemCart({
       {contextHolder} {/* Alert Action */}
       {isLoggedIn && sliceCarts.length === 0 && (
         <div className={classes["itemCart__message"]}>
-          <h2>No Found Carts From User</h2>
-          <Link to="/" className={classes["itemCart__link"]}>
-            Back To Home
+          <h2>Your cart is currently empty</h2>
+          <Link to="/rooms" className={classes["itemCart__link"]}>
+            Return to shop
           </Link>
         </div>
       )}

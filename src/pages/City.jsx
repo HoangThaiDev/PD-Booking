@@ -1,6 +1,5 @@
 // Import Modules
 import React from "react";
-import classes from "./css/city.module.css";
 
 // Import Components
 import Header from "../UI/Header";
@@ -11,7 +10,7 @@ const banner =
 
 export default function City({ cities }) {
   return (
-    <div className={classes.city}>
+    <div className="city">
       <Header
         banner={banner}
         title="Cities of Vietnam, a Touch of Elegance"

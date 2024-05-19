@@ -25,6 +25,7 @@ import SideMenu from "./Layout/SideMenu";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import SettingUser from "./pages/SettingUser";
+import Error from "./pages/Error";
 
 function App() {
   // Cấu hình Axios để gửi cookie trong tất cả các yêu cầu
@@ -100,7 +101,10 @@ function App() {
             <Route path="room/:resortId" element={<DetailRoom />} />
             <Route path="carts" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
-            <Route path="setting-user" element={<SettingUser />} />
+            <Route path="setting-user" element={<SettingUser />}>
+              <Route index element={<SettingUser />} />
+            </Route>
+            <Route path="*" element={<Error />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

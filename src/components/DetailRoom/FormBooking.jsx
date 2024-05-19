@@ -1,12 +1,12 @@
 // Import Modules
 import React, { useEffect, useMemo, useState } from "react";
-import "./css/formBooking.css";
 import moment from "moment";
+import axios from "axios";
 import { useSelector } from "react-redux";
 import { checkFormBooking } from "../../middeware/checkValidateForm";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
+import "./css/formBooking.css";
 import "../../UI/css/messageAlert.css";
 
 // Import Components
@@ -139,15 +139,8 @@ export default function FormBooking({ room }) {
     }
   };
 
-  const submitBookingHandler = async (event) => {
-    event.preventDefault();
-
-    // Check user sign in ?
-    if (!isLoggedIn) {
-      alert("You need to Sign In account to use Booking!");
-      return false;
-    }
-    const updatedServiceOptions = {
+  const updatedServiceOptions = useMemo(() => {
+    return {
       roomClean: serviceOptions.roomClean
         .toLocaleString("us-US")
         .replace(/\,/g, "."),
@@ -156,6 +149,21 @@ export default function FormBooking({ room }) {
         .replace(/\,/g, "."),
       daySpa: serviceOptions.daySpa.toLocaleString("us-US").replace(/\,/g, "."),
     };
+  }, [serviceOptions]);
+
+  const submitBookingHandler = async (event) => {
+    event.preventDefault();
+
+    // Check user sign in ?
+    if (!isLoggedIn) {
+      messageApi.open({
+        type: "error",
+        content: "You need to Sign In account to use Booking!",
+        className: "message-error",
+        icon: <MdError />,
+      });
+      return false;
+    }
 
     const valueFormBooking = {
       roomId: room._id,
@@ -173,7 +181,17 @@ export default function FormBooking({ room }) {
     };
 
     const isCheckValid = checkFormBooking(valueFormBooking);
-    if (isCheckValid) {
+
+    if (!isCheckValid.state) {
+      messageApi.open({
+        type: "error",
+        content: isCheckValid.message,
+        className: "message-error",
+        icon: <MdError />,
+      });
+      return false;
+    }
+    if (isCheckValid.state) {
       try {
         const response = await axios.post(`${API_ROOT}/carts/add-cart`, {
           valueFormBooking,
@@ -192,13 +210,25 @@ export default function FormBooking({ room }) {
           }, 1000);
         }
       } catch (error) {
-        console.log(error);
+        if (error.response.data.showErrorOfCart) {
+          messageApi.open({
+            type: "error",
+            content: error.response.data.message,
+            className: "message-error",
+            icon: <MdError />,
+          });
+          return false;
+        }
         messageApi.open({
           type: "error",
           content: error.response.data.message,
           className: "message-error",
           icon: <MdError />,
         });
+
+        setTimeout(() => {
+          window.location.replace("/login");
+        }, 1000);
       }
     }
   };
