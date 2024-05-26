@@ -86,36 +86,40 @@ export default function Navbar() {
                   </Link>
                 </ul>
               </li>
-              <li className={classes["menu__item"]}>
-                SERVICES
-                <MdKeyboardArrowDown
-                  className={`${classes.icon} ${classes["icon-dropdown"]}`}
-                />
-                <ul className={classes["menu-dropdown"]}>
-                  <Link className={classes["menu-dropdown__item"]} to="/carts">
-                    Cart
-                  </Link>
-                  <Link
-                    className={classes["menu-dropdown__item"]}
-                    to="/checkout"
-                  >
-                    Checkout
-                  </Link>
-                  <Link className={classes["menu-dropdown__item"]}>
-                    Contact
-                  </Link>
-                  <Link className={classes["menu-dropdown__item"]}>
-                    About Me
-                  </Link>
-                </ul>
-              </li>
-              <li className={classes["menu__item"]}>NEWS</li>
+              {isLoggedIn && (
+                <li className={classes["menu__item"]}>
+                  SERVICES
+                  <MdKeyboardArrowDown
+                    className={`${classes.icon} ${classes["icon-dropdown"]}`}
+                  />
+                  <ul className={classes["menu-dropdown"]}>
+                    <Link
+                      className={classes["menu-dropdown__item"]}
+                      to="/carts"
+                    >
+                      Cart
+                    </Link>
+                    <Link
+                      className={classes["menu-dropdown__item"]}
+                      to="/checkout"
+                    >
+                      Checkout
+                    </Link>
+                    <Link
+                      className={classes["menu-dropdown__item"]}
+                      to="/transactions"
+                    >
+                      Transactions
+                    </Link>
+                  </ul>
+                </li>
+              )}
             </ul>
           </Col>
           <Col
             className={`${classes["navbar__col"]} ${classes.logo}`}
-            xs={15}
-            sm={15}
+            xs={14}
+            sm={14}
             md={10}
             lg={7}
             xl={5}
@@ -143,8 +147,8 @@ export default function Navbar() {
           </Col>
           <Col
             className={`${classes["navbar__col"]} ${classes.contact}`}
-            xs={4}
-            sm={4}
+            xs={5}
+            sm={5}
             md={6}
             lg={8}
             xl={8}
@@ -152,7 +156,10 @@ export default function Navbar() {
             <div className={classes["contact-container"]}>
               <ul className={classes["contact__list"]}>
                 {isLoggedIn && (
-                  <Link className={classes["contact__item"]} to="/setting-user">
+                  <Link
+                    className={classes["contact__item"]}
+                    to={`/setting-user`}
+                  >
                     {user.username}
                   </Link>
                 )}
@@ -167,9 +174,20 @@ export default function Navbar() {
                 <Link className={classes["contact__item"]} to="/rooms">
                   Book Now
                 </Link>
-                <Link to="/login" className={classes["contact__item"]}>
-                  <FaRegUserCircle className={classes["icon-user"]} />
-                </Link>
+
+                {isLoggedIn && (
+                  <Link
+                    className={classes["contact__item"]}
+                    to={`/setting-user`}
+                  >
+                    {user.username}
+                  </Link>
+                )}
+                {!isLoggedIn && (
+                  <Link className={classes["contact__item"]} to="/login">
+                    <FaRegUserCircle className={classes["icon-user"]} />
+                  </Link>
+                )}
               </ul>
             </div>
           </Col>

@@ -34,6 +34,7 @@ export default function Provider({ children }) {
     };
     fetchCity();
   }, []);
+
   return (
     <>
       {isLoading &&

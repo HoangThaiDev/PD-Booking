@@ -1,10 +1,7 @@
 // Import Modules
 import { useState, useRef } from "react";
 import classes from "./css/formLogin.module.css";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { userAction } from "../../redux/store";
 import { API_ROOT } from "../../utils/constant";
 import "../../UI/css/messageAlert.css";
 
@@ -41,9 +38,6 @@ export default function FormLogin() {
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
   // Create + use event Handlers
   const showPasswordHandler = (name) => {
     setShowPassword((prev) => {
@@ -71,14 +65,12 @@ export default function FormLogin() {
           icon: <FaCheck />,
         });
         setTimeout(() => {
-          navigate("/", { replace: true });
-          window.location.reload();
+          window.location.replace("/");
         }, 800);
       }
     } catch (error) {
-      const { message, messages } = error.response.data;
-      console.log(messages);
-      if (!message) {
+      const { session, messages } = error.response.data;
+      if (!session) {
         const updatedErrorMessages = { ...errorMessages };
         messages.forEach((errorData) => {
           const { path, message, showError } = errorData;

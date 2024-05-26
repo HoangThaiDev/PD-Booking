@@ -1,14 +1,18 @@
 // Import Modules
 import React from "react";
+import { useSelector } from "react-redux";
 
 // Import Components
 import Header from "../UI/Header";
-import About from "../components/SettingUser/About";
+import Dashboard from "../components/SettingUser/Dashboard";
 
 const banner =
   "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg";
 
 export default function SettingUser() {
+  // Create + use Hooks
+  const { user } = useSelector((state) => state.user);
+
   return (
     <div className="setting">
       <Header
@@ -17,7 +21,7 @@ export default function SettingUser() {
         content="HOME / SETTING"
         showFormBooking={false}
       />
-      <About />
+      {user && <Dashboard user={user} />}
     </div>
   );
 }

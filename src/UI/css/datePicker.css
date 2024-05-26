@@ -60,6 +60,12 @@
     background-color: transparent !important;
 }
 
+.formBooking-popup .ant-picker-cell-range-start .ant-picker-cell-inner,
+.formBooking-popup .ant-picker-cell-range-end .ant-picker-cell-inner {
+    background-color: #B99D75 !important;
+    border-radius: 3px !important;
+}
+
 /* Effect CSS */
 .formBooking-date .ant-picker-active-bar {
     background-color: #B99D75 !important;
@@ -74,8 +80,7 @@
     border: 1px solid #B99D75 !important;
 }
 
-.formBooking-popup .ant-picker-cell:hover .ant-picker-cell-inner,
-.formBooking-popup .ant-picker-cell-iner:hover {
+.formBooking-popup .ant-picker-cell:hover .ant-picker-cell-inner {
     background-color: #B99D75 !important;
     color: #fff;
 }

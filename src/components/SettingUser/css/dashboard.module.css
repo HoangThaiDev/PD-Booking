@@ -1,0 +1,161 @@
+.about {
+    padding-top: 5%;
+}
+
+/* CSS: Container */
+.about__container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* CSS: Row */
+.about__row {
+    justify-content: space-between;
+}
+
+/* CSS: Col */
+.about__col:nth-child(2) {
+    box-shadow: 0 0 10px 2px rgba(234, 232, 232, 0.5);
+    padding: 50px;
+}
+
+/* CSS: Dashboard */
+.menu-dashboard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 0;
+}
+
+.menu__item {
+    width: 100%;
+    font-size: 1.1rem;
+    color: rgb(82, 81, 81);
+    letter-spacing: 1px;
+    font-family: "Playfair Display", serif;
+    box-shadow: 0 0 2px 2px rgba(186, 186, 186, 0.3);
+    text-align: center;
+    padding: 20px 0;
+    line-height: 1.3rem;
+    transition: 0.5s all ease;
+}
+
+.icon {
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+}
+
+
+
+/* CSS: Active */
+.menu__item-active {
+    background-color: rgb(185, 157, 117);
+    color: #fff;
+    transition: 0.3s all ease;
+}
+
+/* CSS: Hover */
+.menu__item-active:hover {
+    color: #fff;
+}
+
+.menu__item:hover {
+    background-color: rgb(185, 157, 117);
+    color: #fff;
+}
+
+/* CSS: Responsive */
+@media screen and (max-width:575px) {
+    .about {
+        padding-top: 20%;
+    }
+
+    /* CSS: Container */
+    .about__container {
+        width: 90%;
+    }
+
+    .menu-dashboard {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    .menu__item {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Col */
+    .about__col:nth-child(2) {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .about {
+        padding-top: 10%;
+    }
+
+    /* CSS: Container */
+    .about__container {
+        width: 90%;
+    }
+
+    .menu-dashboard {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    .menu__item {
+        width: 48%;
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Col */
+    .about__col:nth-child(2) {
+        padding: 25px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .about {
+        padding-top: 10%;
+    }
+
+    /* CSS: Container */
+    .about__container {
+        width: 90%;
+    }
+
+    .menu__item {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Col */
+    .about__col:nth-child(2) {
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .about {
+        padding-top: 10%;
+    }
+
+    /* CSS: Container */
+    .about__container {
+        width: 90%;
+    }
+
+    .menu__item {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Col */
+    .about__col:nth-child(2) {
+        padding: 30px;
+    }
+}

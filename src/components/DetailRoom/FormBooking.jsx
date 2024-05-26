@@ -225,10 +225,11 @@ export default function FormBooking({ room }) {
           className: "message-error",
           icon: <MdError />,
         });
-
-        setTimeout(() => {
-          window.location.replace("/login");
-        }, 1000);
+        if (error.response.data.session) {
+          setTimeout(() => {
+            window.location.replace("/login");
+          }, 1000);
+        }
       }
     }
   };

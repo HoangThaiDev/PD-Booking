@@ -4,10 +4,8 @@
     height: 60px;
     top: 0;
     color: white;
-    border-bottom: 0.5px solid rgba(232, 229, 229, 0.2);
     padding: 30px 0;
     z-index: 3;
-    background: linear-gradient(45deg, rgba(24, 24, 24, 0.3), rgba(162, 160, 160, 0.1));
 }
 
 /* CSS: Row */
@@ -203,6 +201,7 @@
 @media screen and (max-width:575px) {
     .navbar__row {
         padding: 0 10px;
+        word-break: break-all;
     }
 
     .menu__item:not(:first-child),
@@ -234,6 +233,12 @@
     .contact__item:nth-child(4) {
         display: block;
         color: rgba(255, 255, 255, 0.912);
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1rem;
+    }
+
+    .contact__item:nth-child(4) .icon-user {
         font-size: 1.5rem;
     }
 
@@ -273,8 +278,13 @@
     .contact__item:nth-child(4) {
         display: block;
         color: rgba(255, 255, 255, 0.912);
+        font-size: 1rem;
+    }
+
+    .contact__item:nth-child(4) .icon-user {
         font-size: 1.5rem;
     }
+
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -314,11 +324,18 @@
         margin-top: 3px;
     }
 
-    .icon-user {
+    .contact__item:nth-child(4) {
+        display: block;
+        color: rgba(255, 255, 255, 0.912);
+        font-size: 1rem;
+    }
+
+    .contact__item:nth-child(4) .icon-user {
         display: block;
         color: rgba(255, 255, 255, 0.912);
         font-size: 1.3rem;
     }
+
 }
 
 @media screen and (min-width:992px) and (max-width:1190px) {
@@ -356,7 +373,13 @@
         margin-top: 5px;
     }
 
-    .icon-user {
+    .contact__item:nth-child(4) {
+        display: block;
+        color: rgba(255, 255, 255, 0.912);
+        font-size: 1rem;
+    }
+
+    .contact__item:nth-child(4) .icon-user {
         display: block;
         color: rgba(255, 255, 255, 0.912);
         font-size: 1.6rem;

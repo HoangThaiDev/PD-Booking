@@ -30,7 +30,7 @@ export default function Cart() {
             c.numberRooms = c.rooms.join(", ");
             return c;
           });
-          console.log(response);
+
           setCartUser({ items: updatedCarts });
           setIsLoading(true);
         }

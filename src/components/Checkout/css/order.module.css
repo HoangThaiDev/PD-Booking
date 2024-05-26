@@ -1,0 +1,259 @@
+/* CSS: Order Cart */
+.order__carts>h2 {
+    font: 2rem/2.5rem Bodoni Moda, serif;
+    color: rgb(62, 56, 48);
+}
+
+/* CSS: Order Row */
+.carts__row:nth-child(2) {
+    margin-top: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(203, 203, 203);
+    padding-bottom: 1.4rem;
+}
+
+/* CSS: Order Col */
+.carts__row:nth-child(2) .carts__col>h4 {
+    font: 700 1rem Playfair Display, serif;
+    letter-spacing: 2px;
+}
+
+.carts__row:nth-child(2) .carts__col:nth-child(2) {
+    text-align: right;
+}
+
+/* CSS: Carts Row */
+.carts__row {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgb(203, 203, 203);
+    padding-bottom: 1.4rem;
+}
+
+/* CSS: Carts Col */
+.carts__row .carts__col:nth-child(2) {
+    text-align: right;
+}
+
+.carts__col:nth-child(1) .cart-detail>p {
+    margin: 10px 0;
+    font: 1rem "Roboto", sans-serif;
+}
+
+.carts__col:nth-child(1) .cart-detail>p>span {
+    font-weight: 700;
+}
+
+.carts__col:nth-child(1) .cart-detail .cart-detail-name {
+    font-size: 1.2rem;
+}
+
+
+.carts__col:nth-child(2) .cart-price {
+    font: 600 1rem "Roboto", sans-serif;
+    color: rgb(75, 74, 74);
+}
+
+/* CSS: Cart Footer */
+.carts__footer {
+    border: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* CSS: Order Col */
+.carts__footer .carts__col>p {
+    font: 700 1.3rem Playfair Display, serif;
+    letter-spacing: 2px;
+}
+
+.carts__footer .carts__col:nth-child(2) {
+    text-align: right;
+}
+
+/* CSS: Active */
+.carts-empty {
+    text-align: center;
+    margin: 4rem 0 2rem;
+}
+
+.carts-empty>h2 {
+    font: 2rem/2.5rem Bodoni Moda, serif;
+}
+
+/* CSS: Effect */
+
+
+/* CSS: Responsive */
+@media screen and (max-width:575px) {
+
+    /* CSS: Order Cart */
+    .order__carts>h2 {
+        font: 1.5rem/2.5rem Bodoni Moda, serif;
+        text-align: center;
+    }
+
+    /* CSS: Order Col */
+    .carts__row:nth-child(2) .carts__col>h4 {
+        font: 700 0.9rem Playfair Display, serif;
+    }
+
+    .carts__row:nth-child(2) .carts__col:nth-child(2) {
+        text-align: center;
+    }
+
+    .carts__col:nth-child(1) .cart-detail>p {
+        font: 0.9rem/1.3rem "Roboto", sans-serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail .cart-detail-name {
+        font-size: 1rem;
+    }
+
+    .carts__col:nth-child(2) .cart-price {
+        font: 600 0.9rem/1.5rem "Roboto", sans-serif;
+        text-align: center;
+    }
+
+    /* CSS: Cart Footer */
+    /* CSS: Order Col */
+    .carts__footer .carts__col>p {
+        font: 700 1rem Playfair Display, serif;
+        letter-spacing: 2px;
+    }
+
+    .carts__footer .carts__col:nth-child(2) {
+        text-align: right;
+    }
+
+    .carts__footer .carts__col:nth-child(2)>p {
+        word-wrap: break-word;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+
+    /* CSS: Order Cart */
+    .order__carts>h2 {
+        font: 1.8rem/2.5rem Bodoni Moda, serif;
+        text-align: center;
+    }
+
+    /* CSS: Order Col */
+    .carts__row:nth-child(2) .carts__col>h4 {
+        font: 700 0.9rem Playfair Display, serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail>p {
+        font: 0.9rem/1.3rem "Roboto", sans-serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail .cart-detail-name {
+        font-size: 1rem;
+    }
+
+    .carts__col:nth-child(2) .cart-price {
+        font: 600 0.9rem/1.5rem "Roboto", sans-serif;
+    }
+
+    /* CSS: Cart Footer */
+    /* CSS: Order Col */
+    .carts__footer .carts__col>p {
+        font: 700 1.1rem Playfair Display, serif;
+        letter-spacing: 2px;
+    }
+
+    .carts__footer .carts__col:nth-child(2) {
+        text-align: right;
+    }
+
+    .carts__footer .carts__col:nth-child(2)>p {
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    /* CSS: Order Cart */
+    .order__carts>h2 {
+        font: 2rem/2.5rem Bodoni Moda, serif;
+        text-align: center;
+    }
+
+    /* CSS: Order Col */
+    .carts__row:nth-child(2) .carts__col>h4 {
+        font: 700 1rem Playfair Display, serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail>p {
+        font: 1rem/1.3rem "Roboto", sans-serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail .cart-detail-name {
+        font-size: 1rem;
+    }
+
+    .carts__col:nth-child(2) .cart-price {
+        font: 600 1rem/1.5rem "Roboto", sans-serif;
+    }
+
+    /* CSS: Cart Footer */
+    /* CSS: Order Col */
+    .carts__footer .carts__col>p {
+        font: 700 1.1rem Playfair Display, serif;
+        letter-spacing: 2px;
+    }
+
+    .carts__footer .carts__col:nth-child(2) {
+        text-align: right;
+    }
+
+    .carts__footer .carts__col:nth-child(2)>p {
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    /* CSS: Order Cart */
+    .order__carts>h2 {
+        font: 2.3rem/2.5rem Bodoni Moda, serif;
+        text-align: center;
+    }
+
+    /* CSS: Order Col */
+    .carts__row:nth-child(2) .carts__col>h4 {
+        font: 700 1rem Playfair Display, serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail>p {
+        font: 1rem/1.3rem "Roboto", sans-serif;
+    }
+
+    .carts__col:nth-child(1) .cart-detail .cart-detail-name {
+        font-size: 1.2rem;
+    }
+
+    .carts__col:nth-child(2) .cart-price {
+        font: 600 1rem/1.5rem "Roboto", sans-serif;
+    }
+
+    /* CSS: Cart Footer */
+    /* CSS: Order Col */
+    .carts__footer .carts__col>p {
+        font: 700 1.2rem Playfair Display, serif;
+        letter-spacing: 2px;
+    }
+
+    .carts__footer .carts__col:nth-child(2) {
+        text-align: right;
+    }
+
+    .carts__footer .carts__col:nth-child(2)>p {
+        word-wrap: break-word;
+    }
+}

@@ -1,0 +1,49 @@
+/* CSS: Transactions Row - Title */
+.transactions__row-title {
+    flex-wrap: wrap;
+}
+
+/* CSS: Transactions Row - Col */
+.transactions__col-title {
+    padding: 20px 0;
+    border-right: 2px solid #fff;
+    text-align: center;
+}
+
+/* CSS: Transactions Row - Col Content */
+.transactions__col-title>p {
+    font: 600 1rem/1rem Bodoni Moda, serif;
+    color: rgb(15, 63, 102);
+    letter-spacing: 1px;
+}
+
+/* CSS: Transactions Row - Title */
+.transactions__row-content {
+    flex-wrap: wrap;
+    border: 1px solid rgb(15, 63, 102);
+    border-bottom: none;
+    align-items: center;
+}
+
+.transactions__row-content:last-child {
+    border-bottom: 1px solid rgb(15, 63, 102);
+}
+
+/* CSS: Transactions Row - Col */
+.transactions__col-content {
+    padding: 10px;
+    border-right: 1px solid rgb(15, 63, 102);
+    text-align: center;
+}
+
+.transactions__col-content:last-child {
+    padding: 20px 0;
+    border-right: none;
+}
+
+/* CSS: Transactions Row - Col Content */
+.transactions__col-content>p {
+    word-wrap: break-word;
+    font: 0.9rem/1rem Roboto, serif;
+    color: rgba(66, 66, 67);
+}

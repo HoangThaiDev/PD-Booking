@@ -5,7 +5,7 @@ import { APIContext } from "./storeContext/APIContext";
 import { useContext, useEffect, useRef } from "react";
 import axios from "axios";
 import { API_ROOT } from "./utils/constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "./redux/store";
 
 // Import Components
@@ -26,6 +26,11 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import SettingUser from "./pages/SettingUser";
 import Error from "./pages/Error";
+import Transaction from "./pages/Transaction";
+import Profile from "./components/SettingUser/Profile";
+import ChangePassword from "./components/SettingUser/ChangePassword";
+import Transactions from "./components/SettingUser/Transactions";
+import Main from "./components/SettingUser/Main";
 
 function App() {
   // Cấu hình Axios để gửi cookie trong tất cả các yêu cầu
@@ -57,7 +62,6 @@ function App() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(`${API_ROOT}/users/login`);
-
         if (data.isLoggedIn) {
           dispatch(userAction.login(data));
         }
@@ -101,8 +105,15 @@ function App() {
             <Route path="room/:resortId" element={<DetailRoom />} />
             <Route path="carts" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
+            <Route path="transactions" element={<Transaction />} />
             <Route path="setting-user" element={<SettingUser />}>
-              <Route index element={<SettingUser />} />
+              <Route index element={<Main />} />
+              <Route path="profile/:userId" element={<Profile />} />
+              <Route
+                path="change-password/:userId"
+                element={<ChangePassword />}
+              />
+              <Route path="transactions/:userId" element={<Transactions />} />
             </Route>
             <Route path="*" element={<Error />} />
           </Route>

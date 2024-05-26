@@ -8,7 +8,136 @@
     margin: 0 auto;
 }
 
+.btn-submit {
+    margin-top: 2rem;
+    background-color: rgb(62, 62, 62);
+    color: #fff;
+    font: 1.2rem Playfair Display, serif;
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid transparent;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+}
+
 /* CSS: Row */
 .main__row {
     justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* CSS: Col */
+.main__col:nth-child(2) {
+    background-color: rgb(249, 249, 249);
+    height: auto;
+    padding: 40px;
+}
+
+/* CSS: Order Message */
+.order__message {
+    text-align: center;
+}
+
+.order__message>h2 {
+    font: 2.5rem/2.5rem Bodoni Moda, serif;
+    color: rgb(62, 56, 48);
+}
+
+.order__message>p {
+    font: italic 1.5rem/1rem EB Garamond, serif;
+    margin: 1.5rem 0;
+}
+
+.order__message>a {
+    display: inline-block;
+    background-color: rgb(185, 157, 117);
+    color: #fff;
+    margin-top: 10px;
+    padding: 15px 40px;
+    border-radius: 3px;
+    font: 1rem Playfair Display, serif;
+    border: 2px solid transparent;
+    transition: 0.5s all ease-in-out;
+}
+
+/* CSS: Effect */
+.btn-submit:hover {
+    background-color: rgb(185, 157, 117);
+}
+
+.order__message>a:hover {
+    background-color: #fff;
+    color: rgb(185, 157, 117);
+    border-color: rgb(185, 157, 117);
+}
+
+/* CSS: Responsive */
+@media screen and (max-width:575px) {
+    .main__col:nth-child(2) {
+        margin-top: 3rem;
+    }
+
+    .order__message>h2 {
+        font: 2rem/2.5rem Bodoni Moda, serif;
+    }
+
+    .order__message>p {
+        font: italic 1.3rem/1.5rem EB Garamond, serif;
+        margin: 1rem 0;
+    }
+
+    /* CSS: Col */
+    .main__col:nth-child(2) {
+        padding: 40px 20px;
+    }
+
+    .btn-submit {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .main__col:nth-child(2) {
+        margin-top: 3rem;
+    }
+
+    .order__message>h2 {
+        font: 2rem/2.5rem Bodoni Moda, serif;
+    }
+
+    .order__message>p {
+        font: italic 1.3rem/1.5rem EB Garamond, serif;
+        margin: 1rem 0;
+    }
+
+    .btn-submit {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .main__col:nth-child(2) {
+        margin-top: 3rem;
+    }
+
+    .order__message>h2 {
+        font: 2.2rem/2.5rem Bodoni Moda, serif;
+    }
+
+    .order__message>p {
+        font: italic 1.3rem/1.5rem EB Garamond, serif;
+        margin: 1.5rem 0;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .main__col:nth-child(2) {
+        margin-top: 3rem;
+    }
+
+    .order__message>p {
+        font: italic 1.3rem/1.5rem EB Garamond, serif;
+        margin: 1.5rem 0;
+    }
 }

@@ -62,7 +62,6 @@ export default function ListCart({ cartUser }) {
           icon: <MdError />,
         });
       }
-      console.log("hello");
     };
     if (isLoggedIn) {
       updateCheckoutHandler();

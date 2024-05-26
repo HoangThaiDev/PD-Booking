@@ -1,0 +1,207 @@
+/* CSS: Container */
+.main__title {
+    font-size: 2rem;
+    color: rgb(104, 101, 97);
+    font-family: "Bodoni Moda", serif;
+    margin-bottom: 8%;
+}
+
+/* CSS: Row */
+.main__row {
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* CSS: Input */
+.main__item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 0;
+    width: 100%;
+}
+
+.main__item>label {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.main__item .item-input {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgb(225, 225, 225);
+    font-size: 1rem;
+}
+
+.item-btn {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(185, 157, 117);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.5s all ease;
+    margin-top: 10px;
+}
+
+/* CSS: Active */
+.main__item .item-input::placeholder {
+    font-family: "Roboto", sans-serif;
+    color: gray;
+    font-size: 1rem;
+}
+
+.error-message {
+    font-family: "Roboto", sans-serif;
+    color: rgb(246, 118, 68);
+    font-size: 0.9rem;
+}
+
+.item-input:-webkit-autofill,
+.item-input:-webkit-autofill:hover,
+.item-input:-webkit-autofill:focus,
+.item-input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: black;
+    box-shadow: inset 0 0 20px 20px rgba(202, 202, 202, 0.8) !important;
+}
+
+/* CSS: Effect */
+.main__item .item-input:focus {
+    outline: 1px solid rgb(225, 225, 225);
+}
+
+.item-btn:hover {
+    border: 2px solid rgb(185, 157, 117);
+    color: rgb(185, 157, 117);
+    background-color: #fff;
+}
+
+/* CSS: Responsive */
+@media screen and (max-width:575px) {
+
+    /* CSS: Container */
+    .main__title {
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 10% 0;
+    }
+
+    .main__item>label {
+        font-size: 0.9rem;
+    }
+
+    .main__item .item-input {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Active */
+    .main__item .item-input::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .error-message {
+        font-family: "Roboto", sans-serif;
+        color: rgb(246, 118, 68);
+        font-size: 0.8rem;
+    }
+
+    .item-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+
+    /* CSS: Container */
+    .main__title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .main__item>label {
+        font-size: 0.9rem;
+    }
+
+    .main__item .item-input {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Active */
+    .main__item .item-input::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .error-message {
+        font-family: "Roboto", sans-serif;
+        color: rgb(246, 118, 68);
+        font-size: 0.8rem;
+    }
+
+    .item-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    /* CSS: Container */
+    .main__title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .main__item>label {
+        font-size: 1rem;
+    }
+
+    .main__item .item-input {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Active */
+    .main__item .item-input::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .error-message {
+        font-family: "Roboto", sans-serif;
+        color: rgb(246, 118, 68);
+        font-size: 0.8rem;
+    }
+
+    .item-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    /* CSS: Container */
+    .main__title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .main__item>label {
+        font-size: 1rem;
+    }
+
+    .main__item .item-input {
+        font-size: 0.9rem;
+    }
+
+    /* CSS: Active */
+    .main__item .item-input::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .error-message {
+        font-family: "Roboto", sans-serif;
+        color: rgb(246, 118, 68);
+        font-size: 0.8rem;
+    }
+
+}

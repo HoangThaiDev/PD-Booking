@@ -13,7 +13,16 @@ const initialUserOptions = {
 };
 const initialModalCart = { cart: null, showModal: false, refresh: false };
 const initialModalImageRoom = { imageActive: "", showModal: false };
-const initialUser = { user: null, isLoggedIn: false };
+const initialUser = {
+  user: {
+    userId: "",
+    username: "",
+  },
+  detail: null,
+  isLoggedIn: false,
+};
+const initialCheckout = { cart: {} };
+
 // Create Slides
 const sideMenuSlice = createSlice({
   name: "sideMenu",
@@ -113,10 +122,25 @@ const userSlice = createSlice({
   reducers: {
     login(state, data) {
       const { user, isLoggedIn } = data.payload;
-      return { ...state, isLoggedIn: isLoggedIn, user: user };
+      return {
+        ...state,
+        isLoggedIn: isLoggedIn,
+        user: { userId: user.userId, username: user.username },
+        detail: user.detail,
+      };
     },
     logout(state, data) {
-      return { ...state, isLoggedIn: false, user: null };
+      return { ...state, isLoggedIn: false, user: null, detail: null };
+    },
+  },
+});
+
+const checkoutSlice = createSlice({
+  name: "checkout",
+  initialState: initialCheckout,
+  reducers: {
+    saveCarts(state, data) {
+      state.cart = data.payload;
     },
   },
 });
@@ -129,6 +153,7 @@ const store = configureStore({
     modalCart: modalCartSlice.reducer,
     user: userSlice.reducer,
     modalImageRoom: modalImageRoomSlice.reducer,
+    checkout: checkoutSlice.reducer,
   },
 });
 
@@ -140,6 +165,7 @@ const optionsAction = optionsSlice.actions;
 const modalCartAction = modalCartSlice.actions;
 const modalImageRoomAction = modalImageRoomSlice.actions;
 const userAction = userSlice.actions;
+const checkoutAction = checkoutSlice.actions;
 
 export default store;
 export {
@@ -149,4 +175,5 @@ export {
   modalCartAction,
   userAction,
   modalImageRoomAction,
+  checkoutAction,
 };

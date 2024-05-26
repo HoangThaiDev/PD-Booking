@@ -14,7 +14,7 @@ const Container = () => {
   // Create + use Hooks\
   const dispatch = useDispatch();
   const { showSideMenu } = useSelector((state) => state.sideMenu);
-  const { user, isLoggedIn } = useSelector((state) => state.user);
+  const { isLoggedIn } = useSelector((state) => state.user);
 
   // Create + use Event Handlers
   const showSideMenuHandler = () => {
@@ -77,34 +77,31 @@ const Container = () => {
           >
             {isLoggedIn ? "User" : "Login"}
           </Link>
-          <Link
-            to="/carts"
-            className={classes["menu__item"]}
-            onClick={showSideMenuHandler}
-          >
-            Cart
-          </Link>
-          <Link
-            to="/checkout"
-            className={classes["menu__item"]}
-            onClick={showSideMenuHandler}
-          >
-            Checkout
-          </Link>
-          <Link
-            to="/contact"
-            className={classes["menu__item"]}
-            onClick={showSideMenuHandler}
-          >
-            Contact
-          </Link>
-          <Link
-            to="/about-me"
-            className={classes["menu__item"]}
-            onClick={showSideMenuHandler}
-          >
-            About me
-          </Link>
+          {isLoggedIn && (
+            <>
+              <Link
+                to="/carts"
+                className={classes["menu__item"]}
+                onClick={showSideMenuHandler}
+              >
+                Cart
+              </Link>
+              <Link
+                to="/checkout"
+                className={classes["menu__item"]}
+                onClick={showSideMenuHandler}
+              >
+                Checkout
+              </Link>
+              <Link
+                to="/transactions"
+                className={classes["menu__item"]}
+                onClick={showSideMenuHandler}
+              >
+                Contact
+              </Link>
+            </>
+          )}
         </ul>
       </div>
     </div>

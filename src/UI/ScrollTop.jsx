@@ -7,7 +7,9 @@ export default function ScrollTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!pathname.includes("setting-user")) {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;

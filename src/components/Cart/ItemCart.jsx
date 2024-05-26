@@ -98,14 +98,6 @@ export default function ItemCart({
           </Link>
         </div>
       )}
-      {!isLoggedIn && (
-        <div className={classes["itemCart__message"]}>
-          <h2>You should SIGN IN to view Your Cart</h2>
-          <Link to="/login" className={classes["itemCart__link"]}>
-            Go To Login
-          </Link>
-        </div>
-      )}
       {isLoggedIn &&
         sliceCarts.length > 0 &&
         sliceCarts.map((cart) => (

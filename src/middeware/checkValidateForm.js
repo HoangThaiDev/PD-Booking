@@ -14,9 +14,8 @@ const checkValidateFormForgotPassword = (infoUserLogin) => {
 };
 
 const checkFormBooking = (valueFormBooking) => {
-  const { startDate, endDate, adults, children, rooms, maxPeople } =
-    valueFormBooking;
-  const totalPeople = adults + children;
+  const { startDate, endDate, options, rooms, maxPeople } = valueFormBooking;
+  const totalPeople = options.adults + options.children;
   const maxPeopleInRooms = maxPeople * rooms.length;
   const isCheckValidate = { state: true, message: "" };
 
@@ -26,7 +25,7 @@ const checkFormBooking = (valueFormBooking) => {
     return isCheckValidate;
   }
 
-  if (adults === 0 && children === 0) {
+  if (options.adults === 0 && options.children === 0) {
     isCheckValidate.state = false;
     isCheckValidate.message = "Please choice Your Number People Stay In Room!";
     return isCheckValidate;

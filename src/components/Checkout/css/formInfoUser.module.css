@@ -68,7 +68,161 @@
     margin-bottom: 0.1rem;
 }
 
+.item__input-error {
+    border: 1px solid rgba(206, 30, 30, 0.8);
+}
+
+.message-error {
+    display: inline-block;
+    margin-top: 10px;
+    font: 0.9rem/1rem "Roboto", sans-serif;
+    color: rgba(206, 30, 30, 0.8);
+}
+
+.item__input:-webkit-autofill,
+.item__input:-webkit-autofill:hover,
+.item__input:-webkit-autofill:focus,
+.item__input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: black;
+    box-shadow: none !important;
+}
+
 /* CSS: Effect */
 .item__input:focus {
     outline: 1px solid rgb(165, 163, 163);
+}
+
+.item__input-error:focus {
+    outline: 1px solid rgba(206, 30, 30, 0.8);
+}
+
+
+/* CSS: Responsive */
+@media screen and (max-width:575px) {
+    .form {
+        box-shadow: none
+    }
+
+    /* CSS: Form Row */
+    .form__row {
+        gap: 2rem 0;
+    }
+
+    /* CSS: Form Container */
+    .form__container {
+        padding: 20px 0;
+    }
+
+    .form__title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* CSS: Form Input */
+    .form__item {
+        gap: 15px 0;
+    }
+
+    .item__title {
+        font-size: 1rem;
+    }
+
+    .item__title>span {
+        color: rgba(246, 79, 57, 0.907);
+        font-size: 1rem;
+        margin-left: 3px;
+    }
+
+    .item__input,
+    .item__textarea,
+    .item__input::placeholder {
+        font-size: 0.9rem;
+        text-overflow: ellipsis;
+    }
+
+    .message-error {
+        font: 0.8rem/1.2rem "Roboto", sans-serif;
+        color: rgba(206, 30, 30, 0.8);
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .form {
+        box-shadow: none
+    }
+
+    /* CSS: Form Row */
+    .form__row {
+        gap: 2rem 0;
+    }
+
+    /* CSS: Form Container */
+    .form__container {
+        padding: 20px 0;
+    }
+
+    .form__title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    /* CSS: Form Input */
+    .form__item {
+        gap: 15px 0;
+    }
+
+    .item__title {
+        font-size: 1rem;
+    }
+
+    .item__title>span {
+        color: rgba(246, 79, 57, 0.907);
+        font-size: 1rem;
+        margin-left: 3px;
+    }
+
+    .item__input,
+    .item__textarea,
+    .item__input::placeholder {
+        font-size: 0.9rem;
+        text-overflow: ellipsis;
+    }
+
+    .message-error {
+        font: 0.8rem/1.2rem "Roboto", sans-serif;
+        color: rgba(206, 30, 30, 0.8);
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .form {
+        box-shadow: none
+    }
+
+    /* CSS: Form Container */
+    .form__container {
+        padding: 20px 0;
+    }
+
+    .form__title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .form {
+        box-shadow: none
+    }
+
+    /* CSS: Form Container */
+    .form__container {
+        padding: 20px 0;
+    }
+
+    .form__title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
 }

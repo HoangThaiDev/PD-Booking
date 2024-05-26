@@ -84,8 +84,8 @@ export default function FormLogin() {
         }, 1000);
       }
     } catch (error) {
-      const { message, messages } = error.response.data;
-      if (!message) {
+      const { session, messages } = error.response.data;
+      if (!session) {
         const updatedErrorMessages = { ...errorMessages };
         messages.forEach((errorData) => {
           const { path, message, showError } = errorData;
