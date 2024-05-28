@@ -62,7 +62,7 @@ function App() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(`${API_ROOT}/users/login`, {
-          credentials: "include",
+          withCredentials: true,
         });
         if (data.isLoggedIn) {
           dispatch(userAction.login(data));
