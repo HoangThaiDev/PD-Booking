@@ -145,7 +145,7 @@
     font-family: "EB Garamond", serif;
     position: relative;
     border: 1px solid #b99d75;
-    padding: 15px;
+    padding: 15px 10px;
     margin: 15px 0;
     display: flex;
     justify-content: space-between;

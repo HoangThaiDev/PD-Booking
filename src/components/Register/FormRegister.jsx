@@ -1,9 +1,13 @@
 // Import Modules
-import React, { useState, useRef } from "react";
-import classes from "./css/formRegister.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
+
+// Import Hooks
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Import File CSS
+import classes from "./css/formRegister.module.css";
 import "../../UI/css/messageAlert.css";
 
 // Import Components
@@ -84,10 +88,9 @@ export default function FormLogin() {
         }, 1000);
       }
     } catch (error) {
-      const { session, messages } = error.response.data;
-      if (!session) {
+      if (error.response.data.checkValidateForm) {
         const updatedErrorMessages = { ...errorMessages };
-        messages.forEach((errorData) => {
+        error.response.data.messages.forEach((errorData) => {
           const { path, message, showError } = errorData;
           const field = path[0];
 

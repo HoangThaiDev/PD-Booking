@@ -1,5 +1,7 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/about.module.css";
 
 // Import Components
@@ -13,6 +15,7 @@ import ImageCity3 from "../../assets/Images Resort/imageResort3.jpg";
 import ImageCity4 from "../../assets/Images Resort/imageResort4.jpg";
 
 export default function About() {
+  // Create + use variables
   const dataImageCity = [ImageCity1, ImageCity2, ImageCity3, ImageCity4];
 
   return (

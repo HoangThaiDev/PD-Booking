@@ -1,9 +1,13 @@
 // Import Modules
-import React, { useRef, useState, useCallback } from "react";
-import classes from "./css/listCity.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
+
+// Import Hooks
+import React, { useRef, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Import File CSS
+import classes from "./css/listCity.module.css";
 
 // Import Components
 import { Row, Col } from "antd";

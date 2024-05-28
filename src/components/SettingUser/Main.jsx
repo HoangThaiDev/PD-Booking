@@ -1,7 +1,9 @@
-// Import Modules
+// Import Hooks
 import React from "react";
-import classes from "./css/main.module.css";
 import { useSelector } from "react-redux";
+
+// Import File CSS
+import classes from "./css/main.module.css";
 
 export default function Main() {
   // Create + use Hooks

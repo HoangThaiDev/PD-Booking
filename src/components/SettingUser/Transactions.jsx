@@ -1,11 +1,15 @@
 // Import Modules
-import React, { useEffect, useState } from "react";
-import classes from "./css/transactions.module.css";
-import "../../UI/css/messageAlert.css";
 import axios from "axios";
 import { API_ROOT } from "../../utils/constant";
-import { useSelector } from "react-redux";
 import moment from "moment";
+
+// Import Hooks
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+// Import File CSS
+import classes from "./css/transactions.module.css";
+import "../../UI/css/messageAlert.css";
 
 // Import Components
 import { message, Row, Col } from "antd";
@@ -21,6 +25,7 @@ export default function Transactions() {
   const [isLoading, setIsLoading] = useState(false);
   const [transactions, setTransactions] = useState([]);
 
+  // Create + use fetch API
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
@@ -51,6 +56,7 @@ export default function Transactions() {
       fetchTransactions();
     }
   }, [isLoggedIn]);
+
   return (
     <div>
       {contextHolder} {/* Alert Action */}
@@ -62,16 +68,16 @@ export default function Transactions() {
                 <p>#</p>
               </Col>
               <Col className={classes["transactions__col-title"]} xl={6}>
-                <p>CLIENT</p>
+                <p>Client</p>
               </Col>
               <Col className={classes["transactions__col-title"]} xl={6}>
-                <p>ORDER DATE</p>
+                <p>Order Date</p>
               </Col>
               <Col className={classes["transactions__col-title"]} xl={7}>
-                <p>TOTAL</p>
+                <p>Total</p>
               </Col>
               <Col className={classes["transactions__col-title"]} xl={3}>
-                <p>ACTIVE</p>
+                <p>Active</p>
               </Col>
             </Row>
             {transactions.length > 0 &&
@@ -80,29 +86,77 @@ export default function Transactions() {
                   key={tr._id}
                   className={classes["transactions__row-content"]}
                 >
-                  <Col className={classes["transactions__col-content"]} xl={2}>
+                  <Col
+                    className={classes["transactions__col-content"]}
+                    xs={24}
+                    sm={24}
+                    md={24}
+                    lg={24}
+                    xl={2}
+                  >
+                    <span className={classes["title-active-mobile"]}>#</span>
                     <p className={classes["content-id"]}>{i + 1}</p>
                   </Col>
-                  <Col className={classes["transactions__col-content"]} xl={6}>
+                  <Col
+                    className={classes["transactions__col-content"]}
+                    xs={24}
+                    sm={24}
+                    md={24}
+                    lg={24}
+                    xl={6}
+                  >
+                    {" "}
+                    <span className={classes["title-active-mobile"]}>
+                      Client
+                    </span>
                     <p className={classes["content-client"]}>
                       {tr.infoUser.emailContact}
                     </p>
                   </Col>
-                  <Col className={classes["transactions__col-content"]} xl={6}>
+                  <Col
+                    className={classes["transactions__col-content"]}
+                    xs={24}
+                    sm={24}
+                    md={24}
+                    lg={24}
+                    xl={6}
+                  >
+                    <span className={classes["title-active-mobile"]}>
+                      Order Date
+                    </span>
                     <p className={classes["content-date"]}>
-                      {" "}
                       {moment(tr.createAt).format("DD/MM/YYYY")}
                     </p>
                   </Col>
-                  <Col className={classes["transactions__col-content"]} xl={7}>
+                  <Col
+                    className={classes["transactions__col-content"]}
+                    xs={24}
+                    sm={24}
+                    md={24}
+                    lg={24}
+                    xl={7}
+                  >
+                    <span className={classes["title-active-mobile"]}>
+                      Total
+                    </span>
                     <p className={classes["content-total"]}>
                       {tr.cart.totalPriceOfCarts} VNĐ for {tr.cart.items.length}{" "}
                       Items
                     </p>
                   </Col>
-                  <Col className={classes["transactions__col-content"]} xl={3}>
+                  <Col
+                    className={classes["transactions__col-content"]}
+                    xs={24}
+                    sm={24}
+                    md={24}
+                    lg={24}
+                    xl={3}
+                  >
+                    <span className={classes["title-active-mobile"]}>
+                      Active
+                    </span>
                     <p className={classes["content-active"]}>
-                      <FaEye />
+                      <FaEye className={classes["icon-show"]} />
                     </p>
                   </Col>
                 </Row>

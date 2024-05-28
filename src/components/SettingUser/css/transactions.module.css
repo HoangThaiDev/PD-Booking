@@ -1,49 +1,131 @@
 /* CSS: Transactions Row - Title */
 .transactions__row-title {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     flex-wrap: wrap;
+    background-color: rgba(28, 76, 115, 0.8);
 }
 
-/* CSS: Transactions Row - Col */
+/* CSS: Transactions Col - Title */
 .transactions__col-title {
     padding: 20px 0;
-    border-right: 2px solid #fff;
     text-align: center;
 }
 
-/* CSS: Transactions Row - Col Content */
+/* CSS: Transactions Content - Title*/
 .transactions__col-title>p {
-    font: 600 1rem/1rem Bodoni Moda, serif;
-    color: rgb(15, 63, 102);
+    font: 700 1rem/1rem Bodoni Moda, serif;
+    color: #fff;
     letter-spacing: 1px;
 }
 
-/* CSS: Transactions Row - Title */
+/* CSS: Transactions Row - Content */
 .transactions__row-content {
     flex-wrap: wrap;
-    border: 1px solid rgb(15, 63, 102);
-    border-bottom: none;
-    align-items: center;
+    background-color: #fff;
+    transition: 0.3s all ease;
+}
+
+.transactions__row-content:nth-child(2n + 1) {
+    background-color: rgba(245, 242, 240, 0.8);
 }
 
 .transactions__row-content:last-child {
-    border-bottom: 1px solid rgb(15, 63, 102);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
-/* CSS: Transactions Row - Col */
+/* CSS: Transactions Col - Content */
 .transactions__col-content {
-    padding: 10px;
-    border-right: 1px solid rgb(15, 63, 102);
+    padding: 20px 0;
     text-align: center;
 }
 
-.transactions__col-content:last-child {
-    padding: 20px 0;
-    border-right: none;
-}
-
-/* CSS: Transactions Row - Col Content */
+/* CSS: Transactions Content - Content */
 .transactions__col-content>p {
     word-wrap: break-word;
     font: 0.9rem/1rem Roboto, serif;
-    color: rgba(66, 66, 67);
+    color: rgb(128, 128, 128)
 }
+
+.transactions__row-content:nth-child(2n + 1) .transactions__col-content>p {
+    color: rgb(128, 128, 128)
+}
+
+/* CSS: Icon */
+.icon-show {
+    cursor: pointer;
+    color: rgba(28, 76, 115, 0.8);
+}
+
+/* CSS: Effect */
+.transactions__row-content:hover {
+    background-color: rgba(245, 242, 240, 0.8);
+}
+
+/* CSS: Responsives */
+@media screen and (max-width:575px) {
+
+    /* CSS: Transactions Row - Title*/
+    .transactions__row-title {
+        display: none;
+    }
+
+    /* CSS: Transactions Row - Content*/
+    .transactions__row-content {
+        border-bottom: 2px solid rgba(28, 76, 115, 0.8);
+        margin-bottom: 20px;
+    }
+
+    .transactions__row-content:last-child {
+        border-radius: 0;
+        border: 0;
+    }
+
+    .transactions__row-content:nth-child(2n + 1) {
+        background-color: #fff;
+    }
+
+    .transactions__col-content {
+        text-align: left;
+    }
+
+    /* CSS: Transactions Col - Content*/
+    .transactions__col-content {
+        padding: 15px 0;
+    }
+
+    /* .transactions__col-content:nth-child(1) {
+        order: 1;
+    }
+
+    .transactions__col-content:nth-child(2) {
+        order: 3;
+    }
+
+    .transactions__col-content:nth-child(3) {
+        order: 4;
+    }
+
+    .transactions__col-content:nth-child(4) {
+        order: 5;
+    }
+
+    .transactions__col-content:nth-child(5) {
+        order: 2;
+    } */
+
+    /* CSS: Transactions Content - Content*/
+    .transactions__col-content:nth-child(1)>p::before,
+
+    /* CSS: Effect */
+    .transactions__row-content:hover {
+        background-color: #fff;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {}
+
+@media screen and (min-width:768px) and (max-width:991px) {}
+
+@media screen and (min-width:992px) and (max-width:1199px) {}

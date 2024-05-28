@@ -1,6 +1,10 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/relatedProduct.module.css";
+
+// Import Hooks
 import { useNavigate } from "react-router-dom";
 
 // Import Components

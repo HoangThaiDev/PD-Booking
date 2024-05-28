@@ -63,8 +63,8 @@
 
 .rooms__options .col .iconSearch {
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(182, 155, 117);
+    font-size: 1rem;
+    border: 2px solid rgb(182, 155, 117);
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
@@ -72,8 +72,8 @@
 
 .rooms__options .col .iconRefresh {
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(182, 155, 117);
+    font-size: 1rem;
+    border: 2px solid rgb(182, 155, 117);
     padding: 10px 20px;
     color: rgb(182, 155, 117);
     transition: 0.3s all ease;
@@ -112,6 +112,7 @@
     left: 20px;
     font-weight: 700;
     border-radius: 3px;
+    font-size: 0.8rem;
 }
 
 .rooms__item:nth-child(2) {
@@ -128,7 +129,7 @@
 
 .rooms__item:nth-child(2) .rooms__item-name {
     font-family: "Lora", serif;
-    font-size: 2.3rem;
+    font-size: 2rem;
     letter-spacing: 1px;
     color: #403b34;
 }
@@ -139,7 +140,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .rooms__item:nth-child(2) .rooms__item-card .note-flex {
@@ -151,12 +152,12 @@
 .rooms__item:nth-child(2) .rooms__item-card .note-flex>p {
     font-family: "Roboto", sans-serif;
     color: #927646;
-    font-size: 16px;
+    font-size: 0.9rem;
 }
 
 .rooms__item:nth-child(2) .rooms__item-card .note-flex>.icon {
-    margin-right: 10px;
-    font-size: 18px;
+    margin-right: 5px;
+    font-size: 0.9rem;
     color: #927646;
 }
 
@@ -164,13 +165,13 @@
     font-family: "Roboto", sans-serif;
     color: #403b34;
     line-height: 25px;
-    font-size: 16px;
+    font-size: 0.9rem;
 }
 
 .rooms__item:nth-child(2) .rooms__btn-link {
     cursor: pointer;
     background-color: transparent;
-    margin-top: 3%;
+    margin-top: 5%;
     border: 0;
     padding: 0;
     position: relative;
@@ -178,7 +179,7 @@
     font-family: "Playfair Display", serif;
     color: #302a22;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 .rooms__item:nth-child(2) .rooms__btn-link::after {
@@ -301,7 +302,7 @@
     }
 
     .rooms__item:nth-child(2) .rooms__item-name {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin: 20px 0;
     }
 
@@ -315,16 +316,18 @@
     }
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>.icon {
-        font-size: 0.8rem;
-        margin-right: 5px;
+        font-size: 0.7rem;
+        position: relative;
+        top: -1px;
+        margin-right: 3px;
     }
 
     .rooms__item:nth-child(2) .rooms__item-desc {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .rooms__item:nth-child(2) .rooms__btn-link {
@@ -365,10 +368,6 @@
         height: 380px;
     }
 
-    .rooms__price {
-        font-size: 0.8rem;
-    }
-
     .rooms__item:nth-child(2) {
         padding: 10px;
         text-align: center;
@@ -376,11 +375,11 @@
 
     .rooms__item:nth-child(2) .rooms__item-breakcrum {
         margin-bottom: 2%;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-name {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin: 20px 0;
     }
 
@@ -395,11 +394,13 @@
     }
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>.icon {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        position: relative;
+        top: -1px;
         margin-right: 5px;
     }
 
@@ -448,7 +449,7 @@
     }
 
     .rooms__item:nth-child(2) .rooms__item-name {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-card {
@@ -466,7 +467,9 @@
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>.icon {
         font-size: 0.8rem;
-        margin-right: 5px;
+        position: relative;
+        top: -1px;
+        margin-right: 3px;
     }
 
     .rooms__item:nth-child(2) .rooms__item-desc {
@@ -515,11 +518,11 @@
     }
 
     .rooms__item:nth-child(2) .rooms__item-breakcrum {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-name {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-card {
@@ -532,11 +535,13 @@
     }
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .rooms__item:nth-child(2) .rooms__item-card .note-flex>.icon {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        position: relative;
+        top: -1px;
         margin-right: 5px;
     }
 
@@ -545,7 +550,7 @@
     }
 
     .rooms__item:nth-child(2) .rooms__btn-link {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .rooms__footer {

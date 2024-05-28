@@ -35,7 +35,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .rooms__item-card .card-flex {
@@ -47,12 +47,13 @@
 
 .rooms__item-card .card-flex>p {
     font-family: "Roboto", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .rooms__item-card .card-flex .icon {
     position: relative;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    top: -1px;
 }
 
 .about__images {
@@ -182,7 +183,7 @@
 
     .rooms__item-card .card-flex>p,
     .rooms__item-card .card-flex>.icon {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .about__images {
@@ -221,7 +222,7 @@
 
     .rooms__item-card .card-flex>p,
     .rooms__item-card .card-flex>.icon {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .about__images {

@@ -1,10 +1,12 @@
-// Import Modules
+// Import Hooks
 import React, { useMemo } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+// Import File CSS
 import classes from "./css/room.module.css";
 
 // Import Components
 import { Row, Col } from "antd";
-import { Link, useNavigate } from "react-router-dom";
 
 // Import Icons
 import { FaWifi } from "react-icons/fa";

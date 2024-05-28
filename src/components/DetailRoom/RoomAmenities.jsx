@@ -1,5 +1,7 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/roomAmenities.module.css";
 
 // Import Logos
@@ -15,7 +17,7 @@ import CoffeeMachine from "../../assets/Images Room/room Amenities/coffee-machin
 import WelcomDrink from "../../assets/Images Room/room Amenities/welcome-drink.png";
 
 // Create Array Content + Logo JSX
-const dataLogoRoomAmenities = [
+const DUMMY_ROOM_AMENITIES = [
   {
     id: "1",
     img: AirConditioner,
@@ -73,7 +75,7 @@ export default function FamilyAmenities() {
     <div className={classes["room-amenities"]}>
       <h3>Room Amenities</h3>
       <div className={classes["amenities__list"]}>
-        {dataLogoRoomAmenities.map((amenity) => (
+        {DUMMY_ROOM_AMENITIES.map((amenity) => (
           <div className={classes["amenity__item"]} key={amenity.id}>
             <img src={amenity.img} alt={amenity.img} />
             <p>{amenity.content}</p>

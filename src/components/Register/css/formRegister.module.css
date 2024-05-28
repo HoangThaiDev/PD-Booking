@@ -65,7 +65,7 @@
     color: white;
     font-size: 2rem;
     letter-spacing: 1px;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .form-main .form-input {
@@ -92,7 +92,7 @@
     letter-spacing: 1px;
     color: white;
     text-align: left;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     font-size: 13px;
     line-height: 1.3rem;
 }
@@ -219,7 +219,7 @@
 
     .form__col:nth-child(2) {
         order: 1;
-        padding: 4rem 0;
+        padding-top: 4rem;
     }
 
     .form-main {
@@ -227,6 +227,10 @@
         margin: 0 auto;
         padding: 0;
         background: transparent !important;
+    }
+
+    .form-main .form-title {
+        margin-bottom: 5%;
     }
 }
 
@@ -237,7 +241,7 @@
 
     .link_home-mobile {
         display: block;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .form-background {
@@ -255,7 +259,7 @@
     .form__col:nth-child(2) {
         width: 100%;
         order: 1;
-        padding: 4rem 0;
+        padding-top: 4rem;
     }
 
     .form-main {
@@ -263,6 +267,11 @@
         margin: 0 auto;
         padding: 0;
         background: transparent !important;
+    }
+
+    .form-main .error-message {
+        font-size: 0.8rem;
+        margin: 0;
     }
 }
 
@@ -275,12 +284,45 @@
         filter: brightness(45%);
     }
 
+    .card__introduce-container .card__title {
+        font-size: 2rem;
+    }
+
     .form__col:nth-child(1) .card__introduce-container {
         padding: 0;
     }
 
     .card__introduce-container .card__content {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin: 20px 0;
+    }
+
+    .form-main {
+        width: 90%;
+        padding: 0;
+        background: transparent !important;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .form-login {
+        width: 100%;
+    }
+
+    .form-background {
+        filter: brightness(45%);
+    }
+
+    .card__introduce-container .card__title {
+        font-size: 2rem;
+    }
+
+    .form__col:nth-child(1) .card__introduce-container {
+        padding: 0;
+    }
+
+    .card__introduce-container .card__content {
+        font-size: 1.2rem;
         margin: 20px 0;
     }
 

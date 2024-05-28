@@ -1,9 +1,11 @@
-// Import Modules
+// Import Hooks
 import React, { useMemo } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+// Import File CSS
 import classes from "./css/resort.module.css";
 
 // Import Components
-import { Link, useNavigate } from "react-router-dom";
 import { Row, Col } from "antd";
 
 export default function Resort({ resorts }) {
@@ -12,7 +14,6 @@ export default function Resort({ resorts }) {
   const navigate = useNavigate();
 
   // Create + use event Handlers
-
   const navigateResortDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
     navigate(`resort/${modifiedName}`, { state: { id: id } });
@@ -53,7 +54,7 @@ export default function Resort({ resorts }) {
                 xs={24}
                 sm={24}
                 md={24}
-                lg={13}
+                lg={12}
                 xl={12}
               >
                 <img
@@ -67,7 +68,7 @@ export default function Resort({ resorts }) {
                 xs={24}
                 sm={24}
                 md={24}
-                lg={10}
+                lg={11}
                 xl={11}
               >
                 <div className={classes["resort__item-card"]}>

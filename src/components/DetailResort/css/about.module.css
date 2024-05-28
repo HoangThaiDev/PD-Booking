@@ -13,6 +13,7 @@
 .about__row {
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10%;
 }
 
 
@@ -20,7 +21,7 @@
 .about__resort {
     box-shadow: 2px 2px 4px 4px rgba(105, 99, 74, 0.6);
     padding: 50px;
-    border-radius: 100px;
+    border-radius: 50px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
@@ -74,8 +75,8 @@
 
 .card__description .desc-content {
     font-family: "EB Garamond", serif;
-    font-size: 1.2rem;
-    line-height: 30px;
+    font-size: 1.1rem;
+    line-height: 35px;
     margin: 5% 0;
 }
 
@@ -91,8 +92,8 @@
     font-family: "EB Garamond", serif;
     color: rgba(53, 52, 52);
     font-weight: 700;
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1.1rem;
+    margin: 15px 0;
 }
 
 .card__information>p>span {
@@ -108,7 +109,7 @@
     bottom: 0;
     background-color: rgb(182, 155, 117);
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: 2px solid transparent;
     padding: 10px 30px;
     border-radius: 3px;
@@ -181,12 +182,12 @@
     }
 
     .about__col:nth-child(2) .image__list {
-        gap: 20px;
-        justify-content: center;
+        gap: 20px 0;
+        justify-content: space-around;
     }
 
     .about__col:nth-child(2) .image__list>div {
-        width: 80px;
+        width: 20%;
         height: 80px;
     }
 

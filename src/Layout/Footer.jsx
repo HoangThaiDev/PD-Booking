@@ -1,5 +1,7 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/footer.module.css";
 
 // Import Components

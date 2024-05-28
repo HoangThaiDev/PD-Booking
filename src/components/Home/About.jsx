@@ -1,5 +1,7 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/about.module.css";
 
 // Import Components
@@ -13,7 +15,9 @@ import image3 from "../../assets/Images Hotel/img-77-1-683x1024.jpg";
 import image4 from "../../assets/Images Hotel/img-78-1-683x1024.jpg";
 
 export default function About() {
+  // Create + use variables
   const dataImagesBackground = [image1, image2, image3, image4];
+
   return (
     <div className={classes.about}>
       <div className={classes["about__container"]}>

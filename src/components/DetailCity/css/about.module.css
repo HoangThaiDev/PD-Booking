@@ -66,9 +66,9 @@
 .about__col ul li {
     list-style: square;
     font-family: "EB Garamond", serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgb(67, 66, 66);
-    line-height: 40px;
+    line-height: 30px;
     letter-spacing: 1px;
     margin-left: 40px;
     margin-bottom: 10px;
@@ -129,7 +129,7 @@
 .information__col li {
     font-family: "EB Garamond", serif;
     color: rgb(67, 66, 66);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 20px;
     line-height: 30px;
 }
@@ -153,7 +153,7 @@
 /* Responsive */
 @media screen and (max-width:575px) {
     .about {
-        margin-top: 40%;
+        margin-top: 200px;
         padding-bottom: 0;
     }
 
@@ -222,7 +222,7 @@
 
 @media screen and (min-width:576px) and (max-width:767px) {
     .about {
-        margin-top: 30%;
+        margin-top: 200px;
         padding-bottom: 0;
     }
 
@@ -291,7 +291,7 @@
 
 @media screen and (min-width:768px) and (max-width:991px) {
     .about {
-        margin-top: 30%;
+        margin-top: 200px;
         padding-bottom: 0;
     }
 
@@ -361,7 +361,7 @@
 
 @media screen and (min-width:992px) and (max-width:1199px) {
     .about {
-        margin-top: 20%;
+        margin-top: 200px;
         padding-bottom: 0;
     }
 
@@ -371,7 +371,11 @@
 
     .about__title::after,
     .about__title::before {
-        display: none;
+        width: 26%;
+    }
+
+    .about__row {
+        align-items: center;
     }
 
     .about__col:nth-child(2) ul p {
@@ -391,7 +395,7 @@
 
     .about__information::after,
     .about__information::before {
-        display: none;
+        width: 35%;
     }
 
     .information__row {

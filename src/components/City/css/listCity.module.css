@@ -63,8 +63,8 @@
 
 .cities__options .col .iconSearch {
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(182, 155, 117);
+    font-size: 1rem;
+    border: 2px solid rgb(182, 155, 117);
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
@@ -72,10 +72,11 @@
 
 .cities__options .col .iconRefresh {
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(182, 155, 117);
+    font-size: 1rem;
+    border: 2px solid rgb(182, 155, 117);
     padding: 10px 20px;
     color: rgb(182, 155, 117);
+    transition: 0.3s all ease;
 }
 
 .cities__options .col .input-search::placeholder {
@@ -116,7 +117,7 @@
     transition: 0.8s all ease;
     width: 100%;
     height: 100%;
-    filter: brightness(80%);
+    filter: brightness(75%);
     object-fit: cover;
 }
 
@@ -156,6 +157,7 @@
     color: #fff;
     border: 0;
     padding: 5px 10px;
+    transition: 0.3s all ease;
 }
 
 /* CSS: Pagination */
@@ -178,16 +180,14 @@
 }
 
 .form__link .btn-link:hover {
-    transition: 0.3s all ease;
     background-color: rgb(182, 155, 117);
     padding: 5px 10px;
 }
 
 .cities__options .col .iconRefresh:hover {
-    transition: 0.3s all ease;
     background-color: rgb(182, 155, 117);
     color: white;
-    border-left: 1px solid white;
+    border-left: 2px solid white;
 }
 
 /* Responsive */
@@ -260,9 +260,6 @@
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
-    .cities__title {
-        font-size: 2rem;
-    }
 
     .cities__title::after,
     .cities__title::before {
@@ -287,15 +284,16 @@
     }
 
     .cities__item .cities__form .form__name {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         margin-bottom: 10px;
+    }
+
+    .cities__form .form__link {
+        font-size: 0.8rem;
     }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
-    .cities__title {
-        font-size: 2.2rem;
-    }
 
     .cities__title::after,
     .cities__title::before {

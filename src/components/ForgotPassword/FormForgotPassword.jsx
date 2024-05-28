@@ -1,7 +1,11 @@
 // Import Modules
-import React, { useState, useRef } from "react";
-import classes from "./css/formForgotPassword.module.css";
 import { checkValidateFormForgotPassword } from "../../middeware/checkValidateForm";
+
+// Import Hooks
+import React, { useState, useRef } from "react";
+
+// Import File CSS
+import classes from "./css/formForgotPassword.module.css";
 
 // Import Components
 import { Link } from "react-router-dom";

@@ -1,8 +1,12 @@
 // Import Modules
-import { useState, useRef } from "react";
-import classes from "./css/formLogin.module.css";
 import axios from "axios";
 import { API_ROOT } from "../../utils/constant";
+
+// Import Hooks
+import { useState, useRef } from "react";
+
+// Import File CSS
+import classes from "./css/formLogin.module.css";
 import "../../UI/css/messageAlert.css";
 
 // Import Components
@@ -69,10 +73,9 @@ export default function FormLogin() {
         }, 800);
       }
     } catch (error) {
-      const { session, messages } = error.response.data;
-      if (!session) {
+      if (error.response.data.checkValidateForm) {
         const updatedErrorMessages = { ...errorMessages };
-        messages.forEach((errorData) => {
+        error.response.data.messages.forEach((errorData) => {
           const { path, message, showError } = errorData;
           const field = path[0];
 

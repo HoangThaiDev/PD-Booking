@@ -1,16 +1,20 @@
 // Import Modules
-import React, { useRef, useState } from "react";
-import classes from "./css/formBooking.module.css";
-import "./css/datePicker.css";
 import {
   convertFromStartDate,
   convertFromEndDate,
 } from "../middeware/convertFromDate";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { roomAction, optionsAction } from "../redux/store";
 import { API_ROOT } from "../utils/constant";
+
+// Import Hooks
+import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+// Import File CSS
+import classes from "./css/formBooking.module.css";
+import "./css/datePicker.css";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider } from "antd";
@@ -22,7 +26,6 @@ import { RxDividerHorizontal } from "react-icons/rx";
 
 export default function FormBooking() {
   // Create + use Hooks
-
   const [showPopup, setShowPopup] = useState(false);
   const cityRef = useRef("");
   const [options, setOptions] = useState({

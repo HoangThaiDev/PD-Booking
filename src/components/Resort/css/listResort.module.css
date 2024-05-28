@@ -62,8 +62,8 @@
 
 .resort__options .col .iconSearch {
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(182, 155, 117);
+    font-size: 1rem;
+    border: 2px solid rgb(182, 155, 117);
     background-color: rgb(182, 155, 117);
     padding: 10px 20px;
     color: white;
@@ -71,10 +71,11 @@
 
 .resort__options .col .iconRefresh {
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(182, 155, 117);
+    font-size: 1rem;
+    border: 2px solid rgb(182, 155, 117);
     padding: 10px 20px;
     color: rgb(182, 155, 117);
+    transition: 0.3s all ease;
 }
 
 
@@ -181,10 +182,9 @@
 }
 
 .resort__options .col:nth-child(1) .iconRefresh:hover {
-    transition: 0.3s all ease;
     background-color: rgb(182, 155, 117);
     color: white;
-    border-left: 1px solid white;
+    border-left: 2px solid white;
 }
 
 /* Responsive */
@@ -203,7 +203,7 @@
     }
 
     .resort__item {
-        width: 98%;
+        width: 100%;
         height: 380px;
     }
 
@@ -265,7 +265,7 @@
     }
 
     .resort__item {
-        width: 98%;
+        width: 100%;
         height: 400px;
     }
 

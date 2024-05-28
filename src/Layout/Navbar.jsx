@@ -1,8 +1,12 @@
-// Import Modules
-import React, { useEffect, useRef } from "react";
-import classes from "./css/navbar.module.css";
+// Import Hooks
 import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useRef } from "react";
+
+// Import Modules
 import { sideMenuAction } from "../redux/store";
+
+// Import File CSS
+import classes from "./css/navbar.module.css";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -20,6 +24,7 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const { user, isLoggedIn } = useSelector((state) => state.user);
 
+  // Create + use SideEffect
   useEffect(() => {
     const scrollNavbarHandler = () => {
       if (window.scrollY > 200) {
@@ -51,7 +56,7 @@ export default function Navbar() {
           <Col
             className={`${classes["navbar__col"]} ${classes.menu}`}
             xs={4}
-            sm={4}
+            sm={5}
             md={6}
             lg={8}
             xl={8}
@@ -147,7 +152,7 @@ export default function Navbar() {
           </Col>
           <Col
             className={`${classes["navbar__col"]} ${classes.contact}`}
-            xs={5}
+            xs={4}
             sm={5}
             md={6}
             lg={8}
@@ -180,7 +185,7 @@ export default function Navbar() {
                     className={classes["contact__item"]}
                     to={`/setting-user`}
                   >
-                    {user.username}
+                    USER
                   </Link>
                 )}
                 {!isLoggedIn && (

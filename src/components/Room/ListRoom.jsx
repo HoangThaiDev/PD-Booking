@@ -1,9 +1,13 @@
 // Import Modules
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import classes from "./css/listRoom.module.css";
 import axios from "axios";
+
+// Import Hooks
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
+// Import File CSS
+import classes from "./css/listRoom.module.css";
 
 // Import Components
 import { Row, Col } from "antd";
@@ -28,6 +32,7 @@ export default function ListRoom({
   const sliceRoomsHandler = useCallback((array) => {
     return array.slice(0, 4);
   }, []);
+
   // Create + use Hooks
   const [roomsData, setRoomsData] = useState(rooms);
   const [sliceRooms, setSliceRooms] = useState([]);
@@ -39,6 +44,7 @@ export default function ListRoom({
 
   // Setup Value Default for state of Hook useLocation()
   useEffect(() => {
+    // Check condition when rooms fitered by valuee
     if (filteredRooms?.length > 0) {
       const updatedRoom = sliceRoomsHandler(filteredRooms);
       setRoomsData(filteredRooms);
@@ -46,7 +52,6 @@ export default function ListRoom({
       setIsLoading(true);
     } else {
       const updatedRoom = sliceRoomsHandler(rooms);
-
       setRoomsData(rooms);
       setSliceRooms(updatedRoom);
       setIsLoading(true);

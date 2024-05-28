@@ -1,11 +1,15 @@
 // Import Modules
-import React, { useEffect, useMemo, useState } from "react";
 import moment from "moment";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import { checkFormBooking } from "../../middeware/checkValidateForm";
-import { useNavigate } from "react-router-dom";
 import { API_ROOT } from "../../utils/constant";
+
+// Import Hooks
+import React, { useEffect, useMemo, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+// Import File CSS
 import "./css/formBooking.css";
 import "../../UI/css/messageAlert.css";
 

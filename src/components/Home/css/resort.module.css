@@ -27,13 +27,13 @@
 .resort__col>h1 {
     font-family: "Bodoni Moda", serif;
     letter-spacing: 1px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: rgb(71, 70, 70);
 }
 
 .resort__col>a {
     font-family: "Playfair Display", serif;
-    font-size: 18px;
+    font-size: 1rem;
     background-color: #AB916C;
     color: white;
     width: 250px;
@@ -79,7 +79,7 @@
 }
 
 .resort__item-card>p:nth-child(1) {
-    font-size: 14px;
+    font-size: 0.8rem;
     color: rgb(151, 143, 127);
     text-transform: uppercase;
     font-style: italic;
@@ -88,15 +88,15 @@
 
 .card__title {
     font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    margin: 2rem 0;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
     color: rgba(69, 68, 68, 0.9);
     line-height: 40px;
     font-weight: 800;
 }
 
 .card__desc {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 30px;
 }
 
@@ -104,7 +104,7 @@
     cursor: pointer;
     font-family: "Roboto", sans-serif;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 5%;
     border: 2px solid transparent;
     width: 180px;
@@ -136,7 +136,6 @@
     border-color: #75644b;
     color: #454444;
     background-color: white;
-    border-radius: 5px;
 }
 
 .resort__item:hover .resort__item-img {
@@ -204,6 +203,15 @@
         margin: 0 0 1rem 0;
         font-size: 1.3rem;
     }
+
+    .card__desc {
+        font-size: 0.8rem;
+    }
+
+    .card__link {
+        font-size: 0.9rem;
+        width: 150px;
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -257,6 +265,11 @@
     .card__title {
         margin: 0 0 1rem 0;
         font-size: 1.3rem;
+    }
+
+    .card__link {
+        font-size: 0.9rem;
+        width: 150px;
     }
 }
 
@@ -350,7 +363,7 @@
     }
 
     .card__desc {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .card__title {

@@ -1,5 +1,7 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/about.module.css";
 
 // Import Component
@@ -50,7 +52,7 @@ export default function About({ city }) {
             sm={24}
             md={24}
             lg={20}
-            xl={9}
+            xl={8}
           >
             <h3>Văn hóa</h3>
             {city.detail_city.culture.map((c, i) => (
@@ -65,7 +67,7 @@ export default function About({ city }) {
             sm={24}
             md={24}
             lg={24}
-            xl={14}
+            xl={15}
           >
             <div className={classes["information__card"]}>
               <h3>DANH LAM THẮNG CẢNH</h3>

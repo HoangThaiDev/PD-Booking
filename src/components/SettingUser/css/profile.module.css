@@ -39,7 +39,7 @@
     color: #fff;
     background-color: rgb(185, 157, 117);
     padding: 15px 30px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: "Roboto", sans-serif;
     border: 2px solid transparent;
     transition: 0.5s all ease;
@@ -94,12 +94,12 @@
     }
 
     .main__item .item-input {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     /* CSS: Active */
     .main__item .item-input::placeholder {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .error-message {
@@ -110,6 +110,7 @@
 
     .item-btn {
         width: 100%;
+        font-size: 0.9rem;
     }
 }
 
@@ -126,12 +127,12 @@
     }
 
     .main__item .item-input {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     /* CSS: Active */
     .main__item .item-input::placeholder {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .error-message {
@@ -141,7 +142,7 @@
     }
 
     .item-btn {
-        width: 100%;
+        font-size: 0.9rem;
     }
 }
 
@@ -158,12 +159,12 @@
     }
 
     .main__item .item-input {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     /* CSS: Active */
     .main__item .item-input::placeholder {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .error-message {
@@ -173,7 +174,7 @@
     }
 
     .item-btn {
-        width: 100%;
+        font-size: 0.9rem;
     }
 }
 
@@ -202,6 +203,10 @@
         font-family: "Roboto", sans-serif;
         color: rgb(246, 118, 68);
         font-size: 0.8rem;
+    }
+
+    .item-btn {
+        font-size: 0.9rem;
     }
 
 }

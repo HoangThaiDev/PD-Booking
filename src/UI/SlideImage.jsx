@@ -2,6 +2,8 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// Import File CSS
 import "./css/slideImage.css";
 
 // Import Components
@@ -28,6 +30,7 @@ function SamplePrevArrow(props) {
 }
 
 export default function SlideImage({ images }) {
+  // Create + use variables
   const settings = {
     infinite: true,
     speed: 500,
@@ -67,6 +70,7 @@ export default function SlideImage({ images }) {
       },
     ],
   };
+
   return (
     <div className="slide">
       <div className="slider__container">

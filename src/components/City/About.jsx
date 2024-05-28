@@ -1,18 +1,21 @@
 // Import Modules
 import React from "react";
+
+// Import File CSS
 import classes from "./css/about.module.css";
 
 // Import Components
 import SlideImage from "../../UI/SlideImage";
-import LogoCity from "../../assets/buildings.png";
 
 // Import Images
+import LogoCity from "../../assets/buildings.png";
 import ImageCity1 from "../../assets/Images City/ImageCity2.webp";
 import ImageCity2 from "../../assets/Images City/imageCity2.jpg";
 import ImageCity3 from "../../assets/Images City/ImageCity3.jpg";
 import ImageCity4 from "../../assets/Images City/ImageCity4.jpg";
 
 export default function About() {
+  // Create + use variables
   const dataImageCity = [ImageCity1, ImageCity2, ImageCity3, ImageCity4];
 
   return (

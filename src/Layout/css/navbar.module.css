@@ -9,7 +9,6 @@
 }
 
 /* CSS: Row */
-
 .navbar__row {
     height: inherit;
     justify-content: space-around;
@@ -18,7 +17,6 @@
 }
 
 /* CSS: Col - Menu */
-
 .menu__list {
     height: inherit;
     display: flex;
@@ -62,7 +60,6 @@
     padding: 15px 30px;
     border-radius: 3px;
     display: none;
-    /* transition: 0.7s all ease; */
 }
 
 .contact__item .menu-dropdown {
@@ -96,8 +93,9 @@
     display: inline-block;
     color: #f3ab48ed;
     position: absolute;
-    left: 34%;
+    left: 32%;
     bottom: -60%;
+    font-size: 0.9rem;
 }
 
 .icon-star {
@@ -146,7 +144,7 @@
     border-bottom: 0;
 }
 
-
+/* CSS: Animations  */
 @keyframes showMenuDropdown {
     0% {
         opacity: 0.5;
@@ -159,8 +157,7 @@
     }
 }
 
-/* Effect CSS */
-
+/* CSS: Effect */
 .menu__item:hover,
 .menu__item .icon-menu:hover,
 .contact__item:nth-child(1):hover,
@@ -169,7 +166,7 @@
 }
 
 .contact__item:nth-child(3):hover {
-    background-color: rgb(248, 115, 48);
+    background: linear-gradient(45deg, rgba(60, 60, 60, 0.3), rgba(200, 200, 200, 0.3));
     border: 1px solid transparent;
     color: #fff;
 }
@@ -200,7 +197,7 @@
 /* Responsive */
 @media screen and (max-width:575px) {
     .navbar__row {
-        padding: 0 10px;
+        padding: 0 15px;
         word-break: break-all;
     }
 
@@ -306,8 +303,8 @@
 
     .contact__item:nth-child(3) {
         order: 4;
-        padding: 15px 25px;
-        font-size: 0.9rem;
+        padding: 15px;
+        font-size: 0.8rem;
     }
 
     .icon-menu {
@@ -315,7 +312,7 @@
     }
 
     .logo__title {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .logo__rating {

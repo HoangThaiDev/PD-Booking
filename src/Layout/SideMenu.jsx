@@ -1,8 +1,12 @@
 // Import Modules
 import { createPortal } from "react-dom";
-import classes from "./css/sideMenu.module.css";
 import { sideMenuAction } from "../redux/store";
+
+// Import Hooks
 import { useDispatch, useSelector } from "react-redux";
+
+// Import File CSS
+import classes from "./css/sideMenu.module.css";
 
 // Import Icons
 import { IoClose } from "react-icons/io5";
@@ -40,7 +44,13 @@ const Container = () => {
           <span>VN</span> / <span>EN</span>
         </p>
       </div>
-      <div className={classes["menu__list"]}>
+      <div
+        className={
+          isLoggedIn
+            ? `${classes["menu__list"]} ${classes["menu__list-user"]}`
+            : classes["menu__list"]
+        }
+      >
         <ul className={classes["menu__list-flex"]}>
           <Link
             to="/"
@@ -77,25 +87,32 @@ const Container = () => {
           >
             {isLoggedIn ? "User" : "Login"}
           </Link>
+          <Link
+            to="/about-me"
+            className={classes["menu__item"]}
+            onClick={showSideMenuHandler}
+          >
+            About Me
+          </Link>
           {isLoggedIn && (
             <>
               <Link
                 to="/carts"
-                className={classes["menu__item"]}
+                className={`${classes["menu__item"]} ${classes["menu__item-user"]}`}
                 onClick={showSideMenuHandler}
               >
                 Cart
               </Link>
               <Link
                 to="/checkout"
-                className={classes["menu__item"]}
+                className={`${classes["menu__item"]} ${classes["menu__item-user"]}`}
                 onClick={showSideMenuHandler}
               >
                 Checkout
               </Link>
               <Link
                 to="/transactions"
-                className={classes["menu__item"]}
+                className={`${classes["menu__item"]} ${classes["menu__item-user"]}`}
                 onClick={showSideMenuHandler}
               >
                 Contact

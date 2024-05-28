@@ -32,17 +32,17 @@
     display: inline-block;
     font-family: "Playfair Display", serif;
     margin-bottom: 20px;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 .footer .card-content {
     font-family: "Roboto", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .footer .card-socials {
     display: flex;
-    gap: 20px;
+    gap: 10px 15px;
     justify-content: center;
 }
 

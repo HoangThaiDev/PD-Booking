@@ -6,12 +6,12 @@
 
 .about__title {
     font-family: "Lora", serif;
-    font-size: 5rem;
+    font-size: 4rem;
     color: rgba(60, 60, 60, 0.9);
 }
 
 .about__content {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 3rem 0;
     font-family: "EB Garamond", serif;
 }
@@ -20,7 +20,7 @@
     display: inline-block;
     font-family: "EB Garamond", serif;
     color: rgba(60, 60, 60, 0.8);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border: 1px solid rgb(185, 157, 117);
     text-decoration: none;
     padding: 20px 50px;
@@ -33,4 +33,95 @@
     background-color: rgb(185, 157, 117);
     color: #fff;
     border: 1px solid transparent;
+}
+
+
+/* CSS: Responsives */
+@media screen and (max-width:575px) {
+    .about__container {
+        width: 90%;
+        margin: 5rem auto;
+    }
+
+    .about__title {
+        font-size: 2rem;
+    }
+
+    .about__content {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .about__link {
+        font-size: 1rem;
+        padding: 20px 30px;
+
+    }
+}
+
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .about__container {
+        width: 90%;
+        margin: 5rem auto;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    .about__content {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .about__link {
+        font-size: 1rem;
+        padding: 20px 30px;
+
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .about__container {
+        width: 90%;
+        margin: 5rem auto;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    .about__content {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .about__link {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .about__container {
+        width: 90%;
+        margin: 5rem auto;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    .about__content {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .about__link {
+        font-size: 1rem;
+    }
 }

@@ -85,6 +85,10 @@
         transform: translateX(10%);
     }
 
+    .slide .slide-image__list img {
+        height: 400px;
+    }
+
     .slide .slick-arrow {
         padding: 10px;
     }
@@ -105,6 +109,10 @@
         width: 80%;
         line-height: 20px;
         transform: translateX(10%);
+    }
+
+    .slide .slide-image__list img {
+        height: 400px;
     }
 
     .slide .slick-arrow {
@@ -129,6 +137,10 @@
         transform: translateX(10%);
     }
 
+    .slide .slide-image__list img {
+        height: 500px;
+    }
+
     .slide .slick-arrow {
         padding: 15px;
     }
@@ -149,6 +161,10 @@
         width: 80%;
         line-height: 30px;
         transform: translateX(10%);
+    }
+
+    .slide .slide-image__list img {
+        height: 500px;
     }
 
     .slide .slick-arrow {
