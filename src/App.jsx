@@ -61,9 +61,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`${API_ROOT}/users/login`, {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(`${API_ROOT}/users/login`);
         if (data.isLoggedIn) {
           dispatch(userAction.login(data));
         }

@@ -57,13 +57,9 @@ export default function FormLogin() {
     };
 
     try {
-      const response = await axios.post(
-        `${API_ROOT}/users/login`,
-        {
-          infoUserLogin,
-        },
-        { withCredentials: true }
-      );
+      const response = await axios.post(`${API_ROOT}/users/login`, {
+        infoUserLogin,
+      });
 
       if (response.status === 200) {
         messageApi.open({
