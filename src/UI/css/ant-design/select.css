@@ -1,0 +1,96 @@
+.form-input__city .ant-select-selector {
+    background: transparent !important;
+    border: none !important;
+}
+
+.form-input__city .ant-select-suffix,
+.form-input__city .anticon-close-circle {
+    color: #fff !important;
+}
+
+.form-input__city .ant-select-selection-item,
+.form-input__city .ant-select-selection-placeholder {
+    font-family: "Roboto", sans-serif;
+    color: #fff !important;
+    font-size: 15px;
+}
+
+
+/* CSS: Popup Select Dropdown */
+.popup-form-city {
+    border-radius: 3px;
+    border: 2px solid #B99D75;
+    padding: 0;
+}
+
+.popup-form-city .ant-select-item-option-content {
+    font-family: "Roboto", sans-serif;
+    padding: 10px 20px;
+    border-bottom: 1px solid #bcbcbb;
+    transition: 0.5s all ease;
+}
+
+.popup-form-city .ant-select-item-option {
+    padding: 0 !important;
+    align-items: center;
+}
+
+/* CSS: Active */
+.form-input__city .ant-select-selector {
+    outline: none !important;
+    box-shadow: 0 0 0 2px #53624E !important;
+}
+
+.popup-form-city .ant-select-item-option-content:last-child {
+    border-bottom: none;
+}
+
+.popup-form-city .ant-select-item-option-selected .ant-select-item-option-content {
+    background-color: #B99D75;
+    color: #fff;
+    font-weight: normal;
+}
+
+
+/* CSS: Effect */
+.form-input__city .ant-select-selector:focus {
+    border: none !important;
+}
+
+.popup-form-city .ant-select-item-option-content:hover {
+    background-color: #B99D75;
+    color: #fff;
+}
+
+/* CSS: Responsive */
+@media screen and (max-width:575px) {
+
+    .form-input__city .ant-select-selection-item,
+    .form-input__city .ant-select-selection-placeholder {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+
+    .form-input__city .ant-select-selection-item,
+    .form-input__city .ant-select-selection-placeholder {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    .form-input__city .ant-select-selection-item,
+    .form-input__city .ant-select-selection-placeholder {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    .form-input__city .ant-select-selection-item,
+    .form-input__city .ant-select-selection-placeholder {
+        font-size: 0.9rem;
+    }
+}

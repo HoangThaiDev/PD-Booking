@@ -11,7 +11,7 @@ import Header from "../components/Home/Header";
 export default function Home({ cities, resorts, rooms }) {
   return (
     <div className={classes.home}>
-      <Header />
+      <Header cities={cities} />
       <About />
       <City cities={cities} />
       <Resort resorts={resorts} />

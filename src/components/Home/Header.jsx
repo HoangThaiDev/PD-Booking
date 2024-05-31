@@ -8,7 +8,13 @@ import classes from "./css/header.module.css";
 import banner from "../../assets/banner.jpg";
 import FormBooking from "../../UI/FormBooking";
 
-export default function Header() {
+export default function Header({ cities }) {
+  // Create + use variables
+  const listNameCities = cities.map((city) => ({
+    value: city.name,
+    label: city.name,
+  }));
+
   return (
     <div className={classes.header}>
       <img className={classes["header__img"]} src={banner} alt="banner" />
@@ -22,7 +28,7 @@ export default function Header() {
         </p>
       </div>
 
-      <FormBooking />
+      <FormBooking listNameCities={listNameCities} />
     </div>
   );
 }

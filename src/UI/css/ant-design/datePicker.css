@@ -12,6 +12,7 @@
 .formBooking-date .ant-picker-input input {
     color: white;
     font-family: "Roboto", sans-serif;
+    font-size: 15px;
 }
 
 /* CSS: Icon */
@@ -204,7 +205,7 @@
 
     .formBooking-date .ant-picker-input input::placeholder,
     .formBooking-date .ant-picker-input input {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     /* CSS DatePicker */

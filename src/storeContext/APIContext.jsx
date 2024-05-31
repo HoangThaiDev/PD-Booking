@@ -1,8 +1,11 @@
 // Import Modules
-import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { API_ROOT } from "../utils/constant";
 
+// Import Hooks
+import React, { createContext, useEffect, useState } from "react";
+
+// Create Context (Hook)
 const APIContext = createContext();
 
 export default function Provider({ children }) {
@@ -28,7 +31,6 @@ export default function Provider({ children }) {
         });
         setIsLoading(true);
       } catch (error) {
-        console.log(error.response.error);
         setIsLoading(false);
       }
     };

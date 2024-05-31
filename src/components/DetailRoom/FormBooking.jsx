@@ -214,13 +214,16 @@ export default function FormBooking({ room }) {
           }, 1000);
         }
       } catch (error) {
-        if (error.response.data.showErrorOfCart) {
+        if (error.response.data.session) {
           messageApi.open({
             type: "error",
             content: error.response.data.message,
             className: "message-error",
             icon: <MdError />,
           });
+          setTimeout(() => {
+            window.location.replace("/login");
+          }, 1000);
           return false;
         }
         messageApi.open({
@@ -229,11 +232,6 @@ export default function FormBooking({ room }) {
           className: "message-error",
           icon: <MdError />,
         });
-        if (error.response.data.session) {
-          setTimeout(() => {
-            window.location.replace("/login");
-          }, 1000);
-        }
       }
     }
   };

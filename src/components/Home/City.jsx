@@ -102,7 +102,7 @@ export default function City({ cities }) {
   // Create + use event Handlers
   const navigateResortDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`city/${modifiedName}`, { state: { id: id } });
+    navigate(`city/${modifiedName}`, { state: { cityId: id } });
   };
 
   return (

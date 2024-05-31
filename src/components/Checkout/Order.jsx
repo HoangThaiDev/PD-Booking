@@ -1,17 +1,24 @@
 // Import Modules
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import classes from "./css/order.module.css";
 import { API_ROOT } from "../../utils/constant";
-import { useDispatch } from "react-redux";
 import { checkoutAction } from "../../redux/store";
 
+// Import Hooks
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
+// Import File CSS
+import classes from "./css/order.module.css";
+
 // Import Components
-import { Row, Col } from "antd";
-import { Link } from "react-router-dom";
+import { Row, Col, message } from "antd";
+
+// Import Icons
+import { MdError } from "react-icons/md";
 
 export default function Order({ user }) {
   // Create + use Hooks
+  const [messageApi, contextHolder] = message.useMessage();
   const [checkouts, setCheckouts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
@@ -30,8 +37,15 @@ export default function Order({ user }) {
         }
       } catch (error) {
         if (error.response.data.session) {
-          alert(error.response.data.message);
-          window.location.replace("/login");
+          messageApi.open({
+            type: "error",
+            content: error.response.data.message,
+            className: "message-error",
+            icon: <MdError />,
+          });
+          setTimeout(() => {
+            window.location.replace("/login");
+          }, 1000);
           return false;
         }
       }
@@ -42,6 +56,7 @@ export default function Order({ user }) {
   return (
     <div className={classes.order}>
       <div className={classes["order__container"]}>
+        {contextHolder} {/* Alert Action */}
         <div className={classes["order__carts"]}>
           <h2>Your Order</h2>
           <Row className={classes["carts__row"]}>
@@ -111,21 +126,21 @@ export default function Order({ user }) {
             <Row className={classes["carts__footer"]}>
               <Col
                 className={classes["carts__col"]}
-                xs={13}
-                sm={13}
-                md={13}
-                lg={13}
-                xl={13}
+                xs={8}
+                sm={8}
+                md={8}
+                lg={8}
+                xl={8}
               >
                 <p>Total</p>
               </Col>
               <Col
                 className={classes["carts__col"]}
-                xs={10}
-                sm={8}
-                md={8}
-                lg={8}
-                xl={8}
+                xs={13}
+                sm={13}
+                md={13}
+                lg={13}
+                xl={13}
               >
                 <p>{checkouts.totalPriceOfCarts} VNĐ</p>
               </Col>

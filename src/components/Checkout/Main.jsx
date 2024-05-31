@@ -1,14 +1,18 @@
 // Import Modules
-import React, { useRef, useState } from "react";
-import classes from "./css/main.module.css";
-import "../../UI/css/messageAlert.css";
-import { useSelector } from "react-redux";
 import axios from "axios";
 import { API_ROOT } from "../../utils/constant";
 
+// Import Hooks
+import React, { useRef, useState } from "react";
+import { useSelector } from "react-redux";
+
+// Import File CSS
+import classes from "./css/main.module.css";
+import "../../UI/css/messageAlert.css";
+
 // Import Components
 import { Row, Col, message } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FormInfoUser from "./FormInfoUser";
 import Order from "./Order";
 
@@ -101,14 +105,13 @@ export default function Main() {
           icon: <FaCheck />,
         });
         setTimeout(() => {
-          navigate("/");
+          navigate("/transactions");
         }, 1000);
       }
     } catch (error) {
-      const { message, messages } = error.response.data;
-      if (!message) {
+      if (error.response.data.checkValidateForm) {
         const updatedErrorMessages = { ...errorMessages };
-        messages.forEach((errorData) => {
+        error.response.data.messages.forEach((errorData) => {
           const { path, message, showError } = errorData;
           const field = path[0];
           // Updated Error Messages

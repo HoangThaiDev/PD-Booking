@@ -1,0 +1,120 @@
+.listTrans {
+    padding: 5% 0;
+}
+
+/* CSS: Container */
+.listTrans__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* CSS: Row */
+.listTrans__row {
+    justify-content: space-between;
+}
+
+/* CSS: Row - Title */
+.listTrans__title-list {
+    border-top: 1px solid rgb(190, 188, 188);
+    border-bottom: 1px solid rgb(190, 188, 188);
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 0;
+}
+
+.listTrans__title-item {
+    overflow: hidden;
+    text-align: center;
+}
+
+.listTrans__title-item p {
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgba(37, 37, 37, 0.801);
+}
+
+/* CSS: Active */
+.listTrans__title-item-active {
+    display: none;
+    padding: 10px 0;
+}
+
+.listTrans__title-item-active p {
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgba(37, 37, 37, 0.801);
+}
+
+
+
+/* Responsive */
+@media screen and (max-width:575px) {
+    .listTrans__title-list {
+        justify-content: center;
+    }
+
+    .listTrans__title-item {
+        display: none;
+    }
+
+    .listTrans__title-item-active {
+        text-align: center;
+        display: block;
+    }
+
+    /* CSS: form Price */
+    .listTrans__formUser {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .listTrans__title-list {
+        justify-content: center;
+    }
+
+    .listTrans__title-item {
+        display: none;
+    }
+
+    .listTrans__title-item-active {
+        text-align: center;
+        display: block;
+    }
+
+
+    /* CSS: form Price */
+    .listTrans__formUser {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:991px) {
+    .listTrans__title-item>p {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+
+    /* CSS: form Price */
+    .listTrans__formUser {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .listTrans__title-item>p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    /* CSS: form Price */
+    .listTrans__formUser {
+        margin-top: 5rem;
+    }
+}

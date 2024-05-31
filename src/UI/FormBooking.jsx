@@ -8,26 +8,27 @@ import { roomAction, optionsAction } from "../redux/store";
 import { API_ROOT } from "../utils/constant";
 
 // Import Hooks
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // Import File CSS
 import classes from "./css/formBooking.module.css";
-import "./css/datePicker.css";
+import "./css/ant-design/datePicker.css";
+import "./css/ant-design/select.css";
 
 // Import Components
-import { DatePicker, Row, Col, ConfigProvider } from "antd";
+import { DatePicker, Row, Col, Select, ConfigProvider } from "antd";
 
 // Import Icons
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { RxDividerHorizontal } from "react-icons/rx";
 
-export default function FormBooking() {
+export default function FormBooking({ listNameCities }) {
   // Create + use Hooks
   const [showPopup, setShowPopup] = useState(false);
-  const cityRef = useRef("");
+  const [valueCity, seValueCity] = useState("");
   const [options, setOptions] = useState({
     rooms: 0,
     adults: 0,
@@ -43,6 +44,10 @@ export default function FormBooking() {
   const dispatch = useDispatch();
 
   // Create + use Event Handlers
+  const getValueCityHandler = (value) => {
+    seValueCity(value);
+  };
+
   const getValueOfOptionHandler = (name, operation) => {
     if (operation === "d" && options[name] <= 0) {
       return false;
@@ -63,9 +68,10 @@ export default function FormBooking() {
 
   const searchHotelHandler = async (event) => {
     event.preventDefault();
+
     try {
       const response = await axios.post(`${API_ROOT}/rooms/find-room`, {
-        nameCity: cityRef.current.value,
+        nameCity: valueCity,
         options: options,
         dateBooking: dateString,
       });
@@ -114,13 +120,13 @@ export default function FormBooking() {
 
             <Col className={classes["form-input"]} xs={24} xl={6}>
               <label htmlFor="city">City</label>
-              <input
-                id="city"
-                className={classes["form-input__city"]}
-                type="text"
-                placeholder="Vd: Hà Nội, Phú Quốc..."
-                ref={cityRef}
-                autoComplete="city"
+              <Select
+                className="form-input__city"
+                popupClassName="popup-form-city"
+                allowClear={true}
+                placeholder="Choose City"
+                onChange={getValueCityHandler}
+                options={listNameCities}
               />
             </Col>
 

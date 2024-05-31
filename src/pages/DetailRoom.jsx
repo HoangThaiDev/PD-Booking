@@ -1,8 +1,10 @@
 // Import Modules
-import { useEffect, useState, memo } from "react";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { API_ROOT } from "../utils/constant";
+
+// Import Hooks
+import { useEffect, useState, memo } from "react";
+import { useLocation } from "react-router-dom";
 
 // Import Components
 import About from "../components/DetailRoom/About";
@@ -17,17 +19,19 @@ function DetailRoom() {
   useEffect(() => {
     const fetchDetailRoom = async () => {
       try {
-        const { data } = await axios.get(
-          `${API_ROOT}/rooms/detail/${state.id}`
+        const response = await axios.get(
+          `${API_ROOT}/rooms/detail/${state.roomId}`
         );
-        setRoom(data);
-        setIsLoading(true);
+        if (response.status === 200) {
+          setRoom(response.data);
+          setIsLoading(true);
+        }
       } catch (error) {
         console.log(error);
       }
     };
     fetchDetailRoom();
-  }, [state.id]);
+  }, [state.roomId]);
 
   return (
     <div className="detailRoom">

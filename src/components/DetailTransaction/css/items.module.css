@@ -26,12 +26,9 @@
     cursor: pointer;
 }
 
-.itemCart__content-action>p .icon__modal-action {
-    color: rgb(29, 145, 216);
-}
 
-.itemCart__content-action>p .icon__close-action {
-    color: rgba(246, 53, 53, 0.934);
+.itemCart__content-action>p .icon__delete-action {
+    color: rgba(54, 53, 53, 0.9);
 }
 
 
@@ -115,7 +112,10 @@
     border: 2px solid transparent
 }
 
-
+/* CSS: Icons */
+.icon__delete-action {
+    cursor: pointer;
+}
 
 /* CSS: Pagination */
 .pagination__container {

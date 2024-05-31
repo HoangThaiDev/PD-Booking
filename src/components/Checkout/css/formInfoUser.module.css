@@ -29,7 +29,7 @@
 /* CSS: Form Input */
 .form__item {
     display: flex;
-    gap: 20px 0;
+    gap: 10px 0;
     flex-direction: column;
 }
 

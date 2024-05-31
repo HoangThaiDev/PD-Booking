@@ -5,7 +5,7 @@ import { APIContext } from "./storeContext/APIContext";
 import { useContext, useEffect, useRef } from "react";
 import axios from "axios";
 import { API_ROOT } from "./utils/constant";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userAction } from "./redux/store";
 
 // Import Components
@@ -31,6 +31,7 @@ import Profile from "./components/SettingUser/Profile";
 import ChangePassword from "./components/SettingUser/ChangePassword";
 import Transactions from "./components/SettingUser/Transactions";
 import Main from "./components/SettingUser/Main";
+import DetailTransaction from "./pages/DetailTransaction";
 
 function App() {
   // Cấu hình Axios để gửi cookie trong tất cả các yêu cầu
@@ -98,14 +99,30 @@ function App() {
               element={<Home cities={cities} resorts={resorts} rooms={rooms} />}
             />
             <Route path="cities" element={<City cities={cities} />} />
-            <Route path="resorts" element={<Resort resorts={resorts} />} />
-            <Route path="rooms" element={<Room rooms={rooms} />} />
-            <Route path="city/:cityId" element={<DetailCity />} />
-            <Route path="resort/:resortId" element={<DetailResort />} />
+            <Route
+              path="resorts"
+              element={<Resort cities={cities} resorts={resorts} />}
+            />
+            <Route
+              path="rooms"
+              element={<Room cities={cities} rooms={rooms} />}
+            />
+            <Route
+              path="city/:cityId"
+              element={<DetailCity cities={cities} />}
+            />
+            <Route
+              path="resort/:resortId"
+              element={<DetailResort cities={cities} />}
+            />
             <Route path="room/:resortId" element={<DetailRoom />} />
             <Route path="carts" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="transactions" element={<Transaction />} />
+            <Route
+              path="transaction/:transactionId"
+              element={<DetailTransaction />}
+            />
             <Route path="setting-user" element={<SettingUser />}>
               <Route index element={<Main />} />
               <Route path="profile/:userId" element={<Profile />} />

@@ -16,7 +16,7 @@ export default function Resort({ resorts }) {
   // Create + use event Handlers
   const navigateResortDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`resort/${modifiedName}`, { state: { id: id } });
+    navigate(`resort/${modifiedName}`, { state: { resortId: id } });
   };
 
   return (

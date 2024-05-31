@@ -17,6 +17,7 @@ import { message, Row, Col } from "antd";
 // Import Icons
 import { MdError } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Transactions() {
   // Create + use Hooks
@@ -24,6 +25,7 @@ export default function Transactions() {
   const { user, isLoggedIn } = useSelector((state) => state.user);
   const [isLoading, setIsLoading] = useState(false);
   const [transactions, setTransactions] = useState([]);
+  const navigate = useNavigate();
 
   // Create + use fetch API
   useEffect(() => {
@@ -57,6 +59,13 @@ export default function Transactions() {
     }
   }, [isLoggedIn]);
 
+  // Create + use event Handlers
+  const navigateDetailTransHandler = (transaction_id) => {
+    navigate(`/transaction/${transaction_id}`, {
+      state: { transactionId: transaction_id },
+    });
+  };
+
   return (
     <div>
       {contextHolder} {/* Alert Action */}
@@ -64,19 +73,19 @@ export default function Transactions() {
         <div className={classes.transactions}>
           <div className={classes["transactions__container"]}>
             <Row className={classes["transactions__row-title"]}>
-              <Col className={classes["transactions__col-title"]} xl={2}>
+              <Col className={classes["transactions__col-title"]} lg={2} xl={2}>
                 <p>#</p>
               </Col>
-              <Col className={classes["transactions__col-title"]} xl={6}>
+              <Col className={classes["transactions__col-title"]} lg={6} xl={6}>
                 <p>Client</p>
               </Col>
-              <Col className={classes["transactions__col-title"]} xl={6}>
+              <Col className={classes["transactions__col-title"]} lg={6} xl={6}>
                 <p>Order Date</p>
               </Col>
-              <Col className={classes["transactions__col-title"]} xl={7}>
+              <Col className={classes["transactions__col-title"]} lg={7} xl={7}>
                 <p>Total</p>
               </Col>
-              <Col className={classes["transactions__col-title"]} xl={3}>
+              <Col className={classes["transactions__col-title"]} lg={3} xl={3}>
                 <p>Active</p>
               </Col>
             </Row>
@@ -91,10 +100,12 @@ export default function Transactions() {
                     xs={24}
                     sm={24}
                     md={24}
-                    lg={24}
+                    lg={2}
                     xl={2}
                   >
-                    <span className={classes["title-active-mobile"]}>#</span>
+                    <span className={classes["title-active-mobile"]}>
+                      Index
+                    </span>
                     <p className={classes["content-id"]}>{i + 1}</p>
                   </Col>
                   <Col
@@ -102,10 +113,9 @@ export default function Transactions() {
                     xs={24}
                     sm={24}
                     md={24}
-                    lg={24}
+                    lg={6}
                     xl={6}
                   >
-                    {" "}
                     <span className={classes["title-active-mobile"]}>
                       Client
                     </span>
@@ -118,7 +128,7 @@ export default function Transactions() {
                     xs={24}
                     sm={24}
                     md={24}
-                    lg={24}
+                    lg={6}
                     xl={6}
                   >
                     <span className={classes["title-active-mobile"]}>
@@ -133,7 +143,7 @@ export default function Transactions() {
                     xs={24}
                     sm={24}
                     md={24}
-                    lg={24}
+                    lg={7}
                     xl={7}
                   >
                     <span className={classes["title-active-mobile"]}>
@@ -149,14 +159,17 @@ export default function Transactions() {
                     xs={24}
                     sm={24}
                     md={24}
-                    lg={24}
+                    lg={3}
                     xl={3}
                   >
                     <span className={classes["title-active-mobile"]}>
                       Active
                     </span>
                     <p className={classes["content-active"]}>
-                      <FaEye className={classes["icon-show"]} />
+                      <FaEye
+                        className={classes["icon-show"]}
+                        onClick={() => navigateDetailTransHandler(tr._id)}
+                      />
                     </p>
                   </Col>
                 </Row>

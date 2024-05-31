@@ -12,7 +12,14 @@ export default function Header({
   title,
   content,
   showFormBooking = true,
+  cities = [],
 }) {
+  // Create + use variables
+
+  const listNameCities = cities.map((city) => ({
+    value: city.name,
+    label: city.name,
+  }));
   return (
     <div className={classes.header}>
       <img className={classes["header__img"]} src={banner} alt="banner" />
@@ -20,7 +27,7 @@ export default function Header({
         <h1 className={classes["intro__title"]}>{title}</h1>
         <p className={classes["intro__content"]}>{content}</p>
       </div>
-      {showFormBooking && <FormBooking />}
+      {showFormBooking && <FormBooking listNameCities={listNameCities} />}
     </div>
   );
 }

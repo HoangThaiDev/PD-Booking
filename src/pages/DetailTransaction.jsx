@@ -3,8 +3,8 @@ import axios from "axios";
 import { API_ROOT } from "../utils/constant";
 
 // Import Hooks
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState, memo } from "react";
+import { useLocation } from "react-router-dom";
 
 // Import File CSS
 import "../UI/css/messageAlert.css";
@@ -12,32 +12,32 @@ import "../UI/css/messageAlert.css";
 // Import Components
 import { message } from "antd";
 import Header from "../UI/Header";
-import ListTransaction from "../components/Transaction/ListTransaction";
+import Cart from "../components/DetailTransaction/Cart";
 const banner =
   "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg";
 
 // Import Icons
 import { MdError } from "react-icons/md";
 
-export default function Transaction() {
+function DetailTransaction() {
   // Create + use Hooks
   const [messageApi, contextHolder] = message.useMessage();
-  const [transactions, setTransactions] = useState([]);
+  const { state } = useLocation();
+  const [transaction, setTransaction] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const { user, isLoggedIn } = useSelector((state) => state.user);
 
   useEffect(() => {
-    const fetchTransaction = async () => {
+    const fetchDetailResort = async () => {
       try {
         const response = await axios.get(
-          `${API_ROOT}/transactions/get-transaction/${user?.userId}`
+          `${API_ROOT}/transactions/detail/${state.transactionId}`
         );
+
         if (response.status === 200) {
-          setTransactions(response.data);
+          setTransaction(response.data);
           setIsLoading(true);
         }
       } catch (error) {
-        console.log(error);
         if (error.response.data.session) {
           messageApi.open({
             type: "error",
@@ -50,33 +50,28 @@ export default function Transaction() {
           }, 1000);
           return false;
         }
+        setIsLoading(false);
       }
     };
-    if (isLoggedIn) {
-      fetchTransaction();
-    }
-  }, [user]);
-
-  // Create + use event Handlers
-  const updateTransactionsHandler = (newTransations) => {
-    setTransactions(newTransations);
-  };
+    fetchDetailResort();
+  }, [state.resortId]);
 
   return (
-    <div className="carts">
-      {contextHolder} {/* Alert Action */}
-      <Header
-        banner={banner}
-        title="Transaction"
-        content="HOME / TRANSACTION"
-        showFormBooking={false}
-      />
-      {isLoading && (
-        <ListTransaction
-          transactions={transactions}
-          onSaveUpdateTransactions={updateTransactionsHandler}
-        />
+    <div>
+      {isLoading && Object.keys(transaction).length > 0 && (
+        <>
+          {contextHolder} {/* Alert Action */}
+          <Header
+            banner={banner}
+            title="Detail Transaction"
+            content="HOME / DETAIL TRANSACTION"
+            showFormBooking={false}
+          />
+          <Cart trans={transaction} />
+        </>
       )}
     </div>
   );
 }
+
+export default memo(DetailTransaction);

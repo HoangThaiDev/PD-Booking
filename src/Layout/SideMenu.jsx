@@ -115,7 +115,7 @@ const Container = () => {
                 className={`${classes["menu__item"]} ${classes["menu__item-user"]}`}
                 onClick={showSideMenuHandler}
               >
-                Contact
+                Transactions
               </Link>
             </>
           )}

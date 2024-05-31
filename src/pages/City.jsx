@@ -16,6 +16,7 @@ export default function City({ cities }) {
         title="Cities of Vietnam, a Touch of Elegance"
         content="Look for cities that are laid-back, friendly, gourmet, and culturally
         unique"
+        cities={cities}
       />
       <About />
       <ListCity cities={cities} />

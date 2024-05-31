@@ -8,7 +8,7 @@ import ListResort from "../components/Resort/ListResort";
 const banner =
   "https://img.freepik.com/free-photo/indoor-design-luxury-resort_23-2150497253.jpg";
 
-export default function Resort({ resorts }) {
+export default function Resort({ cities, resorts }) {
   return (
     <div>
       <Header
@@ -16,6 +16,7 @@ export default function Resort({ resorts }) {
         title="Resort, paradise of relaxation"
         content="Find comfortable, relaxing resorts, flawless scenery and new
         experiences"
+        cities={cities}
       />
       <About />
       <ListResort resorts={resorts} />

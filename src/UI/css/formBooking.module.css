@@ -31,33 +31,13 @@
     padding: 0 10px;
 }
 
-.form-input__city {
-    box-sizing: border-box;
-    width: 50%;
-    height: inherit;
-    background-color: transparent;
-    border: 0;
-    font-size: 14px;
-    color: white;
-}
-
-.form-input__city::placeholder {
-    font-family: "Roboto", sans-serif;
-    color: white;
-    position: relative;
-    top: 1px;
-}
-
 /* CSS: formBooking - Rooms */
 .form-input>label {
     font-family: "Roboto", sans-serif;
     width: 25%;
+    font-size: 15px;
 }
 
-.form-input>.form-input__city {
-    font-family: "Roboto", sans-serif;
-    width: 60%;
-}
 
 .form-input>div {
     width: 60%;
@@ -76,6 +56,7 @@
     color: white;
     position: relative;
     margin-right: 5px;
+    font-size: 15px;
 }
 
 .form-input>div .icon-dropdown {
@@ -197,17 +178,11 @@ input:-webkit-autofill:active {
         padding: 0 5px;
     }
 
-    .form-input__city {
-        text-align: right;
-    }
-
-    .form-input__city::placeholder {
-        text-align: right;
+    .form-input>label,
+    .form-input .form-input__options {
         font-size: 0.8rem;
-    }
-
-    .form-input__options {
-        font-size: 0.8rem;
+        text-align: left;
+        padding-left: 10px;
     }
 
     .form-input-dropdown {
@@ -237,22 +212,19 @@ input:-webkit-autofill:active {
         padding: 0;
     }
 
-    .form-input__city {
-        text-align: right;
+
+    .form-input>label,
+    .form-input .form-input__options {
+        font-size: 0.8rem;
+        text-align: left;
+        padding-left: 10px;
     }
 
-    .form-input__city::placeholder {
-        text-align: right;
-        font-size: 0.8rem;
-    }
-
-    .form-input__options {
-        font-size: 0.8rem;
-    }
 
     .form-input-dropdown {
-        width: 85% !important;
-        bottom: -150px;
+        width: 50% !important;
+        bottom: -140px;
+        left: 40%;
     }
 
     .btn-search {
@@ -276,13 +248,20 @@ input:-webkit-autofill:active {
         padding: 0;
     }
 
-    .form-input>label {
+    .form-input>label,
+    .form-input .form-input__options {
         font-size: 0.9rem;
+        text-align: left;
+        padding-left: 10px;
     }
 
-    .form-input__city::placeholder {
-        text-align: right;
-        font-size: 0.8rem;
+    .form-input>label {
+        padding: 0;
+    }
+
+    .form-input-dropdown {
+        width: 50% !important;
+        left: 40%;
     }
 }
 
@@ -302,8 +281,20 @@ input:-webkit-autofill:active {
         padding: 0;
     }
 
-    .form-input__city::placeholder {
-        text-align: right;
+    .form-input>label,
+    .form-input .form-input__options {
         font-size: 0.9rem;
+        text-align: left;
+        padding-left: 10px;
     }
+
+    .form-input>label {
+        padding: 0;
+    }
+
+    .form-input-dropdown {
+        width: 50% !important;
+        left: 40%;
+    }
+
 }

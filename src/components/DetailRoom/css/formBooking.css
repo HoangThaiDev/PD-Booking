@@ -354,7 +354,7 @@
     }
 
     .formBooking__header__col:nth-child(2)>p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .formDatePopup-checkIn .ant-picker-panel-container {
@@ -369,14 +369,14 @@
 
     .formDate__container .formDate-checkIn input[value],
     .formDate__container .formDate-checkOut input[value] {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 
     .formDate__container .formDate-checkIn input[value]::placeholder,
     .formDate__container .formDate-checkOut input[value]::placeholder,
     .formDate__container .ant-picker-suffix .anticon-calendar,
     .formDate__container .ant-picker-clear .anticon {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     /* CSS: Form Options */
@@ -387,12 +387,12 @@
 
     .form__adult-quantity>label,
     .form__children-quantity>label {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .form__adult-quantity>p,
     .form__children-quantity>p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     /* CSS: Number Room */
@@ -401,7 +401,7 @@
     }
 
     .selectRooms .checkbox>label {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding-left: 25px;
     }
 
@@ -429,7 +429,7 @@
 
     .form-service .checkbox>label {
         padding-left: 25px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .form-service .checkbox>label::before {

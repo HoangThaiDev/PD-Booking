@@ -1,5 +1,7 @@
-// Import Modules
-import React, { useRef } from "react";
+// Import Hooks
+import React from "react";
+
+// Import File CSS
 import classes from "./css/formInfoUser.module.css";
 
 // Import Components
@@ -19,6 +21,7 @@ export default function FormInfoUser({
   // Create + use Hooks
   const { firstName, lastName, country, address, city, phone, email } =
     errorMessages;
+
   return (
     <div className={classes.form}>
       <div className={classes["form__container"]}>

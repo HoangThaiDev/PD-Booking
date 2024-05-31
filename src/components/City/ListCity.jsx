@@ -44,7 +44,7 @@ export default function ListCity({ cities }) {
 
   const navigateCityDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`/city/${modifiedName}`, { state: { id: id } });
+    navigate(`/city/${modifiedName}`, { state: { cityId: id } });
   };
 
   const refreshDataCityHandler = () => {

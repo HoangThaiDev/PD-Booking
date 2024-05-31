@@ -58,6 +58,11 @@
     color: rgba(28, 76, 115, 0.8);
 }
 
+/* CSS: Active */
+.title-active-mobile {
+    display: none;
+}
+
 /* CSS: Effect */
 .transactions__row-content:hover {
     background-color: rgba(245, 242, 240, 0.8);
@@ -91,32 +96,29 @@
     }
 
     /* CSS: Transactions Col - Content*/
+    .title-active-mobile {
+        display: block;
+        width: 40%;
+        color: rgba(28, 76, 115, 0.8);
+        font-weight: 700;
+    }
+
     .transactions__col-content {
         padding: 15px 0;
+        display: flex;
     }
-
-    /* .transactions__col-content:nth-child(1) {
-        order: 1;
-    }
-
-    .transactions__col-content:nth-child(2) {
-        order: 3;
-    }
-
-    .transactions__col-content:nth-child(3) {
-        order: 4;
-    }
-
-    .transactions__col-content:nth-child(4) {
-        order: 5;
-    }
-
-    .transactions__col-content:nth-child(5) {
-        order: 2;
-    } */
 
     /* CSS: Transactions Content - Content*/
-    .transactions__col-content:nth-child(1)>p::before,
+    .transactions__col-content>p {
+        width: 50%;
+    }
+
+    .transactions__col-content:nth-child(5)>p::after {
+        content: '(Show detail)';
+        position: absolute;
+        margin-left: 10px;
+        font: 0.8rem/1rem Roboto, sans-serif;
+    }
 
     /* CSS: Effect */
     .transactions__row-content:hover {
@@ -124,8 +126,120 @@
     }
 }
 
-@media screen and (min-width:576px) and (max-width:767px) {}
+@media screen and (min-width:576px) and (max-width:767px) {
 
-@media screen and (min-width:768px) and (max-width:991px) {}
+    /* CSS: Transactions Row - Title*/
+    .transactions__row-title {
+        display: none;
+    }
+
+    /* CSS: Transactions Row - Content*/
+    .transactions__row-content {
+        padding: 20px;
+        border-bottom: 2px solid rgba(28, 76, 115, 0.8);
+        margin-bottom: 20px;
+    }
+
+    .transactions__row-content:last-child {
+        border-radius: 0;
+        border: 0;
+    }
+
+    .transactions__row-content:nth-child(2n + 1) {
+        background-color: #fff;
+    }
+
+    .transactions__col-content {
+        text-align: left;
+    }
+
+    /* CSS: Transactions Col - Content*/
+    .title-active-mobile {
+        display: block;
+        width: 40%;
+        color: rgba(28, 76, 115, 0.8);
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .transactions__col-content {
+        padding: 15px 0;
+        display: flex;
+    }
+
+    /* CSS: Transactions Content - Content*/
+    .transactions__col-content>p {
+        width: 50%;
+    }
+
+    .transactions__col-content:nth-child(5)>p::after {
+        content: '(Show detail)';
+        position: absolute;
+        margin-left: 10px;
+        font: 0.9rem/1rem Roboto, sans-serif;
+    }
+
+    /* CSS: Effect */
+    .transactions__row-content:hover {
+        background-color: #fff;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    /* CSS: Transactions Row - Title*/
+    .transactions__row-title {
+        display: none;
+    }
+
+    /* CSS: Transactions Row - Content*/
+    .transactions__row-content {
+        border-bottom: 2px solid rgba(28, 76, 115, 0.8);
+        margin-bottom: 20px;
+    }
+
+    .transactions__row-content:last-child {
+        border-radius: 0;
+        border: 0;
+    }
+
+    .transactions__row-content:nth-child(2n + 1) {
+        background-color: #fff;
+    }
+
+    .transactions__col-content {
+        text-align: left;
+    }
+
+    /* CSS: Transactions Col - Content*/
+    .title-active-mobile {
+        display: block;
+        width: 40%;
+        color: rgba(28, 76, 115, 0.8);
+        font-weight: 700;
+    }
+
+    .transactions__col-content {
+        padding: 10px 0;
+        display: flex;
+    }
+
+    /* CSS: Transactions Content - Content*/
+    .transactions__col-content>p {
+        width: 50%;
+    }
+
+    .transactions__col-content:nth-child(5)>p::after {
+        content: '(Show detail)';
+        position: absolute;
+        margin-left: 10px;
+        font: 0.8rem/1rem Roboto, sans-serif;
+    }
+
+    /* CSS: Effect */
+    .transactions__row-content:hover {
+        background-color: #fff;
+    }
+}
 
 @media screen and (min-width:992px) and (max-width:1199px) {}

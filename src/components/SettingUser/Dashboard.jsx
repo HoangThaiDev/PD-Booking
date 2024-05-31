@@ -48,7 +48,7 @@ export default function Dashboard({ user }) {
             className={classes["about__col"]}
             xs={24}
             sm={24}
-            md={6}
+            md={7}
             lg={6}
             xl={6}
           >
@@ -116,7 +116,7 @@ export default function Dashboard({ user }) {
             className={classes["about__col"]}
             xs={24}
             sm={24}
-            md={17}
+            md={16}
             lg={17}
             xl={17}
           >
