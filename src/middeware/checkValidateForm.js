@@ -1,18 +1,3 @@
-const checkValidateFormForgotPassword = (infoUserLogin) => {
-  const { email } = infoUserLogin;
-  let isCheck = true;
-  let errorMessages = {
-    email: false,
-  };
-
-  if (email.trim().length < 5 || !email.includes("@")) {
-    isCheck = false;
-    errorMessages.email = true;
-  }
-
-  return { isCheck, errorMessages };
-};
-
 const checkFormBooking = (valueFormBooking) => {
   const { startDate, endDate, options, rooms, maxPeople } = valueFormBooking;
   const totalPeople = options.adults + options.children;
@@ -47,4 +32,4 @@ const checkFormBooking = (valueFormBooking) => {
   return isCheckValidate;
 };
 
-export { checkValidateFormForgotPassword, checkFormBooking };
+export { checkFormBooking };
