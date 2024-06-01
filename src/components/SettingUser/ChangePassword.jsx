@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 // Import File CSS
 import classes from "./css/changePassword.module.css";
-import "../../UI/css/messageAlert.css";
+import "../../UI/css/ant-design/messageAlert.css";
 
 // Import Components
 import { Row, Col, message } from "antd";

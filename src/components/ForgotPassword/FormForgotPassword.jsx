@@ -7,7 +7,7 @@ import React, { useState, useRef } from "react";
 
 // Import File CSS
 import classes from "./css/formForgotPassword.module.css";
-import "../../UI/css/messageAlert.css";
+import "../../UI/css/ant-design/messageAlert.css";
 
 // Import Components
 import { Link, useNavigate, useSearchParams } from "react-router-dom";

@@ -1,0 +1,47 @@
+/* CSS: Slider */
+.slider-images-container {
+    position: relative;
+    z-index: -1;
+}
+
+.slider-images-container img {
+    height: 85vh;
+
+}
+
+/* CSS: Arrow Slider */
+.slider-images-container .slick-arrow {
+    display: block;
+    border-radius: 100%;
+    background-color: #fff;
+    padding: 15px;
+    z-index: 2;
+}
+
+.slider-images-container .slick-next {
+    right: -25px !important;
+    z-index: 1;
+}
+
+.slider-images-container .slick-prev {
+    left: -25px !important;
+    z-index: 1;
+}
+
+/* Effect CSS */
+.slider-images-container .slick-next::before,
+.slider-images-container .slick-prev::before {
+    font-size: 24px;
+    color: black;
+    position: relative;
+    top: -5px;
+
+}
+
+.slider-images-container .slick-next::before {
+    content: '\21C0';
+}
+
+.slider-images-container .slick-prev::before {
+    content: '\21BC';
+}

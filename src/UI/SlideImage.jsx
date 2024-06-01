@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Import File CSS
-import "./css/slideImage.css";
+import "./css/slider/slideImage.css";
 
 // Import Components
 import Slider from "react-slick";

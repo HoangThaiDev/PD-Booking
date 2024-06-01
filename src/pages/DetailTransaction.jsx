@@ -7,7 +7,7 @@ import React, { useEffect, useState, memo } from "react";
 import { useLocation } from "react-router-dom";
 
 // Import File CSS
-import "../UI/css/messageAlert.css";
+import "../UI/css/ant-design/messageAlert.css";
 
 // Import Components
 import { message } from "antd";

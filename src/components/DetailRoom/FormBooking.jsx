@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 // Import File CSS
 import "./css/formBooking.css";
-import "../../UI/css/messageAlert.css";
+import "../../UI/css/ant-design/messageAlert.css";
 
 // Import Components
 import { DatePicker, Row, Col, ConfigProvider, message } from "antd";

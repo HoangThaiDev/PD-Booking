@@ -99,17 +99,17 @@ const modalImageRoomSlice = createSlice({
   initialState: initialModalImageRoom,
   reducers: {
     showModalImageRoom(state, data) {
-      const urlImage = data.payload;
+      const images = data.payload;
       return {
         ...state,
-        imageActive: urlImage,
+        images: images,
         showModal: true,
       };
     },
     hideModalImageRoom(state, data) {
       return {
         ...state,
-        imageActive: "",
+        images: [],
         showModal: false,
       };
     },

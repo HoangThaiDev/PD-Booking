@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 // Import File CSS
 import classes from "./css/items.module.css";
-import "../../UI/css/messageAlert.css";
+import "../../UI/css/ant-design/messageAlert.css";
 
 // Import Components
 import { Row, Col, message } from "antd";

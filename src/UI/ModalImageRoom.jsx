@@ -1,17 +1,45 @@
 // Import Modules
 import React from "react";
-import classes from "./css/modalImageRoom.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { modalImageRoomAction } from "../redux/store";
+
+// Import Components
+import Slider from "react-slick";
+
+// Import File CSS
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import classes from "./css/slider/modalImageRoom.module.css";
+import "./css/slider/sliderImageRoom.css";
 
 // Import Icons
 import { MdClose } from "react-icons/md";
 
+// Import Arrow Slider
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return <div className={className} onClick={onClick} />;
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return <div className={className} onClick={onClick} />;
+}
+
 export default function ModalImageRoom() {
+  // Create + use setting Slider
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
+
   // Create + use Hooks
-  const { imageActive, showModal } = useSelector(
-    (state) => state.modalImageRoom
-  );
+  const { images, showModal } = useSelector((state) => state.modalImageRoom);
+
   const dispatch = useDispatch();
 
   // Create + use event Handlers
@@ -37,7 +65,14 @@ export default function ModalImageRoom() {
               onClick={closeModalImageRoomHandler}
             />
           </div>
-          <img src={imageActive} alt={imageActive} />
+
+          <div className="slider-images-container">
+            <Slider {...settings}>
+              {images.map((img) => (
+                <img key={img} src={img} alt={img} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </div>

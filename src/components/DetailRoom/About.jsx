@@ -11,14 +11,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Row, Col } from "antd";
 import FamilyAmenities from "./FamilyAmenities";
 import RoomAmenities from "./RoomAmenities";
+import FormBooking from "./FormBooking";
+import ModalImageRoom from "../../UI/ModalImageRoom";
 
 // Import Icons
 import { FaWifi } from "react-icons/fa";
 import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineSmokeFree } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
-import FormBooking from "./FormBooking";
-import ModalImageRoom from "../../UI/ModalImageRoom";
 
 export default function About({ room }) {
   // Create + use Hook
@@ -26,8 +26,8 @@ export default function About({ room }) {
   const { showModal } = useSelector((state) => state.modalImageRoom);
 
   // Create + use event Handlers
-  const showModalImageRoom = (path) => {
-    dispatch(modalImageRoomAction.showModalImageRoom(path));
+  const showModalImageRoom = (images) => {
+    dispatch(modalImageRoomAction.showModalImageRoom(images));
   };
 
   return (
@@ -79,7 +79,7 @@ export default function About({ room }) {
                   className={classes["image__item"]}
                   src={r}
                   alt={r}
-                  onClick={() => showModalImageRoom(r)}
+                  onClick={() => showModalImageRoom(room.photos)}
                 />
               ))}
             </div>

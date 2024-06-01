@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 // Import File CSS
 import classes from "./css/profile.module.css";
-import "../../UI/css/messageAlert.css";
+import "../../UI/css/ant-design/messageAlert.css";
 
 // Import Components
 import { Row, Col, message } from "antd";

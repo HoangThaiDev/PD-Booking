@@ -2,7 +2,6 @@
 import classes from "./css/modalCart.module.css";
 
 export default function ModalCart({ transaction }) {
-  console.log("cap nhat tien", transaction.cart.totalPriceOfCarts);
   return (
     <div className={classes.modalCart}>
       <h2>Info Client</h2>
