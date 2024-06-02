@@ -6,7 +6,6 @@
 
 .slider-images-container img {
     height: 85vh;
-
 }
 
 /* CSS: Arrow Slider */
@@ -20,12 +19,10 @@
 
 .slider-images-container .slick-next {
     right: -25px !important;
-    z-index: 1;
 }
 
 .slider-images-container .slick-prev {
     left: -25px !important;
-    z-index: 1;
 }
 
 /* Effect CSS */
@@ -44,4 +41,102 @@
 
 .slider-images-container .slick-prev::before {
     content: '\21BC';
+}
+
+/* CSS: Responsives */
+
+@media screen and (max-width:575px) {
+    .slider-images-container img {
+        height: 60vh;
+    }
+
+    .slider-images-container .slick-arrow {
+        padding: 5px;
+    }
+
+    .slider-images-container .slick-next {
+        right: -15px !important;
+    }
+
+    .slider-images-container .slick-prev {
+        left: -15px !important;
+    }
+
+    .slider-images-container .slick-next::before,
+    .slider-images-container .slick-prev::before {
+        font-size: 1.3rem;
+        top: -3px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .slider-images-container img {
+        height: 70vh;
+    }
+
+    .slider-images-container .slick-arrow {
+        padding: 8px;
+    }
+
+    .slider-images-container .slick-next {
+        right: -15px !important;
+    }
+
+    .slider-images-container .slick-prev {
+        left: -15px !important;
+    }
+
+    .slider-images-container .slick-next::before,
+    .slider-images-container .slick-prev::before {
+        font-size: 1.3rem;
+        top: -3px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .slider-images-container img {
+        height: 80vh;
+    }
+
+    .slider-images-container .slick-arrow {
+        padding: 8px;
+    }
+
+    .slider-images-container .slick-next {
+        right: -15px !important;
+    }
+
+    .slider-images-container .slick-prev {
+        left: -15px !important;
+    }
+
+    .slider-images-container .slick-next::before,
+    .slider-images-container .slick-prev::before {
+        font-size: 1.3rem;
+        top: -3px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .slider-images-container img {
+        height: 85vh;
+    }
+
+    .slider-images-container .slick-arrow {
+        padding: 8px;
+    }
+
+    .slider-images-container .slick-next {
+        right: -15px !important;
+    }
+
+    .slider-images-container .slick-prev {
+        left: -15px !important;
+    }
+
+    .slider-images-container .slick-next::before,
+    .slider-images-container .slick-prev::before {
+        font-size: 1.3rem;
+        top: -3px;
+    }
 }

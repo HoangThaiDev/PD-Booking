@@ -24,12 +24,12 @@
 
 .modal__header {
     position: absolute;
+    clip-path: polygon(100% 100%, 100% 0, 0 0);
     background-color: #fff;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     right: 0;
     top: 0;
-    border-bottom-left-radius: 10px;
 }
 
 .modal__icon-close {
@@ -64,8 +64,6 @@
     }
 }
 
-
-
 /* Responsive */
 @media screen and (max-width:575px) {
     .modal__container {
@@ -75,6 +73,19 @@
 
     .modal__card {
         height: 60vh;
+    }
+
+    .modal__header {
+        width: 50px;
+        height: 50px;
+        right: 0;
+        top: 0;
+    }
+
+    .modal__icon-close {
+        font-size: 1.5rem;
+        top: 5px;
+        right: 3px;
     }
 }
 
@@ -87,6 +98,19 @@
     .modal__card {
         height: 70vh;
     }
+
+    .modal__header {
+        width: 70px;
+        height: 70px;
+        right: 0;
+        top: 0;
+    }
+
+    .modal__icon-close {
+        font-size: 1.7rem;
+        top: 10px;
+        right: 5px;
+    }
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -98,6 +122,19 @@
     .modal__card {
         height: 80vh;
     }
+
+    .modal__header {
+        width: 70px;
+        height: 70px;
+        right: 0;
+        top: 0;
+    }
+
+    .modal__icon-close {
+        font-size: 1.7rem;
+        top: 10px;
+        right: 5px;
+    }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
@@ -108,5 +145,18 @@
 
     .modal__card {
         height: 80vh;
+    }
+
+    .modal__header {
+        width: 80px;
+        height: 80px;
+        right: 0;
+        top: 0;
+    }
+
+    .modal__icon-close {
+        font-size: 1.7rem;
+        top: 10px;
+        right: 10px;
     }
 }
