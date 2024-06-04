@@ -44,6 +44,7 @@ export default function FormBooking({ listNameCities }) {
   const dispatch = useDispatch();
 
   // Create + use Event Handlers
+
   const getValueCityHandler = (value) => {
     seValueCity(value);
   };
@@ -61,9 +62,20 @@ export default function FormBooking({ listNameCities }) {
   };
 
   const changeDatePickerHandler = (value) => {
-    const formattedStartDate = convertFromStartDate(value[0].$d);
-    const formattedEndDate = convertFromEndDate(value[1].$d);
-    setDateString({ startDate: formattedStartDate, endDate: formattedEndDate });
+    if (value) {
+      const formattedStartDate = convertFromStartDate(value[0].$d);
+      const formattedEndDate = convertFromEndDate(value[1].$d);
+      setDateString({
+        startDate: formattedStartDate,
+        endDate: formattedEndDate,
+      });
+      return false;
+    } else {
+      setDateString({
+        startDate: "",
+        endDate: "",
+      });
+    }
   };
 
   const searchHotelHandler = async (event) => {
@@ -81,11 +93,13 @@ export default function FormBooking({ listNameCities }) {
           date: dateString,
           options: options,
         };
+
         dispatch(optionsAction.saveValueOptions(userOptions)); // Save options value of user choice in store Redux
         dispatch(roomAction.updatedRooms(response.data)); // Save filtered rooms in store Redux
         navigate("/rooms");
       }
     } catch (error) {
+      console.log(error);
       alert(error.response.data.message);
     }
   };

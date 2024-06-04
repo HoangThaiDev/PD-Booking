@@ -43,6 +43,9 @@ export default function About({ room }) {
             xl={14}
           >
             <h2 className={classes["about__name"]}>{room.name}</h2>
+            <p className={classes["about__location"]}>
+              {room.nameCity} - {room.nameResort}
+            </p>
             <p className={classes["about__breakcrum"]}>
               Private Pool / Ocean View / Single Level
             </p>

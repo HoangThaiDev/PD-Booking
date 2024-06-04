@@ -11,7 +11,7 @@
 .modalCart__container {
     position: absolute;
     width: 70%;
-    transform: translate(17%, 30%);
+    transform: translate(17%, 17%);
     background-color: white;
     box-shadow: 0 0 4px 4px rgba(241, 241, 241, 0.303);
     border-radius: 3px;
@@ -222,7 +222,6 @@
 
     .modalCart__col:nth-child(2) .modalCart__name {
         font-size: 1.5rem;
-        margin-bottom: 10px;
     }
 
     .modalCart__col:nth-child(2) .modalCart__detail li,
@@ -325,7 +324,7 @@
     }
 
     .modalCart__col:nth-child(2) .modalCart__name {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .modalCart__col:nth-child(2) .modalCart__detail li,
@@ -438,6 +437,10 @@
         font-size: 1.4rem;
         color: #484847;
         margin-left: 10px;
+    }
+
+    .modalCart__col:nth-child(2) .modalCart__name {
+        font-size: 1.7rem;
     }
 
     .modalCart__status>span {

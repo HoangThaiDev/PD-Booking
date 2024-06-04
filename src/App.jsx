@@ -94,30 +94,48 @@ function App() {
 
         <Routes>
           <Route path="/" element={<RootLayout />}>
+            {/* Page Home */}
             <Route
               index
               element={<Home cities={cities} resorts={resorts} rooms={rooms} />}
             />
+            {/* Page City */}
             <Route path="cities" element={<City cities={cities} />} />
+
+            {/* Page Resort */}
             <Route
               path="resorts"
               element={<Resort cities={cities} resorts={resorts} />}
             />
+
+            {/* Page Room */}
             <Route
               path="rooms"
               element={<Room cities={cities} rooms={rooms} />}
             />
+
+            {/* Page Detail City */}
             <Route
               path="city/:cityId"
               element={<DetailCity cities={cities} />}
             />
+
+            {/* Page Detail Resort */}
             <Route
               path="resort/:resortId"
               element={<DetailResort cities={cities} />}
             />
-            <Route path="room/:resortId" element={<DetailRoom />} />
+
+            {/* Page Detail Room */}
+            <Route path="room/detail/:roomId" element={<DetailRoom />} />
+
+            {/* Page Cart */}
             <Route path="carts" element={<Cart />} />
+
+            {/* Page Checkout */}
             <Route path="checkout" element={<Checkout />} />
+
+            {/* Page Transaction */}
             <Route path="transactions" element={<Transaction />} />
             <Route
               path="transaction/:transactionId"
@@ -132,10 +150,18 @@ function App() {
               />
               <Route path="transactions/:userId" element={<Transactions />} />
             </Route>
+
+            {/* Page Error */}
             <Route path="*" element={<Error />} />
           </Route>
+
+          {/* Page Login */}
           <Route path="login" element={<Login />} />
+
+          {/* Page Register */}
           <Route path="register" element={<Register />} />
+
+          {/* Page Forgot Password */}
           <Route path="forgot-password" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>

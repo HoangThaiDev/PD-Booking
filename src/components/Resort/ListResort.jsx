@@ -28,12 +28,15 @@ export default function ListResort({ resorts }) {
 
   const findResortByNameHandler = async () => {
     try {
-      const { data } = await axios.post(`${API_ROOT}/resorts/search`, {
+      const response = await axios.post(`${API_ROOT}/resorts/search`, {
         name: nameResortRef.current.value,
       });
-      setResortsSlice(data);
+
+      if (response.status === 200) {
+        setResortsSlice(response.data);
+      }
     } catch (error) {
-      console.log(error);
+      alert(error.response.data.message);
     }
   };
 

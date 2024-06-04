@@ -61,15 +61,17 @@ export default function ListRoom({
   // Create + use event Handlers
   const findRoomByNameHandler = async () => {
     try {
-      const { data } = await axios.post(`${API_ROOT}/rooms/search`, {
+      const response = await axios.post(`${API_ROOT}/rooms/search`, {
         name: nameRoomRef.current.value,
       });
-      const updatedRoom = sliceRoomsHandler(data);
-      setRoomsData(data);
-      setSliceRooms(updatedRoom);
-      setRefreshPage(true);
+      if (response.status === 200) {
+        const updatedRoom = sliceRoomsHandler(response.data);
+        setRoomsData(response.data);
+        setSliceRooms(updatedRoom);
+        setRefreshPage(true);
+      }
     } catch (error) {
-      console.log(error);
+      alert(error.response.data.message);
     }
   };
 
@@ -78,9 +80,11 @@ export default function ListRoom({
     setRefreshPage(restart);
   }, []);
 
-  const navigateRoomDetailHandler = (id, name) => {
-    const modifiedName = name.split(" ").join("-");
-    navigate(`/room/${modifiedName}`, { state: { roomId: id } });
+  const navigateRoomDetailHandler = (id, nameRoom, nameCity, nameResort) => {
+    const modifiedName = nameRoom.split(" ").join("-");
+    navigate(`/room/detail/${modifiedName}`, {
+      state: { roomId: id, nameCity, nameResort },
+    });
   };
 
   const refreshDataRoomHandler = () => {
@@ -118,6 +122,7 @@ export default function ListRoom({
                 </div>
               </Col>
             </Row>
+
             {sliceRooms.length > 0 &&
               sliceRooms.map((r) => (
                 <Row className={classes["rooms__list"]} key={r._id}>
@@ -190,7 +195,14 @@ export default function ListRoom({
                     <div>
                       <button
                         className={classes["rooms__btn-link"]}
-                        onClick={() => navigateRoomDetailHandler(r._id, r.name)}
+                        onClick={() =>
+                          navigateRoomDetailHandler(
+                            r._id,
+                            r.name,
+                            r.nameCity,
+                            r.nameResort
+                          )
+                        }
                       >
                         Discover More
                       </button>

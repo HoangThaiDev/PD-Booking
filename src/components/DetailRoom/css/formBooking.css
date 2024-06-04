@@ -305,6 +305,13 @@
     transition: 0.3s all ease;
 }
 
+/* CSS: Active */
+.message-full-room {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: #494949;
+}
+
 /* Effect CSS */
 
 .formDate__container .formDate-checkIn input:focus,
@@ -462,6 +469,13 @@
     .btn-submit {
         font-size: 0.9rem;
     }
+
+    .message-full-room {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        color: #494949;
+        text-align: center;
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -573,6 +587,13 @@
 
     .btn-submit {
         font-size: 1rem;
+    }
+
+    .message-full-room {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        color: #494949;
+        text-align: center;
     }
 }
 

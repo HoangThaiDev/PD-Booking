@@ -25,6 +25,7 @@ import { FaCheck } from "react-icons/fa";
 export default function FormBooking({ room }) {
   // Create +use Hooks
   const [messageApi, contextHolder] = message.useMessage();
+  const [roomDetail, setRoomDetail] = useState(room);
   const { isLoggedIn, user } = useSelector((state) => state.user);
   const {
     adults: adultsValue,
@@ -73,7 +74,7 @@ export default function FormBooking({ room }) {
 
     const priceOptions =
       serviceOptions.roomClean + serviceOptions.massage + serviceOptions.daySpa;
-    const priceRoom = parseInt(room.discount_price.replace(/\./g, ""));
+    const priceRoom = parseInt(roomDetail.discount_price.replace(/\./g, ""));
     let checkDateString =
       moment(dateString.startDate).isSame(dateString.endDate) ||
       moment(dateString.startDate).isAfter(dateString.endDate);
@@ -101,9 +102,14 @@ export default function FormBooking({ room }) {
     setDateString((prev) => {
       return { ...prev, startDate: formattedStartDate };
     });
+
+    if (Object.keys(dateString.endDate).length > 0) {
+      console.log("helloo");
+      checkRoomHasFull(formattedStartDate, dateString.endDate);
+    }
   };
 
-  const changeDateCheckOutHandler = (date, dateString) => {
+  const changeDateCheckOutHandler = (date) => {
     if (!date) {
       return false;
     }
@@ -111,6 +117,25 @@ export default function FormBooking({ room }) {
     setDateString((prev) => {
       return { ...prev, endDate: formattedEndDate };
     });
+    checkRoomHasFull(dateString.startDate, formattedEndDate);
+  };
+
+  const checkRoomHasFull = async (startDate, endDate) => {
+    const convertStartDate = moment(startDate).format("DD/MM/YYYY");
+    const convertEndDate = moment(endDate).format("DD/MM/YYYY");
+
+    try {
+      const response = await axios.post(`${API_ROOT}/rooms/check`, {
+        convertStartDate,
+        convertEndDate,
+        room,
+      });
+      if (response.status === 200) {
+        setRoomDetail(response.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const getValueOfOptionHandler = (name, operation) => {
@@ -170,14 +195,16 @@ export default function FormBooking({ room }) {
     }
 
     const valueFormBooking = {
-      roomId: room._id,
-      name: room.name,
-      photo: room.photos[0],
+      roomId: roomDetail._id,
+      nameCity: roomDetail.nameCity,
+      nameResort: roomDetail.nameResort,
+      name: roomDetail.name,
+      photo: roomDetail.photos[0],
       startDate: moment(dateString.startDate).format("DD/MM/YYYY"),
       endDate: moment(dateString.endDate).format("DD/MM/YYYY"),
       options: options,
-      price: room.discount_price,
-      maxPeople: room.detail.maxPeople,
+      price: roomDetail.discount_price,
+      maxPeople: roomDetail.detail.maxPeople,
       rooms: selectedRooms,
       totalPrice: totalCost,
       serviceOptions: updatedServiceOptions,
@@ -270,10 +297,10 @@ export default function FormBooking({ room }) {
               xl={13}
             >
               <p>
-                From: <span>{room.price}</span> VND/Night
+                From: <span>{roomDetail.price}</span> VND/Night
               </p>
               <p>
-                Sale: <span>{room.discount_price}</span> VND/Night
+                Sale: <span>{roomDetail.discount_price}</span> VND/Night
               </p>
             </Col>
           </Row>
@@ -325,16 +352,20 @@ export default function FormBooking({ room }) {
           <div className="selectRooms">
             <p>Select Rooms:</p>
             <div className="selectRooms__row">
-              {room.numberRooms.map((r, i) => (
-                <div className="checkbox" key={i}>
-                  <input
-                    type="checkbox"
-                    id={r}
-                    onClick={(event) => getNumberRoomHandler(event, r)}
-                  />
-                  <label htmlFor={r}>{r}</label>
-                </div>
-              ))}
+              {roomDetail.numberRooms.length === 0 && (
+                <p className="message-full-room">Room Full!</p>
+              )}
+              {roomDetail.numberRooms.length > 0 &&
+                roomDetail.numberRooms.map((r, i) => (
+                  <div className="checkbox" key={i}>
+                    <input
+                      type="checkbox"
+                      id={r}
+                      onClick={(event) => getNumberRoomHandler(event, r)}
+                    />
+                    <label htmlFor={r}>{r}</label>
+                  </div>
+                ))}
             </div>
           </div>
 

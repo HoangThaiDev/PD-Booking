@@ -13,6 +13,7 @@ import Header from "../UI/Header";
 function DetailRoom() {
   // Create + use Hooks
   const { state } = useLocation();
+
   const [room, setRoom] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,7 +21,7 @@ function DetailRoom() {
     const fetchDetailRoom = async () => {
       try {
         const response = await axios.get(
-          `${API_ROOT}/rooms/detail/${state.roomId}`
+          `${API_ROOT}/rooms/detail/?nameCity=${state.nameCity}&&nameResort=${state.nameResort}&&roomId=${state.roomId}`
         );
         if (response.status === 200) {
           setRoom(response.data);

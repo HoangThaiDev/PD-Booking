@@ -74,9 +74,7 @@ export default function ListTransaction({
       }
     }
   };
-  {
-    console.log(transactions);
-  }
+
   return (
     <div className={classes.list}>
       <div className={classes["list__container"]}>
@@ -127,6 +125,10 @@ export default function ListTransaction({
                       <img src={item.photo} alt={item.photo} />
                       <div className={classes["product-info"]}>
                         <h3>{item.name}</h3>
+                        <p>
+                          <span>Location:</span> {item.nameCity} -{" "}
+                          {item.nameResort}
+                        </p>
                         <p>
                           <span>Date:</span> {item.date.startDate} -
                           {item.date.endDate}

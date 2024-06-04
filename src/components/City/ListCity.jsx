@@ -28,12 +28,14 @@ export default function ListCity({ cities }) {
   // Create + use event Handlers
   const findCityByNameHandler = async () => {
     try {
-      const { data } = await axios.post(`${API_ROOT}/cities/search`, {
+      const response = await axios.post(`${API_ROOT}/cities/search`, {
         name: nameCityRef.current.value,
       });
-      setCitiesSlice(data);
+      if (response.status === 200) {
+        setCitiesSlice(response.data);
+      }
     } catch (error) {
-      console.log(error);
+      alert(error.response.data.message);
     }
   };
 
