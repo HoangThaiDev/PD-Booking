@@ -18,7 +18,6 @@ import beachIcon from "../../assets/Activities City/sunbed.png";
 import templeIcon from "../../assets/Activities City/chinese.png";
 
 // Customize Arrow Slider
-
 function SampleNextArrow(props) {
   const { className, onClick } = props;
   return (

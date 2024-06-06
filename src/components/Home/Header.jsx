@@ -17,7 +17,9 @@ export default function Header({ cities }) {
 
   return (
     <div className={classes.header}>
-      <img className={classes["header__img"]} src={banner} alt="banner" />
+      {<img className={classes["header__img"]} src={banner} alt="banner" /> || (
+        <Skeleton />
+      )}
       <div className={classes["header__introduce"]}>
         <h1 className={classes["intro__title"]}>
           Vietnam's Resort Search System

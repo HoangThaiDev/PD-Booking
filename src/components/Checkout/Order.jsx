@@ -101,7 +101,7 @@ export default function Order({ user }) {
                   <div className={classes["cart-detail"]}>
                     <p className={classes["cart-detail-name"]}>{item.name}</p>
                     <p className={classes["cart-detail-date"]}>
-                      <span>Date:</span> {item.date.startDate} -
+                      <span>Date:</span> {item.date.startDate} -{" "}
                       {item.date.endDate}
                     </p>
                     <p className={classes["cart-detail-options"]}>

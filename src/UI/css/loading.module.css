@@ -1,0 +1,140 @@
+.loading__card {
+    position: absolute;
+    top: 25%;
+    width: 800px;
+    transform: translate(45%, 50%);
+    text-align: center;
+    color: rgb(38, 70, 83);
+    word-wrap: break-word;
+}
+
+.fade-loading {
+    position: absolute;
+    margin-bottom: 20px;
+    left: 47% !important;
+}
+
+.loading__card>h1 {
+    font-family: "Lora", serif;
+    font-size: 2.5rem;
+}
+
+.loading__card>p {
+    font-family: "EB Garamond", serif;
+    margin-top: 10px;
+    font-size: 1.8rem;
+}
+
+.loading__card>p>span {
+    font-weight: bold;
+}
+
+
+@media screen and (max-width:575px) {
+    .loading__card {
+        width: 100%;
+        top: 10%;
+        transform: translate(0, 50%);
+    }
+
+    .fade-loading {
+        position: absolute;
+        margin-bottom: 20px;
+        left: 45% !important;
+    }
+
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+
+    .loading__card>p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .loading__card>p>span {
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .loading__card {
+        width: 100%;
+        top: 10%;
+        transform: translate(0, 50%);
+    }
+
+    .fade-loading {
+        position: absolute;
+        margin-bottom: 20px;
+        left: 47% !important;
+    }
+
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+
+    .loading__card>p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .loading__card>p>span {
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .loading__card {
+        width: 100%;
+        top: 10%;
+        transform: translate(0, 50%);
+    }
+
+    .fade-loading {
+        position: absolute;
+        margin-bottom: 20px;
+        left: 48% !important;
+    }
+
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+
+    .loading__card>p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .loading__card>p>span {
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .loading__card {
+        width: 100%;
+        top: 10%;
+        transform: translate(0, 50%);
+    }
+
+    .fade-loading {
+        position: absolute;
+        margin-bottom: 20px;
+        left: 48% !important;
+    }
+
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+
+    .loading__card>p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .loading__card>p>span {
+        font-weight: bold;
+    }
+}
