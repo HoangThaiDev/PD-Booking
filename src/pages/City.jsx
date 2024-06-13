@@ -5,8 +5,7 @@ import React from "react";
 import Header from "../UI/Header";
 import About from "../components/City/About";
 import ListCity from "../components/City/ListCity";
-const banner =
-  "https://a.storyblok.com/f/88871/1408x744/8f2b7c30e8/chongqing-headerbild-jpg.jpg";
+import banner from "../assets/Images Banner/banner-city.jpg";
 
 export default function City({ cities }) {
   return (
@@ -18,6 +17,7 @@ export default function City({ cities }) {
         unique"
         cities={cities}
       />
+
       <About />
       <ListCity cities={cities} />
     </div>

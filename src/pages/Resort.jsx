@@ -5,8 +5,7 @@ import React from "react";
 import Header from "../UI/Header";
 import About from "../components/Resort/About";
 import ListResort from "../components/Resort/ListResort";
-const banner =
-  "https://img.freepik.com/free-photo/indoor-design-luxury-resort_23-2150497253.jpg";
+import banner from "../assets/Images Banner/banner-resort.webp";
 
 export default function Resort({ cities, resorts }) {
   return (

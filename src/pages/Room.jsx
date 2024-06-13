@@ -8,8 +8,7 @@ import { useSelector } from "react-redux";
 import Header from "../UI/Header";
 import About from "../components/Room/About";
 import ListRoom from "../components/Room/ListRoom";
-const banner =
-  "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/04/spacejoy-FX61rYaAfCQ-unsplash.jpg";
+import banner from "../assets/Images Banner/banner-room.jpg";
 
 export default function Room({ rooms, cities }) {
   // Create + use Hooks

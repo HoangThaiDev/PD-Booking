@@ -5,7 +5,7 @@ import React from "react";
 import classes from "./css/header.module.css";
 
 // Import Components
-import banner from "../../assets/banner.jpg";
+import banner from "../../assets/Images Banner/banner-home.jpg";
 import FormBooking from "../../UI/FormBooking";
 
 export default function Header({ cities }) {

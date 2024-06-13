@@ -13,8 +13,7 @@ import "../UI/css/ant-design/messageAlert.css";
 import { message } from "antd";
 import Header from "../UI/Header";
 import ListTransaction from "../components/Transaction/ListTransaction";
-const banner =
-  "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg";
+import banner from "../assets/Images Banner/banner2.jpg";
 
 // Import Icons
 import { MdError } from "react-icons/md";

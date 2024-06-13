@@ -11,8 +11,7 @@ import Header from "../UI/Header";
 import ListCart from "../components/Cart/ListCart";
 import ModalCart from "../UI/ModalCart";
 
-const banner =
-  "https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg";
+import banner from "../assets/Images Banner/banner2.jpg";
 
 export default function Cart() {
   // Create + use Hooks
