@@ -22,7 +22,7 @@ export default function Room({ rooms }) {
   // Create + use event Handlers
   const navigateRoomDetailHandler = (id, name) => {
     const modifiedName = name.split(" ").join("-");
-    navigate(`room/${modifiedName}`, { state: { roomId: id } });
+    navigate(`room/detail/${modifiedName}`, { state: { roomId: id } });
   };
 
   return (

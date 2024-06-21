@@ -1,6 +1,6 @@
 // Import Hooks
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // Import Modules
 import { sideMenuAction } from "../redux/store";
@@ -23,16 +23,15 @@ export default function Navbar() {
   const navbarNavRef = useRef(null);
   const dispatch = useDispatch();
   const { user, isLoggedIn } = useSelector((state) => state.user);
+  const [isScrollNavbar, setIsScrollNavbar] = useState(false);
 
   // Create + use SideEffect
   useEffect(() => {
     const scrollNavbarHandler = () => {
       if (window.scrollY > 200) {
-        navbarNavRef.current.classList.add(`${classes["navbar-nav-scroll"]}`);
+        setIsScrollNavbar(true);
       } else {
-        navbarNavRef.current.classList.remove(
-          `${classes["navbar-nav-scroll"]}`
-        );
+        setIsScrollNavbar(false);
       }
     };
 
@@ -42,7 +41,7 @@ export default function Navbar() {
     return () => {
       document.removeEventListener("scroll", scrollNavbarHandler);
     };
-  }, []);
+  }, [isScrollNavbar]);
 
   // Create + use Event Handlers
   const showSideMenuHandler = () => {
@@ -51,7 +50,13 @@ export default function Navbar() {
 
   return (
     <div className={classes.navbar}>
-      <div className={classes["navbar__nav"]} ref={navbarNavRef}>
+      <div
+        className={
+          isScrollNavbar
+            ? `${classes["navbar__nav"]} ${classes["navbar__nav-scroll"]}`
+            : classes["navbar__nav"]
+        }
+      >
         <Row className={classes["navbar__row"]}>
           <Col
             className={`${classes["navbar__col"]} ${classes.menu}`}

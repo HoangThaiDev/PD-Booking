@@ -13,6 +13,7 @@ import { IoClose } from "react-icons/io5";
 
 // Import Components
 import { Link } from "react-router-dom";
+import banner from "../assets/Images Banner/banner2.jpg";
 
 const Container = () => {
   // Create + use Hooks\
@@ -31,10 +32,7 @@ const Container = () => {
         showSideMenu ? `${classes["show"]}` : `${classes["hide"]}`
       }`}
     >
-      <img
-        src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg"
-        alt="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/05/siravitplug-MhPJdWYWbWI-unsplash-2.jpg"
-      />
+      <img src={banner} alt={banner} />
       <div className={classes["sideMenu__header"]}>
         <IoClose
           className={classes["icon-close"]}

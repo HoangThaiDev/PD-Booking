@@ -139,7 +139,7 @@
 
 
 /* CSS: Active */
-.navbar-nav-scroll {
+.navbar__nav-scroll {
     transition: 1s all ease;
     background-color: #66c8c9;
     border-bottom: 0;

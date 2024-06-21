@@ -22,7 +22,7 @@ export default function DetailCity({ cities }) {
         const response = await axios.get(
           `${API_ROOT}/cities/detail/${state.cityId}`
         );
-        console.log(response.data);
+
         if (response.status === 200) {
           setCity(response.data);
           setIsLoading(!isLoading);
